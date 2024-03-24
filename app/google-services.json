@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969276336690",
+    "project_id": "pfg-caraction",
+    "storage_bucket": "pfg-caraction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969276336690:android:3736cb91bb81dcaf2b6a2b",
+        "android_client_info": {
+          "package_name": "com.acasloa946.pfg_caraction"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtOwUdWP7ryviIvmr-ksDYRVGMOvRiqO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
