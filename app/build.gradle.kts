@@ -2,7 +2,15 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.relay") version "0.3.09"
-    id("com.google.gms.google-services")}
+    id("com.google.gms.google-services")
+    //Dagger Hilt
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+
+
+
+}
+
 
 android {
     namespace = "com.acasloa946.pfg_caraction"
@@ -41,7 +49,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.0"
     }
     packaging {
         resources {
@@ -74,5 +82,22 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.1")
+    implementation("com.google.android.gms:play-services-auth:21.0.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.11.0")
 
+    //extended icons
+    implementation("androidx.compose.material:material-icons-extended:1.6.4")
+
+    //dagger hilt
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-android-compiler:2.50")
+
+
+
+
+}
+
+
+kapt {
+    correctErrorTypes = true
 }
