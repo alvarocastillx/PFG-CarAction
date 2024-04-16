@@ -15,7 +15,6 @@ import com.google.firebase.ktx.Firebase
 
 class InitScreenViewmodel : ViewModel() {
 
-    //TODO: CERRAR SESIÓN DE GOOGLE, HACER BOTÓN BIEN,
     private val auth = Firebase.auth
 
 
@@ -30,6 +29,9 @@ class InitScreenViewmodel : ViewModel() {
             FirebaseAuth.getInstance().signInWithCredential(credential)
                 .addOnCompleteListener {
                     onSuccess()
+                }
+                .addOnFailureListener {
+                    onFailure()
                 }
         }
         catch (e: ApiException) {

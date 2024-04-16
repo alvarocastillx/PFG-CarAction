@@ -7,7 +7,7 @@ enum class UserType {
     NULL
 }
 data class UserEntity(
-    val name:String,
-    val type:UserType,
-    val email:String
+    val name:String? = null,
+    val type:UserType? = null,
+    val email:String? = null
 )

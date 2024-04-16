@@ -10,5 +10,9 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
         userDao.createUserInDatabase(UserEntity(userModel.name,userModel.type,userModel.email),context)
     }
 
+    suspend fun fetchUser(context: Context, email:String):UserEntity? {
+        val user = userDao.fetchUser(context, email)
+        return user
+    }
 
 }

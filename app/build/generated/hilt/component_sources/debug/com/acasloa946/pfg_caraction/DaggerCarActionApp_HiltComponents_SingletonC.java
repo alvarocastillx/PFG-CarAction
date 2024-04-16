@@ -9,7 +9,10 @@ import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddUserUseCaseFactory;
+import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchUserCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideUserDaoFactory;
+import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel;
+import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel_HiltModules_KeyModule_ProvideFactory;
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel_HiltModules_KeyModule_ProvideFactory;
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel;
@@ -17,6 +20,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterV
 import com.acasloa946.pfg_caraction.data.UserDao;
 import com.acasloa946.pfg_caraction.data.UserRepository;
 import com.acasloa946.pfg_caraction.domain.addUserUseCase;
+import com.acasloa946.pfg_caraction.domain.fetchUserUseCase;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import dagger.hilt.android.ActivityRetainedLifecycle;
@@ -382,7 +386,7 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     @Override
     public Set<String> getViewModelKeys() {
-      return ImmutableSet.<String>of(Q2Viewmodel_HiltModules_KeyModule_ProvideFactory.provide(), RegisterViewmodel_HiltModules_KeyModule_ProvideFactory.provide());
+      return ImmutableSet.<String>of(Q2Viewmodel_HiltModules_KeyModule_ProvideFactory.provide(), RegisterViewmodel_HiltModules_KeyModule_ProvideFactory.provide(), homeScreenViewmodel_HiltModules_KeyModule_ProvideFactory.provide());
     }
 
     @Override
@@ -412,6 +416,8 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private Provider<RegisterViewmodel> registerViewmodelProvider;
 
+    private Provider<homeScreenViewmodel> homeScreenViewmodelProvider;
+
     private ViewModelCImpl(SingletonCImpl singletonCImpl,
         ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam,
         ViewModelLifecycle viewModelLifecycleParam) {
@@ -427,11 +433,12 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
         final ViewModelLifecycle viewModelLifecycleParam) {
       this.q2ViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
       this.registerViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
+      this.homeScreenViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 2);
     }
 
     @Override
     public Map<String, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
-      return ImmutableMap.<String, javax.inject.Provider<ViewModel>>of("com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel", ((Provider) q2ViewmodelProvider), "com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel", ((Provider) registerViewmodelProvider));
+      return ImmutableMap.<String, javax.inject.Provider<ViewModel>>of("com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel", ((Provider) q2ViewmodelProvider), "com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel", ((Provider) registerViewmodelProvider), "com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel", ((Provider) homeScreenViewmodelProvider));
     }
 
     @Override
@@ -465,6 +472,9 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
           case 1: // com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel 
           return (T) new RegisterViewmodel();
+
+          case 2: // com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel 
+          return (T) new homeScreenViewmodel(singletonCImpl.fetchUserUseCase());
 
           default: throw new AssertionError(id);
         }
@@ -560,6 +570,10 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private addUserUseCase addUserUseCase() {
       return HiltModule_ProvideAddUserUseCaseFactory.provideAddUserUseCase(hiltModule, userRepository());
+    }
+
+    private fetchUserUseCase fetchUserUseCase() {
+      return HiltModule_ProvideFetchUserCaseFactory.provideFetchUserCase(hiltModule, userRepository());
     }
 
     @SuppressWarnings("unchecked")

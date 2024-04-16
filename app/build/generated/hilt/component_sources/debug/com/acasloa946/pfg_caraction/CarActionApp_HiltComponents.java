@@ -1,6 +1,7 @@
 package com.acasloa946.pfg_caraction;
 
 import com.acasloa946.pfg_caraction.Hilt.HiltModule;
+import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel_HiltModules;
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel_HiltModules;
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel_HiltModules;
 import dagger.Binds;
@@ -150,7 +151,8 @@ public final class CarActionApp_HiltComponents {
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
           HiltWrapper_SavedStateHandleModule.class,
           Q2Viewmodel_HiltModules.KeyModule.class,
-          RegisterViewmodel_HiltModules.KeyModule.class
+          RegisterViewmodel_HiltModules.KeyModule.class,
+          homeScreenViewmodel_HiltModules.KeyModule.class
       }
   )
   @ActivityRetainedScoped
@@ -188,7 +190,8 @@ public final class CarActionApp_HiltComponents {
       modules = {
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
           Q2Viewmodel_HiltModules.BindsModule.class,
-          RegisterViewmodel_HiltModules.BindsModule.class
+          RegisterViewmodel_HiltModules.BindsModule.class,
+          homeScreenViewmodel_HiltModules.BindsModule.class
       }
   )
   @ViewModelScoped

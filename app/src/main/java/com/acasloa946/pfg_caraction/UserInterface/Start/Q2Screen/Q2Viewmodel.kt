@@ -24,7 +24,6 @@ class Q2Viewmodel @Inject constructor(private val addUserUseCase: addUserUseCase
         viewModelScope.launch {
             addUserUseCase.invoke(UserModel(name,userType, currentMail!!),context)
         }
-        auth.currentUser!!.delete()
     }
 
 

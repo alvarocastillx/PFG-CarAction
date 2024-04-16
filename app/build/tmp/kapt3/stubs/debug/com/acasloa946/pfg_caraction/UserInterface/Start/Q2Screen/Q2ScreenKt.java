@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.Modifier;
 import androidx.navigation.NavController;
+import com.acasloa946.pfg_caraction.Navigation.Routes;
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel;
 import com.acasloa946.pfg_caraction.data.Entities.UserType;
 

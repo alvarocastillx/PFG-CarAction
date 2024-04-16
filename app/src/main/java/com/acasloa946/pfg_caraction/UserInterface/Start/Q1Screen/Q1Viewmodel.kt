@@ -16,5 +16,17 @@ class Q1Viewmodel : ViewModel() {
         name = input
     }
 
+    fun checkName(
+        emptyName:() -> Unit,
+        success: () -> Unit
+    ) {
+        if (name.isBlank()) {
+            emptyName()
+        }
+        else {
+            success()
+        }
+    }
+
 
 }

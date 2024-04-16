@@ -33,7 +33,7 @@ fun InitPage(navController: NavController, initScreenViewmodel: InitScreenViewmo
                 .fillMaxWidth()
                 .height(711.dp),
             onLoginClick = {
-                //todo
+                navController.navigate(Routes.LoginScreen.route)
             },
             onRegisterClick = {
                 navController.navigate(Routes.RegisterScreen.route)

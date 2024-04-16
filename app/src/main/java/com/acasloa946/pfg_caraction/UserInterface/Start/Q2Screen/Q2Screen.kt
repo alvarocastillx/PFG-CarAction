@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.MainQ1Components
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel
 import com.acasloa946.pfg_caraction.data.Entities.UserType
@@ -38,11 +39,11 @@ fun Q2Screen(navController: NavController, q2Viewmodel: Q2Viewmodel, q1Viewmodel
         MainQ2Component(modifier = Modifier.fillMaxWidth().height(695.dp),
             onClickBuy = {
                 q2Viewmodel.createUserAcc(q1Viewmodel.name, userType = UserType.BUYER, context)
-                //TODO: NAVIGATION HACIA PAGINA PRINCIPAL
+                navController.navigate(Routes.HomeScreen.route)
             },
             onClickSell = {
                 q2Viewmodel.createUserAcc(q1Viewmodel.name, userType = UserType.SELLER, context)
-                //TODO: NAVIGATION HACIA PAGINA PRINCIPAL
+                navController.navigate(Routes.HomeScreen.route)
             })
         Text(
             text = "CarAction® 2024",

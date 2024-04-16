@@ -13,9 +13,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
+import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
 import com.acasloa946.pfg_caraction.mainq1.MainQ1
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
@@ -24,6 +26,7 @@ import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 @Composable
 fun Q1Screen(navController: NavController, q1Viewmodel: Q1Viewmodel) {
 
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -36,7 +39,15 @@ fun Q1Screen(navController: NavController, q1Viewmodel: Q1Viewmodel) {
             .height(695.dp),
             q1Viewmodel = q1Viewmodel,
             onNextClick = {
-                navController.navigate(Routes.Q2Screen.route)
+                q1Viewmodel.checkName(
+                    emptyName = {
+                        toastMaker("Introduzca un nombre", context)
+                    },
+                    success = {
+                        navController.navigate(Routes.Q2Screen.route)
+                    }
+                )
+
             })
         Text(
             text = "CarAction® 2024",
