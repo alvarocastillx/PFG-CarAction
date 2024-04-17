@@ -6,7 +6,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
@@ -21,10 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.SemanticsProperties.ImeAction
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.DpOffset
@@ -32,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
-import com.acasloa946.pfg_caraction.data.CarType
+import com.acasloa946.pfg_caraction.data.CarEntityType
 import com.acasloa946.pfg_caraction.pantallaprincipal.Banner
 import com.acasloa946.pfg_caraction.pantallaprincipal.BannerImage
 import com.acasloa946.pfg_caraction.pantallaprincipal.BienvenidaCard
@@ -63,6 +59,7 @@ import com.acasloa946.pfg_caraction.ui.theme.RojoMain
  * Pujas, calificación de usuarios.
  * BDDs: users, cars, pujas
  * Notificaciones
+ * API PARA MARCAS Y ¿MODELOS? Y UTILIZAR FOTOS DESPUES
  *
  */
 @Composable
@@ -155,7 +152,7 @@ fun PantallaPrincipalComponent(
                     horizontalArrangement = Arrangement.spacedBy(3.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    items(CarType.entries) {
+                    items(CarEntityType.entries) {
                         SearchGadget(modifier = Modifier.size(104.dp,32.dp),
                             gadgetText = it.name)
                     }

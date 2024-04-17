@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "com.acasloa946.pfg_caraction.app-mergeDebugResources-60:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "com.acasloa946.pfg_caraction.app-mergeDebugResources-62:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\dbb834ffab5673fbaa86e745c193252f\\transformed\\foundation-release\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\beb18ba4248fd1f64f2ecd0d4247f29d\\transformed\\ui-release\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,136",
-                        "endColumns": "80,76",
-                        "endOffsets": "131,208"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,182,258,343,434,511,585,662,740,815,880,945,1018,1093,1161,1234,1300",
+                        "endColumns": "76,75,84,90,76,73,76,77,74,64,64,72,74,67,72,65,115",
+                        "endOffsets": "177,253,338,429,506,580,657,735,810,875,940,1013,1088,1156,1229,1295,1411"
                     },
                     "to": {
-                        "startLines": "102,103",
-                        "startColumns": "4,4",
-                        "startOffsets": "9285,9366",
-                        "endColumns": "80,76",
-                        "endOffsets": "9361,9438"
+                        "startLines": "13,14,66,67,69,74,75,76,77,78,79,80,81,83,87,88,89",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1166,1243,6303,6388,6548,6982,7056,7133,7211,7286,7351,7416,7489,7643,7978,8051,8117",
+                        "endColumns": "76,75,84,90,76,73,76,77,74,64,64,72,74,67,72,65,115",
+                        "endOffsets": "1238,1314,6383,6474,6620,7051,7128,7206,7281,7346,7411,7484,7559,7706,8046,8112,8228"
                     }
                 },
                 {
@@ -89,24 +89,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\4363bacfa5fc01bd192bbccb62317ec2\\transformed\\ui-release\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\e4fa54d0d4a9aa6110dc38fe6f2b2f1d\\transformed\\foundation-release\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,182,258,343,434,511,585,662,740,815,880,945,1018,1093,1161,1234,1300",
-                        "endColumns": "76,75,84,90,76,73,76,77,74,64,64,72,74,67,72,65,115",
-                        "endOffsets": "177,253,338,429,506,580,657,735,810,875,940,1013,1088,1156,1229,1295,1411"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,136",
+                        "endColumns": "80,76",
+                        "endOffsets": "131,208"
                     },
                     "to": {
-                        "startLines": "13,14,66,67,69,74,75,76,77,78,79,80,81,83,87,88,89",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1166,1243,6303,6388,6548,6982,7056,7133,7211,7286,7351,7416,7489,7643,7978,8051,8117",
-                        "endColumns": "76,75,84,90,76,73,76,77,74,64,64,72,74,67,72,65,115",
-                        "endOffsets": "1238,1314,6383,6474,6620,7051,7128,7206,7281,7346,7411,7484,7559,7706,8046,8112,8228"
+                        "startLines": "102,103",
+                        "startColumns": "4,4",
+                        "startOffsets": "9285,9366",
+                        "endColumns": "80,76",
+                        "endOffsets": "9361,9438"
                     }
                 },
                 {
-                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\ebc0f471edd60c80b8bdcbaa61407369\\transformed\\play-services-base-18.0.1\\res\\values-zh-rCN\\values.xml",
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\0fe16639dd99ae6da80db9e2035ec7da\\transformed\\play-services-base-18.1.0\\res\\values-zh-rCN\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

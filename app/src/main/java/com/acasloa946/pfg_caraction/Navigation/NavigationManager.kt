@@ -6,6 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.HomeScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.UploadCarScreen
+import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitPage
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.LoginScreen.LoginScreen
@@ -18,11 +20,11 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterV
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterScreen
 
 @Composable
-fun NavigationManager(registerViewmodel: RegisterViewmodel, initScreenViewmodel: InitScreenViewmodel, q1Viewmodel: Q1Viewmodel, q2Viewmodel: Q2Viewmodel, loginViewmodel: loginViewmodel, homeScreenViewmodel: homeScreenViewmodel) {
+fun NavigationManager(registerViewmodel: RegisterViewmodel, initScreenViewmodel: InitScreenViewmodel, q1Viewmodel: Q1Viewmodel, q2Viewmodel: Q2Viewmodel, loginViewmodel: loginViewmodel, homeScreenViewmodel: homeScreenViewmodel, uploadCarViewmodel: uploadCarViewmodel) {
 
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "InitScreen") {
+    NavHost(navController = navController, startDestination = "UploadCarScreen") {
         composable("InitScreen") {
             InitPage(navController,initScreenViewmodel)
         }
@@ -40,6 +42,9 @@ fun NavigationManager(registerViewmodel: RegisterViewmodel, initScreenViewmodel:
         }
         composable("HomeScreen") {
             HomeScreen(navController = navController, homeScreenViewmodel = homeScreenViewmodel)
+        }
+        composable("UploadCarScreen") {
+            UploadCarScreen(navController = navController, uploadCarViewmodel = uploadCarViewmodel)
         }
         }
 }

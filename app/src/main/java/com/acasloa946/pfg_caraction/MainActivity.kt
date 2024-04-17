@@ -10,6 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.acasloa946.pfg_caraction.Navigation.NavigationManager
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.LoginScreen.loginViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel
@@ -29,6 +30,7 @@ class MainActivity : ComponentActivity() {
         val q2Viewmodel : Q2Viewmodel by viewModels()
         val loginViewmodel : loginViewmodel by viewModels()
         val homeScreenViewmodel : homeScreenViewmodel by viewModels()
+        val uploadCarViewmodel : uploadCarViewmodel by viewModels()
 
 
         setContent {
@@ -38,7 +40,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    NavigationManager(registerViewmodel,initScreenViewmodel, q1Viewmodel, q2Viewmodel, loginViewmodel, homeScreenViewmodel)
+                    NavigationManager(registerViewmodel,initScreenViewmodel, q1Viewmodel, q2Viewmodel, loginViewmodel, homeScreenViewmodel, uploadCarViewmodel)
                 }
             }
         }

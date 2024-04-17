@@ -1,13 +1,13 @@
 package com.acasloa946.pfg_caraction.data
 
-enum class CarType {
+enum class CarEntityType {
     SUV,
     BERLINA,
     ESTATE,
-    LAMBO,
-    FERRA,
-    BIMMER
+    ELÉCTRICO,
+    SUPERCOCHE,
+    CABRIO
 }
 data class CarEntity (
-    var type:CarType
+    var type:CarEntityType
 )

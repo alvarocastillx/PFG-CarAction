@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.activity.ComponentActivity;
 import androidx.compose.ui.Modifier;
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel;
+import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitScreenViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.LoginScreen.loginViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel;

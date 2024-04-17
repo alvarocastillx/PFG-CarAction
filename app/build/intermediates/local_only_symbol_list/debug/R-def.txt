@@ -7,6 +7,9 @@ color purple_700
 color teal_200
 color teal_700
 color white
+drawable bottom_nav_bar_car_vector
+drawable bottom_nav_bar_home_vector
+drawable bottom_nav_bar_vertical_line
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image_banner
@@ -39,6 +42,8 @@ drawable register_screen_image_car_action
 drawable register_screen_rectangle_reg
 drawable search_gadget_image_1
 drawable search_gadget_rectangle_8
+drawable upload_car_screen_upload_vector
+drawable upload_car_screen_vector
 font railinc_font
 font relay_kaisei_harunoumi_bold
 font relay_kaisei_harunoumi_medium

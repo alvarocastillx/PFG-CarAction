@@ -83,14 +83,22 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.1")
     implementation("com.google.android.gms:play-services-auth:21.0.0")
-    implementation("com.google.firebase:firebase-firestore-ktx:24.11.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.11.1")
 
     //extended icons
-    implementation("androidx.compose.material:material-icons-extended:1.6.4")
+    implementation("androidx.compose.material:material-icons-extended:1.6.5")
 
     //dagger hilt
     implementation("com.google.dagger:hilt-android:2.50")
     kapt("com.google.dagger:hilt-android-compiler:2.50")
+
+    //firebase storage (subir imágenes)
+    implementation("com.google.firebase:firebase-storage")
+    //para hacer intent de galería
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    //coil para imagenes de internet
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
 
 
 

@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "com.acasloa946.pfg_caraction.app-mergeDebugResources-60:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.acasloa946.pfg_caraction.app-mergeDebugResources-62:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\dbb834ffab5673fbaa86e745c193252f\\transformed\\foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\beb18ba4248fd1f64f2ecd0d4247f29d\\transformed\\ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,141",
-                        "endColumns": "85,84",
-                        "endOffsets": "136,221"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,197,279,373,472,559,641,730,819,903,968,1032,1110,1192,1265,1342,1408",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
+                        "endOffsets": "192,274,368,467,554,636,725,814,898,963,1027,1105,1187,1260,1337,1403,1524"
                     },
                     "to": {
-                        "startLines": "84,85",
-                        "startColumns": "4,4",
-                        "startOffsets": "8224,8310",
-                        "endColumns": "85,84",
-                        "endOffsets": "8305,8390"
+                        "startLines": "13,14,48,49,51,56,57,58,59,60,61,62,63,65,69,70,71",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1267,1359,5039,5133,5306,5774,5856,5945,6034,6118,6183,6247,6325,6490,6845,6922,6988",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
+                        "endOffsets": "1354,1436,5128,5227,5388,5851,5940,6029,6113,6178,6242,6320,6402,6558,6917,6983,7104"
                     }
                 },
                 {
@@ -72,20 +72,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\4363bacfa5fc01bd192bbccb62317ec2\\transformed\\ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\e4fa54d0d4a9aa6110dc38fe6f2b2f1d\\transformed\\foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,197,279,373,472,559,641,730,819,903,968,1032,1110,1192,1265,1342,1408",
-                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
-                        "endOffsets": "192,274,368,467,554,636,725,814,898,963,1027,1105,1187,1260,1337,1403,1524"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,141",
+                        "endColumns": "85,84",
+                        "endOffsets": "136,221"
                     },
                     "to": {
-                        "startLines": "13,14,48,49,51,56,57,58,59,60,61,62,63,65,69,70,71",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1267,1359,5039,5133,5306,5774,5856,5945,6034,6118,6183,6247,6325,6490,6845,6922,6988",
-                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
-                        "endOffsets": "1354,1436,5128,5227,5388,5851,5940,6029,6113,6178,6242,6320,6402,6558,6917,6983,7104"
+                        "startLines": "84,85",
+                        "startColumns": "4,4",
+                        "startOffsets": "8224,8310",
+                        "endColumns": "85,84",
+                        "endOffsets": "8305,8390"
                     }
                 }
             ]
