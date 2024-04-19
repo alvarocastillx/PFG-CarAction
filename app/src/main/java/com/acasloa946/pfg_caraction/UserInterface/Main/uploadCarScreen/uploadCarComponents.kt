@@ -3,12 +3,20 @@ package com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -28,17 +36,33 @@ import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
+import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
+import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.acasloa946.pfg_caraction.uploadcarscreen.Banner
 import com.acasloa946.pfg_caraction.uploadcarscreen.BannerImage
+import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonMake
+import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonModel
+import com.acasloa946.pfg_caraction.uploadcarscreen.ImageFrame
 import com.acasloa946.pfg_caraction.uploadcarscreen.MainUploadScreen
+import com.acasloa946.pfg_caraction.uploadcarscreen.Marca
 import com.acasloa946.pfg_caraction.uploadcarscreen.MaterialSymbolsMenu
+import com.acasloa946.pfg_caraction.uploadcarscreen.Modelo
+import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle
+import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle2
+import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldKM
+import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldPlate
+import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldPrice
+import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldYear
 import com.acasloa946.pfg_caraction.uploadcarscreen.TopLevel
 import com.acasloa946.pfg_caraction.uploadcarscreen.UploadIcon
 import com.acasloa946.pfg_caraction.uploadcarscreen.UploadImageFrame
+import com.acasloa946.pfg_caraction.uploadcarscreen.UploadText
 import com.acasloa946.pfg_caraction.uploadcarscreen.UploadVector
 import com.acasloa946.pfg_caraction.uploadcarscreen.Vector
+import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext1
+import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext2
 import com.google.relay.compose.RelayText
 
 @Composable
@@ -46,6 +70,8 @@ fun UploadCarScreenComponent(
     modifier: Modifier = Modifier,
     rightMenuClick: () -> Unit = {},
     uploadImageClick: () -> Unit = {},
+    onMakeClick : () -> Unit = {},
+    onModelClick : () -> Unit = {},
     uploadCarViewmodel: uploadCarViewmodel
 ) {
     TopLevel(modifier = modifier) {
@@ -82,32 +108,16 @@ fun UploadCarScreenComponent(
                     )
                 )
             ) {
-                Image(painter = painterResource(id = R.drawable.image_banner), contentDescription = null,
-                    modifier = Modifier.fillMaxSize())
+                Image(
+                    painter = painterResource(id = R.drawable.image_banner),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize()
+                )
             }
         }
         MainUploadScreen(modifier = Modifier
             .rowWeight(1.0f)
             .columnWeight(1.0f)) {
-            if (uploadCarViewmodel.selectedImageUri != null) {
-                Column(
-                    modifier = Modifier.size(100.dp)
-                ) {
-
-                    SubcomposeAsyncImage(
-                        model = uploadCarViewmodel.selectedImageUri,
-                        contentDescription = null,
-                        contentScale = ContentScale.FillWidth,
-                        loading = {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(
-                                    100.dp
-                                ), color = Color(0xFF1ACE4D)
-                            )
-                        }
-                    )
-                }
-            }
             UploadImageFrame(
                 uploadImageClick = uploadImageClick,
                 modifier = Modifier.rowWeight(1.0f)
@@ -119,20 +129,157 @@ fun UploadCarScreenComponent(
                 }
                 UploadTextComponent()
             }
-            Column (
-                modifier = Modifier.size(200.dp)
-            ){
-                var expanded by remember { mutableStateOf(false) }
-                DropdownMenu(expanded = expanded, onDismissRequest = { /*TODO*/ },) {
-                    DropdownMenuItem(text = {
-                        Text("1")
-                    }, onClick = { /*TODO*/ })
-                    DropdownMenuItem(text ={
-                        Text("2")
-                    }, onClick = { /*TODO*/ })
-                }
-            }
+            ImageFrame {
 
+            }
+            TextFieldPlate {
+                TextField(
+                    value = "", onValueChange = {
+                        ""
+                    },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = RojoMain,
+                        unfocusedBorderColor = BlancoMain,
+                        focusedLabelColor = BlancoMain,
+                        unfocusedLabelColor = BlancoMain,
+                        unfocusedTextColor = BlancoMain,
+                        focusedTextColor = BlancoMain
+                    ),
+                    placeholder = {
+                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    leadingIcon = {
+                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                    }
+                )
+
+            }
+            Spacer(modifier = Modifier.padding(5.dp))
+            ButtonMake(onMakeClick = onMakeClick) {
+                Rectangle2(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorNext1(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12727737426758.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                Marca(makeText = uploadCarViewmodel.makeButtonText,
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = -0.000030517578125.dp,
+                            y = 0.9825668334960938.dp
+                        )
+                    )
+                )
+            }
+            ButtonModel(onModelClick = onModelClick) {
+                Rectangle(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorNext2(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12727737426758.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                Modelo(modelText = uploadCarViewmodel.modelButtonText,
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = -0.000030517578125.dp,
+                            y = 0.9825668334960938.dp
+                        )
+                    )
+                )
+            }
+            TextFieldYear {
+                TextField(
+                    value = "", onValueChange = {
+                        ""
+                    },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = RojoMain,
+                        unfocusedBorderColor = BlancoMain,
+                        focusedLabelColor = BlancoMain,
+                        unfocusedLabelColor = BlancoMain,
+                        unfocusedTextColor = BlancoMain,
+                        focusedTextColor = BlancoMain
+                    ),
+                    placeholder = {
+                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    leadingIcon = {
+                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                    }
+                )
+            }
+            TextFieldKM {
+                TextField(
+                    value = "", onValueChange = {
+                        ""
+                    },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = RojoMain,
+                        unfocusedBorderColor = BlancoMain,
+                        focusedLabelColor = BlancoMain,
+                        unfocusedLabelColor = BlancoMain,
+                        unfocusedTextColor = BlancoMain,
+                        focusedTextColor = BlancoMain
+                    ),
+                    placeholder = {
+                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    leadingIcon = {
+                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                    }
+                )
+            }
+            TextFieldPrice {
+                TextField(
+                    value = "", onValueChange = {
+                        ""
+                    },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = RojoMain,
+                        unfocusedBorderColor = BlancoMain,
+                        focusedLabelColor = BlancoMain,
+                        unfocusedLabelColor = BlancoMain,
+                        unfocusedTextColor = BlancoMain,
+                        focusedTextColor = BlancoMain
+                    ),
+                    placeholder = {
+                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    leadingIcon = {
+                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                    }
+                )
+            }
         }
     }
 }
@@ -155,4 +302,16 @@ fun UploadTextComponent(modifier: Modifier = Modifier) {
     )
 }
 
+/*
+Image(
+                    painter = painterResource(id = R.drawable.image_banner),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize()
+                )
 
+
+                modifier = Modifier
+                .rowWeight(1.0f)
+                .clip(BottomRoundedShape(60.dp))
+                .border(2.dp, RojoMain, BottomRoundedShape(60.dp))
+ */

@@ -28,6 +28,8 @@ drawable main_q2_ellipse_2
 drawable main_q2_ellipse_3
 drawable main_q2_rectangle_buy
 drawable main_q2_rectangle_sell
+drawable make_component_vector
+drawable model_component_vector
 drawable pantalla_principal_elipe
 drawable pantalla_principal_filter_icon_vector
 drawable pantalla_principal_imagen_2024_03_09_183540025_removebg_preview_1
@@ -42,8 +44,12 @@ drawable register_screen_image_car_action
 drawable register_screen_rectangle_reg
 drawable search_gadget_image_1
 drawable search_gadget_rectangle_8
+drawable upload_car_screen_rectangle
+drawable upload_car_screen_rectangle_2
 drawable upload_car_screen_upload_vector
 drawable upload_car_screen_vector
+drawable upload_car_screen_vector_next1
+drawable upload_car_screen_vector_next2
 font railinc_font
 font relay_kaisei_harunoumi_bold
 font relay_kaisei_harunoumi_medium

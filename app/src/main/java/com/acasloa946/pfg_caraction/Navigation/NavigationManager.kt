@@ -4,6 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.CarMakesScreen
+import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.CarModelScreen
+import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.HomeScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.UploadCarScreen
@@ -20,16 +24,26 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterV
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterScreen
 
 @Composable
-fun NavigationManager(registerViewmodel: RegisterViewmodel, initScreenViewmodel: InitScreenViewmodel, q1Viewmodel: Q1Viewmodel, q2Viewmodel: Q2Viewmodel, loginViewmodel: loginViewmodel, homeScreenViewmodel: homeScreenViewmodel, uploadCarViewmodel: uploadCarViewmodel) {
+fun NavigationManager(
+    registerViewmodel: RegisterViewmodel,
+    initScreenViewmodel: InitScreenViewmodel,
+    q1Viewmodel: Q1Viewmodel,
+    q2Viewmodel: Q2Viewmodel,
+    loginViewmodel: loginViewmodel,
+    homeScreenViewmodel: homeScreenViewmodel,
+    uploadCarViewmodel: uploadCarViewmodel,
+    carMakesViewmodel: carMakesViewmodel,
+    carModelViewmodel: carModelViewmodel
+) {
 
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "UploadCarScreen") {
+    NavHost(navController = navController, startDestination = "HomeScreen") {
         composable("InitScreen") {
-            InitPage(navController,initScreenViewmodel)
+            InitPage(navController, initScreenViewmodel)
         }
         composable("RegisterScreen") {
-            RegisterScreen(navController,registerViewmodel)
+            RegisterScreen(navController, registerViewmodel)
         }
         composable("Q1Screen") {
             Q1Screen(navController, q1Viewmodel)
@@ -44,7 +58,13 @@ fun NavigationManager(registerViewmodel: RegisterViewmodel, initScreenViewmodel:
             HomeScreen(navController = navController, homeScreenViewmodel = homeScreenViewmodel)
         }
         composable("UploadCarScreen") {
-            UploadCarScreen(navController = navController, uploadCarViewmodel = uploadCarViewmodel)
+            UploadCarScreen(navController = navController, uploadCarViewmodel = uploadCarViewmodel, carMakesViewmodel, carModelViewmodel)
         }
+        composable("CarMakesScreen") {
+            CarMakesScreen(navController = navController, carMakesViewmodel = carMakesViewmodel, uploadCarViewmodel)
         }
+        composable("CarModelScreen") {
+            CarModelScreen(navController = navController, carModelViewmodel = carModelViewmodel, uploadCarViewmodel)
+        }
+    }
 }

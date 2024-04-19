@@ -8,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -38,6 +39,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
+import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.PantallaPrincipalComponent
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
@@ -46,9 +49,8 @@ import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.google.firebase.Firebase
 import com.google.relay.compose.RowScopeInstanceImpl.align
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarViewmodel) {
+fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarViewmodel, carMakesViewmodel: carMakesViewmodel, carModelViewmodel: carModelViewmodel) {
     val context = LocalContext.current
 
     val launcher = rememberLauncherForActivityResult(
@@ -70,7 +72,26 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            UploadCarScreenComponent(uploadCarViewmodel = uploadCarViewmodel, modifier = Modifier.fillMaxWidth().height(800.dp))
+            carMakesViewmodel.getMakes {
+                toastMaker("Error al recuperar marcas. Inténtelo de nuevo en otro momento.",context)
+            }
+            carModelViewmodel.getModels(uploadCarViewmodel.selectedMake.name.toString())
+            UploadCarScreenComponent(uploadCarViewmodel = uploadCarViewmodel, modifier = Modifier.fillMaxWidth().height(875.dp),
+                uploadImageClick = {
+                    launcher.launch("image/*")
+                },
+                onMakeClick = {
+                    navController.navigate(Routes.CarMakesScreen.route)
+                },
+                onModelClick = {
+                    if (uploadCarViewmodel.makeButtonText=="Marca") {
+                        toastMaker("Seleccione la marca de su coche", context)
+                    }
+                    else {
+                        navController.navigate(Routes.CarModelScreen.route)
+                    }
+                }
+            )
 
 
 
@@ -96,5 +117,6 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
         }
     }
 }
+/*
 
-
+*/
