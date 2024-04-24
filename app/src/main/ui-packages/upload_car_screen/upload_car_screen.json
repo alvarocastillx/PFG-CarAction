@@ -1,0 +1,854 @@
+{
+  "name": "upload_car_screen",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "146:797",
+    "version": "5614066905",
+    "component-id": "2045267f16fdfb58d2b2ae8d23e1dfa5b9096655"
+  },
+  "default": "UploadCarScreen",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Banner"
+      },
+      {
+        "type": "group",
+        "id": "MainUploadScreen"
+      },
+      {
+        "type": "group",
+        "id": "material-symbols:menu"
+      },
+      {
+        "type": "group",
+        "id": "BannerImage"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "group",
+        "id": "UploadImageFrame"
+      },
+      {
+        "type": "group",
+        "id": "ImageFrame"
+      },
+      {
+        "type": "group",
+        "id": "TextFieldPlate"
+      },
+      {
+        "type": "group",
+        "id": "ButtonMake"
+      },
+      {
+        "type": "group",
+        "id": "ButtonModel"
+      },
+      {
+        "type": "group",
+        "id": "ButtonLocalization"
+      },
+      {
+        "type": "group",
+        "id": "TextFieldYear"
+      },
+      {
+        "type": "group",
+        "id": "TextFieldKM"
+      },
+      {
+        "type": "group",
+        "id": "TextFieldPrice"
+      },
+      {
+        "type": "group",
+        "id": "UploadIcon"
+      },
+      {
+        "type": "text",
+        "id": "UploadText"
+      },
+      {
+        "type": "vector",
+        "id": "UploadVector"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "vector",
+        "id": "VectorNext1"
+      },
+      {
+        "type": "text",
+        "id": "Marca"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle"
+      },
+      {
+        "type": "vector",
+        "id": "VectorNext2"
+      },
+      {
+        "type": "text",
+        "id": "Modelo"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle3"
+      },
+      {
+        "type": "vector",
+        "id": "VectorNext3"
+      },
+      {
+        "type": "text",
+        "id": "Localización"
+      }
+    ],
+    "modes": {
+      "UploadCarScreen": {
+        "rules": [
+          {
+            "id": "top_level",
+            "main-axis-align": "start",
+            "children": [
+              "Banner",
+              "MainUploadScreen"
+            ],
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          },
+          {
+            "id": "Banner",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "102.0"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false",
+            "children": [
+              "material-symbols:menu",
+              "BannerImage"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "MainUploadScreen",
+            "padding": {
+              "left": "8.0",
+              "right": "8.0"
+            },
+            "main-axis-align": "start",
+            "children": [
+              "UploadImageFrame",
+              "ImageFrame",
+              "TextFieldPlate",
+              "ButtonMake",
+              "ButtonModel",
+              "ButtonLocalization",
+              "TextFieldYear",
+              "TextFieldKM",
+              "TextFieldPrice"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "material-symbols:menu",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "38.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "26.0"
+              }
+            },
+            "tap-handler": "$rightMenuClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "41.511627197265625"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "50.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Vector"
+            ]
+          },
+          {
+            "id": "BannerImage",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.0732574462890625"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.85348510742188"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "96.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "Vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000011444091796875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "31.13372039794922"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "25.0"
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "UploadImageFrame",
+            "padding": {
+              "left": "74.0",
+              "top": "23.0",
+              "right": "74.0",
+              "bottom": "27.0"
+            },
+            "border-radius": "34.0",
+            "tap-handler": "$uploadImageClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "main-axis-align": "start",
+            "children": [
+              "UploadIcon",
+              "UploadText"
+            ],
+            "item-spacing": "5.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            }
+          },
+          {
+            "id": "ImageFrame",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "131.0"
+              }
+            },
+            "is-structured": "false"
+          },
+          {
+            "id": "TextFieldPlate",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "ButtonMake",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onMakeClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle 2",
+              "VectorNext1",
+              "Marca"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "ButtonModel",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onModelClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle",
+              "VectorNext2",
+              "Modelo"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "ButtonLocalization",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onModelClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle3",
+              "VectorNext3",
+              "Localización"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "TextFieldYear",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "TextFieldKM",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "TextFieldPrice",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "UploadIcon",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "41.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "41.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "UploadVector"
+            ]
+          },
+          {
+            "id": "UploadText",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "Subir fotografías",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "18.0",
+            "line-height": "1.6039999855889215",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "UploadVector",
+            "margin": {
+              "left": "6.833251953125",
+              "top": "4.484375",
+              "right": "6.833400726318359",
+              "bottom": "3.416645050048828"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "upload_vector.svg"
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "VectorNext1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "129.12727737426758"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.00008106231689453125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_next1.svg"
+          },
+          {
+            "id": "Marca",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.000030517578125"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9825668334960938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$makeText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "Rectangle",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle.svg"
+          },
+          {
+            "id": "VectorNext2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "129.12727737426758"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.00008106231689453125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_next2.svg"
+          },
+          {
+            "id": "Modelo",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.000030517578125"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9825668334960938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$modelText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "Rectangle3",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "tap-handler": "$onLocationClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle3.svg"
+          },
+          {
+            "id": "VectorNext3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "129.12727737426758"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.00008106231689453125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_next3.svg"
+          },
+          {
+            "id": "Localización",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.000030517578125"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9825668334960938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$modelText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "rightMenuClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "uploadImageClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onMakeClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onModelClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "makeText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "modelText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "onLocationClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "UploadCarScreen",
+      "size": {
+        "width": 360.0,
+        "height": 865.0
+      },
+      "parameters": {
+        "makeText": "Marca ",
+        "modelText": "Localización"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

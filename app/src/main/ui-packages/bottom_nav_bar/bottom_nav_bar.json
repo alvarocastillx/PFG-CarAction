@@ -1,0 +1,267 @@
+{
+  "name": "bottom_nav_bar",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "142:676",
+    "version": "5565070466",
+    "component-id": "50ac70c6189b04efec63e72200503409b38ec980"
+  },
+  "default": "BottomNavBar",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "FrameHomeIcon"
+      },
+      {
+        "type": "vector",
+        "id": "VerticalLine"
+      },
+      {
+        "type": "group",
+        "id": "FrameCarIcon"
+      },
+      {
+        "type": "group",
+        "id": "HomeIcon"
+      },
+      {
+        "type": "vector",
+        "id": "HomeVector"
+      },
+      {
+        "type": "group",
+        "id": "UploadCarIcon"
+      },
+      {
+        "type": "vector",
+        "id": "CarVector"
+      }
+    ],
+    "modes": {
+      "BottomNavBar": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": "1.0",
+              "right": "1.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": "1.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "FrameHomeIcon",
+              "VerticalLine",
+              "FrameCarIcon"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "FrameHomeIcon",
+            "tap-handler": "$onHomeClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "171.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "58.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "HomeIcon"
+            ]
+          },
+          {
+            "id": "VerticalLine",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "41.0"
+              }
+            },
+            "vector-content": "vertical_line.svg"
+          },
+          {
+            "id": "FrameCarIcon",
+            "tap-handler": "$onCarClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "171.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "58.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "UploadCarIcon"
+            ]
+          },
+          {
+            "id": "HomeIcon",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-3.5"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "24.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "24.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "HomeVector"
+            ]
+          },
+          {
+            "id": "HomeVector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "16.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.0"
+              }
+            },
+            "vector-content": "home_vector.svg"
+          },
+          {
+            "id": "UploadCarIcon",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.5"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.5"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "23.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "24.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "CarVector"
+            ]
+          },
+          {
+            "id": "CarVector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.9875001907348633"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.9999980926513672"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "20.975000381469727"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "20.000003814697266"
+              }
+            },
+            "vector-content": "car_vector.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onHomeClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onCarClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "BottomNavBar",
+      "size": {
+        "width": 345.0,
+        "height": 58.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

@@ -90,6 +90,9 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                     else {
                         navController.navigate(Routes.CarModelScreen.route)
                     }
+                },
+                onLocationClick = {
+                    navController.navigate(Routes.CarLocationScreen.route)
                 }
             )
 

@@ -1,0 +1,178 @@
+{
+  "name": "make_component",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "165:148",
+    "version": "5591138187",
+    "component-id": "48a1e35c5d8b2cf0bf62759baa0484c23ead55c0"
+  },
+  "default": "MakeComponent",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "top_level_synth"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "text",
+        "id": "Marca"
+      }
+    ],
+    "modes": {
+      "MakeComponent": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onMakeClick",
+            "stroke-width": "2.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false",
+            "children": [
+              "top_level_synth",
+              "Vector"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          },
+          {
+            "id": "top_level_synth",
+            "opacity": "100.0",
+            "padding": {
+              "left": "2.0",
+              "top": "9.0",
+              "right": "2.0",
+              "bottom": "9.0"
+            },
+            "border-radius": "15.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Marca"
+            ],
+            "item-spacing": "10.0"
+          },
+          {
+            "id": "Vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "134.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.00008106231689453125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "12.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.33333396911621"
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Marca",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "326.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "37.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$makeText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onMakeClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "makeText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "MakeComponent",
+      "size": {
+        "width": 330.0,
+        "height": 55.0
+      },
+      "parameters": {
+        "makeText": "Marca "
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

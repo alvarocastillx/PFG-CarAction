@@ -5,5 +5,7 @@ class const {
         const val BASE_URL = "https://carapi.app/api/"
         const val ENDPOINT_MAKES = "makes"
         const val ENDPOINT_MODEL = "models"
+
+
     }
 }

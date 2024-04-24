@@ -13,11 +13,11 @@ import com.google.firebase.Firebase
 import com.google.firebase.storage.storage
 import kotlinx.coroutines.launch
 
-
+//TODO: FUN CLEAR VIEWMODEL
 class uploadCarViewmodel : ViewModel() {
     private val storageRef = Firebase.storage
 
-    private var selectedImageUri: Uri? by mutableStateOf(null)
+    var selectedImageUri: Uri? by mutableStateOf(null)
 
     var selectedMake by mutableStateOf(APIMake())
     var makeButtonText by mutableStateOf("Marca")
@@ -46,8 +46,13 @@ class uploadCarViewmodel : ViewModel() {
     }
 
     fun selectMake(make:APIMake) {
+        if (modelButtonText!="Modelo") {
+            selectedModel = APIModel()
+            modelButtonText = "Modelo"
+        }
         selectedMake = make
         makeButtonText = make.name.toString()
+
     }
 
     fun selectModel(model:APIModel) {

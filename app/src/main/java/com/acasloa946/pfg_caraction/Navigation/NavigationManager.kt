@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.CarLocationScreen
+import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.carLocationViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.CarMakesScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.CarModelScreen
@@ -33,7 +35,8 @@ fun NavigationManager(
     homeScreenViewmodel: homeScreenViewmodel,
     uploadCarViewmodel: uploadCarViewmodel,
     carMakesViewmodel: carMakesViewmodel,
-    carModelViewmodel: carModelViewmodel
+    carModelViewmodel: carModelViewmodel,
+    carLocationViewmodel: carLocationViewmodel
 ) {
 
     val navController = rememberNavController()
@@ -65,6 +68,9 @@ fun NavigationManager(
         }
         composable("CarModelScreen") {
             CarModelScreen(navController = navController, carModelViewmodel = carModelViewmodel, uploadCarViewmodel)
+        }
+        composable("CarLocationScreen") {
+            CarLocationScreen(navController = navController, carLocationViewmodel = carLocationViewmodel)
         }
     }
 }

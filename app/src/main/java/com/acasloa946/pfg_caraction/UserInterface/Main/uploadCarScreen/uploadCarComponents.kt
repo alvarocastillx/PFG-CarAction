@@ -2,26 +2,25 @@ package com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AttachMoney
+import androidx.compose.material.icons.filled.CalendarMonth
+import androidx.compose.material.icons.filled.CalendarToday
+import androidx.compose.material.icons.filled.Commit
+import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -37,20 +36,22 @@ import coil.compose.SubcomposeAsyncImage
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
-import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.acasloa946.pfg_caraction.uploadcarscreen.Banner
 import com.acasloa946.pfg_caraction.uploadcarscreen.BannerImage
+import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonLocalization
 import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonMake
 import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonModel
 import com.acasloa946.pfg_caraction.uploadcarscreen.ImageFrame
+import com.acasloa946.pfg_caraction.uploadcarscreen.LocalizaciN
 import com.acasloa946.pfg_caraction.uploadcarscreen.MainUploadScreen
 import com.acasloa946.pfg_caraction.uploadcarscreen.Marca
 import com.acasloa946.pfg_caraction.uploadcarscreen.MaterialSymbolsMenu
 import com.acasloa946.pfg_caraction.uploadcarscreen.Modelo
 import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle
 import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle2
+import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle3
 import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldKM
 import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldPlate
 import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldPrice
@@ -58,27 +59,31 @@ import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldYear
 import com.acasloa946.pfg_caraction.uploadcarscreen.TopLevel
 import com.acasloa946.pfg_caraction.uploadcarscreen.UploadIcon
 import com.acasloa946.pfg_caraction.uploadcarscreen.UploadImageFrame
-import com.acasloa946.pfg_caraction.uploadcarscreen.UploadText
 import com.acasloa946.pfg_caraction.uploadcarscreen.UploadVector
 import com.acasloa946.pfg_caraction.uploadcarscreen.Vector
 import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext1
 import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext2
+import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext3
 import com.google.relay.compose.RelayText
+import com.google.relay.compose.RowScopeInstanceImpl.align
 
 @Composable
 fun UploadCarScreenComponent(
     modifier: Modifier = Modifier,
     rightMenuClick: () -> Unit = {},
     uploadImageClick: () -> Unit = {},
-    onMakeClick : () -> Unit = {},
-    onModelClick : () -> Unit = {},
-    uploadCarViewmodel: uploadCarViewmodel
+    onMakeClick: () -> Unit = {},
+    onModelClick: () -> Unit = {},
+    uploadCarViewmodel: uploadCarViewmodel,
+    onLocationClick : () -> Unit
 ) {
     TopLevel(modifier = modifier) {
-        Banner(modifier = Modifier
-            .rowWeight(1.0f)
-            .clip(BottomRoundedShape(60.dp))
-            .border(2.dp, RojoMain, BottomRoundedShape(60.dp))) {
+        Banner(
+            modifier = Modifier
+                .rowWeight(1.0f)
+                .clip(BottomRoundedShape(60.dp))
+                .border(2.dp, RojoMain, BottomRoundedShape(60.dp))
+        ) {
             MaterialSymbolsMenu(
                 rightMenuClick = rightMenuClick,
                 modifier = Modifier.boxAlign(
@@ -115,21 +120,47 @@ fun UploadCarScreenComponent(
                 )
             }
         }
-        MainUploadScreen(modifier = Modifier
-            .rowWeight(1.0f)
-            .columnWeight(1.0f)) {
-            UploadImageFrame(
-                uploadImageClick = uploadImageClick,
-                modifier = Modifier.rowWeight(1.0f)
-            ) {
-                UploadIcon {
-                    UploadVector(modifier = Modifier
-                        .rowWeight(1.0f)
-                        .columnWeight(1.0f))
+        MainUploadScreen(
+            modifier = Modifier
+                .rowWeight(1.0f)
+                .columnWeight(1.0f)
+        ) {
+            if (uploadCarViewmodel.selectedImageUri == null) {
+                UploadImageFrame(
+                    uploadImageClick = uploadImageClick,
+                    modifier = Modifier.rowWeight(1.0f)
+                ) {
+                    UploadIcon {
+                        UploadVector(
+                            modifier = Modifier
+                                .rowWeight(1.0f)
+                                .columnWeight(1.0f)
+                        )
+                    }
+                    UploadTextComponent()
                 }
-                UploadTextComponent()
             }
-            ImageFrame {
+            Spacer(modifier = Modifier.padding(3.dp))
+            if (uploadCarViewmodel.selectedImageUri != null) {
+                ImageFrame {
+                    SubcomposeAsyncImage(
+                        model = uploadCarViewmodel.selectedImageUri,
+                        contentDescription = null,
+                        contentScale = ContentScale.FillWidth,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(20.dp))
+                            .border(2.dp, RojoMain, RoundedCornerShape(20.dp)),
+                        loading = {
+                            CircularProgressIndicator(
+                                modifier = Modifier
+                                    .size(150.dp)
+                                    .align(Alignment.Center),
+                                color = RojoMain
+                            )
+                        }
+                    )
+                }
+
 
             }
             TextFieldPlate {
@@ -146,11 +177,11 @@ fun UploadCarScreenComponent(
                         focusedTextColor = BlancoMain
                     ),
                     placeholder = {
-                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                        Text("Matrícula", color = BlancoMain, fontSize = 15.sp)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                        Icon(imageVector = Icons.Default.DirectionsCar, contentDescription = null, tint = BlancoMain)
                     }
                 )
 
@@ -175,7 +206,8 @@ fun UploadCarScreenComponent(
                         )
                     )
                 )
-                Marca(makeText = uploadCarViewmodel.makeButtonText,
+                Marca(
+                    makeText = uploadCarViewmodel.makeButtonText,
                     modifier = Modifier.boxAlign(
                         alignment = Alignment.Center,
                         offset = DpOffset(
@@ -204,7 +236,39 @@ fun UploadCarScreenComponent(
                         )
                     )
                 )
-                Modelo(modelText = uploadCarViewmodel.modelButtonText,
+                Modelo(
+                    modelText = uploadCarViewmodel.modelButtonText,
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = -0.000030517578125.dp,
+                            y = 0.9825668334960938.dp
+                        )
+                    )
+                )
+            }
+            ButtonLocalization(onModelClick = onModelClick) {
+                Rectangle3(
+                    onLocationClick = onLocationClick,
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorNext3(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12727737426758.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                LocalizaciN(
+                    modelText = "Localización",
                     modifier = Modifier.boxAlign(
                         alignment = Alignment.Center,
                         offset = DpOffset(
@@ -228,11 +292,11 @@ fun UploadCarScreenComponent(
                         focusedTextColor = BlancoMain
                     ),
                     placeholder = {
-                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                        Text("Año del vehículo", color = BlancoMain, fontSize = 15.sp)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                        Icon(imageVector = Icons.Default.CalendarMonth, contentDescription = null, tint = BlancoMain)
                     }
                 )
             }
@@ -250,11 +314,11 @@ fun UploadCarScreenComponent(
                         focusedTextColor = BlancoMain
                     ),
                     placeholder = {
-                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                        Text("Kilómetros", color = BlancoMain, fontSize = 15.sp)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                        Icon(imageVector = Icons.Default.Commit, contentDescription = null, tint = BlancoMain)
                     }
                 )
             }
@@ -272,11 +336,11 @@ fun UploadCarScreenComponent(
                         focusedTextColor = BlancoMain
                     ),
                     placeholder = {
-                        Text("KM.", color = BlancoMain, fontSize = 15.sp)
+                        Text("Precio", color = BlancoMain, fontSize = 15.sp)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.Email , contentDescription = null)
+                        Icon(imageVector = Icons.Default.AttachMoney, contentDescription = null, tint = BlancoMain)
                     }
                 )
             }

@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.acasloa946.pfg_caraction.Navigation.NavigationManager
+import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.carLocationViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
@@ -19,6 +20,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel
 import com.acasloa946.pfg_caraction.ui.theme.PFGCarActionTheme
+import com.google.android.libraries.places.api.Places
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,6 +37,7 @@ class MainActivity : ComponentActivity() {
         val uploadCarViewmodel: uploadCarViewmodel by viewModels()
         val carMakesViewmodel: carMakesViewmodel by viewModels()
         val carModelViewmodel: carModelViewmodel by viewModels()
+        val carLocationViewmodel : carLocationViewmodel by viewModels()
 
 
 
@@ -54,7 +57,8 @@ class MainActivity : ComponentActivity() {
                         homeScreenViewmodel,
                         uploadCarViewmodel,
                         carMakesViewmodel,
-                        carModelViewmodel
+                        carModelViewmodel,
+                        carLocationViewmodel
                     )
                 }
             }

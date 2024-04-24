@@ -1,0 +1,55 @@
+{
+  "name": "makes_screen",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "165:719",
+    "version": "5591216898",
+    "component-id": "bb8104f2502388629658a4b279025a0456669e79"
+  },
+  "default": "MakesScreen",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      }
+    ],
+    "modes": {
+      "MakesScreen": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": "20.0",
+              "top": "22.0",
+              "right": "20.0"
+            },
+            "main-axis-align": "start",
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "MakesScreen",
+      "size": {
+        "width": 360.0,
+        "height": 800.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

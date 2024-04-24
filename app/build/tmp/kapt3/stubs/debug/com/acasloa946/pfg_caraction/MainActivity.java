@@ -3,6 +3,7 @@ package com.acasloa946.pfg_caraction;
 import android.os.Bundle;
 import androidx.activity.ComponentActivity;
 import androidx.compose.ui.Modifier;
+import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.carLocationViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel;
@@ -12,6 +13,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.LoginScreen.loginViewmod
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel;
+import com.google.android.libraries.places.api.Places;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public final class MainActivity extends androidx.activity.ComponentActivity {
     
     public MainActivity() {
-        super();
+        super(0);
     }
     
     @java.lang.Override
