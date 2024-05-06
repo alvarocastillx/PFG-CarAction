@@ -8,13 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AttachMoney
 import androidx.compose.material.icons.filled.CalendarMonth
-import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.filled.Commit
 import androidx.compose.material.icons.filled.DirectionsCar
-import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -27,6 +26,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
@@ -43,15 +43,18 @@ import com.acasloa946.pfg_caraction.uploadcarscreen.BannerImage
 import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonLocalization
 import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonMake
 import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonModel
+import com.acasloa946.pfg_caraction.uploadcarscreen.ButtonPublish
 import com.acasloa946.pfg_caraction.uploadcarscreen.ImageFrame
 import com.acasloa946.pfg_caraction.uploadcarscreen.LocalizaciN
 import com.acasloa946.pfg_caraction.uploadcarscreen.MainUploadScreen
 import com.acasloa946.pfg_caraction.uploadcarscreen.Marca
 import com.acasloa946.pfg_caraction.uploadcarscreen.MaterialSymbolsMenu
 import com.acasloa946.pfg_caraction.uploadcarscreen.Modelo
+import com.acasloa946.pfg_caraction.uploadcarscreen.PublicarAnuncio
 import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle
 import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle2
 import com.acasloa946.pfg_caraction.uploadcarscreen.Rectangle3
+import com.acasloa946.pfg_caraction.uploadcarscreen.RectanglePublish
 import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldKM
 import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldPlate
 import com.acasloa946.pfg_caraction.uploadcarscreen.TextFieldPrice
@@ -64,8 +67,8 @@ import com.acasloa946.pfg_caraction.uploadcarscreen.Vector
 import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext1
 import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext2
 import com.acasloa946.pfg_caraction.uploadcarscreen.VectorNext3
+import com.acasloa946.pfg_caraction.uploadcarscreen.VectorPublish
 import com.google.relay.compose.RelayText
-import com.google.relay.compose.RowScopeInstanceImpl.align
 
 @Composable
 fun UploadCarScreenComponent(
@@ -75,7 +78,8 @@ fun UploadCarScreenComponent(
     onMakeClick: () -> Unit = {},
     onModelClick: () -> Unit = {},
     uploadCarViewmodel: uploadCarViewmodel,
-    onLocationClick : () -> Unit
+    onLocationClick : () -> Unit,
+    onPublishClick : () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
         Banner(
@@ -165,8 +169,8 @@ fun UploadCarScreenComponent(
             }
             TextFieldPlate {
                 TextField(
-                    value = "", onValueChange = {
-                        ""
+                    value = uploadCarViewmodel.carPlate, onValueChange = {
+                        uploadCarViewmodel.changePlate(it)
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = RojoMain,
@@ -280,8 +284,8 @@ fun UploadCarScreenComponent(
             }
             TextFieldYear {
                 TextField(
-                    value = "", onValueChange = {
-                        ""
+                    value = uploadCarViewmodel.carYearField, onValueChange = {
+                        uploadCarViewmodel.changeYear(it)
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = RojoMain,
@@ -297,13 +301,14 @@ fun UploadCarScreenComponent(
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
                         Icon(imageVector = Icons.Default.CalendarMonth, contentDescription = null, tint = BlancoMain)
-                    }
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
             }
             TextFieldKM {
                 TextField(
-                    value = "", onValueChange = {
-                        ""
+                    value = uploadCarViewmodel.carKMField, onValueChange = {
+                        uploadCarViewmodel.changeKM(it)
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = RojoMain,
@@ -319,13 +324,14 @@ fun UploadCarScreenComponent(
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
                         Icon(imageVector = Icons.Default.Commit, contentDescription = null, tint = BlancoMain)
-                    }
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
             }
             TextFieldPrice {
                 TextField(
-                    value = "", onValueChange = {
-                        ""
+                    value = uploadCarViewmodel.carPriceField, onValueChange = {
+                        uploadCarViewmodel.changePrice(it)
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = RojoMain,
@@ -341,7 +347,40 @@ fun UploadCarScreenComponent(
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
                         Icon(imageVector = Icons.Default.AttachMoney, contentDescription = null, tint = BlancoMain)
-                    }
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                )
+            }
+            Spacer(modifier = Modifier.padding(5.dp))
+            ButtonPublish(onPublishClick = onPublishClick) {
+                RectanglePublish(
+                    onLocationClick = onPublishClick,
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorPublish(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12727737426758.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                PublicarAnuncio(
+                    modelText = "Publicar anuncio",
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = -0.000030517578125.dp,
+                            y = 0.9825668334960938.dp
+                        )
+                    )
                 )
             }
         }

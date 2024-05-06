@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
-import com.acasloa946.pfg_caraction.data.CarEntityType
+import com.acasloa946.pfg_caraction.data.Entities.CarEntityType
 import com.acasloa946.pfg_caraction.pantallaprincipal.Banner
 import com.acasloa946.pfg_caraction.pantallaprincipal.BannerImage
 import com.acasloa946.pfg_caraction.pantallaprincipal.BienvenidaCard

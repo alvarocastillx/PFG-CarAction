@@ -41,6 +41,7 @@ fun UploadCarScreen(
     uploadImageClick: () -> Unit = {},
     onMakeClick: () -> Unit = {},
     onModelClick: () -> Unit = {},
+    onPublishClick: () -> Unit = {},
     onLocationClick: () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
@@ -181,11 +182,42 @@ fun UploadCarScreen(
             TextFieldYear {}
             TextFieldKM {}
             TextFieldPrice {}
+            ButtonPublish(onPublishClick = onPublishClick) {
+                RectanglePublish(
+                    onLocationClick = onLocationClick,
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorPublish(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12727737426758.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                PublicarAnuncio(
+                    modelText = modelText,
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = -0.000030517578125.dp,
+                            y = 0.9825668334960938.dp
+                        )
+                    )
+                )
+            }
         }
     }
 }
 
-@Preview(widthDp = 360, heightDp = 865)
+@Preview(widthDp = 360, heightDp = 925)
 @Composable
 private fun UploadCarScreenPreview() {
     MaterialTheme {
@@ -195,8 +227,9 @@ private fun UploadCarScreenPreview() {
                 uploadImageClick = {},
                 onMakeClick = {},
                 onModelClick = {},
+                onPublishClick = {},
                 makeText = "Marca ",
-                modelText = "Localización",
+                modelText = "Publicar anuncio",
                 onLocationClick = {},
                 modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
             )
@@ -601,6 +634,61 @@ fun TextFieldPrice(
         clipToParent = false,
         content = content,
         modifier = modifier.requiredWidth(318.0.dp).requiredHeight(56.0.dp)
+    )
+}
+
+@Composable
+fun RectanglePublish(
+    onLocationClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    RelayVector(
+        vector = painterResource(R.drawable.upload_car_screen_rectangle_publish),
+        modifier = modifier.tappable(onTap = onLocationClick).requiredWidth(318.0.dp).requiredHeight(56.0.dp)
+    )
+}
+
+@Composable
+fun VectorPublish(modifier: Modifier = Modifier) {
+    RelayVector(
+        vector = painterResource(R.drawable.upload_car_screen_vector_publish),
+        modifier = modifier.requiredWidth(11.563636779785156.dp).requiredHeight(18.66666603088379.dp)
+    )
+}
+
+@Composable
+fun PublicarAnuncio(
+    modelText: String,
+    modifier: Modifier = Modifier
+) {
+    RelayText(
+        content = modelText,
+        fontSize = 21.0.sp,
+        fontFamily = kaiseiHarunoUmi,
+        color = Color(
+            alpha = 255,
+            red = 53,
+            green = 54,
+            blue = 52
+        ),
+        height = 1.4479999542236328.em,
+        fontWeight = FontWeight(700.0.toInt()),
+        maxLines = -1,
+        modifier = modifier.requiredWidth(314.14544677734375.dp).requiredHeight(36.35087585449219.dp)
+    )
+}
+
+@Composable
+fun ButtonPublish(
+    onPublishClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable RelayContainerScope.() -> Unit
+) {
+    RelayContainer(
+        isStructured = false,
+        clipToParent = false,
+        content = content,
+        modifier = modifier.tappable(onTap = onPublishClick).requiredWidth(318.0.dp).requiredHeight(56.0.dp)
     )
 }
 

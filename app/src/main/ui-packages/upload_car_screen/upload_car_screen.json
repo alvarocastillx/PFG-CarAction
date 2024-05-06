@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "XzTnM8qIz9wRWwySmSiAGW",
     "node": "146:797",
-    "version": "5614066905",
+    "version": "5640990149",
     "component-id": "2045267f16fdfb58d2b2ae8d23e1dfa5b9096655"
   },
   "default": "UploadCarScreen",
@@ -74,6 +74,10 @@
       },
       {
         "type": "group",
+        "id": "ButtonPublish"
+      },
+      {
+        "type": "group",
         "id": "UploadIcon"
       },
       {
@@ -119,6 +123,18 @@
       {
         "type": "text",
         "id": "Localización"
+      },
+      {
+        "type": "vector",
+        "id": "RectanglePublish"
+      },
+      {
+        "type": "vector",
+        "id": "VectorPublish"
+      },
+      {
+        "type": "text",
+        "id": "Publicar anuncio"
       }
     ],
     "modes": {
@@ -187,7 +203,8 @@
               "ButtonLocalization",
               "TextFieldYear",
               "TextFieldKM",
-              "TextFieldPrice"
+              "TextFieldPrice",
+              "ButtonPublish"
             ],
             "item-spacing": "10.0",
             "clip-content": "false"
@@ -484,6 +501,27 @@
               }
             },
             "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "ButtonPublish",
+            "tap-handler": "$onPublishClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RectanglePublish",
+              "VectorPublish",
+              "Publicar anuncio"
+            ],
             "clip-content": "false"
           },
           {
@@ -793,6 +831,92 @@
             "text-size": "21.0",
             "line-height": "1.4479999542236328",
             "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RectanglePublish",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "tap-handler": "$onLocationClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle_publish.svg"
+          },
+          {
+            "id": "VectorPublish",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "129.12727737426758"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.00008106231689453125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_publish.svg"
+          },
+          {
+            "id": "Publicar anuncio",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.000030517578125"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9825668334960938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            },
+            "text-content": "$modelText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
           }
         ]
       }
@@ -819,6 +943,11 @@
       "required": false,
       "description": ""
     },
+    "onPublishClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
     "makeText": {
       "data-type": "text",
       "required": false,
@@ -840,11 +969,11 @@
       "design": "UploadCarScreen",
       "size": {
         "width": 360.0,
-        "height": 865.0
+        "height": 925.0
       },
       "parameters": {
         "makeText": "Marca ",
-        "modelText": "Localización"
+        "modelText": "Publicar anuncio"
       }
     }
   ],

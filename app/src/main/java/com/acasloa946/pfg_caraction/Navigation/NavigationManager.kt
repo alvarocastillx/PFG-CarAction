@@ -70,7 +70,7 @@ fun NavigationManager(
             CarModelScreen(navController = navController, carModelViewmodel = carModelViewmodel, uploadCarViewmodel)
         }
         composable("CarLocationScreen") {
-            CarLocationScreen(navController = navController, carLocationViewmodel = carLocationViewmodel)
+            CarLocationScreen(navController = navController, carLocationViewmodel = carLocationViewmodel, uploadCarViewmodel)
         }
     }
 }

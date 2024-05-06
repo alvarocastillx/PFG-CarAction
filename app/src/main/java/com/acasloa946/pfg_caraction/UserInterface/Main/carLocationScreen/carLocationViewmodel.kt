@@ -17,6 +17,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.libraries.places.api.Places
@@ -26,23 +27,25 @@ import com.google.android.libraries.places.api.model.PlaceTypes
 import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import java.util.Locale
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 class carLocationViewmodel : ViewModel() {
 
-    private var locationService : FusedLocationProviderClient? = null
+    private var locationService: FusedLocationProviderClient? = null
 
     //Localización (latitud, longitud)
-    private var _userLocation = MutableLiveData<Pair<Double,Double>>()
-    var userLocation : LiveData<Pair<Double,Double>> = _userLocation
+    private var _userLocation = MutableLiveData<Pair<Double, Double>>()
+    var userLocation: LiveData<Pair<Double, Double>> = _userLocation
 
     //Dirección (string de calle)
-    private val _markerAddressDetail = MutableStateFlow<ResponseState<Address>>(ResponseState.Idle)//ResponseState is a wrapper class
+    private val _markerAddressDetail =
+        MutableStateFlow<ResponseState<Address>>(ResponseState.Idle)//ResponseState is a wrapper class
     private val markerAddressDetail = _markerAddressDetail.asStateFlow()
     var userAddress by mutableStateOf("")
-
 
 
     fun getLocationPermission(
@@ -50,26 +53,40 @@ class carLocationViewmodel : ViewModel() {
         permission: String,
         launcher: ManagedActivityResultLauncher<String, Boolean>
     ) {
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             launcher.launch(permission)
-        }
-        else {
+        } else {
             launcher.launch(permission)
         }
     }
 
     @SuppressLint("MissingPermission")
-    fun getLocation(fusedLocationProviderClient: FusedLocationProviderClient, failedToGetLocation : () -> Unit) {
-        fusedLocationProviderClient.lastLocation.addOnSuccessListener {
-            location -> _userLocation.value = Pair(location.latitude, location.longitude)
-
-
-        }.addOnFailureListener {
-            failedToGetLocation()
+    fun getLocation(
+        fusedLocationProviderClient: FusedLocationProviderClient,
+        failedToGetLocation: () -> Unit
+    ) {
+        viewModelScope.launch {
+            try {
+                fusedLocationProviderClient.lastLocation.addOnSuccessListener { location ->
+                    if (location != null) {
+                        _userLocation.value = Pair(location.latitude, location.longitude)
+                    } else {
+                        failedToGetLocation()
+                    }
+                }.addOnFailureListener {
+                    failedToGetLocation()
+                }.await()
+            }
+            catch (e:Exception) {
+                failedToGetLocation()
+            }
         }
+
     }
-
-
 
 
     fun getMarkerAddressDetails(lat: Double, long: Double, context: Context) {
@@ -91,12 +108,15 @@ class carLocationViewmodel : ViewModel() {
                     1,
                 )
                 _markerAddressDetail.value =
-                    if(!addresses.isNullOrEmpty()){
+                    if (!addresses.isNullOrEmpty()) {
                         ResponseState.Success(addresses[0])
-                    }else{
+                    } else {
                         ResponseState.Error(Exception("No existe la dirección"))
                     }
-                userAddress = (markerAddressDetail.value as ResponseState.Success<Address>).data.getAddressLine(0)
+                userAddress =
+                    (markerAddressDetail.value as ResponseState.Success<Address>).data.getAddressLine(
+                        0
+                    )
 
 
             }
@@ -106,12 +126,7 @@ class carLocationViewmodel : ViewModel() {
     }
 
 
-
-
-
-
 }
-
 
 
 sealed class ResponseState<out T> {

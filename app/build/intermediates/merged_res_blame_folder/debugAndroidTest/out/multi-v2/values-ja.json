@@ -4,7 +4,7 @@
             "outputFile": "com.acasloa946.pfg_caraction.test.app-mergeDebugAndroidTestResources-32:/values-ja/values-ja.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\dd9efa4d9468ae88f32879b1f8ec3fc3\\transformed\\core-1.12.0\\res\\values-ja\\values-ja.xml",
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\4efa3563d3bc4efbaac8d7b1ad2efb18\\transformed\\core-1.13.0\\res\\values-ja\\values-ja.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\4363bacfa5fc01bd192bbccb62317ec2\\transformed\\ui-release\\res\\values-ja\\values-ja.xml",
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\bb79ba385914e0dadc294015e2fcb21b\\transformed\\ui-release\\res\\values-ja\\values-ja.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

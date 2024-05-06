@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.API.APIModule
-import com.acasloa946.pfg_caraction.API.Models.APIMake
+import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIMake
 import kotlinx.coroutines.launch
 
 class carMakesViewmodel : ViewModel() {

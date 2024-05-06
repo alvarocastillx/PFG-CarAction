@@ -1,6 +1,7 @@
 package com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen
 
 import android.net.Uri
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -51,6 +52,9 @@ import com.google.relay.compose.RowScopeInstanceImpl.align
 
 @Composable
 fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarViewmodel, carMakesViewmodel: carMakesViewmodel, carModelViewmodel: carModelViewmodel) {
+
+
+
     val context = LocalContext.current
 
     val launcher = rememberLauncherForActivityResult(
@@ -76,7 +80,9 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                 toastMaker("Error al recuperar marcas. Inténtelo de nuevo en otro momento.",context)
             }
             carModelViewmodel.getModels(uploadCarViewmodel.selectedMake.name.toString())
-            UploadCarScreenComponent(uploadCarViewmodel = uploadCarViewmodel, modifier = Modifier.fillMaxWidth().height(875.dp),
+            UploadCarScreenComponent(uploadCarViewmodel = uploadCarViewmodel, modifier = Modifier
+                .fillMaxWidth()
+                .height(910.dp),
                 uploadImageClick = {
                     launcher.launch("image/*")
                 },
@@ -93,6 +99,14 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                 },
                 onLocationClick = {
                     navController.navigate(Routes.CarLocationScreen.route)
+                },
+                onPublishClick = {
+                    uploadCarViewmodel.getCarType(
+                        fillData = {
+                            toastMaker("Introduzca todos los datos de su coche", context)
+                        },
+                        context
+                    )
                 }
             )
 
@@ -115,6 +129,7 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                 },
                 onHomeClick = {
                     navController.navigate(Routes.HomeScreen.route)
+                    uploadCarViewmodel.clearScreen()
                 }
             )
         }

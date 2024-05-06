@@ -1,8 +1,10 @@
 package com.acasloa946.pfg_caraction.Hilt
 
+import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel
 import com.acasloa946.pfg_caraction.data.UserDao
 import com.acasloa946.pfg_caraction.data.UserRepository
+import com.acasloa946.pfg_caraction.domain.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.addUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
 import dagger.Module
@@ -17,12 +19,20 @@ import javax.inject.Singleton
 class HiltModule {
     @Provides
     fun provideAddUserUseCase(userRepository: UserRepository): addUserUseCase {
-        return addUserUseCase(userRepository) // Asumiendo que AddUserUseCaseImpl es la implementación
+        return addUserUseCase(userRepository)
     }
     @Provides
     fun provideFetchUserCase(userRepository: UserRepository): fetchUserUseCase {
-        return fetchUserUseCase(userRepository) // Asumiendo que AddUserUseCaseImpl es la implementación
+        return fetchUserUseCase(userRepository)
     }
+
+    @Provides
+    fun provideAddCarUseCase(userRepository: UserRepository): addCarUseCase {
+        return addCarUseCase(userRepository)
+    }
+
+
+
 
 
 
