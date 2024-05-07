@@ -9,9 +9,11 @@ data class CarModel (
     val year:Int,
     val km:Int,
     val price:Double,
-    val location: Pair<Double,Double>,
+    val location: Pair<Double?,Double?>,
     val locationName : String,
     val userName: String,
+    val fuelType:String,
+    val transmisionType:String
 
 
 )

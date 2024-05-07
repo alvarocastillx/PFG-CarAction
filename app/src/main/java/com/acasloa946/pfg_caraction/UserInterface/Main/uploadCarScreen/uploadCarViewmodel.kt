@@ -7,15 +7,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.API.APIModule
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIMake
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIModel
-import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
-import com.acasloa946.pfg_caraction.data.Entities.CarEntity
 import com.acasloa946.pfg_caraction.domain.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
 import com.google.firebase.Firebase
@@ -65,7 +62,9 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
     lateinit var userLocation: LiveData<Pair<Double, Double>>
     var userLocationString by mutableStateOf("")
 
-    var _userName by mutableStateOf("")
+    private var _userName by mutableStateOf("")
+    private var _carFuelType by mutableStateOf("")
+    private var _carTransmisionType by mutableStateOf("")
 
 
     fun getSelectedImage(uri: Uri?) {
@@ -138,7 +137,11 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
         val apiModule = APIModule()
         if (makeButtonText != "Marca" && modelButtonText != "Modelo") {
             viewModelScope.launch {
-                _carType = apiModule.getCarType(makeButtonText, modelButtonText).vclass.toString()
+                val APICar = apiModule.getCarType(makeButtonText, modelButtonText)
+                _carType = APICar.vclass.toString()
+                _carFuelType = APICar.fueltype1.toString()
+                _carTransmisionType = APICar.trany.toString()
+
                 uploadCar(fillData, context)
             }
         } else {
@@ -174,7 +177,9 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
                         _carPrice!!,
                         userLocation.value!!,
                         userLocationString,
-                        _userName
+                        _userName,
+                        _carFuelType,
+                        _carTransmisionType
                     )
                     addCarUseCase.invoke(carToUpload, context)
                 }
@@ -205,6 +210,9 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
         _carPrice = 0.0
         _carType = ""
         userLocationString = ""
+        _userName = ""
+        _carFuelType = ""
+        _carTransmisionType = ""
     }
 
 

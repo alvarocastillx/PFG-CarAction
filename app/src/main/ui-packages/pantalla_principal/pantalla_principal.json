@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "XzTnM8qIz9wRWwySmSiAGW",
     "node": "115:848",
-    "version": "5538507721",
+    "version": "5707183302",
     "component-id": "6dc4a1ea81451f95474ca1c49e52a68850a1f6c1"
   },
   "default": "Pantalla principal",
@@ -149,16 +149,6 @@
               "left": "8.0",
               "right": "8.0"
             },
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": "1.0"
-              },
-              "height-constraints": {
-                "sizing-mode": "fixed",
-                "value": "656.36767578125"
-              }
-            },
             "main-axis-align": "start",
             "children": [
               "Bienvenida_Card",
@@ -168,7 +158,7 @@
               "search_Bar",
               "FrameCars"
             ],
-            "item-spacing": "8.0",
+            "item-spacing": "6.0",
             "clip-content": "false"
           },
           {
@@ -229,7 +219,7 @@
             "alignment": {
               "horizontal": {
                 "attachment": "center",
-                "offset": "0.000011444091796875"
+                "offset": "-0.000003814697265625"
               },
               "vertical": {
                 "attachment": "center",
@@ -368,16 +358,6 @@
           },
           {
             "id": "FrameCars",
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": "1.0"
-              },
-              "height-constraints": {
-                "sizing-mode": "fixed",
-                "value": "500.0"
-              }
-            },
             "is-structured": "false",
             "clip-content": "false"
           },
@@ -445,7 +425,7 @@
             "alignment": {
               "horizontal": {
                 "attachment": "center",
-                "offset": "-0.000102996826171875"
+                "offset": "-0.000041961669921875"
               },
               "vertical": {
                 "attachment": "center",
@@ -472,7 +452,7 @@
             "alignment": {
               "horizontal": {
                 "attachment": "center",
-                "offset": "-0.0000438690185546875"
+                "offset": "0.0000171661376953125"
               },
               "vertical": {
                 "attachment": "center",

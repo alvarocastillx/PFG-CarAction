@@ -12,6 +12,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -23,15 +24,25 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMake
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.google.relay.compose.RowScopeInstanceImpl.align
+import kotlinx.coroutines.delay
 
 
 @Composable
 fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenViewmodel) {
     val context = LocalContext.current
+
+    LaunchedEffect(true) {
+        while (true) {
+
+            homeScreenViewmodel.fetchCars()
+            delay(60000)
+        }
+    }
     Box(
         modifier = Modifier
             .fillMaxSize()
             .align(Alignment.CenterVertically)
+            .background(GrisMain)
 
     ) {
         Column(
@@ -49,15 +60,15 @@ fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenView
                     toastMaker("Ha ocurrido un error con su cuenta", context)
                     navController.navigate(Routes.InitScreen.route)
                 })
-
-            PantallaPrincipalComponent(modifier = Modifier.fillMaxWidth().height(800.dp),
+            PantallaPrincipalComponent(modifier = Modifier
+                .fillMaxWidth()
+                .height(800.dp),
                 textWelcome = homeScreenViewmodel.userName, homeScreenViewmodel = homeScreenViewmodel)
 
         }
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(GrisMain)
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 15.dp)
 

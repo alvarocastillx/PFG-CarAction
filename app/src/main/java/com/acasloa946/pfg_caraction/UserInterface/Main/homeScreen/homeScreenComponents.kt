@@ -1,5 +1,6 @@
 package com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -8,26 +9,49 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.SubcomposeAsyncImage
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
+import com.acasloa946.pfg_caraction.carcard.CarCard
+import com.acasloa946.pfg_caraction.carcard.Frame1
+import com.acasloa946.pfg_caraction.carcard.Frame2
+import com.acasloa946.pfg_caraction.carcard.Frame3
+import com.acasloa946.pfg_caraction.carcard.Frame4
+import com.acasloa946.pfg_caraction.carcard.FrameImage
+import com.acasloa946.pfg_caraction.carcard.FuelTypeText
+import com.acasloa946.pfg_caraction.carcard.KMText
+import com.acasloa946.pfg_caraction.carcard.Line1
+import com.acasloa946.pfg_caraction.carcard.Line2
+import com.acasloa946.pfg_caraction.carcard.Line3
+import com.acasloa946.pfg_caraction.carcard.LocationText
+import com.acasloa946.pfg_caraction.carcard.MakeModelText
+import com.acasloa946.pfg_caraction.carcard.PriceText
+import com.acasloa946.pfg_caraction.carcard.TransType
+import com.acasloa946.pfg_caraction.carcard.YearText
 import com.acasloa946.pfg_caraction.data.Entities.CarEntityType
 import com.acasloa946.pfg_caraction.pantallaprincipal.Banner
 import com.acasloa946.pfg_caraction.pantallaprincipal.BannerImage
@@ -70,6 +94,9 @@ fun PantallaPrincipalComponent(
     onUserClick: () -> Unit = {},
     homeScreenViewmodel: homeScreenViewmodel
 ) {
+
+
+    val fetchedCars by homeScreenViewmodel.fetchedCars.collectAsState()
     TopLevel(modifier = modifier) {
         Banner(modifier = Modifier
             .rowWeight(1.0f)
@@ -159,7 +186,7 @@ fun PantallaPrincipalComponent(
                 }
             }
             Linea2()
-            Spacer(modifier = Modifier.padding(5.dp))
+            Spacer(modifier = Modifier.padding(10.dp))
             SearchBar(modifier = Modifier
                 .rowWeight(1.0f)
                 .columnWeight(1.0f)) {
@@ -184,7 +211,7 @@ fun PantallaPrincipalComponent(
                         modifier = Modifier
                             .background(BlancoMain)
                             .fillMaxSize()
-                            .border(3.dp, RojoMain,RoundedCornerShape(15.dp)),
+                            .border(3.dp, RojoMain, RoundedCornerShape(15.dp)),
                         textStyle = TextStyle.Default.copy(fontSize = 10.sp),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
 
@@ -208,13 +235,89 @@ fun PantallaPrincipalComponent(
                     )
                 }
             }
+            Spacer(modifier = Modifier.padding(15.dp))
             FrameCars(modifier = Modifier.rowWeight(1.0f)) {
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(5.dp)
+                ){
+                    items(fetchedCars) {
+                        CarCardComponent(
+                            makeModelText = AnnotatedString("${it.make} ${it.model}"),
+                            priceText = "${it.price}€",
+                            locationText = AnnotatedString("Localización: "+ homeScreenViewmodel.formatLocationString(it.locationName)),
+                            yearText = AnnotatedString("Año: "+it.year.toString()),
+                            kmText = AnnotatedString("Km´s: "+it.km.toString()),
+                            transText = AnnotatedString("Tipo de transmisión: "+it.transmisionType),
+                            fuelTypeText = AnnotatedString("Tipo de combustible: "+it.fuelType),
+                            image = it.image
+                        )
+                    }
+                }
 
             }
+
+
         }
+
     }
+    Spacer(modifier = Modifier.padding(40.dp))
 }
 
+@Composable
+fun CarCardComponent(
+    modifier: Modifier = Modifier,
+    makeModelText: AnnotatedString = AnnotatedString(""),
+    priceText: String = "",
+    locationText: AnnotatedString = AnnotatedString(""),
+    yearText: AnnotatedString = AnnotatedString(""),
+    kmText: AnnotatedString = AnnotatedString(""),
+    transText: AnnotatedString = AnnotatedString(""),
+    fuelTypeText: AnnotatedString = AnnotatedString(""),
+    image : String,
+    onCarClick: () -> Unit = {}
+) {
+    com.acasloa946.pfg_caraction.carcard.TopLevel(
+        onCarClick = onCarClick,
+        modifier = modifier
+    ) {
+        FrameImage {
+            SubcomposeAsyncImage(
+                model = image,
+                contentDescription = null,
+                contentScale = ContentScale.FillWidth,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(20.dp))
+                    .border(2.dp, RojoMain, RoundedCornerShape(20.dp)),
+                loading = {
+                    CircularProgressIndicator(
+                        modifier = Modifier
+                            .size(150.dp)
+                            .align(Alignment.Center),
+                        color = RojoMain
+                    )
+                }
+            )
+        }
+        Line1()
+        MakeModelText(makeModelText = makeModelText)
+        Line2()
+        Frame1 {
+            LocationText(locationText = locationText)
+            YearText(yearText = yearText)
+        }
+        Frame2 {
+            KMText(kmText = kmText)
+        }
+        Frame4 {
+            TransType(transText = transText)
+        }
+        Frame3 {
+            FuelTypeText(fuelTypeText = fuelTypeText)
+        }
+        Line3()
+        PriceText(priceText = priceText)
+    }
+}
 
 
 /*

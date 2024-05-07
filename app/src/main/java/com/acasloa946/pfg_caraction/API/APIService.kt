@@ -25,7 +25,7 @@ interface ApiService {
 
     @GET(ENDPOINT_TYPE)
     suspend fun getType(
-        @Query("select") select:String = "make,model,vclass",
+        @Query("select") select:String = "make,model,vclass,fueltype1,trany",
         @Query ("") make:String,
         @Query ("") model:String,
         @Query("where") where:String = "make='$make' and model='$model'",

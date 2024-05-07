@@ -1,0 +1,527 @@
+{
+  "name": "car_card",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "204:200",
+    "version": "5705874307",
+    "component-id": "556043bcd52f587c97aaaaec7658cb009ad36be1"
+  },
+  "default": "Car_card",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "FrameImage"
+      },
+      {
+        "type": "vector",
+        "id": "Line1"
+      },
+      {
+        "type": "text",
+        "id": "MakeModelText"
+      },
+      {
+        "type": "vector",
+        "id": "Line2"
+      },
+      {
+        "type": "group",
+        "id": "Frame 1"
+      },
+      {
+        "type": "group",
+        "id": "Frame 2"
+      },
+      {
+        "type": "group",
+        "id": "Frame 4"
+      },
+      {
+        "type": "group",
+        "id": "Frame 3"
+      },
+      {
+        "type": "vector",
+        "id": "Line3"
+      },
+      {
+        "type": "text",
+        "id": "PriceText"
+      },
+      {
+        "type": "text",
+        "id": "LocationText"
+      },
+      {
+        "type": "text",
+        "id": "YearText"
+      },
+      {
+        "type": "text",
+        "id": "KMText"
+      },
+      {
+        "type": "text",
+        "id": "TransType"
+      },
+      {
+        "type": "text",
+        "id": "FuelTypeText"
+      }
+    ],
+    "modes": {
+      "Car_card": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "top": "6.0",
+              "bottom": "6.0"
+            },
+            "border-radius": "19.0",
+            "tap-handler": "$onCarClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "children": [
+              "FrameImage",
+              "Line1",
+              "MakeModelText",
+              "Line2",
+              "Frame 1",
+              "Frame 2",
+              "Frame 4",
+              "Frame 3",
+              "Line3",
+              "PriceText"
+            ],
+            "item-spacing": "6.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "FrameImage",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "195.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "133.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "Line1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "392.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "2.0"
+              }
+            },
+            "vector-content": "line1.svg"
+          },
+          {
+            "id": "MakeModelText",
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "annotated-text-content": "$MakeModelText",
+            "overflow": "visible",
+            "text-size": "20.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "Line2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "392.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "2.0"
+              }
+            },
+            "vector-content": "line2.svg"
+          },
+          {
+            "id": "Frame 1",
+            "padding": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "LocationText",
+              "YearText"
+            ],
+            "item-spacing": "10.0"
+          },
+          {
+            "id": "Frame 2",
+            "padding": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "KMText"
+            ],
+            "item-spacing": "10.0"
+          },
+          {
+            "id": "Frame 4",
+            "padding": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "TransType"
+            ],
+            "item-spacing": "10.0"
+          },
+          {
+            "id": "Frame 3",
+            "padding": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "FuelTypeText"
+            ],
+            "item-spacing": "10.0"
+          },
+          {
+            "id": "Line3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "392.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "2.0"
+              }
+            },
+            "vector-content": "line3.svg"
+          },
+          {
+            "id": "PriceText",
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "$priceText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "20.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "LocationText",
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "annotated-text-content": "$locationText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "12.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "YearText",
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "annotated-text-content": "$yearText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "12.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "KMText",
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "annotated-text-content": "$kmText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "12.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "TransType",
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "annotated-text-content": "$transText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "12.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "FuelTypeText",
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "annotated-text-content": "$fuelTypeText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "12.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onCarClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "MakeModelText": {
+      "data-type": "annotated-text-content",
+      "required": false,
+      "description": ""
+    },
+    "priceText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "locationText": {
+      "data-type": "annotated-text-content",
+      "required": false,
+      "description": ""
+    },
+    "yearText": {
+      "data-type": "annotated-text-content",
+      "required": false,
+      "description": ""
+    },
+    "kmText": {
+      "data-type": "annotated-text-content",
+      "required": false,
+      "description": ""
+    },
+    "transText": {
+      "data-type": "annotated-text-content",
+      "required": false,
+      "description": ""
+    },
+    "fuelTypeText": {
+      "data-type": "annotated-text-content",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Car_card",
+      "size": {
+        "width": 392.0,
+        "height": 411.0
+      },
+      "parameters": {
+        "MakeModelText": {
+          "text": "Mercedes SL",
+          "annotated-text-span-list": [
+            {
+              "span-start": 0,
+              "span-length": 9
+            },
+            {
+              "span-start": 9,
+              "span-length": 2,
+              "annotated-text-style": {
+                "font-weight": 400.0,
+                "typeface": "Kaisei HarunoUmi"
+              }
+            }
+          ]
+        },
+        "priceText": "35.000€",
+        "locationText": {
+          "text": "Localización: Málaga",
+          "annotated-text-span-list": [
+            {
+              "span-start": 0,
+              "span-length": 14
+            },
+            {
+              "span-start": 14,
+              "span-length": 6,
+              "annotated-text-style": {
+                "font-weight": 400.0,
+                "typeface": "Kaisei HarunoUmi"
+              }
+            }
+          ]
+        },
+        "yearText": {
+          "text": "Año: 2024",
+          "annotated-text-span-list": [
+            {
+              "span-start": 0,
+              "span-length": 5
+            },
+            {
+              "span-start": 5,
+              "span-length": 4,
+              "annotated-text-style": {
+                "font-weight": 400.0,
+                "typeface": "Kaisei HarunoUmi"
+              }
+            }
+          ]
+        },
+        "kmText": {
+          "text": "Kilometraje: 192.000km",
+          "annotated-text-span-list": [
+            {
+              "span-start": 0,
+              "span-length": 13
+            },
+            {
+              "span-start": 13,
+              "span-length": 9,
+              "annotated-text-style": {
+                "font-weight": 400.0,
+                "typeface": "Kaisei HarunoUmi"
+              }
+            }
+          ]
+        },
+        "transText": {
+          "text": "Tipo de transmisión: 192cv.",
+          "annotated-text-span-list": [
+            {
+              "span-start": 0,
+              "span-length": 21
+            },
+            {
+              "span-start": 21,
+              "span-length": 6,
+              "annotated-text-style": {
+                "font-weight": 400.0,
+                "typeface": "Kaisei HarunoUmi"
+              }
+            }
+          ]
+        },
+        "fuelTypeText": {
+          "text": "Tipo de combustible: Gasolina",
+          "annotated-text-span-list": [
+            {
+              "span-start": 0,
+              "span-length": 21
+            },
+            {
+              "span-start": 21,
+              "span-length": 8,
+              "annotated-text-style": {
+                "font-weight": 400.0,
+                "typeface": "Kaisei HarunoUmi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

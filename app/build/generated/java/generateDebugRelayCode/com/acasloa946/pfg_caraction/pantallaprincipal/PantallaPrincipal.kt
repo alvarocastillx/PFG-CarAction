@@ -56,7 +56,7 @@ fun PantallaPrincipal(
                     modifier = Modifier.boxAlign(
                         alignment = Alignment.Center,
                         offset = DpOffset(
-                            x = 0.000011444091796875.dp,
+                            x = -0.000003814697265625.dp,
                             y = 0.0.dp
                         )
                     )
@@ -72,7 +72,7 @@ fun PantallaPrincipal(
                 )
             ) {}
         }
-        MainHome(modifier = Modifier.rowWeight(1.0f)) {
+        MainHome(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)) {
             BienvenidaCard(
                 onUserClick = onUserClick,
                 modifier = Modifier.rowWeight(1.0f)
@@ -92,7 +92,7 @@ fun PantallaPrincipal(
                         modifier = Modifier.boxAlign(
                             alignment = Alignment.Center,
                             offset = DpOffset(
-                                x = -0.000102996826171875.dp,
+                                x = -0.000041961669921875.dp,
                                 y = 0.000019073486328125.dp
                             )
                         )
@@ -101,7 +101,7 @@ fun PantallaPrincipal(
                             modifier = Modifier.boxAlign(
                                 alignment = Alignment.Center,
                                 offset = DpOffset(
-                                    x = -0.0000438690185546875.dp,
+                                    x = 0.0000171661376953125.dp,
                                     y = 0.0001163482666015625.dp
                                 )
                             )
@@ -126,7 +126,7 @@ fun PantallaPrincipal(
                     )
                 }
             }
-            FrameCars(modifier = Modifier.rowWeight(1.0f)) {}
+            FrameCars(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)) {}
         }
     }
 }
@@ -404,7 +404,7 @@ fun FrameCars(
         isStructured = false,
         clipToParent = false,
         content = content,
-        modifier = modifier.fillMaxWidth(1.0f).requiredHeight(500.0.dp)
+        modifier = modifier.fillMaxWidth(1.0f).fillMaxHeight(1.0f)
     )
 }
 
@@ -421,10 +421,10 @@ fun MainHome(
             end = 8.0.dp,
             bottom = 0.0.dp
         ),
-        itemSpacing = 8.0,
+        itemSpacing = 6.0,
         clipToParent = false,
         content = content,
-        modifier = modifier.fillMaxWidth(1.0f).requiredHeight(656.36767578125.dp)
+        modifier = modifier.fillMaxWidth(1.0f).fillMaxHeight(1.0f)
     )
 }
 

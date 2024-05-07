@@ -78,7 +78,7 @@ class APIModule {
         return if (carTypeList.value.isNotEmpty()){
             carTypeList.value[0]
         } else {
-            APITypeResult(make = make, model = model, vclass = "Berlina")
+            APITypeResult(make = make, model = model, vclass = "Berlina", fueltype1 = "Gasolina", trany = "Manual")
         }
     }
 

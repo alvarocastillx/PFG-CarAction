@@ -8,17 +8,21 @@ enum class CarEntityType {
     SUPERCOCHE,
     CABRIO
 }
+
+
 data class CarEntity (
-    val type: String,
-    val image: String,
-    val make:String,
-    val model:String,
-    val plate:String,
-    val year:Int,
-    val km:Int,
-    val price:Double,
-    val location: Pair<Double,Double>,
-    val locationName : String,
-    val userName: String
+    val type: String? = null,
+    val image: String? = null,
+    val make:String? = null,
+    val model:String? = null,
+    val plate:String? = null,
+    val year:Int? = null,
+    val km:Int? = null,
+    val price:Double? = null,
+    val location: Map<String,Double>? = null,
+    val locationName : String? = null,
+    val userName: String? = null,
+    val fuelType:String? = null,
+    val transmisionType:String? = null
 
 )

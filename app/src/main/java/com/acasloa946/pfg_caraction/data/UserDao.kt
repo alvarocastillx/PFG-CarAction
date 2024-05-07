@@ -3,6 +3,10 @@ package com.acasloa946.pfg_caraction.data
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.data.Entities.CarEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserType
@@ -10,7 +14,9 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+
 
 interface UserDao {
 
@@ -62,7 +68,8 @@ interface UserDao {
         if (FirebaseApp.getApps(context).isNotEmpty()) {
             val db = FirebaseFirestore.getInstance()
             try {
-                val docRef = db.collection("Cars").document(carEntity.plate + carEntity.model + carEntity.year)
+                val docRef = db.collection("Cars")
+                    .document(carEntity.plate + carEntity.model + carEntity.year)
                 val coche = docRef.get().await()
                 if (coche.exists()) {
                     Log.d("NO SE AGREGA", "YA EXISTE")
@@ -76,6 +83,23 @@ interface UserDao {
         } else {
             Log.e("Error", "ERROR: FirebaseApp no inicializado")
         }
+    }
+
+
+    suspend fun fetchCars(): MutableList<CarEntity> {
+
+        val db = FirebaseFirestore.getInstance()
+        val querySnapshot = db.collection("Cars").get().await()
+
+        val carList = mutableListOf<CarEntity>()
+        for (document in querySnapshot) {
+            val car = document.toObject(CarEntity::class.java)
+            carList.add(car)
+        }
+
+
+        return carList.toMutableList()
+
     }
 
 }

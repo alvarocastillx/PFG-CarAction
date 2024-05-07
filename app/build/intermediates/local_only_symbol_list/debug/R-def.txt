@@ -10,6 +10,9 @@ color white
 drawable bottom_nav_bar_car_vector
 drawable bottom_nav_bar_home_vector
 drawable bottom_nav_bar_vertical_line
+drawable car_card_line1
+drawable car_card_line2
+drawable car_card_line3
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image_banner
