@@ -1,13 +1,5 @@
 package com.acasloa946.pfg_caraction.data.Entities
 
-enum class CarEntityType {
-    SUV,
-    BERLINA,
-    ESTATE,
-    ELÉCTRICO,
-    SUPERCOCHE,
-    CABRIO
-}
 
 
 data class CarEntity (

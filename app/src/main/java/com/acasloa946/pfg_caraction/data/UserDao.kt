@@ -92,13 +92,38 @@ interface UserDao {
         val querySnapshot = db.collection("Cars").get().await()
 
         val carList = mutableListOf<CarEntity>()
+        val carTypeList = mutableListOf<String>()
+
         for (document in querySnapshot) {
             val car = document.toObject(CarEntity::class.java)
             carList.add(car)
+
+            if (!carTypeList.contains(car.type)) {
+                carTypeList.add(car.type!!)
+            }
         }
 
 
         return carList.toMutableList()
+
+    }
+
+    suspend fun fetchCarTypes(): MutableList<String> {
+
+        val db = FirebaseFirestore.getInstance()
+        val querySnapshot = db.collection("Cars").get().await()
+
+        val carTypeList = mutableListOf<String>()
+
+        for (document in querySnapshot) {
+            val car = document.toObject(CarEntity::class.java)
+            if (!carTypeList.contains(car.type)) {
+                carTypeList.add(car.type!!)
+            }
+        }
+
+
+        return carTypeList
 
     }
 

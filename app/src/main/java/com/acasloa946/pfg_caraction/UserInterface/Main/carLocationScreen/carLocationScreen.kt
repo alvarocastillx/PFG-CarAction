@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.MutableLiveData
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
@@ -85,7 +86,7 @@ fun CarLocationScreen(navController: NavController, carLocationViewmodel: carLoc
                 carLocationViewmodel,
                 userLocation,
                 onAssignClick = {
-                    uploadCarViewmodel.userLocation = carLocationViewmodel.userLocation
+                    uploadCarViewmodel.userLocation = carLocationViewmodel.userLocation as MutableLiveData<Pair<Double, Double>>
                     carLocationViewmodel.getMarkerAddressDetails(userLocation.first,userLocation.second,context)
                     uploadCarViewmodel.userLocationString = carLocationViewmodel.userAddress
                     navController.navigate(Routes.UploadCarScreen.route)

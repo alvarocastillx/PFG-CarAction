@@ -1,11 +1,10 @@
 package com.acasloa946.pfg_caraction.Hilt
 
-import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel
 import com.acasloa946.pfg_caraction.data.UserDao
 import com.acasloa946.pfg_caraction.data.UserRepository
 import com.acasloa946.pfg_caraction.domain.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.addUserUseCase
+import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
 import dagger.Module
@@ -35,6 +34,11 @@ class HiltModule {
     @Provides
     fun provideFetchCarsUseCase(userRepository: UserRepository): fetchCarsUseCase {
         return fetchCarsUseCase(userRepository)
+    }
+
+    @Provides
+    fun provideFetchCarsTypeUseCase(userRepository: UserRepository): fetchCarTypesUseCase {
+        return fetchCarTypesUseCase(userRepository)
     }
 
 

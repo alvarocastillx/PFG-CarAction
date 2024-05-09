@@ -20,12 +20,16 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
     suspend fun addCar(carModel: CarModel ,context: Context,
     ){
         userDao.uploadCarToDatabase(carEntity = CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
-            mapOf("first" to carModel.location.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType), context,)
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType), context,)
     }
 
     suspend fun fetchCars(): MutableList<CarEntity> {
         val carList = userDao.fetchCars()
         return carList
+    }
+    suspend fun fetchCarTypes(): MutableList<String> {
+        val carTypeList = userDao.fetchCarTypes()
+        return  carTypeList
     }
 
 }

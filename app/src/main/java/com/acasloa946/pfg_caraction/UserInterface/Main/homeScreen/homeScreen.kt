@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
+import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
@@ -28,16 +29,20 @@ import kotlinx.coroutines.delay
 
 
 @Composable
-fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenViewmodel) {
+fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenViewmodel, carScreenViewmodel: CarScreenViewmodel) {
     val context = LocalContext.current
-
+    /* SI ESO PONERLO PARA QUE SE ACTUALICE CUANDO SUBA, SINO SE LIA
     LaunchedEffect(true) {
         while (true) {
 
             homeScreenViewmodel.fetchCars()
-            delay(60000)
+            delay(120000)
         }
+
+
     }
+
+     */
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -63,7 +68,7 @@ fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenView
             PantallaPrincipalComponent(modifier = Modifier
                 .fillMaxWidth()
                 .height(800.dp),
-                textWelcome = homeScreenViewmodel.userName, homeScreenViewmodel = homeScreenViewmodel)
+                textWelcome = homeScreenViewmodel.userName, homeScreenViewmodel = homeScreenViewmodel, navController = navController, carScreenViewmodel = carScreenViewmodel)
 
         }
         Box(

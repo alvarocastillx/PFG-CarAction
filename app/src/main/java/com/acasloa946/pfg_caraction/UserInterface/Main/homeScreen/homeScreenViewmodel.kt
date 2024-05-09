@@ -8,7 +8,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
-import com.acasloa946.pfg_caraction.domain.addUserUseCase
+import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
 import com.google.firebase.auth.ktx.auth
@@ -20,19 +20,29 @@ import javax.inject.Inject
 
 @HiltViewModel
 class homeScreenViewmodel @Inject constructor(
-    private val fetchUserUseCase: fetchUserUseCase, private val fetchCarsUseCase: fetchCarsUseCase
+    private val fetchUserUseCase: fetchUserUseCase, private val fetchCarsUseCase: fetchCarsUseCase, private val fetchCarTypesUseCase: fetchCarTypesUseCase
 ) : ViewModel() {
+
+
 
     private val auth = Firebase.auth
     private var fetched = false
     private var alreadyFetchedCars = false
 
     var searchBarText by mutableStateOf("")
-    var originalCarList: MutableList<CarModel> = mutableListOf()
+    private var _originalCarList: MutableList<CarModel> = mutableListOf()
 
     var userName: String by mutableStateOf("")
 
     val fetchedCars = MutableStateFlow<List<CarModel>>(emptyList())
+    val fetchedCarTypes  = MutableStateFlow<List<String>>(emptyList())
+
+    private var _typeSortedList: MutableList<CarModel> = mutableListOf()
+
+
+
+
+
     fun fetchUserName(context: Context, onError: () -> Unit) {
         val currentEmail = auth.currentUser?.email
         viewModelScope.launch {
@@ -42,6 +52,7 @@ class homeScreenViewmodel @Inject constructor(
                     userName = user.name
                     fetched = true
                     fetchCars()
+                    fetchCarTypes()
                 }
             } catch (e: Exception) {
                 auth.currentUser?.delete()
@@ -68,22 +79,64 @@ class homeScreenViewmodel @Inject constructor(
         } else if (searchBarText.isBlank() && alreadyFetchedCars) {
             fetchedCars.value = carModelList
         }
-        originalCarList = fetchedCars.value.toMutableList()
+        _originalCarList = fetchedCars.value.toMutableList()
 
 
     }
-
-    fun filterListBySearchbar(userInput: String) {
-
-        fetchedCars.value = originalCarList.filter { item ->
-            val makeModel = "${item.make} ${item.model}"
-            makeModel.contains(userInput, ignoreCase = true)
+    private var previousType = ""
+    private fun filterListBySearchbar(userInput: String) {
+        Log.d("DEBUG",previousType)
+        if (previousType == "") {
+            fetchedCars.value = _originalCarList.filter { item ->
+                val makeModel = "${item.make} ${item.model}"
+                makeModel.contains(userInput, ignoreCase = true)
+            }
         }
+        else {
+            if (userInput != "") {
+                fetchedCars.value = fetchedCars.value.filter { item ->
+                    val makeModel = "${item.make} ${item.model}"
+                    makeModel.contains(userInput, ignoreCase = true)
+                }
+            }
+            else {
+                fetchedCars.value = _typeSortedList
+            }
+
+        }
+
+    }
+
+    fun filterListByTypeButton(typeToSearch:String) {
+        if (previousType != typeToSearch) {
+            fetchedCars.value = _originalCarList.filter { item ->
+                item.type!!.contains(typeToSearch)
+            }
+        }
+        else {
+            fetchedCars.value = _originalCarList
+        }
+        _typeSortedList = fetchedCars.value.toMutableList()
+        previousType = typeToSearch
 
     }
 
     fun formatLocationString(locationString: String): String {
         val locationParts = locationString.split(",")
         return locationParts[1] + "," + locationParts[3]
+    }
+
+    suspend fun fetchCarTypes() {
+        var carTypeList = mutableListOf<String>()
+        viewModelScope.launch {
+            try {
+                carTypeList = fetchCarTypesUseCase.invoke()
+            }
+            catch (e:Exception) {
+                Log.d("Error","Error al recuperar tipos")
+            }
+        }.join()
+        fetchedCarTypes.value = carTypeList
+
     }
 }

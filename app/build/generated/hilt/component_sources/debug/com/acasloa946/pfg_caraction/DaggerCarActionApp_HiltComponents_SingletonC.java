@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModel;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddCarUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddUserUseCaseFactory;
+import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsTypeUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchUserCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideUserDaoFactory;
@@ -25,6 +26,7 @@ import com.acasloa946.pfg_caraction.data.UserDao;
 import com.acasloa946.pfg_caraction.data.UserRepository;
 import com.acasloa946.pfg_caraction.domain.addCarUseCase;
 import com.acasloa946.pfg_caraction.domain.addUserUseCase;
+import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase;
 import com.google.common.collect.ImmutableMap;
@@ -483,7 +485,7 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
           return (T) new RegisterViewmodel();
 
           case 2: // com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel 
-          return (T) new homeScreenViewmodel(singletonCImpl.fetchUserUseCase(), singletonCImpl.fetchCarsUseCase());
+          return (T) new homeScreenViewmodel(singletonCImpl.fetchUserUseCase(), singletonCImpl.fetchCarsUseCase(), singletonCImpl.fetchCarTypesUseCase());
 
           case 3: // com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel 
           return (T) new uploadCarViewmodel(singletonCImpl.addCarUseCase(), singletonCImpl.fetchUserUseCase());
@@ -590,6 +592,10 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private fetchCarsUseCase fetchCarsUseCase() {
       return HiltModule_ProvideFetchCarsUseCaseFactory.provideFetchCarsUseCase(hiltModule, userRepository());
+    }
+
+    private fetchCarTypesUseCase fetchCarTypesUseCase() {
+      return HiltModule_ProvideFetchCarsTypeUseCaseFactory.provideFetchCarsTypeUseCase(hiltModule, userRepository());
     }
 
     private addCarUseCase addCarUseCase() {

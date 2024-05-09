@@ -7,6 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.API.APIModule
@@ -59,14 +60,16 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
     private var _carType by mutableStateOf("")
 
 
-    lateinit var userLocation: LiveData<Pair<Double, Double>>
+    var userLocation = MutableLiveData<Pair<Double,Double>>()
     var userLocationString by mutableStateOf("")
 
     private var _userName by mutableStateOf("")
     private var _carFuelType by mutableStateOf("")
     private var _carTransmisionType by mutableStateOf("")
 
-
+    init {
+        userLocation.value = Pair(0.0,0.0)
+    }
     fun getSelectedImage(uri: Uri?) {
         selectedImageUri = uri
         uploadImage(selectedImageUri)
@@ -138,6 +141,7 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
         if (makeButtonText != "Marca" && modelButtonText != "Modelo") {
             viewModelScope.launch {
                 val APICar = apiModule.getCarType(makeButtonText, modelButtonText)
+
                 _carType = APICar.vclass.toString()
                 _carFuelType = APICar.fueltype1.toString()
                 _carTransmisionType = APICar.trany.toString()
@@ -160,7 +164,7 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
     ) {
         if (selectedImageURL.isNotBlank() && carPlate.isNotBlank() && (makeButtonText != "Marca") && (modelButtonText != "Modelo") && ((_carYear.toString().length == 4) && (_carYear!! <= Calendar.getInstance()
                 .get(Calendar.YEAR))) && (userLocation.value!!.first != 0.0) &&
-            carKMField.isNotBlank() && carPriceField.isNotBlank()
+            carKMField.isNotBlank() && carPriceField.isNotBlank() && userLocationString.isNotBlank()
         ) {
             viewModelScope.launch {
                 try {

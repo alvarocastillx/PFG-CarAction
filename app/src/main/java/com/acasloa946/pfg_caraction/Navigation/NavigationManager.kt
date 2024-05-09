@@ -10,6 +10,8 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.CarMakesSc
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.CarModelScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreen
+import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.HomeScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.UploadCarScreen
@@ -36,7 +38,8 @@ fun NavigationManager(
     uploadCarViewmodel: uploadCarViewmodel,
     carMakesViewmodel: carMakesViewmodel,
     carModelViewmodel: carModelViewmodel,
-    carLocationViewmodel: carLocationViewmodel
+    carLocationViewmodel: carLocationViewmodel,
+    carScreenViewmodel: CarScreenViewmodel
 ) {
 
     val navController = rememberNavController()
@@ -58,19 +61,46 @@ fun NavigationManager(
             LoginScreen(navController = navController, loginViewmodel = loginViewmodel)
         }
         composable("HomeScreen") {
-            HomeScreen(navController = navController, homeScreenViewmodel = homeScreenViewmodel)
+            HomeScreen(
+                navController = navController,
+                homeScreenViewmodel = homeScreenViewmodel,
+                carScreenViewmodel
+            )
         }
         composable("UploadCarScreen") {
-            UploadCarScreen(navController = navController, uploadCarViewmodel = uploadCarViewmodel, carMakesViewmodel, carModelViewmodel)
+            UploadCarScreen(
+                navController = navController,
+                uploadCarViewmodel = uploadCarViewmodel,
+                carMakesViewmodel,
+                carModelViewmodel
+            )
         }
         composable("CarMakesScreen") {
-            CarMakesScreen(navController = navController, carMakesViewmodel = carMakesViewmodel, uploadCarViewmodel)
+            CarMakesScreen(
+                navController = navController,
+                carMakesViewmodel = carMakesViewmodel,
+                uploadCarViewmodel
+            )
         }
         composable("CarModelScreen") {
-            CarModelScreen(navController = navController, carModelViewmodel = carModelViewmodel, uploadCarViewmodel)
+            CarModelScreen(
+                navController = navController,
+                carModelViewmodel = carModelViewmodel,
+                uploadCarViewmodel
+            )
         }
         composable("CarLocationScreen") {
-            CarLocationScreen(navController = navController, carLocationViewmodel = carLocationViewmodel, uploadCarViewmodel)
+            CarLocationScreen(
+                navController = navController,
+                carLocationViewmodel = carLocationViewmodel,
+                uploadCarViewmodel
+            )
+        }
+        composable("CarScreen") {
+            CarScreen(
+                navController = navController,
+                carScreenViewmodel = carScreenViewmodel
+            )
         }
     }
 }
