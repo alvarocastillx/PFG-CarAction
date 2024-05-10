@@ -9,4 +9,11 @@ import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 class CarScreenViewmodel : ViewModel() {
 
     var clickedCar by mutableStateOf(CarModel())
+
+    fun formatLocationString(locationString: String): String {
+        val locationParts = locationString.split(",")
+        return locationParts[1] + "," + locationParts[3]
+    }
+
+
 }

@@ -39,9 +39,13 @@ class homeScreenViewmodel @Inject constructor(
 
     private var _typeSortedList: MutableList<CarModel> = mutableListOf()
 
+    var countOfList by mutableStateOf(5)
 
 
 
+    fun add5toList() {
+        countOfList += 5
+    }
 
     fun fetchUserName(context: Context, onError: () -> Unit) {
         val currentEmail = auth.currentUser?.email
@@ -85,7 +89,6 @@ class homeScreenViewmodel @Inject constructor(
     }
     private var previousType = ""
     private fun filterListBySearchbar(userInput: String) {
-        Log.d("DEBUG",previousType)
         if (previousType == "") {
             fetchedCars.value = _originalCarList.filter { item ->
                 val makeModel = "${item.make} ${item.model}"
@@ -112,12 +115,14 @@ class homeScreenViewmodel @Inject constructor(
             fetchedCars.value = _originalCarList.filter { item ->
                 item.type!!.contains(typeToSearch)
             }
+            previousType = typeToSearch
         }
         else {
             fetchedCars.value = _originalCarList
+            previousType = ""
         }
         _typeSortedList = fetchedCars.value.toMutableList()
-        previousType = typeToSearch
+
 
     }
 

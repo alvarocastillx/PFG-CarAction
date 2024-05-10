@@ -4,9 +4,11 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddLocation
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -47,6 +49,8 @@ import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapUiSettings
 import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.rememberCameraPositionState
+import com.google.relay.compose.BoxScopeInstanceImpl.align
+import kotlinx.coroutines.delay
 
 @Composable
 fun LocationScreenComponent(
@@ -65,29 +69,48 @@ fun LocationScreenComponent(
     }
     val context = LocalContext.current
 
+    var isMapLoaded by remember { mutableStateOf(false) }
+
+
+    LaunchedEffect(Unit) {
+        delay(2000)
+        isMapLoaded = true
+    }
+
+
 
     TopLevel(modifier = modifier) {
         MapFrame(modifier = Modifier.rowWeight(1.0f)) {
-            GoogleMap(
-                cameraPositionState = cameraPositionState,
-                uiSettings = MapUiSettings(scrollGesturesEnabled = false)
+            if (isMapLoaded) {
+                GoogleMap(
+                    cameraPositionState = cameraPositionState,
+                    uiSettings = MapUiSettings(scrollGesturesEnabled = false)
 
-            ) {
-                if (userLocation.first != 0.0) {
-                    Marker(
-                        position = LatLng(userLocation.first, userLocation.second),
-                        title = "Tu ubicación"
-                    )
-                    cameraPositionState.move(
-                        update = CameraUpdateFactory.newLatLng(
-                            LatLng(
-                                userLocation.first,
-                                userLocation.second
+                ) {
+                    if (userLocation.first != 0.0) {
+                        Marker(
+                            position = LatLng(userLocation.first, userLocation.second),
+                            title = "Tu ubicación"
+                        )
+                        cameraPositionState.move(
+                            update = CameraUpdateFactory.newLatLng(
+                                LatLng(
+                                    userLocation.first,
+                                    userLocation.second
+                                )
                             )
                         )
-                    )
+                    }
                 }
             }
+            else {
+                CircularProgressIndicator(
+                    modifier = Modifier
+                        .align(Alignment.Center).size(100.dp),
+                    color = RojoMain
+                )
+            }
+
         }
         Spacer(modifier = Modifier.padding(5.dp))
         LineSeparatoria()

@@ -1,20 +1,13 @@
 package com.acasloa946.pfg_caraction.data
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
-import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.data.Entities.CarEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserType
-import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.launch
+import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.tasks.await
 
 
@@ -121,10 +114,62 @@ interface UserDao {
                 carTypeList.add(car.type!!)
             }
         }
-
-
         return carTypeList
-
     }
+
+    suspend fun linkCarToProfile(
+        carEntity: CarEntity, context: Context, email: String
+    ) {
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            var user = UserEntity()
+            try {
+                val fetchedUser = db.collection("Users").document(email).get().await()
+                if (fetchedUser != null) {
+                    user = fetchedUser.toObject(UserEntity::class.java)!!
+                }
+                val carsUploadedByUser = user.uploadedCars!!
+                carsUploadedByUser.add(carEntity.plate + carEntity.model + carEntity.year)
+                db.collection("Users")
+                    .document(email).update(
+                        "uploadedCars",
+                        carsUploadedByUser
+                    ).addOnSuccessListener {
+                        Log.d("Success", "Coche linkeado correctamente")
+                    }.addOnFailureListener { Log.d("Error", "Error al linkear coche") }
+            } catch (e: Exception) {
+                Log.e("Error", "ERROR", e)
+            }
+        } else {
+            Log.e("Error", "ERROR: FirebaseApp no inicializado")
+        }
+    }
+    suspend fun fetchCarsUploadedByUser(
+        context: Context, email: String
+    ): MutableList<CarEntity> {
+        var user = UserEntity()
+        var carsOfUser = mutableListOf<CarEntity>()
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                val fetchedUser = db.collection("Users").document(email).get().await()
+                if (fetchedUser != null) {
+                    user = fetchedUser.toObject(UserEntity::class.java)!!
+                }
+                for (i in user.uploadedCars!!) {
+                    val fetchedCar = db.collection("Cars").document(i).get().await()
+                    carsOfUser.add(fetchedCar.toObject(CarEntity::class.java)!!)
+                }
+
+
+            } catch (e: Exception) {
+                Log.e("Error", "ERROR", e)
+            }
+        } else {
+            Log.e("Error", "ERROR: FirebaseApp no inicializado")
+        }
+        return carsOfUser
+    }
+
 
 }

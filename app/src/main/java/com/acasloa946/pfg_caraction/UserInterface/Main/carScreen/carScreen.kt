@@ -54,7 +54,7 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                 yearText = carScreenViewmodel.clickedCar.year.toString(),
                 priceText = "${carScreenViewmodel.clickedCar.price}€",
                 fuelText = carScreenViewmodel.clickedCar.fuelType!!,
-                localizationText = carScreenViewmodel.clickedCar.locationName!!,
+                localizationText = carScreenViewmodel.formatLocationString(carScreenViewmodel.clickedCar.locationName!!),
                 onContactClick = {
 
                 },

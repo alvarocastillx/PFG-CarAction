@@ -3,6 +3,7 @@ package com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen;
 
 import com.acasloa946.pfg_caraction.domain.addCarUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase;
+import com.acasloa946.pfg_caraction.domain.linkCarToProfileUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.QualifierMetadata;
@@ -23,24 +24,29 @@ public final class uploadCarViewmodel_Factory implements Factory<uploadCarViewmo
 
   private final Provider<fetchUserUseCase> fetchUserUseCaseProvider;
 
+  private final Provider<linkCarToProfileUseCase> linkCarToProfileUseCaseProvider;
+
   public uploadCarViewmodel_Factory(Provider<addCarUseCase> addCarUseCaseProvider,
-      Provider<fetchUserUseCase> fetchUserUseCaseProvider) {
+      Provider<fetchUserUseCase> fetchUserUseCaseProvider,
+      Provider<linkCarToProfileUseCase> linkCarToProfileUseCaseProvider) {
     this.addCarUseCaseProvider = addCarUseCaseProvider;
     this.fetchUserUseCaseProvider = fetchUserUseCaseProvider;
+    this.linkCarToProfileUseCaseProvider = linkCarToProfileUseCaseProvider;
   }
 
   @Override
   public uploadCarViewmodel get() {
-    return newInstance(addCarUseCaseProvider.get(), fetchUserUseCaseProvider.get());
+    return newInstance(addCarUseCaseProvider.get(), fetchUserUseCaseProvider.get(), linkCarToProfileUseCaseProvider.get());
   }
 
   public static uploadCarViewmodel_Factory create(Provider<addCarUseCase> addCarUseCaseProvider,
-      Provider<fetchUserUseCase> fetchUserUseCaseProvider) {
-    return new uploadCarViewmodel_Factory(addCarUseCaseProvider, fetchUserUseCaseProvider);
+      Provider<fetchUserUseCase> fetchUserUseCaseProvider,
+      Provider<linkCarToProfileUseCase> linkCarToProfileUseCaseProvider) {
+    return new uploadCarViewmodel_Factory(addCarUseCaseProvider, fetchUserUseCaseProvider, linkCarToProfileUseCaseProvider);
   }
 
   public static uploadCarViewmodel newInstance(addCarUseCase addCarUseCase,
-      fetchUserUseCase fetchUserUseCase) {
-    return new uploadCarViewmodel(addCarUseCase, fetchUserUseCase);
+      fetchUserUseCase fetchUserUseCase, linkCarToProfileUseCase linkCarToProfileUseCase) {
+    return new uploadCarViewmodel(addCarUseCase, fetchUserUseCase, linkCarToProfileUseCase);
   }
 }

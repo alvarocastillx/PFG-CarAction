@@ -2,6 +2,8 @@ package com.acasloa946.pfg_caraction.UserInterface.Main.carScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -110,13 +112,16 @@ fun CarScreenComponent(
 
     val cameraPositionState = rememberCameraPositionState {
         position =
-            CameraPosition.fromLatLngZoom(LatLng(carScreenViewmodel.clickedCar.location!!.first!!,
-                carScreenViewmodel.clickedCar.location!!.second!!), 8f)
+            CameraPosition.fromLatLngZoom(
+                LatLng(
+                    carScreenViewmodel.clickedCar.location!!.first!!,
+                    carScreenViewmodel.clickedCar.location!!.second!!
+                ), 8f
+            )
     }
 
     var isMapLoaded by remember { mutableStateOf(false) }
 
-    val coroutineScope = CoroutineScope(Dispatchers.Default)
 
     LaunchedEffect(Unit) {
         delay(2000)
@@ -193,47 +198,52 @@ fun CarScreenComponent(
                 }
             }
             ImageFrame {
-                SubcomposeAsyncImage(
-                    model = carScreenViewmodel.clickedCar.image,
-                    contentDescription = null,
-                    contentScale = ContentScale.FillWidth,
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(20.dp))
-                        .border(2.dp, RojoMain, RoundedCornerShape(20.dp)),
-                    loading = {
-                        CircularProgressIndicator(
-                            modifier = Modifier
-                                .size(100.dp)
-                                .align(Alignment.Center),
-                            color = RojoMain
-                        )
-                    }
-                )
 
+                Row (
+                    modifier = Modifier.fillMaxSize(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ){
+                    SubcomposeAsyncImage(
+                        model = carScreenViewmodel.clickedCar.image,
+                        contentDescription = null,
+                        contentScale = ContentScale.FillWidth,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(20.dp))
+                            .border(2.dp, RojoMain, RoundedCornerShape(20.dp)),
+                        loading = {
+                            CircularProgressIndicator(
+                                modifier = Modifier
+                                    .size(100.dp)
+                                    .align(Alignment.Center),
+                                color = RojoMain
+                            )
+                        }
+                    )
+                }
             }
             MapFrame {
-
                 if (isMapLoaded) {
-
                     GoogleMap(
                         cameraPositionState = cameraPositionState,
-                        uiSettings = MapUiSettings(scrollGesturesEnabled = true)
+                        uiSettings = MapUiSettings(scrollGesturesEnabled = false)
                     ) {
                         Marker(
-                            position = LatLng(carScreenViewmodel.clickedCar.location!!.first!!,
-                                carScreenViewmodel.clickedCar.location!!.second!!),
+                            position = LatLng(
+                                carScreenViewmodel.clickedCar.location!!.first!!,
+                                carScreenViewmodel.clickedCar.location!!.second!!
+                            ),
                             title = "Tu ubicación"
                         )
                     }
                 } else {
                     CircularProgressIndicator(
                         modifier = Modifier
-                            .align(Alignment.Center).size(100.dp),
+                            .align(Alignment.Center)
+                            .size(100.dp),
                         color = RojoMain
                     )
                 }
-
-
 
 
             }

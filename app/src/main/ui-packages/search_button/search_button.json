@@ -1,0 +1,119 @@
+{
+  "name": "search_button",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "221:129",
+    "version": "5715758236",
+    "component-id": "7689b7a476495980fb76b56a33ffbb8d24bfbbe9"
+  },
+  "default": "SearchButton",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "text"
+      }
+    ],
+    "modes": {
+      "SearchButton": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": "38.0",
+              "top": "4.0",
+              "right": "38.0",
+              "bottom": "4.0"
+            },
+            "tap-handler": "$onSearchClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "arrangement": "row",
+            "children": [
+              "text"
+            ],
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          },
+          {
+            "id": "text",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "31.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "21.0"
+              }
+            },
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "$searchText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "15.0",
+            "line-height": "1.6039999643961587",
+            "typeface": "Raillinc"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onSearchClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "searchText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "SearchButton",
+      "size": {
+        "width": 107.0,
+        "height": 29.0
+      },
+      "parameters": {
+        "searchText": "text"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

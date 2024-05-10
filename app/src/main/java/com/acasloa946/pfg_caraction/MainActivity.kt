@@ -14,6 +14,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesVi
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.LoginScreen.loginViewmodel
@@ -40,6 +41,7 @@ class MainActivity : ComponentActivity() {
         val carModelViewmodel: carModelViewmodel by viewModels()
         val carLocationViewmodel : carLocationViewmodel by viewModels()
         val carScreenViewmodel : CarScreenViewmodel by viewModels()
+        val profileViewmodel : profileViewmodel by viewModels()
 
 
 
@@ -61,7 +63,8 @@ class MainActivity : ComponentActivity() {
                         carMakesViewmodel,
                         carModelViewmodel,
                         carLocationViewmodel,
-                        carScreenViewmodel
+                        carScreenViewmodel,
+                        profileViewmodel
                     )
                 }
             }

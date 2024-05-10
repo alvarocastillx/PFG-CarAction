@@ -14,6 +14,8 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.HomeScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.ProfileScreen
+import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.UploadCarScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitPage
@@ -39,7 +41,8 @@ fun NavigationManager(
     carMakesViewmodel: carMakesViewmodel,
     carModelViewmodel: carModelViewmodel,
     carLocationViewmodel: carLocationViewmodel,
-    carScreenViewmodel: CarScreenViewmodel
+    carScreenViewmodel: CarScreenViewmodel,
+    profileViewmodel: profileViewmodel
 ) {
 
     val navController = rememberNavController()
@@ -72,7 +75,7 @@ fun NavigationManager(
                 navController = navController,
                 uploadCarViewmodel = uploadCarViewmodel,
                 carMakesViewmodel,
-                carModelViewmodel
+                carModelViewmodel,
             )
         }
         composable("CarMakesScreen") {
@@ -101,6 +104,9 @@ fun NavigationManager(
                 navController = navController,
                 carScreenViewmodel = carScreenViewmodel
             )
+        }
+        composable("ProfileScreen") {
+            ProfileScreen(navController = navController, profileViewmodel = profileViewmodel, homeScreenViewmodel)
         }
     }
 }

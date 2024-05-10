@@ -56,6 +56,12 @@ drawable pantalla_principal_linea1
 drawable pantalla_principal_linea2
 drawable pantalla_principal_user_image_vecvec
 drawable pantalla_principal_vector
+drawable profile_screen_linea1
+drawable profile_screen_linea2
+drawable profile_screen_pfpcircle
+drawable profile_screen_vector
+drawable profile_screen_vector1
+drawable profile_screen_vector2
 drawable register_screen_image_car_action
 drawable register_screen_rectangle_reg
 drawable upload_car_screen_rectangle

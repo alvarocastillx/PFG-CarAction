@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.LiveData
+import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,12 +16,16 @@ import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIModel
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.domain.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
+import com.acasloa946.pfg_caraction.domain.linkCarToProfileUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.storage.storage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.text.NumberFormat
 import java.util.Calendar
+import java.util.Currency
+import java.util.Locale
 import javax.inject.Inject
 import kotlin.math.roundToInt
 
@@ -29,7 +33,11 @@ import kotlin.math.roundToInt
 //TODO: FUN CLEAR VIEWMODEL
 //TODO: casos de uso de fotos?
 @HiltViewModel
-class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarUseCase, private val fetchUserUseCase: fetchUserUseCase) : ViewModel() {
+class uploadCarViewmodel @Inject constructor(
+    private val addCarUseCase: addCarUseCase,
+    private val fetchUserUseCase: fetchUserUseCase,
+    private val linkCarToProfileUseCase: linkCarToProfileUseCase
+) : ViewModel() {
     private val storageRef = Firebase.storage
     private val auth = Firebase.auth
 
@@ -55,12 +63,12 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
     private var _carKM: Int? by mutableStateOf(0)
 
     var carPriceField by mutableStateOf("")
-    private var _carPrice: Double? by mutableStateOf(0.0)
+    private var _carPrice: String? by mutableStateOf("")
 
     private var _carType by mutableStateOf("")
 
 
-    var userLocation = MutableLiveData<Pair<Double,Double>>()
+    var userLocation = MutableLiveData<Pair<Double, Double>>()
     var userLocationString by mutableStateOf("")
 
     private var _userName by mutableStateOf("")
@@ -68,8 +76,9 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
     private var _carTransmisionType by mutableStateOf("")
 
     init {
-        userLocation.value = Pair(0.0,0.0)
+        userLocation.value = Pair(0.0, 0.0)
     }
+
     fun getSelectedImage(uri: Uri?) {
         selectedImageUri = uri
         uploadImage(selectedImageUri)
@@ -107,7 +116,7 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
     }
 
     fun changePlate(plate: String) {
-        carPlate = plate
+        carPlate = plate.uppercase(Locale.getDefault())
     }
 
     fun changeYear(year: String) {
@@ -133,10 +142,13 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
 
     fun changePrice(price: String) {
         carPriceField = price
-        _carPrice = price.toDoubleOrNull()
+        val numberFormat = NumberFormat.getNumberInstance(Locale.getDefault())
+        if (price.isNotBlank() && price.isDigitsOnly()) {
+            _carPrice = numberFormat.format(price.toLongOrNull())
+        }
     }
 
-    fun getCarType(fillData: () -> Unit, context: Context) {
+    fun getCarType(fillData: () -> Unit, context: Context, uploadedSuccessfuly: () -> Unit) {
         val apiModule = APIModule()
         if (makeButtonText != "Marca" && modelButtonText != "Modelo") {
             viewModelScope.launch {
@@ -146,7 +158,7 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
                 _carFuelType = APICar.fueltype1.toString()
                 _carTransmisionType = APICar.trany.toString()
 
-                uploadCar(fillData, context)
+                uploadCar(fillData, context, uploadedSuccessfuly)
             }
         } else {
             fillData()
@@ -161,6 +173,7 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
     private fun uploadCar(
         fillData: () -> Unit,
         context: Context,
+        uploadedSuccessfuly: () -> Unit
     ) {
         if (selectedImageURL.isNotBlank() && carPlate.isNotBlank() && (makeButtonText != "Marca") && (modelButtonText != "Modelo") && ((_carYear.toString().length == 4) && (_carYear!! <= Calendar.getInstance()
                 .get(Calendar.YEAR))) && (userLocation.value!!.first != 0.0) &&
@@ -186,13 +199,13 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
                         _carTransmisionType
                     )
                     addCarUseCase.invoke(carToUpload, context)
-                }
-                catch (e: Exception) {
-                    Log.d("ERROR","ERROR AL AÑADIR COCHE A LA BASE DE DATOS")
+                    linkCarToProfileUseCase.invoke(carToUpload,context, auth.currentUser!!.email!!)
+                    uploadedSuccessfuly()
+                } catch (e: Exception) {
+                    Log.d("ERROR", "ERROR AL AÑADIR COCHE A LA BASE DE DATOS")
                 }
             }
         } else {
-            //TODO: CONTROLAR VARIABLES
             fillData()
         }
 
@@ -211,7 +224,7 @@ class uploadCarViewmodel  @Inject constructor(private val addCarUseCase: addCarU
         carKMField = ""
         _carKM = 0
         carPriceField = ""
-        _carPrice = 0.0
+        _carPrice = ""
         _carType = ""
         userLocationString = ""
         _userName = ""

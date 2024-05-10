@@ -8,7 +8,7 @@ data class CarModel (
     val plate:String? = null,
     val year:Int? = null,
     val km:Int? = null,
-    val price:Double? = null,
+    val price:String? = null,
     val location: Pair<Double?,Double?>? = null,
     val locationName : String? = null,
     val userName: String? = null,

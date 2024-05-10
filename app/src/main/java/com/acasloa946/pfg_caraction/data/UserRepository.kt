@@ -9,12 +9,11 @@ import javax.inject.Inject
 
 class UserRepository @Inject constructor(private val userDao : UserDao) {
     suspend fun addUser(userModel: UserModel, context: Context) {
-        userDao.createUserInDatabase(UserEntity(userModel.name,userModel.type,userModel.email),context)
+        userDao.createUserInDatabase(UserEntity(userModel.name,userModel.type,userModel.email, userModel.uploadedCars),context)
     }
 
-    suspend fun fetchUser(context: Context, email:String):UserEntity? {
-        val user = userDao.fetchUser(context, email)
-        return user
+    suspend fun fetchUser(context: Context, email: String): UserEntity? {
+        return userDao.fetchUser(context, email)
     }
 
     suspend fun addCar(carModel: CarModel ,context: Context,
@@ -24,12 +23,21 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
     }
 
     suspend fun fetchCars(): MutableList<CarEntity> {
-        val carList = userDao.fetchCars()
-        return carList
+        return userDao.fetchCars()
     }
     suspend fun fetchCarTypes(): MutableList<String> {
-        val carTypeList = userDao.fetchCarTypes()
-        return  carTypeList
+        return userDao.fetchCarTypes()
+    }
+
+    suspend fun linkCarToProfile(carModel: CarModel, context: Context, email:String) {
+        userDao.linkCarToProfile(CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType), context, email
+        )
+
+    }
+
+    suspend fun fetchCarsUploadedByUser(context: Context, email: String): MutableList<CarEntity> {
+        return userDao.fetchCarsUploadedByUser(context, email)
     }
 
 }

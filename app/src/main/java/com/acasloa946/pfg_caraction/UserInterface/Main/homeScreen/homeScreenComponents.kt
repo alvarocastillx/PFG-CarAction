@@ -1,21 +1,19 @@
 package com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -45,7 +43,6 @@ import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
-import com.acasloa946.pfg_caraction.carcard.CarCard
 import com.acasloa946.pfg_caraction.carcard.Frame1
 import com.acasloa946.pfg_caraction.carcard.Frame2
 import com.acasloa946.pfg_caraction.carcard.Frame3
@@ -61,6 +58,9 @@ import com.acasloa946.pfg_caraction.carcard.MakeModelText
 import com.acasloa946.pfg_caraction.carcard.PriceText
 import com.acasloa946.pfg_caraction.carcard.TransType
 import com.acasloa946.pfg_caraction.carcard.YearText
+import com.acasloa946.pfg_caraction.notfoundalert.NotFoundAlert
+import com.acasloa946.pfg_caraction.notfoundalert.NotFoundText
+import com.acasloa946.pfg_caraction.notfoundalert.raillinc
 import com.acasloa946.pfg_caraction.pantallaprincipal.Banner
 import com.acasloa946.pfg_caraction.pantallaprincipal.BannerImage
 import com.acasloa946.pfg_caraction.pantallaprincipal.BienvenidaCard
@@ -81,9 +81,6 @@ import com.acasloa946.pfg_caraction.pantallaprincipal.UserImage
 import com.acasloa946.pfg_caraction.pantallaprincipal.UserImageVEC
 import com.acasloa946.pfg_caraction.pantallaprincipal.UserImageVECVEC
 import com.acasloa946.pfg_caraction.pantallaprincipal.Vector
-import com.acasloa946.pfg_caraction.searchbutton.SearchButton
-import com.acasloa946.pfg_caraction.searchbutton.Text
-import com.acasloa946.pfg_caraction.searchbutton.raillinc
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
@@ -114,10 +111,12 @@ fun PantallaPrincipalComponent(
     val fetchedCars by homeScreenViewmodel.fetchedCars.collectAsState()
     val fetchedCarsType by homeScreenViewmodel.fetchedCarTypes.collectAsState()
     TopLevel(modifier = modifier) {
-        Banner(modifier = Modifier
-            .rowWeight(1.0f)
-            .clip(BottomRoundedShape(60.dp))
-            .border(2.dp, RojoMain, BottomRoundedShape(60.dp))) {
+        Banner(
+            modifier = Modifier
+                .rowWeight(1.0f)
+                .clip(BottomRoundedShape(60.dp))
+                .border(2.dp, RojoMain, BottomRoundedShape(60.dp))
+        ) {
             MaterialSymbolsMenu(
                 rightMenuClick = rightMenuClick,
                 modifier = Modifier.boxAlign(
@@ -147,8 +146,11 @@ fun PantallaPrincipalComponent(
                     )
                 )
             ) {
-                Image(painter = painterResource(id = R.drawable.image_banner), contentDescription = null,
-                    modifier = Modifier.fillMaxSize())
+                Image(
+                    painter = painterResource(id = R.drawable.image_banner),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize()
+                )
             }
         }
         MainHome(modifier = Modifier.rowWeight(1.0f)) {
@@ -206,9 +208,11 @@ fun PantallaPrincipalComponent(
             }
             Linea2()
             Spacer(modifier = Modifier.padding(10.dp))
-            SearchBar(modifier = Modifier
-                .rowWeight(1.0f)
-                .columnWeight(1.0f)) {
+            SearchBar(
+                modifier = Modifier
+                    .rowWeight(1.0f)
+                    .columnWeight(1.0f)
+            ) {
                 SearchBarFrame(modifier = Modifier.rowWeight(1.0f)) {
                     androidx.compose.material3.TextField(
                         value = homeScreenViewmodel.searchBarText,
@@ -235,12 +239,10 @@ fun PantallaPrincipalComponent(
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
 
 
-
-
                     )
 
                 }
-                FilterIcon (onFilterClick = {
+                FilterIcon(onFilterClick = {
 
                 }) {
                     FilterIconVector(
@@ -256,32 +258,49 @@ fun PantallaPrincipalComponent(
             }
             Spacer(modifier = Modifier.padding(15.dp))
             FrameCars(modifier = Modifier.rowWeight(1.0f)) {
-                LazyColumn(
-                    verticalArrangement = Arrangement.spacedBy(5.dp)
-                ){
-                    items(fetchedCars) {
-                        CarCardComponent(
-                            makeModelText = AnnotatedString("${it.make} ${it.model}"),
-                            priceText = "${it.price}€",
-                            locationText = AnnotatedString("Localización: "+ homeScreenViewmodel.formatLocationString(
-                                it.locationName!!
-                            )),
-                            yearText = AnnotatedString("Año: "+it.year.toString()),
-                            kmText = AnnotatedString("Km´s: "+it.km.toString()),
-                            transText = AnnotatedString("Tipo de transmisión: "+it.transmisionType),
-                            fuelTypeText = AnnotatedString("Tipo de combustible: "+it.fuelType),
-                            image = it.image!!,
-                            onCarClick = {
-                                navController.navigate(Routes.CarScreen.route)
-                                carScreenViewmodel.clickedCar = it
-                            }
-                        )
+                val scrollState = rememberLazyListState()
+                var countOfList = homeScreenViewmodel.countOfList
+                if (!fetchedCars.isEmpty()) {
+                    LazyColumn(
+                        verticalArrangement = Arrangement.spacedBy(5.dp),
+                        state = scrollState
+                    ) {
+                        if (!scrollState.canScrollForward) {
+                            homeScreenViewmodel.add5toList()
+                        }
+                        items(fetchedCars.take(countOfList)) {
+                            CarCardComponent(
+                                makeModelText = AnnotatedString("${it.make} ${it.model}"),
+                                priceText = "${it.price}€",
+                                locationText = AnnotatedString(
+                                    "Localización: " + homeScreenViewmodel.formatLocationString(
+                                        it.locationName!!
+                                    )
+                                ),
+                                yearText = AnnotatedString("Año: " + it.year.toString()),
+                                kmText = AnnotatedString("Km´s: " + it.km.toString()+ " km´s"),
+                                transText = AnnotatedString("Tipo de transmisión: " + it.transmisionType),
+                                fuelTypeText = AnnotatedString("Tipo de combustible: " + it.fuelType),
+                                image = it.image!!,
+                                onCarClick = {
+                                    navController.navigate(Routes.CarScreen.route)
+                                    carScreenViewmodel.clickedCar = it
+                                }
+                            )
+                        }
+
+                    }
+                } else {
+                    Column (
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .align(Alignment.CenterVertically)
+                            .fillMaxSize()
+                    ){
+                        NotFoundAlertComponent(modifier = Modifier.size(205.dp,29.dp))
                     }
                 }
-
             }
-
-
         }
 
     }
@@ -298,7 +317,7 @@ fun CarCardComponent(
     kmText: AnnotatedString = AnnotatedString(""),
     transText: AnnotatedString = AnnotatedString(""),
     fuelTypeText: AnnotatedString = AnnotatedString(""),
-    image : String,
+    image: String,
     onCarClick: () -> Unit = {}
 ) {
     com.acasloa946.pfg_caraction.carcard.TopLevel(
@@ -317,7 +336,8 @@ fun CarCardComponent(
                 loading = {
                     CircularProgressIndicator(
                         modifier = Modifier
-                            .align(Alignment.Center).fillMaxSize(),
+                            .align(Alignment.Center)
+                            .fillMaxSize(),
                         color = RojoMain
                     )
                 }
@@ -343,8 +363,6 @@ fun CarCardComponent(
         PriceText(priceText = priceText)
     }
 }
-
-
 
 
 @Composable
@@ -382,6 +400,37 @@ fun TextComponent(
 }
 
 
+@Composable
+fun NotFoundAlertComponent(modifier: Modifier = Modifier) {
+    com.acasloa946.pfg_caraction.notfoundalert.TopLevel(modifier = modifier) {
+        NotFoundText(
+            modifier = Modifier.boxAlign(
+                alignment = Alignment.Center,
+                offset = DpOffset(
+                    x = 0.5.dp,
+                    y = 0.0.dp
+                )
+            )
+        )
+    }
+}
+
+@Composable
+fun NotFoundTextComponent(modifier: Modifier = Modifier) {
+    RelayText(
+        content = "No se han encontrado coches.",
+        fontSize = 12.0.sp,
+        fontFamily = raillincFont,
+        color = Color(
+            alpha = 255,
+            red = 0,
+            green = 0,
+            blue = 0
+        ),
+        height = 1.6039999326070147.em,
+        modifier = modifier
+    )
+}
 
 
 /*

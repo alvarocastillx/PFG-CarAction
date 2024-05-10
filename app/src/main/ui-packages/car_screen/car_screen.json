@@ -1,0 +1,1519 @@
+{
+  "name": "car_screen",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "225:265",
+    "version": "5717933884",
+    "component-id": "35406c60aab344009ecf82e76b15046f5828ea9c"
+  },
+  "default": "CarScreen",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Banner"
+      },
+      {
+        "type": "group",
+        "id": "MainCarScreen"
+      },
+      {
+        "type": "group",
+        "id": "material-symbols:menu"
+      },
+      {
+        "type": "group",
+        "id": "BannerImage"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "group",
+        "id": "FrameUsername"
+      },
+      {
+        "type": "group",
+        "id": "ImageFrame"
+      },
+      {
+        "type": "group",
+        "id": "MapFrame"
+      },
+      {
+        "type": "group",
+        "id": "FieldMake"
+      },
+      {
+        "type": "group",
+        "id": "FieldModel"
+      },
+      {
+        "type": "group",
+        "id": "FieldPlate"
+      },
+      {
+        "type": "group",
+        "id": "FieldLocalization"
+      },
+      {
+        "type": "group",
+        "id": "FieldAño"
+      },
+      {
+        "type": "group",
+        "id": "FieldKM"
+      },
+      {
+        "type": "group",
+        "id": "FieldTrans"
+      },
+      {
+        "type": "group",
+        "id": "FieldFuel"
+      },
+      {
+        "type": "group",
+        "id": "FieldPrice"
+      },
+      {
+        "type": "group",
+        "id": "ButtonContact"
+      },
+      {
+        "type": "text",
+        "id": "UserName"
+      },
+      {
+        "type": "group",
+        "id": "User_Image"
+      },
+      {
+        "type": "group",
+        "id": "User_Image_synth"
+      },
+      {
+        "type": "vector",
+        "id": "UserImageVECVEC"
+      },
+      {
+        "type": "vector",
+        "id": "Elipe"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Marca"
+      },
+      {
+        "type": "vector",
+        "id": "RC"
+      },
+      {
+        "type": "text",
+        "id": "Modelo"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle"
+      },
+      {
+        "type": "text",
+        "id": "Matrícula"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle3"
+      },
+      {
+        "type": "text",
+        "id": "Localización"
+      },
+      {
+        "type": "vector",
+        "id": "RC2"
+      },
+      {
+        "type": "text",
+        "id": "Año"
+      },
+      {
+        "type": "vector",
+        "id": "RC3"
+      },
+      {
+        "type": "text",
+        "id": "KMS"
+      },
+      {
+        "type": "vector",
+        "id": "RC6"
+      },
+      {
+        "type": "text",
+        "id": "Trans"
+      },
+      {
+        "type": "vector",
+        "id": "RC7"
+      },
+      {
+        "type": "text",
+        "id": "Fueld"
+      },
+      {
+        "type": "vector",
+        "id": "RC4"
+      },
+      {
+        "type": "text",
+        "id": "Precio"
+      },
+      {
+        "type": "vector",
+        "id": "RectanglePublish"
+      },
+      {
+        "type": "vector",
+        "id": "VectorPublish"
+      },
+      {
+        "type": "text",
+        "id": "Contactar con vendedor"
+      }
+    ],
+    "modes": {
+      "CarScreen": {
+        "rules": [
+          {
+            "id": "top_level",
+            "children": [
+              "Banner",
+              "MainCarScreen"
+            ],
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          },
+          {
+            "id": "Banner",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "102.0"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false",
+            "children": [
+              "material-symbols:menu",
+              "BannerImage"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "MainCarScreen",
+            "padding": {
+              "left": "8.0",
+              "right": "8.0"
+            },
+            "main-axis-align": "start",
+            "children": [
+              "FrameUsername",
+              "ImageFrame",
+              "MapFrame",
+              "FieldMake",
+              "FieldModel",
+              "FieldPlate",
+              "FieldLocalization",
+              "FieldAño",
+              "FieldKM",
+              "FieldTrans",
+              "FieldFuel",
+              "FieldPrice",
+              "ButtonContact"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "material-symbols:menu",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "38.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "26.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "41.511627197265625"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "50.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Vector"
+            ]
+          },
+          {
+            "id": "BannerImage",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.0732574462890625"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.85348510742188"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "96.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "Vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.000476837158203125"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "31.13372039794922"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "25.0"
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "FrameUsername",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "UserName",
+              "User_Image"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "ImageFrame",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "131.0"
+              }
+            },
+            "is-structured": "false"
+          },
+          {
+            "id": "MapFrame",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "320.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "268.0"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false"
+          },
+          {
+            "id": "FieldMake",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle 2",
+              "Marca"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldModel",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RC",
+              "Modelo"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldPlate",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle",
+              "Matrícula"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldLocalization",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle3",
+              "Localización"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldAño",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RC2",
+              "Año"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldKM",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RC3",
+              "KMS"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldTrans",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RC6",
+              "Trans"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldFuel",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RC7",
+              "Fueld"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "FieldPrice",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RC4",
+              "Precio"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "ButtonContact",
+            "tap-handler": "$onContactClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RectanglePublish",
+              "VectorPublish",
+              "Contactar con vendedor"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "UserName",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "UserName",
+            "overflow": "visible",
+            "text-size": "12.0",
+            "line-height": "1.6039999326070147",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "User_Image",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "User_Image_synth",
+              "UserImageVECVEC"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "User_Image_synth",
+            "opacity": "100.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Elipe"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "UserImageVECVEC",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.0002689361572265625"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0000743865966796875"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "13.400312423706055"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "16.463132858276367"
+              }
+            },
+            "vector-content": "user_image_vecvec.svg"
+          },
+          {
+            "id": "Elipe",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "26.367647171020508"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "26.367647171020508"
+              }
+            },
+            "vector-content": "elipe.svg"
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Marca",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$makeText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RC",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rc.svg"
+          },
+          {
+            "id": "Modelo",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$modelText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "Rectangle",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle.svg"
+          },
+          {
+            "id": "Matrícula",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$plateText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "Rectangle3",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle3.svg"
+          },
+          {
+            "id": "Localización",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$localizationText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RC2",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rc2.svg"
+          },
+          {
+            "id": "Año",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$yearText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RC3",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rc3.svg"
+          },
+          {
+            "id": "KMS",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$kmText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RC6",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rc6.svg"
+          },
+          {
+            "id": "Trans",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$transText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RC7",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rc7.svg"
+          },
+          {
+            "id": "Fueld",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$fuelText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RC4",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rc4.svg"
+          },
+          {
+            "id": "Precio",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.000457763671875"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.9824447631835938"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.14544677734375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.35087585449219"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$priceText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "21.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RectanglePublish",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle_publish.svg"
+          },
+          {
+            "id": "VectorPublish",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "129.12752151489258"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.00004100799560546875"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_publish.svg"
+          },
+          {
+            "id": "Contactar con vendedor",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.5"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "31.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            },
+            "text-content": "Contactar con vendedor",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "18.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onContactClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "makeText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "modelText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "plateText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "localizationText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "yearText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "kmText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "transText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "fuelText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "priceText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "CarScreen",
+      "size": {
+        "width": 360.0,
+        "height": 1240.0
+      },
+      "parameters": {
+        "makeText": "Marca ",
+        "modelText": "Modelo",
+        "plateText": "Matrícula",
+        "localizationText": "Localización",
+        "yearText": "Año",
+        "kmText": "KMS",
+        "transText": "Tranmisión\n",
+        "fuelText": "Combustible\n",
+        "priceText": "Precio "
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

@@ -1,0 +1,87 @@
+{
+  "name": "not_found_alert",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "233:112",
+    "version": "5733092260",
+    "component-id": "fb67a60baf778140df160b04b31485a31595abc1"
+  },
+  "default": "NotFoundAlert",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "NotFoundText"
+      }
+    ],
+    "modes": {
+      "NotFoundAlert": {
+        "rules": [
+          {
+            "id": "top_level",
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false",
+            "children": [
+              "NotFoundText"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            }
+          },
+          {
+            "id": "NotFoundText",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.5"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "No se han encontrado coches.",
+            "overflow": "visible",
+            "text-size": "12.0",
+            "line-height": "1.6039999326070147",
+            "typeface": "Raillinc"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "NotFoundAlert",
+      "size": {
+        "width": 205.0,
+        "height": 29.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

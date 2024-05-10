@@ -31,18 +31,10 @@ import kotlinx.coroutines.delay
 @Composable
 fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenViewmodel, carScreenViewmodel: CarScreenViewmodel) {
     val context = LocalContext.current
-    /* SI ESO PONERLO PARA QUE SE ACTUALICE CUANDO SUBA, SINO SE LIA
-    LaunchedEffect(true) {
-        while (true) {
 
-            homeScreenViewmodel.fetchCars()
-            delay(120000)
-        }
-
-
+    LaunchedEffect(Unit) {
+        homeScreenViewmodel.fetchCars()
     }
-
-     */
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -68,7 +60,10 @@ fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenView
             PantallaPrincipalComponent(modifier = Modifier
                 .fillMaxWidth()
                 .height(800.dp),
-                textWelcome = homeScreenViewmodel.userName, homeScreenViewmodel = homeScreenViewmodel, navController = navController, carScreenViewmodel = carScreenViewmodel)
+                textWelcome = homeScreenViewmodel.userName, homeScreenViewmodel = homeScreenViewmodel, navController = navController, carScreenViewmodel = carScreenViewmodel,
+                onUserClick = {
+                    navController.navigate(Routes.ProfileScreen.route)
+                })
 
         }
         Box(

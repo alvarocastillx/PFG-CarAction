@@ -42,6 +42,7 @@ import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.PantallaPrincipalComponent
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
@@ -105,8 +106,14 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                         fillData = {
                             toastMaker("Introduzca todos los datos de su coche", context)
                         },
-                        context
+                        context,
+                        uploadedSuccessfuly = {
+                            toastMaker("Anuncio publicado correctamente",context)
+                            navController.navigate(Routes.HomeScreen.route)
+                            uploadCarViewmodel.clearScreen()
+                        }
                     )
+
                 }
             )
 

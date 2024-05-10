@@ -2,6 +2,8 @@ package com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -32,6 +34,7 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.core.text.isDigitsOnly
 import coil.compose.SubcomposeAsyncImage
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
@@ -78,8 +81,8 @@ fun UploadCarScreenComponent(
     onMakeClick: () -> Unit = {},
     onModelClick: () -> Unit = {},
     uploadCarViewmodel: uploadCarViewmodel,
-    onLocationClick : () -> Unit,
-    onPublishClick : () -> Unit = {}
+    onLocationClick: () -> Unit,
+    onPublishClick: () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
         Banner(
@@ -147,22 +150,27 @@ fun UploadCarScreenComponent(
             Spacer(modifier = Modifier.padding(3.dp))
             if (uploadCarViewmodel.selectedImageUri != null) {
                 ImageFrame {
-                    SubcomposeAsyncImage(
-                        model = uploadCarViewmodel.selectedImageUri,
-                        contentDescription = null,
-                        contentScale = ContentScale.FillWidth,
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(20.dp))
-                            .border(2.dp, RojoMain, RoundedCornerShape(20.dp)),
-                        loading = {
-                            CircularProgressIndicator(
-                                modifier = Modifier
-                                    .size(150.dp)
-                                    .align(Alignment.Center),
-                                color = RojoMain
-                            )
-                        }
-                    )
+                    Row (modifier = Modifier.fillMaxSize(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center) {
+                        SubcomposeAsyncImage(
+                            model = uploadCarViewmodel.selectedImageUri,
+                            contentDescription = null,
+                            contentScale = ContentScale.FillWidth,
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(20.dp))
+                                .border(2.dp, RojoMain, RoundedCornerShape(20.dp)),
+                            loading = {
+                                CircularProgressIndicator(
+                                    modifier = Modifier
+                                        .size(150.dp)
+                                        .align(Alignment.Center),
+                                    color = RojoMain
+                                )
+                            }
+                        )
+                    }
+
                 }
 
 
@@ -185,7 +193,11 @@ fun UploadCarScreenComponent(
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.DirectionsCar, contentDescription = null, tint = BlancoMain)
+                        Icon(
+                            imageVector = Icons.Default.DirectionsCar,
+                            contentDescription = null,
+                            tint = BlancoMain
+                        )
                     }
                 )
 
@@ -285,7 +297,12 @@ fun UploadCarScreenComponent(
             TextFieldYear {
                 TextField(
                     value = uploadCarViewmodel.carYearField, onValueChange = {
-                        uploadCarViewmodel.changeYear(it)
+                        if (it.isNotBlank() && (it.last() != '.' && it.last() != ',' && it.last() != '-' && it.last() != ' ')) {
+                            uploadCarViewmodel.changeYear(it)
+                        } else if (it.isBlank()) {
+                            uploadCarViewmodel.changeYear("")
+                        }
+
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = RojoMain,
@@ -300,7 +317,11 @@ fun UploadCarScreenComponent(
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.CalendarMonth, contentDescription = null, tint = BlancoMain)
+                        Icon(
+                            imageVector = Icons.Default.CalendarMonth,
+                            contentDescription = null,
+                            tint = BlancoMain
+                        )
                     },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
@@ -308,7 +329,12 @@ fun UploadCarScreenComponent(
             TextFieldKM {
                 TextField(
                     value = uploadCarViewmodel.carKMField, onValueChange = {
-                        uploadCarViewmodel.changeKM(it)
+                        if (it.isNotBlank() && (it.last() != '.' && it.last() != ',' && it.last() != '-' && it.last() != ' ')) {
+                            uploadCarViewmodel.changeKM(it)
+                        } else if (it.isBlank()) {
+                            uploadCarViewmodel.changeKM("")
+                        }
+
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = RojoMain,
@@ -323,7 +349,11 @@ fun UploadCarScreenComponent(
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.Commit, contentDescription = null, tint = BlancoMain)
+                        Icon(
+                            imageVector = Icons.Default.Commit,
+                            contentDescription = null,
+                            tint = BlancoMain
+                        )
                     },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
@@ -331,7 +361,11 @@ fun UploadCarScreenComponent(
             TextFieldPrice {
                 TextField(
                     value = uploadCarViewmodel.carPriceField, onValueChange = {
-                        uploadCarViewmodel.changePrice(it)
+                        if (it.isNotBlank() && (it.last() != '.' && it.last() != ',' && it.last() != '-' && it.last() != ' ' && it.isDigitsOnly())) {
+                            uploadCarViewmodel.changePrice(it)
+                        } else if (it.isBlank()) {
+                            uploadCarViewmodel.changePrice("")
+                        }
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = RojoMain,
@@ -346,7 +380,11 @@ fun UploadCarScreenComponent(
                     },
                     modifier = Modifier.fillMaxWidth(),
                     leadingIcon = {
-                        Icon(imageVector = Icons.Default.AttachMoney, contentDescription = null, tint = BlancoMain)
+                        Icon(
+                            imageVector = Icons.Default.AttachMoney,
+                            contentDescription = null,
+                            tint = BlancoMain
+                        )
                     },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )

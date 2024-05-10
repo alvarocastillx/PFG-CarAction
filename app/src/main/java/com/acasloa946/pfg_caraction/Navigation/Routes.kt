@@ -12,6 +12,8 @@ sealed class Routes(var route:String) {
     object CarModelScreen : Routes("CarModelScreen")
     object CarLocationScreen : Routes("CarLocationScreen")
     object CarScreen : Routes("CarScreen")
+    object ProfileScreen : Routes("ProfileScreen")
+
 
 
 
