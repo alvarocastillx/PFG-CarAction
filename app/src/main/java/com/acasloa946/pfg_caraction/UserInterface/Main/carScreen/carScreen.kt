@@ -21,12 +21,13 @@ import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.google.relay.compose.RowScopeInstanceImpl.align
 
 @Composable
-fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmodel) {
+fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmodel, profileViewmodel: profileViewmodel) {
 
 
     Box(
@@ -58,7 +59,9 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                 onContactClick = {
 
                 },
-                carScreenViewmodel = carScreenViewmodel
+                carScreenViewmodel = carScreenViewmodel,
+                navController = navController,
+                profileViewmodel = profileViewmodel
             )
         }
         Box(

@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class UserRepository @Inject constructor(private val userDao : UserDao) {
     suspend fun addUser(userModel: UserModel, context: Context) {
-        userDao.createUserInDatabase(UserEntity(userModel.name,userModel.type,userModel.email, userModel.uploadedCars),context)
+        userDao.createUserInDatabase(UserEntity(userModel.name,userModel.type,userModel.email, userModel.uploadedCars, userModel.memberSince),context)
     }
 
     suspend fun fetchUser(context: Context, email: String): UserEntity? {
@@ -38,6 +38,10 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
 
     suspend fun fetchCarsUploadedByUser(context: Context, email: String): MutableList<CarEntity> {
         return userDao.fetchCarsUploadedByUser(context, email)
+    }
+
+    suspend fun fetchUserByName(context: Context, name:String):UserEntity? {
+        return userDao.fetchUserByName(context, name)
     }
 
 }

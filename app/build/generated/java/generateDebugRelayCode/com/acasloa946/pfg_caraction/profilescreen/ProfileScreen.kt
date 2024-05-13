@@ -33,6 +33,7 @@ import com.google.relay.compose.tappable
 fun ProfileScreen(
     modifier: Modifier = Modifier,
     userText: String = "",
+    memberSinceText: String = "",
     leftMenuClick: () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
@@ -104,6 +105,7 @@ fun ProfileScreen(
                     }
                 }
                 UserName(userText = userText)
+                MiembroDesde15DeMayoDe2024(memberSinceText = memberSinceText)
                 Linea2()
                 FrameUploadedCars {}
             }
@@ -119,6 +121,7 @@ private fun ProfileScreenPreview() {
             ProfileScreen(
                 leftMenuClick = {},
                 userText = "UserName",
+                memberSinceText = "Miembro desde: 15 de Mayo de 2024",
                 modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
             )
         }
@@ -272,6 +275,26 @@ fun UserName(
             blue = 233
         ),
         height = 1.6039999643961587.em,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun MiembroDesde15DeMayoDe2024(
+    memberSinceText: String,
+    modifier: Modifier = Modifier
+) {
+    RelayText(
+        content = memberSinceText,
+        fontSize = 11.0.sp,
+        fontFamily = raillinc,
+        color = Color(
+            alpha = 255,
+            red = 255,
+            green = 255,
+            blue = 255
+        ),
+        height = 1.603999918157404.em,
         modifier = modifier
     )
 }

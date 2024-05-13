@@ -1,7 +1,9 @@
 package com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen
 
 import android.content.Context
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -16,8 +18,11 @@ import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import java.time.LocalDate
+import java.time.LocalTime
 import javax.inject.Inject
 
+@RequiresApi(Build.VERSION_CODES.O)
 @HiltViewModel
 class homeScreenViewmodel @Inject constructor(
     private val fetchUserUseCase: fetchUserUseCase, private val fetchCarsUseCase: fetchCarsUseCase, private val fetchCarTypesUseCase: fetchCarTypesUseCase
@@ -40,7 +45,6 @@ class homeScreenViewmodel @Inject constructor(
     private var _typeSortedList: MutableList<CarModel> = mutableListOf()
 
     var countOfList by mutableStateOf(5)
-
 
 
     fun add5toList() {

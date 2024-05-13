@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.acasloa946.pfg_caraction.app-mergeDebugResources-72:/values-v24/values-v24.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\AlvaroPC\\.gradle\\caches\\transforms-3\\8eaa708aa512eef4c9d1fd6935632606\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                }
+            ]
+        }
+    ]
+}

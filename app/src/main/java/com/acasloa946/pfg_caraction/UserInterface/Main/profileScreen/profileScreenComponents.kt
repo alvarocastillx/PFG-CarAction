@@ -40,12 +40,14 @@ import com.acasloa946.pfg_caraction.profilescreen.Linea1
 import com.acasloa946.pfg_caraction.profilescreen.Linea2
 import com.acasloa946.pfg_caraction.profilescreen.MainHome
 import com.acasloa946.pfg_caraction.profilescreen.MaterialSymbolsMenu
+import com.acasloa946.pfg_caraction.profilescreen.MiembroDesde15DeMayoDe2024
 import com.acasloa946.pfg_caraction.profilescreen.PFP
 import com.acasloa946.pfg_caraction.profilescreen.PFPCircle
 import com.acasloa946.pfg_caraction.profilescreen.TopLevel
 import com.acasloa946.pfg_caraction.profilescreen.Vector
 import com.acasloa946.pfg_caraction.profilescreen.Vector1
 import com.acasloa946.pfg_caraction.profilescreen.Vector2
+import com.acasloa946.pfg_caraction.profilescreen.raillinc
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.google.relay.compose.RelayText
@@ -57,7 +59,7 @@ fun ProfileScreenComponent(
     userText: String = "",
     leftMenuClick: () -> Unit = {},
     profileViewmodel: profileViewmodel,
-    navController: NavController
+    memberSinceText: String
 ) {
     val fetchedCars by profileViewmodel.fetchedCarsUploadedByUser.collectAsState()
 
@@ -143,8 +145,9 @@ fun ProfileScreenComponent(
                     }
                 }
                 UserNameComponent(userText = userText)
-                Spacer(modifier = Modifier.padding(3.dp))
+                MemberSinceComponent(memberSinceText = memberSinceText)
                 Linea2()
+                Spacer(modifier = Modifier.padding(30.dp))
                 FrameUploadedCars {
                     val scrollState = rememberLazyListState()
                     var countOfList = 5
@@ -189,14 +192,12 @@ fun ProfileScreenComponent(
                     }
 
 
-
-
-
-
                 }
+
             }
         }
     }
+    Spacer(modifier = Modifier.padding(40.dp))
 }
 
 
@@ -216,6 +217,27 @@ fun UserNameComponent(
             blue = 233
         ),
         height = 1.6039999643961587.em,
+        modifier = modifier
+    )
+}
+
+
+@Composable
+fun MemberSinceComponent(
+    memberSinceText: String,
+    modifier: Modifier = Modifier
+) {
+    RelayText(
+        content = memberSinceText,
+        fontSize = 11.0.sp,
+        fontFamily = raillincFont,
+        color = Color(
+            alpha = 255,
+            red = 255,
+            green = 255,
+            blue = 255
+        ),
+        height = 1.603999918157404.em,
         modifier = modifier
     )
 }

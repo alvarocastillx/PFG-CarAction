@@ -54,9 +54,9 @@ fun ProfileScreen(navController: NavController, profileViewmodel: profileViewmod
             ProfileScreenComponent(modifier = Modifier
                 .fillMaxWidth()
                 .height(800.dp),
-                userText = homeScreenViewmodel.userName,
+                userText = profileViewmodel.userName,
                 profileViewmodel = profileViewmodel,
-                navController = navController)
+                memberSinceText = "Miembro desde ${profileViewmodel.memberSince}")
 
         }
         Box(

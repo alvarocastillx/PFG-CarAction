@@ -13,6 +13,7 @@ import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddUserUseCaseFactory
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsTypeUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsUploadedByUserUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsUseCaseFactory;
+import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchUserByNameUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchUserCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideLinkCarToProfileUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideUserDaoFactory;
@@ -33,6 +34,7 @@ import com.acasloa946.pfg_caraction.domain.addUserUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase;
+import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase;
 import com.acasloa946.pfg_caraction.domain.linkCarToProfileUseCase;
 import com.google.common.collect.ImmutableMap;
@@ -497,7 +499,7 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
           return (T) new homeScreenViewmodel(singletonCImpl.fetchUserUseCase(), singletonCImpl.fetchCarsUseCase(), singletonCImpl.fetchCarTypesUseCase());
 
           case 3: // com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel 
-          return (T) new profileViewmodel(singletonCImpl.fetchCarsUploadedByUserUseCase());
+          return (T) new profileViewmodel(singletonCImpl.fetchCarsUploadedByUserUseCase(), singletonCImpl.fetchUserByNameUseCase());
 
           case 4: // com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel 
           return (T) new uploadCarViewmodel(singletonCImpl.addCarUseCase(), singletonCImpl.fetchUserUseCase(), singletonCImpl.linkCarToProfileUseCase());
@@ -612,6 +614,10 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private fetchCarsUploadedByUserUseCase fetchCarsUploadedByUserUseCase() {
       return HiltModule_ProvideFetchCarsUploadedByUserUseCaseFactory.provideFetchCarsUploadedByUserUseCase(hiltModule, userRepository());
+    }
+
+    private fetchUserByNameUseCase fetchUserByNameUseCase() {
+      return HiltModule_ProvideFetchUserByNameUseCaseFactory.provideFetchUserByNameUseCase(hiltModule, userRepository());
     }
 
     private addCarUseCase addCarUseCase() {

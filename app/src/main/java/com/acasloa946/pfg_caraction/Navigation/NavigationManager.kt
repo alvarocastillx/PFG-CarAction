@@ -67,7 +67,8 @@ fun NavigationManager(
             HomeScreen(
                 navController = navController,
                 homeScreenViewmodel = homeScreenViewmodel,
-                carScreenViewmodel
+                carScreenViewmodel,
+                profileViewmodel
             )
         }
         composable("UploadCarScreen") {
@@ -102,7 +103,8 @@ fun NavigationManager(
         composable("CarScreen") {
             CarScreen(
                 navController = navController,
-                carScreenViewmodel = carScreenViewmodel
+                carScreenViewmodel = carScreenViewmodel,
+                profileViewmodel
             )
         }
         composable("ProfileScreen") {

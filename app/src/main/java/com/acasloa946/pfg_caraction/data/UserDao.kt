@@ -9,6 +9,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.tasks.await
+import okhttp3.internal.threadName
 
 
 interface UserDao {
@@ -148,7 +149,7 @@ interface UserDao {
         context: Context, email: String
     ): MutableList<CarEntity> {
         var user = UserEntity()
-        var carsOfUser = mutableListOf<CarEntity>()
+        val carsOfUser = mutableListOf<CarEntity>()
         if (FirebaseApp.getApps(context).isNotEmpty()) {
             val db = FirebaseFirestore.getInstance()
             try {
@@ -169,6 +170,28 @@ interface UserDao {
             Log.e("Error", "ERROR: FirebaseApp no inicializado")
         }
         return carsOfUser
+    }
+
+    suspend fun fetchUserByName(context: Context, name:String):UserEntity? {
+        var user: UserEntity? = UserEntity("", UserType.NULL, "")
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            db.collection("Users").get()
+                .addOnSuccessListener { coleccion ->
+                    for (documento in coleccion) {
+                        val fireBaseUser = documento.toObject(UserEntity::class.java)
+                        if (fireBaseUser.name == name) {
+                            user = fireBaseUser
+                        }
+                    }
+                }
+                .addOnFailureListener { _ ->
+                    Log.d("ERROR", "NO SE HA PODIDO ENCONTRAR AL USUARIO")
+                }.await()
+        } else {
+            Log.d("error", "ERROR")
+        }
+        return user
     }
 
 

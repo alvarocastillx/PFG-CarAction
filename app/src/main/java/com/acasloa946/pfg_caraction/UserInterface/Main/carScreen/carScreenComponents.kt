@@ -2,6 +2,7 @@ package com.acasloa946.pfg_caraction.UserInterface.Main.carScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,8 +26,11 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import coil.compose.SubcomposeAsyncImage
+import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.R
+import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
 import com.acasloa946.pfg_caraction.carscreen.AO
 import com.acasloa946.pfg_caraction.carscreen.Banner
@@ -107,7 +111,9 @@ fun CarScreenComponent(
     priceText: String = "",
     userNameText: String = "",
     onContactClick: () -> Unit = {},
-    carScreenViewmodel: CarScreenViewmodel
+    carScreenViewmodel: CarScreenViewmodel,
+    navController: NavController,
+    profileViewmodel: profileViewmodel
 ) {
 
     val cameraPositionState = rememberCameraPositionState {
@@ -180,7 +186,10 @@ fun CarScreenComponent(
                 .rowWeight(1.0f)
                 .columnWeight(1.0f)
         ) {
-            FrameUsername {
+            FrameUsername (modifier = Modifier.clickable {
+                navController.navigate(Routes.ProfileScreen.route)
+                profileViewmodel.userName = userNameText
+            }) {
                 UserNameComponent(userNameText = userNameText)
                 UserImage {
                     UserImageSynth {

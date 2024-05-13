@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "XzTnM8qIz9wRWwySmSiAGW",
     "node": "240:196",
-    "version": "5733782313",
+    "version": "5747093515",
     "component-id": "d434456fc4148d36886933c78a498bfcebbdf910"
   },
   "default": "ProfileScreen",
@@ -51,6 +51,10 @@
       {
         "type": "text",
         "id": "UserName"
+      },
+      {
+        "type": "text",
+        "id": "Miembro desde: 15 de Mayo de 2024"
       },
       {
         "type": "vector",
@@ -248,6 +252,7 @@
             "children": [
               "FramePFP",
               "UserName",
+              "Miembro desde: 15 de Mayo de 2024",
               "Linea2",
               "FrameUploadedCars"
             ],
@@ -283,6 +288,20 @@
             "overflow": "visible",
             "text-size": "15.0",
             "line-height": "1.6039999643961587",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "Miembro desde: 15 de Mayo de 2024",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "$memberSinceText",
+            "overflow": "visible",
+            "text-size": "11.0",
+            "line-height": "1.603999918157404",
             "typeface": "Raillinc"
           },
           {
@@ -435,6 +454,11 @@
       "data-type": "text",
       "required": false,
       "description": ""
+    },
+    "memberSinceText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
     }
   },
   "previews": [
@@ -445,7 +469,8 @@
         "height": 800.0
       },
       "parameters": {
-        "userText": "UserName"
+        "userText": "UserName",
+        "memberSinceText": "Miembro desde: 15 de Mayo de 2024"
       }
     }
   ],

@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
@@ -29,7 +30,7 @@ import kotlinx.coroutines.delay
 
 
 @Composable
-fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenViewmodel, carScreenViewmodel: CarScreenViewmodel) {
+fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenViewmodel, carScreenViewmodel: CarScreenViewmodel, profileViewmodel: profileViewmodel) {
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
@@ -63,6 +64,7 @@ fun HomeScreen(navController: NavController, homeScreenViewmodel: homeScreenView
                 textWelcome = homeScreenViewmodel.userName, homeScreenViewmodel = homeScreenViewmodel, navController = navController, carScreenViewmodel = carScreenViewmodel,
                 onUserClick = {
                     navController.navigate(Routes.ProfileScreen.route)
+                    profileViewmodel.userName = homeScreenViewmodel.userName
                 })
 
         }

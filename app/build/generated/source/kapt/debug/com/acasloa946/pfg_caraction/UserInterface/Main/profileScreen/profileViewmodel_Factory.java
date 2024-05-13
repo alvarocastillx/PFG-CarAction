@@ -2,6 +2,7 @@
 package com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen;
 
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase;
+import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.QualifierMetadata;
@@ -20,23 +21,29 @@ import javax.inject.Provider;
 public final class profileViewmodel_Factory implements Factory<profileViewmodel> {
   private final Provider<fetchCarsUploadedByUserUseCase> fetchCarsUploadedByUserUseCaseProvider;
 
+  private final Provider<fetchUserByNameUseCase> fetchUserByNameUseCaseProvider;
+
   public profileViewmodel_Factory(
-      Provider<fetchCarsUploadedByUserUseCase> fetchCarsUploadedByUserUseCaseProvider) {
+      Provider<fetchCarsUploadedByUserUseCase> fetchCarsUploadedByUserUseCaseProvider,
+      Provider<fetchUserByNameUseCase> fetchUserByNameUseCaseProvider) {
     this.fetchCarsUploadedByUserUseCaseProvider = fetchCarsUploadedByUserUseCaseProvider;
+    this.fetchUserByNameUseCaseProvider = fetchUserByNameUseCaseProvider;
   }
 
   @Override
   public profileViewmodel get() {
-    return newInstance(fetchCarsUploadedByUserUseCaseProvider.get());
+    return newInstance(fetchCarsUploadedByUserUseCaseProvider.get(), fetchUserByNameUseCaseProvider.get());
   }
 
   public static profileViewmodel_Factory create(
-      Provider<fetchCarsUploadedByUserUseCase> fetchCarsUploadedByUserUseCaseProvider) {
-    return new profileViewmodel_Factory(fetchCarsUploadedByUserUseCaseProvider);
+      Provider<fetchCarsUploadedByUserUseCase> fetchCarsUploadedByUserUseCaseProvider,
+      Provider<fetchUserByNameUseCase> fetchUserByNameUseCaseProvider) {
+    return new profileViewmodel_Factory(fetchCarsUploadedByUserUseCaseProvider, fetchUserByNameUseCaseProvider);
   }
 
   public static profileViewmodel newInstance(
-      fetchCarsUploadedByUserUseCase fetchCarsUploadedByUserUseCase) {
-    return new profileViewmodel(fetchCarsUploadedByUserUseCase);
+      fetchCarsUploadedByUserUseCase fetchCarsUploadedByUserUseCase,
+      fetchUserByNameUseCase fetchUserByNameUseCase) {
+    return new profileViewmodel(fetchCarsUploadedByUserUseCase, fetchUserByNameUseCase);
   }
 }

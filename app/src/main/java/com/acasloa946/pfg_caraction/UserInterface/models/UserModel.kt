@@ -6,5 +6,6 @@ data class UserModel(
     val name:String,
     val type: UserType,
     val email:String,
-    val uploadedCars:MutableList<String>? = null
+    val uploadedCars:MutableList<String>? = null,
+    val memberSince: String? = null
 )

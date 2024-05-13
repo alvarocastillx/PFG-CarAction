@@ -10,5 +10,6 @@ data class UserEntity(
     val name:String? = null,
     val type:UserType? = null,
     val email:String? = null,
-    val uploadedCars:MutableList<String>? = null
+    val uploadedCars:MutableList<String>? = null,
+    val memberSince: String? = null
 )
