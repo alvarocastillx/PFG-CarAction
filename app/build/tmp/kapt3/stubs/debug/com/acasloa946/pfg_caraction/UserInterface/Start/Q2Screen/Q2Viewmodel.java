@@ -2,8 +2,6 @@ package com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen;
 
 import android.content.Context;
 import androidx.lifecycle.ViewModel;
-import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel;
-import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.models.UserModel;
 import com.acasloa946.pfg_caraction.data.Entities.UserType;
 import com.acasloa946.pfg_caraction.domain.addUserUseCase;

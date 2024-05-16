@@ -84,7 +84,7 @@ class uploadCarViewmodel @Inject constructor(
         uploadImage(selectedImageUri)
     }
 
-    fun uploadImage(uri: Uri?) {
+    private fun uploadImage(uri: Uri?) {
         val imageRef = storageRef.reference.child("$uri")
         viewModelScope.launch {
             uri?.let {

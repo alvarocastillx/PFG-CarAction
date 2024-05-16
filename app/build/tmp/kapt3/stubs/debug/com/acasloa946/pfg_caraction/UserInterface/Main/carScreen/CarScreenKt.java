@@ -1,6 +1,5 @@
 package com.acasloa946.pfg_caraction.UserInterface.Main.carScreen;
 
-import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.material.icons.Icons;
 import androidx.compose.material3.DrawerValue;
@@ -9,8 +8,6 @@ import androidx.compose.ui.Alignment;
 import androidx.compose.ui.Modifier;
 import androidx.navigation.NavController;
 import com.acasloa946.pfg_caraction.Navigation.Routes;
-import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel;
-import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel;
 

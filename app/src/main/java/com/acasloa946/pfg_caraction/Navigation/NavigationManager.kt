@@ -12,6 +12,8 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.CarModelSc
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.ChatScreen
+import com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.HomeScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.ProfileScreen
@@ -43,7 +45,8 @@ fun NavigationManager(
     carModelViewmodel: carModelViewmodel,
     carLocationViewmodel: carLocationViewmodel,
     carScreenViewmodel: CarScreenViewmodel,
-    profileViewmodel: profileViewmodel
+    profileViewmodel: profileViewmodel,
+    chatScreenViewmodel: chatScreenViewmodel
 ) {
 
     val navController = rememberNavController()
@@ -120,6 +123,9 @@ fun NavigationManager(
         }
         composable("SplashScreen") {
             SplashScreen(navController, homeScreenViewmodel)
+        }
+        composable("ChatScreen") {
+            ChatScreen(navController = navController, carScreenViewmodel, chatScreenViewmodel)
         }
     }
 }

@@ -1134,6 +1134,10 @@ drawable car_screen_rectangle_publish
 drawable car_screen_user_image_vecvec
 drawable car_screen_vector
 drawable car_screen_vector_publish
+drawable chat_screen_1line
+drawable chat_screen_2line
+drawable chat_screen_elipe
+drawable chat_screen_user_image_vecvec
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused

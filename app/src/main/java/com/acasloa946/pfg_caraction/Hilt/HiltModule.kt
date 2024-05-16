@@ -9,7 +9,9 @@ import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
+import com.acasloa946.pfg_caraction.domain.getMessagesUseCase
 import com.acasloa946.pfg_caraction.domain.linkCarToProfileUseCase
+import com.acasloa946.pfg_caraction.domain.sendMessageUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -59,6 +61,15 @@ class HiltModule {
         return fetchUserByNameUseCase(userRepository)
     }
 
+    @Provides
+    fun provideSendMessageUseCase(userRepository: UserRepository): sendMessageUseCase {
+        return sendMessageUseCase(userRepository)
+    }
+
+    @Provides
+    fun providegetMessageUseCase(userRepository: UserRepository): getMessagesUseCase {
+        return getMessagesUseCase(userRepository)
+    }
 
 
 

@@ -1,8 +1,10 @@
 package com.acasloa946.pfg_caraction.data
 
 import android.content.Context
+import android.os.Message
 import android.util.Log
 import com.acasloa946.pfg_caraction.data.Entities.CarEntity
+import com.acasloa946.pfg_caraction.data.Entities.MessageEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserType
 import com.google.firebase.FirebaseApp
@@ -192,6 +194,57 @@ interface UserDao {
             Log.d("error", "ERROR")
         }
         return user
+    }
+
+    suspend fun sendMessage(context: Context, messageEntity : MessageEntity) {
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                db.collection("Messages").document().set(
+                    messageEntity
+                ).addOnSuccessListener {
+                    Log.d("Success", "Mensaje enviado correctamente")
+                }.addOnFailureListener {
+                    Log.d("Error", "ERROR AL ENVIAR MENSAJE")
+                }.await()
+
+            } catch (e: Exception) {
+                Log.d("Error", "ERROR INESPERADO")
+            }
+        } else {
+            Log.d("error", "ERROR")
+
+        }
+    }
+
+    suspend fun getMessages(context: Context, userReading:String, otherUser:String): List<MessageEntity> {
+        val sentMessages = mutableListOf<MessageEntity>()
+        val receivedMessages = mutableListOf<MessageEntity>()
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                Log.d("userReading",userReading)
+                Log.d("otherUser",otherUser)
+
+                val messages = db.collection("Messages").get().await()
+                for (message in messages) {
+                    val messageObject = message.toObject(MessageEntity::class.java)
+                    if (messageObject.sent_by == userReading && messageObject.sent_to==otherUser) {
+                        sentMessages.add(messageObject)
+                    }
+                    else if (messageObject.sent_by == otherUser && messageObject.sent_to==userReading) {
+                        receivedMessages.add(messageObject)
+                    }
+                }
+
+            } catch (e: Exception) {
+                Log.d("Error", "ERROR INESPERADO")
+            }
+        } else {
+            Log.d("error", "ERROR")
+
+        }
+        return (sentMessages+receivedMessages).sortedBy { messageEntity -> messageEntity.sent_on }
     }
 
 

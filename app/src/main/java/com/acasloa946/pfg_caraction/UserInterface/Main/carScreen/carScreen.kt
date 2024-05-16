@@ -113,7 +113,7 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                         fuelText = carScreenViewmodel.clickedCar.fuelType!!,
                         localizationText = carScreenViewmodel.formatLocationString(carScreenViewmodel.clickedCar.locationName!!),
                         onContactClick = {
-
+                            navController.navigate(Routes.ChatScreen.route)
                         },
                         carScreenViewmodel = carScreenViewmodel,
                         navController = navController,

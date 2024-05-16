@@ -2,8 +2,10 @@ package com.acasloa946.pfg_caraction.data
 
 import android.content.Context
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
+import com.acasloa946.pfg_caraction.UserInterface.models.MessageModel
 import com.acasloa946.pfg_caraction.UserInterface.models.UserModel
 import com.acasloa946.pfg_caraction.data.Entities.CarEntity
+import com.acasloa946.pfg_caraction.data.Entities.MessageEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserEntity
 import javax.inject.Inject
 
@@ -44,4 +46,11 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
         return userDao.fetchUserByName(context, name)
     }
 
+    suspend fun sendMessage(context: Context, messageModel: MessageModel) {
+       userDao.sendMessage(context,MessageEntity(messageModel.message,messageModel.sent_by,messageModel.sent_to,messageModel.sent_on))
+    }
+
+    suspend fun getMessages(context: Context, userReading: String, otherUser:String):List<MessageModel> {
+        return userDao.getMessages(context, userReading, otherUser).map { item -> MessageModel(item.message,item.sent_by,item.sent_to,item.sent_on) }
+    }
 }
