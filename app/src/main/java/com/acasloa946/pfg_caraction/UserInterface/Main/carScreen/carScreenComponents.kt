@@ -14,7 +14,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -74,13 +73,10 @@ import com.acasloa946.pfg_caraction.carscreen.Trans
 import com.acasloa946.pfg_caraction.carscreen.UserImage
 import com.acasloa946.pfg_caraction.carscreen.UserImageSynth
 import com.acasloa946.pfg_caraction.carscreen.UserImageVECVEC
-import com.acasloa946.pfg_caraction.carscreen.UserName
 import com.acasloa946.pfg_caraction.carscreen.Vector
 import com.acasloa946.pfg_caraction.carscreen.VectorPublish
-import com.acasloa946.pfg_caraction.carscreen.raillinc
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.GoogleMap
@@ -89,13 +85,8 @@ import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.relay.compose.BoxScopeInstanceImpl.align
 import com.google.relay.compose.RelayText
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlin.coroutines.coroutineContext
+
 
 @Composable
 fun CarScreenComponent(
@@ -113,7 +104,8 @@ fun CarScreenComponent(
     onContactClick: () -> Unit = {},
     carScreenViewmodel: CarScreenViewmodel,
     navController: NavController,
-    profileViewmodel: profileViewmodel
+    profileViewmodel: profileViewmodel,
+    onLeftMenuClick: () -> Unit
 ) {
 
     val cameraPositionState = rememberCameraPositionState {
@@ -151,7 +143,9 @@ fun CarScreenComponent(
                         x = 38.0.dp,
                         y = 26.0.dp
                     )
-                )
+                ).clickable {
+                    onLeftMenuClick()
+                }
             ) {
                 Vector(
                     modifier = Modifier.boxAlign(

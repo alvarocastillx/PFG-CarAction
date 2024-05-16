@@ -13,6 +13,7 @@ sealed class Routes(var route:String) {
     object CarLocationScreen : Routes("CarLocationScreen")
     object CarScreen : Routes("CarScreen")
     object ProfileScreen : Routes("ProfileScreen")
+    object SplashScreen : Routes("SplashScreen")
 
 
 

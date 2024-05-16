@@ -58,9 +58,7 @@ import com.acasloa946.pfg_caraction.carcard.MakeModelText
 import com.acasloa946.pfg_caraction.carcard.PriceText
 import com.acasloa946.pfg_caraction.carcard.TransType
 import com.acasloa946.pfg_caraction.carcard.YearText
-import com.acasloa946.pfg_caraction.notfoundalert.NotFoundAlert
 import com.acasloa946.pfg_caraction.notfoundalert.NotFoundText
-import com.acasloa946.pfg_caraction.notfoundalert.raillinc
 import com.acasloa946.pfg_caraction.pantallaprincipal.Banner
 import com.acasloa946.pfg_caraction.pantallaprincipal.BannerImage
 import com.acasloa946.pfg_caraction.pantallaprincipal.BienvenidaCard
@@ -96,6 +94,7 @@ import com.google.relay.compose.RowScopeInstanceImpl.align
  * API PARA MARCAS Y ¿MODELOS? Y UTILIZAR FOTOS DESPUES
  *
  */
+
 @Composable
 fun PantallaPrincipalComponent(
     modifier: Modifier = Modifier,
@@ -259,7 +258,7 @@ fun PantallaPrincipalComponent(
             Spacer(modifier = Modifier.padding(15.dp))
             FrameCars(modifier = Modifier.rowWeight(1.0f)) {
                 val scrollState = rememberLazyListState()
-                var countOfList = homeScreenViewmodel.countOfList
+                val countOfList = homeScreenViewmodel.countOfList
                 if (!fetchedCars.isEmpty()) {
                     LazyColumn(
                         verticalArrangement = Arrangement.spacedBy(5.dp),
@@ -278,7 +277,7 @@ fun PantallaPrincipalComponent(
                                     )
                                 ),
                                 yearText = AnnotatedString("Año: " + it.year.toString()),
-                                kmText = AnnotatedString("Km´s: " + it.km.toString()+ " km´s"),
+                                kmText = AnnotatedString("Km´s: " + it.km.toString() + " km´s"),
                                 transText = AnnotatedString("Tipo de transmisión: " + it.transmisionType),
                                 fuelTypeText = AnnotatedString("Tipo de combustible: " + it.fuelType),
                                 image = it.image!!,
@@ -291,13 +290,13 @@ fun PantallaPrincipalComponent(
 
                     }
                 } else {
-                    Column (
+                    Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier
                             .align(Alignment.CenterVertically)
                             .fillMaxSize()
-                    ){
-                        NotFoundAlertComponent(modifier = Modifier.size(205.dp,29.dp))
+                    ) {
+                        NotFoundAlertComponent(modifier = Modifier.size(205.dp, 29.dp))
                     }
                 }
             }
@@ -415,27 +414,4 @@ fun NotFoundAlertComponent(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun NotFoundTextComponent(modifier: Modifier = Modifier) {
-    RelayText(
-        content = "No se han encontrado coches.",
-        fontSize = 12.0.sp,
-        fontFamily = raillincFont,
-        color = Color(
-            alpha = 255,
-            red = 0,
-            green = 0,
-            blue = 0
-        ),
-        height = 1.6039999326070147.em,
-        modifier = modifier
-    )
-}
 
-
-/*
- Image(painter = painterResource(id = R.drawable.image_banner), contentDescription = null,
-                    modifier = Modifier.fillMaxSize())
-
-
- */

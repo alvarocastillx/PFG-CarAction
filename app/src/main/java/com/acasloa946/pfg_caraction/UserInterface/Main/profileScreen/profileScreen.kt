@@ -8,11 +8,24 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.Icon
+import androidx.compose.material3.ModalDrawerSheet
+import androidx.compose.material3.ModalNavigationDrawer
+import androidx.compose.material3.NavigationDrawerItem
+import androidx.compose.material3.Text
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,8 +35,11 @@ import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
+import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
+import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.google.relay.compose.RowScopeInstanceImpl.align
+import kotlinx.coroutines.launch
 
 @Composable
 fun ProfileScreen(navController: NavController, profileViewmodel: profileViewmodel, homeScreenViewmodel: homeScreenViewmodel) {
@@ -33,49 +49,103 @@ fun ProfileScreen(navController: NavController, profileViewmodel: profileViewmod
     LaunchedEffect(Unit) {
         profileViewmodel.fetchCarsUploadedByUser(context)
     }
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .align(Alignment.CenterVertically)
-            .background(GrisMain)
 
-    ) {
-        Column(
-            modifier = Modifier
-                .verticalScroll(
-                    rememberScrollState(10000),
-                    enabled = true,
-                    reverseScrolling = true
-                ),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
 
-            ProfileScreenComponent(modifier = Modifier
-                .fillMaxWidth()
-                .height(800.dp),
-                userText = profileViewmodel.userName,
-                profileViewmodel = profileViewmodel,
-                memberSinceText = "Miembro desde ${profileViewmodel.memberSince}")
 
-        }
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 15.dp)
+    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val coroutine = rememberCoroutineScope()
 
-        ) {
-            BottomNavBar(modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .clip(RoundedCornerShape(10.dp)),
-                onCarClick = {
-                    navController.navigate(Routes.UploadCarScreen.route)
-                },
-                onHomeClick = {
-                    navController.navigate(Routes.HomeScreen.route)
+    ModalNavigationDrawer(
+        drawerState = drawerState,
+        drawerContent = {
+            ModalDrawerSheet(
+                modifier = Modifier
+                    .height(840.dp)
+                    .background(BlancoMain)
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.padding(top = 30.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.AccountCircle, contentDescription = null,
+                        modifier = Modifier.size(100.dp)
+                    )
+
+                    Text(text = homeScreenViewmodel.userName, fontFamily = raillincFont)
+                    NavigationDrawerItem(
+                        icon = {
+                            Icon(imageVector = Icons.Default.Face, contentDescription = null)
+                        },
+                        label = { Text(text = "Perfil") },
+                        selected = false, onClick = {
+                            navController.navigate(Routes.ProfileScreen.route)
+                            profileViewmodel.userName = homeScreenViewmodel.userName
+                        })
+                    NavigationDrawerItem(
+                        icon = {
+                            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
+                        },
+                        label = { Text(text = "Ajustes") },
+                        selected = false, onClick = { /*TODO*/ })
                 }
-            )
+
+            }
+        },
+        content = {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.CenterVertically)
+                    .background(GrisMain)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .verticalScroll(
+                            rememberScrollState(10000),
+                            enabled = true,
+                            reverseScrolling = true
+                        ),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    ProfileScreenComponent(modifier = Modifier
+                        .fillMaxWidth()
+                        .height(800.dp),
+                        userText = profileViewmodel.userName,
+                        profileViewmodel = profileViewmodel,
+                        memberSinceText = "Miembro desde ${profileViewmodel.memberSince}",
+                        leftMenuClick = {
+                            coroutine.launch {
+                                drawerState.open()
+                            }
+                        })
+                }
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.BottomCenter)
+                        .padding(bottom = 15.dp)
+                ) {
+                    BottomNavBar(modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .clip(RoundedCornerShape(10.dp)),
+                        onCarClick = {
+                            navController.navigate(Routes.UploadCarScreen.route)
+                        },
+                        onHomeClick = {
+                            navController.navigate(Routes.HomeScreen.route)
+                        }
+                    )
+                }
+            }
         }
-    }
+    )
 }
+
+
+
+/*
+
+ */

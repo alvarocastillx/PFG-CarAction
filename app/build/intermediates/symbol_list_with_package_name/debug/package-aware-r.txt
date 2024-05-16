@@ -1170,6 +1170,7 @@ drawable init_screen_android_large_rectangle_reg
 drawable location_screen_line_separatoria
 drawable location_screen_vector
 drawable location_screen_vector2
+drawable logogif
 drawable main_login_car_action_image
 drawable main_login_rectangle_2
 drawable main_q1_ellipse_2
@@ -1231,6 +1232,7 @@ drawable upload_car_screen_vector_next1
 drawable upload_car_screen_vector_next2
 drawable upload_car_screen_vector_next3
 drawable upload_car_screen_vector_publish
+font against_regular
 font railinc_font
 font relay_kaisei_harunoumi_bold
 font relay_kaisei_harunoumi_medium

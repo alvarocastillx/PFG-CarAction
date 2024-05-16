@@ -16,6 +16,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.HomeScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.ProfileScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.splashScreen.SplashScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.UploadCarScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitPage
@@ -47,7 +48,7 @@ fun NavigationManager(
 
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "HomeScreen") {
+    NavHost(navController = navController, startDestination = "SplashScreen") {
         composable("InitScreen") {
             InitPage(navController, initScreenViewmodel)
         }
@@ -77,6 +78,8 @@ fun NavigationManager(
                 uploadCarViewmodel = uploadCarViewmodel,
                 carMakesViewmodel,
                 carModelViewmodel,
+                profileViewmodel,
+                homeScreenViewmodel
             )
         }
         composable("CarMakesScreen") {
@@ -104,11 +107,19 @@ fun NavigationManager(
             CarScreen(
                 navController = navController,
                 carScreenViewmodel = carScreenViewmodel,
-                profileViewmodel
+                profileViewmodel,
+                homeScreenViewmodel
             )
         }
         composable("ProfileScreen") {
-            ProfileScreen(navController = navController, profileViewmodel = profileViewmodel, homeScreenViewmodel)
+            ProfileScreen(
+                navController = navController,
+                profileViewmodel = profileViewmodel,
+                homeScreenViewmodel
+            )
+        }
+        composable("SplashScreen") {
+            SplashScreen(navController, homeScreenViewmodel)
         }
     }
 }

@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId = "com.acasloa946.pfg_caraction"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -100,6 +100,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.9.0")
     //coil para imagenes de internet
     implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("io.coil-kt:coil-gif:2.6.0")
     // Implementaciones de RetroFit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
