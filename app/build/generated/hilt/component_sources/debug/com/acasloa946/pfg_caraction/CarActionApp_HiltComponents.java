@@ -2,6 +2,7 @@ package com.acasloa946.pfg_caraction;
 
 import com.acasloa946.pfg_caraction.Hilt.HiltModule;
 import com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel_HiltModules;
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel_HiltModules;
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel_HiltModules;
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel_HiltModules;
@@ -156,6 +157,7 @@ public final class CarActionApp_HiltComponents {
           Q2Viewmodel_HiltModules.KeyModule.class,
           RegisterViewmodel_HiltModules.KeyModule.class,
           chatScreenViewmodel_HiltModules.KeyModule.class,
+          currentChatsViewmodel_HiltModules.KeyModule.class,
           homeScreenViewmodel_HiltModules.KeyModule.class,
           profileViewmodel_HiltModules.KeyModule.class,
           uploadCarViewmodel_HiltModules.KeyModule.class
@@ -198,6 +200,7 @@ public final class CarActionApp_HiltComponents {
           Q2Viewmodel_HiltModules.BindsModule.class,
           RegisterViewmodel_HiltModules.BindsModule.class,
           chatScreenViewmodel_HiltModules.BindsModule.class,
+          currentChatsViewmodel_HiltModules.BindsModule.class,
           homeScreenViewmodel_HiltModules.BindsModule.class,
           profileViewmodel_HiltModules.BindsModule.class,
           uploadCarViewmodel_HiltModules.BindsModule.class

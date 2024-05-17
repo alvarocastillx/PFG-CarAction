@@ -50,7 +50,6 @@ class chatScreenViewmodel @Inject constructor(private val sendMessageUseCase: se
         viewModelScope.launch {
             otherUserMail = fetchUserByNameUseCase.invoke(context,sent_to).email
             messagesList = getMessagesUseCase.invoke(context,  auth.currentUser!!.email!!, otherUserMail).toMutableList()
-            Log.d("",messagesList.toString())
         }
     }
 

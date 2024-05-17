@@ -10,6 +10,7 @@ import com.acasloa946.pfg_caraction.data.Entities.UserType
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.tasks.await
 import okhttp3.internal.threadName
 
@@ -178,19 +179,15 @@ interface UserDao {
         var user: UserEntity? = UserEntity("", UserType.NULL, "")
         if (FirebaseApp.getApps(context).isNotEmpty()) {
             val db = FirebaseFirestore.getInstance()
-            db.collection("Users").get()
-                .addOnSuccessListener { coleccion ->
-                    for (documento in coleccion) {
+            val t = db.collection("Users").get().await()
+                    for (documento in t.documents) {
                         val fireBaseUser = documento.toObject(UserEntity::class.java)
-                        if (fireBaseUser.name == name) {
+                        if (fireBaseUser?.name == name) {
                             user = fireBaseUser
                         }
                     }
                 }
-                .addOnFailureListener { _ ->
-                    Log.d("ERROR", "NO SE HA PODIDO ENCONTRAR AL USUARIO")
-                }.await()
-        } else {
+         else {
             Log.d("error", "ERROR")
         }
         return user
@@ -223,9 +220,6 @@ interface UserDao {
         if (FirebaseApp.getApps(context).isNotEmpty()) {
             val db = FirebaseFirestore.getInstance()
             try {
-                Log.d("userReading",userReading)
-                Log.d("otherUser",otherUser)
-
                 val messages = db.collection("Messages").get().await()
                 for (message in messages) {
                     val messageObject = message.toObject(MessageEntity::class.java)
@@ -242,9 +236,31 @@ interface UserDao {
             }
         } else {
             Log.d("error", "ERROR")
-
         }
         return (sentMessages+receivedMessages).sortedBy { messageEntity -> messageEntity.sent_on }
+    }
+
+    suspend fun fetchChatsOfUser(context: Context, userReading:String): MutableList<MessageEntity>{
+        val messagesList = mutableListOf<MessageEntity>()
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                val messages = db.collection("Messages").get().await()
+                for (message in messages) {
+                    val messageObject = message.toObject(MessageEntity::class.java)
+                    if (messageObject.sent_by == userReading || messageObject.sent_to==userReading) {
+                        messagesList.add(messageObject)
+                    }
+                }
+
+            } catch (e: Exception) {
+                Log.d("Error", "ERROR INESPERADO")
+            }
+        } else {
+            Log.d("error", "ERROR")
+        }
+
+        return messagesList
     }
 
 

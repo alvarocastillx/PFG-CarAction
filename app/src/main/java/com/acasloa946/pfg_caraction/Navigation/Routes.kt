@@ -15,6 +15,7 @@ sealed class Routes(var route:String) {
     object ProfileScreen : Routes("ProfileScreen")
     object SplashScreen : Routes("SplashScreen")
     object ChatScreen : Routes("ChatScreen")
+    object CurrentChatsScreen : Routes("CurrentChatsScreen")
 
 
 

@@ -8,6 +8,6 @@ import javax.inject.Inject
 class fetchUserByNameUseCase @Inject constructor(private val userRepository: UserRepository) {
     suspend operator fun invoke(context: Context, name:String): UserModel {
         val user = userRepository.fetchUserByName(context, name)
-        return UserModel(user!!.name!!, user.type!!, user.email!!, user.uploadedCars!!,user.memberSince)
+        return UserModel(user?.name.toString(), user?.type!!, user.email!!, user.uploadedCars!!,user.memberSince)
     }
 }

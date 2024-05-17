@@ -4,8 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,12 +25,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
+import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.chatscreen.ChatBar
 import com.acasloa946.pfg_caraction.chatscreen.ChatFrame
 import com.acasloa946.pfg_caraction.chatscreen.Class1Line
@@ -42,6 +48,7 @@ import com.acasloa946.pfg_caraction.chatscreen.UserImageVECVEC
 import com.acasloa946.pfg_caraction.chatscreen.UserNameFrame
 import com.acasloa946.pfg_caraction.messagereceivedcard.MessageReceivedCard
 import com.acasloa946.pfg_caraction.messagesentcard.MessageSentCard
+import com.acasloa946.pfg_caraction.messagesentcard.raillinc
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
@@ -54,13 +61,21 @@ fun ChatScreenComponent(
     modifier: Modifier = Modifier,
     userNameText: String = "",
     chatScreenViewmodel: chatScreenViewmodel,
-    carScreenViewmodel: CarScreenViewmodel
+    carScreenViewmodel: CarScreenViewmodel,
+    currentChatsViewmodel: currentChatsViewmodel
 ) {
 
     val context = LocalContext.current
     LaunchedEffect(true) {
         while (true) {
-            chatScreenViewmodel.getMessages(context,carScreenViewmodel.clickedCar.userName!!)
+            if (carScreenViewmodel.clickedCar != CarModel()) {
+                chatScreenViewmodel.getMessages(context,carScreenViewmodel.clickedCar.userName!!)
+                carScreenViewmodel.clickedCar = CarModel()
+            }
+            else {
+                chatScreenViewmodel.getMessages(context,currentChatsViewmodel.clickedUserToChat)
+                currentChatsViewmodel.clickedUserToChat = ""
+            }
             delay(5000)
         }
     }
@@ -87,8 +102,8 @@ fun ChatScreenComponent(
                 ){
                     items(chatScreenViewmodel.messagesList) {
                         if (it.sent_to == chatScreenViewmodel.otherUserMail) {
-                            Row (horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth()){
-                                MessageSentCard(messageContentText = it.message!!)
+                            Row (horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth()) {
+                                MessageSentCard(messageContentText = it.message!!, modifier = Modifier.wrapContentHeight())
                             }
                         }
                         else {
@@ -208,10 +223,4 @@ fun UserNameTextComponent(
     )
 }
 
-/*
-chatScreenViewmodel.sendMessage(context,
-                            carScreenViewmodel.clickedCar.userName!!,
-                            errorSendingMessage = {
-                                toastMaker("Error al enviar mensaje. Inténtelo de nuevo más tarde",context)
-                            })
- */
+

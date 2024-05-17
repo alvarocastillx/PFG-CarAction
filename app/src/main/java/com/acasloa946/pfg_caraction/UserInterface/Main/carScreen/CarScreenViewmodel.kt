@@ -10,6 +10,7 @@ class CarScreenViewmodel : ViewModel() {
 
     var clickedCar by mutableStateOf(CarModel())
 
+
     fun formatLocationString(locationString: String): String {
         val locationParts = locationString.split(",")
         return locationParts[1] + "," + locationParts[3]

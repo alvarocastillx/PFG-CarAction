@@ -53,4 +53,8 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
     suspend fun getMessages(context: Context, userReading: String, otherUser:String):List<MessageModel> {
         return userDao.getMessages(context, userReading, otherUser).map { item -> MessageModel(item.message,item.sent_by,item.sent_to,item.sent_on) }
     }
+
+    suspend fun fetchChatsOfUser(context: Context, userReading: String): List<MessageModel>{
+        return userDao.fetchChatsOfUser(context, userReading).map { item -> MessageModel(item.message,item.sent_by,item.sent_to,item.sent_on) }
+    }
 }

@@ -7,6 +7,7 @@ import com.acasloa946.pfg_caraction.domain.addUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
+import com.acasloa946.pfg_caraction.domain.fetchChatsOfUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
 import com.acasloa946.pfg_caraction.domain.getMessagesUseCase
@@ -69,6 +70,10 @@ class HiltModule {
     @Provides
     fun providegetMessageUseCase(userRepository: UserRepository): getMessagesUseCase {
         return getMessagesUseCase(userRepository)
+    }
+    @Provides
+    fun provideFetchChatsOfUserUseCase(userRepository: UserRepository): fetchChatsOfUserUseCase {
+        return fetchChatsOfUserUseCase(userRepository)
     }
 
 

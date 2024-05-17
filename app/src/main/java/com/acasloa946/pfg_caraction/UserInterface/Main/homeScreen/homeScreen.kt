@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.DrawerValue
@@ -96,6 +97,12 @@ fun HomeScreen(
                         },
                         label = { Text(text = "Ajustes") },
                         selected = false, onClick = { /*TODO*/ })
+                    NavigationDrawerItem(
+                        icon = {
+                            Icon(imageVector = Icons.Default.Chat, contentDescription = null)
+                        },
+                        label = { Text(text = "Chats") },
+                        selected = false, onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
                 }
 
             }
