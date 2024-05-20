@@ -41,11 +41,11 @@ fun ChatScreen(
             .background(GrisMain),
     ) {
         var userNameText = ""
-        if (carScreenViewmodel.clickedCar != CarModel()) {
-            userNameText = carScreenViewmodel.clickedCar.userName!!
+        if (currentChatsViewmodel.clickedUserToChat != "") {
+            userNameText = currentChatsViewmodel.clickedUserToChat
         }
         else {
-            userNameText = currentChatsViewmodel.clickedUserToChat
+            userNameText = carScreenViewmodel.clickedCar.userName.toString()
         }
         ChatScreenComponent(
             modifier = Modifier
@@ -54,7 +54,8 @@ fun ChatScreen(
             userNameText = userNameText,
             chatScreenViewmodel = chatScreenViewmodel,
             carScreenViewmodel,
-            currentChatsViewmodel
+            currentChatsViewmodel,
+            navController
         )
     }
 }

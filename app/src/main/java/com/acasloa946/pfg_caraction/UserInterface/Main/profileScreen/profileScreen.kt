@@ -86,16 +86,17 @@ fun ProfileScreen(navController: NavController, profileViewmodel: profileViewmod
                         })
                     NavigationDrawerItem(
                         icon = {
-                            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
-                        },
-                        label = { Text(text = "Ajustes") },
-                        selected = false, onClick = { /*TODO*/ })
-                    NavigationDrawerItem(
-                        icon = {
                             Icon(imageVector = Icons.Default.Chat, contentDescription = null)
                         },
                         label = { Text(text = "Chats") },
                         selected = false, onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
+                    NavigationDrawerItem(
+                        icon = {
+                            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
+                        },
+                        label = { Text(text = "Ajustes") },
+                        selected = false, onClick = { /*TODO*/ })
+
                 }
 
             }

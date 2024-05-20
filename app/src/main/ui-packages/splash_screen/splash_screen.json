@@ -1,0 +1,117 @@
+{
+  "name": "splash_screen",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "283:192",
+    "version": "5766912786",
+    "component-id": "392071a97f3f3e28f5ec7ac49f29c516c7da2838"
+  },
+  "default": "SplashScreen",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "GifFrame"
+      }
+    ],
+    "modes": {
+      "SplashScreen": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "GifFrame"
+            ],
+            "fills": [
+              {
+                "color": {},
+                "opacity": "1.0",
+                "fill-type": "lineargradient",
+                "blend-mode": "normal",
+                "color-stops": [
+                  {
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "89.99999999999989",
+                      "saturation": "0.037037037037037035",
+                      "value": "0.21176470588235294"
+                    },
+                    "color-stop-position": "0.0"
+                  },
+                  {
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "351.66666666666663",
+                      "saturation": "0.782608695652174",
+                      "value": "0.9019607843137255"
+                    },
+                    "color-stop-position": "1.0"
+                  }
+                ],
+                "gradient-handle-positions": [
+                  {
+                    "x": "0.5",
+                    "y": "1.0"
+                  },
+                  {
+                    "x": "0.5",
+                    "y": "0.0"
+                  },
+                  {
+                    "x": "1.0",
+                    "y": "1.0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "GifFrame",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "SplashScreen",
+      "size": {
+        "width": 360.0,
+        "height": 800.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

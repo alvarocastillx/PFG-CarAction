@@ -27,21 +27,19 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.R
-import com.acasloa946.pfg_caraction.UserInterface.ResultStateCurrentChats
+import com.acasloa946.pfg_caraction.UserInterface.States.ResultStateCurrentChats
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
 import com.acasloa946.pfg_caraction.UserInterface.models.UserModel
 import com.acasloa946.pfg_caraction.chatbutton.ChatButton
 import com.acasloa946.pfg_caraction.currentchatsscreen.Banner
 import com.acasloa946.pfg_caraction.currentchatsscreen.BannerImage
-import com.acasloa946.pfg_caraction.currentchatsscreen.Chats
 import com.acasloa946.pfg_caraction.currentchatsscreen.Linea1
 import com.acasloa946.pfg_caraction.currentchatsscreen.MainChats
 import com.acasloa946.pfg_caraction.currentchatsscreen.MaterialSymbolsMenu
 import com.acasloa946.pfg_caraction.currentchatsscreen.TopLevel
 import com.acasloa946.pfg_caraction.currentchatsscreen.UserChatsFrame
 import com.acasloa946.pfg_caraction.currentchatsscreen.Vector
-import com.acasloa946.pfg_caraction.currentchatsscreen.raillinc
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.google.relay.compose.RelayText
@@ -54,7 +52,8 @@ fun CurrentChatsScreenComponent(
     currentChatsViewmodel: currentChatsViewmodel,
     navController: NavController
 ) {
-    val userChatsState by currentChatsViewmodel.userChatsState.observeAsState(ResultStateCurrentChats.Loading)
+    val userCurrentChatsState by currentChatsViewmodel.userCurrentChatsState.observeAsState(
+        ResultStateCurrentChats.Loading)
     val context = LocalContext.current
 
 
@@ -108,7 +107,7 @@ fun CurrentChatsScreenComponent(
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ){
-                    UserChatsFrame(resultState = userChatsState, context, navController = navController,
+                    UserChatsFrame(resultState = userCurrentChatsState, context, navController = navController,
                         currentChatsViewmodel)
 
                 }

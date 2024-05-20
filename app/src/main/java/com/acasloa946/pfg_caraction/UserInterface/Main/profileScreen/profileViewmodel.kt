@@ -5,9 +5,14 @@ import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.acasloa946.pfg_caraction.UserInterface.States.ChatScreenStates
+import com.acasloa946.pfg_caraction.UserInterface.States.ProfileScreenStates
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
+import com.acasloa946.pfg_caraction.UserInterface.models.MessageModel
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
 import com.google.firebase.Firebase
@@ -44,6 +49,10 @@ class profileViewmodel @Inject constructor(
         12 to "Diciembre"
     )
 
+    private val _profileStates = MutableLiveData<ProfileScreenStates<List<CarModel>>>()
+    val profileStates: LiveData<ProfileScreenStates<List<CarModel>>> = _profileStates
+
+
     private fun formatDate(date: String): String {
         val splittedDate = date.split("-")
         return try {
@@ -54,6 +63,7 @@ class profileViewmodel @Inject constructor(
     }
 
     fun fetchCarsUploadedByUser(context: Context) {
+        _profileStates.value = ProfileScreenStates.Loading
         viewModelScope.launch {
             try {
                 val user = fetchUserByNameUseCase.invoke(context, userName)
@@ -61,15 +71,13 @@ class profileViewmodel @Inject constructor(
                 memberSince = formatDate(user.memberSince.toString())
                 fetchedCarsUploadedByUser.value =
                     fetchCarsUploadedByUserUseCase.invoke(context, userMail).toList()
+                _profileStates.value = ProfileScreenStates.Success(fetchedCarsUploadedByUser.value)
             } catch (e: Exception) {
                 Log.d("Error", "Error al encontrar al usuario.", e)
+                _profileStates.value = ProfileScreenStates.Error(e)
             }
 
         }
     }
 
-    fun formatLocationString(locationString: String): String {
-        val locationParts = locationString.split(",")
-        return locationParts[1] + "," + locationParts[3]
-    }
 }

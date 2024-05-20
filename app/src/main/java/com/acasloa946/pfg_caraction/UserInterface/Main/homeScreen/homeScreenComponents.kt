@@ -32,6 +32,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
@@ -43,21 +44,12 @@ import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
-import com.acasloa946.pfg_caraction.carcard.Frame1
-import com.acasloa946.pfg_caraction.carcard.Frame2
-import com.acasloa946.pfg_caraction.carcard.Frame3
-import com.acasloa946.pfg_caraction.carcard.Frame4
 import com.acasloa946.pfg_caraction.carcard.FrameImage
-import com.acasloa946.pfg_caraction.carcard.FuelTypeText
-import com.acasloa946.pfg_caraction.carcard.KMText
 import com.acasloa946.pfg_caraction.carcard.Line1
 import com.acasloa946.pfg_caraction.carcard.Line2
-import com.acasloa946.pfg_caraction.carcard.Line3
-import com.acasloa946.pfg_caraction.carcard.LocationText
 import com.acasloa946.pfg_caraction.carcard.MakeModelText
 import com.acasloa946.pfg_caraction.carcard.PriceText
-import com.acasloa946.pfg_caraction.carcard.TransType
-import com.acasloa946.pfg_caraction.carcard.YearText
+import com.acasloa946.pfg_caraction.carcard.against
 import com.acasloa946.pfg_caraction.notfoundalert.NotFoundText
 import com.acasloa946.pfg_caraction.pantallaprincipal.Banner
 import com.acasloa946.pfg_caraction.pantallaprincipal.BannerImage
@@ -82,6 +74,7 @@ import com.acasloa946.pfg_caraction.pantallaprincipal.Vector
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
+import com.acasloa946.pfg_caraction.ui.theme.againstFont
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.google.relay.compose.RelayText
 import com.google.relay.compose.RowScopeInstanceImpl.align
@@ -259,7 +252,7 @@ fun PantallaPrincipalComponent(
             FrameCars(modifier = Modifier.rowWeight(1.0f)) {
                 val scrollState = rememberLazyListState()
                 val countOfList = homeScreenViewmodel.countOfList
-                if (!fetchedCars.isEmpty()) {
+                if (fetchedCars.isNotEmpty()) {
                     LazyColumn(
                         verticalArrangement = Arrangement.spacedBy(5.dp),
                         state = scrollState
@@ -269,17 +262,8 @@ fun PantallaPrincipalComponent(
                         }
                         items(fetchedCars.take(countOfList)) {
                             CarCardComponent(
-                                makeModelText = AnnotatedString("${it.make} ${it.model}"),
+                                makeModelText = ("${it.make} ${it.model}"),
                                 priceText = "${it.price}€",
-                                locationText = AnnotatedString(
-                                    "Localización: " + homeScreenViewmodel.formatLocationString(
-                                        it.locationName!!
-                                    )
-                                ),
-                                yearText = AnnotatedString("Año: " + it.year.toString()),
-                                kmText = AnnotatedString("Km´s: " + it.km.toString() + " km´s"),
-                                transText = AnnotatedString("Tipo de transmisión: " + it.transmisionType),
-                                fuelTypeText = AnnotatedString("Tipo de combustible: " + it.fuelType),
                                 image = it.image!!,
                                 onCarClick = {
                                     navController.navigate(Routes.CarScreen.route)
@@ -306,18 +290,14 @@ fun PantallaPrincipalComponent(
     Spacer(modifier = Modifier.padding(40.dp))
 }
 
+
 @Composable
 fun CarCardComponent(
-    modifier: Modifier = Modifier,
-    makeModelText: AnnotatedString = AnnotatedString(""),
+    modifier: Modifier = Modifier.clip(RoundedCornerShape(20.dp)),
+    makeModelText: String = "",
     priceText: String = "",
-    locationText: AnnotatedString = AnnotatedString(""),
-    yearText: AnnotatedString = AnnotatedString(""),
-    kmText: AnnotatedString = AnnotatedString(""),
-    transText: AnnotatedString = AnnotatedString(""),
-    fuelTypeText: AnnotatedString = AnnotatedString(""),
-    image: String,
-    onCarClick: () -> Unit = {}
+    onCarClick: () -> Unit = {},
+    image:String
 ) {
     com.acasloa946.pfg_caraction.carcard.TopLevel(
         onCarClick = onCarClick,
@@ -343,25 +323,37 @@ fun CarCardComponent(
             )
         }
         Line1()
-        MakeModelText(makeModelText = makeModelText)
+        MakeModelTextC(makeModelText = makeModelText)
         Line2()
-        Frame1 {
-            LocationText(locationText = locationText)
-            YearText(yearText = yearText)
-        }
-        Frame2 {
-            KMText(kmText = kmText)
-        }
-        Frame4 {
-            TransType(transText = transText)
-        }
-        Frame3 {
-            FuelTypeText(fuelTypeText = fuelTypeText)
-        }
-        Line3()
         PriceText(priceText = priceText)
     }
 }
+
+@Composable
+fun MakeModelTextC(
+    makeModelText: String,
+    modifier: Modifier = Modifier
+) {
+    RelayText(
+        content = makeModelText,
+        fontSize = 20.0.sp,
+        fontFamily = againstFont,
+        color = Color(
+            alpha = 255,
+            red = 0,
+            green = 0,
+            blue = 0
+        ),
+        height = 1.3649999618530273.em,
+        modifier = modifier,
+        fontWeight = FontWeight.ExtraBold
+    )
+}
+
+/*
+
+ */
+
 
 
 @Composable

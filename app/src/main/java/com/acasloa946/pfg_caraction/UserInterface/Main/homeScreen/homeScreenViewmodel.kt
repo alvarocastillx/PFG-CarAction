@@ -7,6 +7,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
@@ -16,11 +19,12 @@ import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @HiltViewModel
 class homeScreenViewmodel @Inject constructor(
-    private val fetchUserUseCase: fetchUserUseCase, private val fetchCarsUseCase: fetchCarsUseCase, private val fetchCarTypesUseCase: fetchCarTypesUseCase
+    private val fetchUserUseCase: fetchUserUseCase, private val fetchCarsUseCase: fetchCarsUseCase, private val fetchCarTypesUseCase: fetchCarTypesUseCase,
 ) : ViewModel() {
 
 
@@ -40,9 +44,6 @@ class homeScreenViewmodel @Inject constructor(
     private var _typeSortedList: MutableList<CarModel> = mutableListOf()
 
     var countOfList by mutableStateOf(5)
-
-
-
 
 
 

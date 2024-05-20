@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.acasloa946.pfg_caraction.UserInterface.ResultStateCurrentChats
+import com.acasloa946.pfg_caraction.UserInterface.States.ResultStateCurrentChats
 import com.acasloa946.pfg_caraction.UserInterface.models.UserModel
 import com.acasloa946.pfg_caraction.domain.fetchChatsOfUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
@@ -25,8 +25,8 @@ class currentChatsViewmodel @Inject constructor(private val fetchChatsOfUserUseC
     val auth = Firebase.auth
 
 
-    private val _userChatsState = MutableLiveData<ResultStateCurrentChats<List<UserModel>>>()
-    val userChatsState: LiveData<ResultStateCurrentChats<List<UserModel>>> = _userChatsState
+    private val _userCurrentChatsState = MutableLiveData<ResultStateCurrentChats<List<UserModel>>>()
+    val userCurrentChatsState: LiveData<ResultStateCurrentChats<List<UserModel>>> = _userCurrentChatsState
 
     var clickedUserToChat by mutableStateOf("")
 
@@ -34,7 +34,7 @@ class currentChatsViewmodel @Inject constructor(private val fetchChatsOfUserUseC
     fun fetchChats(context: Context) {
         userChats.clear()
         val currentUserMail = auth.currentUser!!.email!!
-        _userChatsState.value = ResultStateCurrentChats.Loading
+        _userCurrentChatsState.value = ResultStateCurrentChats.Loading
         val userMailChats by mutableStateOf(mutableListOf<String>())
         viewModelScope.launch {
             try {
@@ -51,10 +51,10 @@ class currentChatsViewmodel @Inject constructor(private val fetchChatsOfUserUseC
                     val user = fetchUserUseCase.invoke(userMail, context)
                     userChats.add(user)
                 }
-                _userChatsState.value = ResultStateCurrentChats.Success(userChats)
+                _userCurrentChatsState.value = ResultStateCurrentChats.Success(userChats)
             }
             catch (e:Exception) {
-                _userChatsState.value = ResultStateCurrentChats.Error(e)
+                _userCurrentChatsState.value = ResultStateCurrentChats.Error(e)
             }
         }
 

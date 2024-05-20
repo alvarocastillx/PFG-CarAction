@@ -17,6 +17,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.LoginScreen.loginViewmod
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel;
+import com.acasloa946.pfg_caraction.UserInterface.notifications.notif;
 import com.google.android.libraries.places.api.Places;
 import dagger.hilt.android.AndroidEntryPoint;
 

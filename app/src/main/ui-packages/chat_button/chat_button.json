@@ -1,0 +1,177 @@
+{
+  "name": "chat_button",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "313:180",
+    "version": "5785621094",
+    "component-id": "c1ed7a1e12903fc075e2133326640eca0416c8b3"
+  },
+  "default": "ChatButton",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "top_level_synth"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "text",
+        "id": "UserNameText"
+      }
+    ],
+    "modes": {
+      "ChatButton": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": "15.0",
+            "drop-shadow": {
+              "color": {
+                "alpha": "0.24705882352941178",
+                "hue": "0.0",
+                "saturation": "0.0",
+                "value": "0.0"
+              },
+              "blur": "45.0",
+              "offset-x": "0.0",
+              "offset-y": "11.0",
+              "spread": "0.0",
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onChatClick",
+            "stroke-width": "2.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false",
+            "children": [
+              "top_level_synth",
+              "Vector"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          },
+          {
+            "id": "top_level_synth",
+            "opacity": "100.0",
+            "padding": {
+              "left": "2.0",
+              "top": "9.0",
+              "right": "2.0",
+              "bottom": "9.0"
+            },
+            "border-radius": "15.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "UserNameText"
+            ],
+            "item-spacing": "10.0"
+          },
+          {
+            "id": "Vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "134.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.49983692169189453"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "12.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.33333396911621"
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "UserNameText",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "326.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "28.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "$chatUsernameText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "18.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onChatClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "chatUsernameText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "ChatButton",
+      "size": {
+        "width": 344.0,
+        "height": 46.0
+      },
+      "parameters": {
+        "chatUsernameText": "Username"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

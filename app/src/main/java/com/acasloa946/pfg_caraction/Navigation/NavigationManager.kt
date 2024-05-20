@@ -33,6 +33,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Screen
 import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterScreen
+import com.acasloa946.pfg_caraction.UserInterface.notifications.notif
 
 @Composable
 fun NavigationManager(
@@ -49,7 +50,7 @@ fun NavigationManager(
     carScreenViewmodel: CarScreenViewmodel,
     profileViewmodel: profileViewmodel,
     chatScreenViewmodel: chatScreenViewmodel,
-    currentChatsViewmodel: currentChatsViewmodel
+    currentChatsViewmodel: currentChatsViewmodel,
 ) {
 
     val navController = rememberNavController()

@@ -38,6 +38,7 @@ import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
+import com.acasloa946.pfg_caraction.UserInterface.notifications.notif
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
@@ -93,16 +94,17 @@ fun HomeScreen(
                         })
                     NavigationDrawerItem(
                         icon = {
-                            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
-                        },
-                        label = { Text(text = "Ajustes") },
-                        selected = false, onClick = { /*TODO*/ })
-                    NavigationDrawerItem(
-                        icon = {
                             Icon(imageVector = Icons.Default.Chat, contentDescription = null)
                         },
                         label = { Text(text = "Chats") },
                         selected = false, onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
+                    NavigationDrawerItem(
+                        icon = {
+                            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
+                        },
+                        label = { Text(text = "Ajustes") },
+                        selected = false, onClick = { /*TODO*/ })
+
                 }
 
             }
@@ -167,6 +169,11 @@ fun HomeScreen(
         }
     )
 }
+
+/*
+                            notif.notify(context,"5")
+
+ */
 
 
 

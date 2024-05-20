@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-36:12
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.11.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\94e5c44fd90ca7eb2cd408cee7a25505\transformed\firebase-firestore-ktx-24.11.1\AndroidManifest.xml:2:1-18:12
 MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c007a930a1a7a101fbd2c2cf36dd224a\transformed\coil-compose-2.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth-ktx:22.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\feb12476e59bea646ae93e8ca82397f6\transformed\firebase-auth-ktx-22.3.1\AndroidManifest.xml:2:1-17:12
@@ -36,6 +36,8 @@ MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\AlvaroPC
 MERGED from [com.google.firebase:firebase-common:20.4.3] C:\Users\AlvaroPC\.gradle\caches\transforms-3\72500d7b5fd1a220a7bed65a3905cf6c\transformed\firebase-common-20.4.3\AndroidManifest.xml:15:1-41:12
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\88becb3e7ef5ac417c6d75a12610b090\transformed\recaptcha-18.4.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\60c9969e0cffbeae50f6b8507de869af\transformed\integrity-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\855d29519ccfc5892c922ba217dcbae4\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:17:1-145:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\AlvaroPC\.gradle\caches\transforms-3\7e2c195b441a09a46d9369c9447bf33e\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dbb525729fc81874adb37a5cfc4fc642\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c46d232295f7c79ddd69f34c51074c06\transformed\navigation-common-ktx-2.7.7\AndroidManifest.xml:2:1-7:12
@@ -75,6 +77,7 @@ MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\tran
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\da8bfd7d400a7204188ad7bc438c3050\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\65d688c1f21794ca9ad2bce48e45d4b6\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\6186fe3b19a7ced2cee879c1a644ca78\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\66894a2eb512352e0fc98740d369eccf\transformed\lifecycle-service-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\a3966a945f9b377d2147661aea68635b\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d1e0131b89222b08145d10b86ca8e95c\transformed\lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ea7c35b133ab1272d42e0b1d2064f3fe\transformed\lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:17:1-22:12
@@ -102,6 +105,7 @@ MERGED from [androidx.core:core:1.13.0] C:\Users\AlvaroPC\.gradle\caches\transfo
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c5ee3434d4ee855981cebd58a20daa4c\transformed\lifecycle-runtime-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\30fc946ff304942c0b5b47a62d413928\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\6fc30f90677007043cc20c4c945b330b\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-ktx:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ce6dcdaef032049d907fb150dbb31682\transformed\room-ktx-2.5.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\091b3cec09b69ecdd7be195e37695194\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:15:1-19:12
 MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\b150c9513cb3d84cb808ff08628d8ff1\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dc239834cf7e277c230a267ae7ed2680\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:17:1-27:12
@@ -113,6 +117,9 @@ MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\AlvaroPC\.gradle\caches\
 MERGED from [androidx.activity:activity:1.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\8b8c712220a3dcf00d4553fae65e859f\transformed\activity-1.9.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\bc17cd6488d8e623b11bd6bcd69ed3f0\transformed\activity-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dcfee32e744d19962e19917950d79c11\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.sqlite:sqlite-framework:2.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\477d9fbebb0473d52fa2144f3e40f905\transformed\sqlite-framework-2.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\3cf7afb129e7e0a61487f33fc9efd629\transformed\sqlite-2.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\f0dd217b61d9b695314659dd677506b4\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\5f117fb26d946a1c5e87c63d4adf47a7\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\AlvaroPC\.gradle\caches\transforms-3\703b129ad1bb56dd5fe14990b875e79d\transformed\firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
@@ -121,9 +128,9 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Us
 MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\0a1b67a8ee8c5da9ccba9a4d34ab99e9\transformed\transport-runtime-3.2.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\9cca1bb3a5f6b693dea601da6741bfd8\transformed\transport-api-3.1.0\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\a462c25d076c71bbceffc51f5a9bb1da\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\cbcfff796798b50f6f9b3adc5450d2b3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\04383091a568cbbe466b62989e9e288f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\35bae98c5e87572327ba1aee83e6e691\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\cbcfff796798b50f6f9b3adc5450d2b3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c8cb99171604453e2634b2cf3d7da75a\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\b8937a08354be65db0b99c5fe6b9d37b\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\AlvaroPC\.gradle\caches\transforms-3\9290277847e082090a12d48465eabd8f\transformed\exifinterface-1.3.7\AndroidManifest.xml:17:1-24:12
@@ -158,9 +165,13 @@ MERGED from [com.google.android.libraries.places:places:3.4.0] C:\Users\AlvaroPC
 MERGED from [com.google.android.libraries.places:places:3.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\370b87636b99932bfac9c20ff90a8e7f\transformed\places-3.4.0\AndroidManifest.xml:10:5-79
 	android:name
 		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:8:22-74
 application
-ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:8:5-33:19
-INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:8:5-33:19
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:10:5-35:19
+INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:10:5-35:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.11.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\94e5c44fd90ca7eb2cd408cee7a25505\transformed\firebase-firestore-ktx-24.11.1\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.11.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\94e5c44fd90ca7eb2cd408cee7a25505\transformed\firebase-firestore-ktx-24.11.1\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-auth-ktx:22.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\feb12476e59bea646ae93e8ca82397f6\transformed\firebase-auth-ktx-22.3.1\AndroidManifest.xml:7:5-15:19
@@ -201,6 +212,8 @@ MERGED from [com.google.firebase:firebase-common:20.4.3] C:\Users\AlvaroPC\.grad
 MERGED from [com.google.firebase:firebase-common:20.4.3] C:\Users\AlvaroPC\.gradle\caches\transforms-3\72500d7b5fd1a220a7bed65a3905cf6c\transformed\firebase-common-20.4.3\AndroidManifest.xml:22:5-39:19
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\60c9969e0cffbeae50f6b8507de869af\transformed\integrity-1.2.0\AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\60c9969e0cffbeae50f6b8507de869af\transformed\integrity-1.2.0\AndroidManifest.xml:5:5-6:19
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
 MERGED from [com.google.android.gms:play-services-measurement:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ebc8344e3bfab709f1a74d98f56d1338\transformed\play-services-measurement-21.6.1\AndroidManifest.xml:28:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ebc8344e3bfab709f1a74d98f56d1338\transformed\play-services-measurement-21.6.1\AndroidManifest.xml:28:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement-sdk:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\acc72389e25edceaa2fda0dc050c4f2f\transformed\play-services-measurement-sdk-21.6.1\AndroidManifest.xml:22:5-23:19
@@ -231,6 +244,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d0f9373525288dd31758f26fec7b73c9\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d4a1f7e621e31df8dfef1c6ac162b3b5\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d4a1f7e621e31df8dfef1c6ac162b3b5\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:23:5-29:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c4a8632cbdd8329213f7b8a205470b70\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:25:5-33:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c4a8632cbdd8329213f7b8a205470b70\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:25:5-33:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\0a1b67a8ee8c5da9ccba9a4d34ab99e9\transformed\transport-runtime-3.2.0\AndroidManifest.xml:23:5-37:19
@@ -246,51 +261,51 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Al
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\4efa3563d3bc4efbaac8d7b1ad2efb18\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:15:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:13:9-54
 	android:roundIcon
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:16:9-54
 	tools:targetApi
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:18:9-29
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:20:9-29
 	android:icon
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:16:9-50
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:18:9-50
 	android:dataExtractionRules
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:10:9-65
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:12:9-65
 	android:name
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:17:9-37
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:19:9-37
 activity#com.acasloa946.pfg_caraction.MainActivity
-ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:19:9-29:20
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:21:9-31:20
 	android:label
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:22:13-45
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:24:13-45
 	android:exported
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:23:13-36
 	android:theme
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:23:13-54
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:25:13-54
 	android:name
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:20:13-41
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:22:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:24:13-28:29
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:27:27-74
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:29:27-74
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:30:9-32:71
+ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:32:9-34:71
 	android:value
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:32:13-68
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:34:13-68
 	android:name
-		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:31:13-58
+		ADDED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:33:13-58
 uses-sdk
 INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml
@@ -359,6 +374,10 @@ MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\AlvaroPC\.g
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\88becb3e7ef5ac417c6d75a12610b090\transformed\recaptcha-18.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\60c9969e0cffbeae50f6b8507de869af\transformed\integrity-1.2.0\AndroidManifest.xml:4:5-44
 MERGED from [com.google.android.play:integrity:1.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\60c9969e0cffbeae50f6b8507de869af\transformed\integrity-1.2.0\AndroidManifest.xml:4:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\855d29519ccfc5892c922ba217dcbae4\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\855d29519ccfc5892c922ba217dcbae4\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\AlvaroPC\.gradle\caches\transforms-3\7e2c195b441a09a46d9369c9447bf33e\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\AlvaroPC\.gradle\caches\transforms-3\7e2c195b441a09a46d9369c9447bf33e\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dbb525729fc81874adb37a5cfc4fc642\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:20:5-44
@@ -437,6 +456,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\Alva
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\65d688c1f21794ca9ad2bce48e45d4b6\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\6186fe3b19a7ced2cee879c1a644ca78\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\6186fe3b19a7ced2cee879c1a644ca78\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\66894a2eb512352e0fc98740d369eccf\transformed\lifecycle-service-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\66894a2eb512352e0fc98740d369eccf\transformed\lifecycle-service-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\a3966a945f9b377d2147661aea68635b\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\a3966a945f9b377d2147661aea68635b\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d1e0131b89222b08145d10b86ca8e95c\transformed\lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:5:5-44
@@ -491,6 +512,8 @@ MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\AlvaroPC\.gradle
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\30fc946ff304942c0b5b47a62d413928\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\6fc30f90677007043cc20c4c945b330b\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\6fc30f90677007043cc20c4c945b330b\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ce6dcdaef032049d907fb150dbb31682\transformed\room-ktx-2.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ce6dcdaef032049d907fb150dbb31682\transformed\room-ktx-2.5.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\091b3cec09b69ecdd7be195e37695194\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\091b3cec09b69ecdd7be195e37695194\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
 MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\b150c9513cb3d84cb808ff08628d8ff1\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
@@ -513,6 +536,12 @@ MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\AlvaroPC\.gradle\cac
 MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\bc17cd6488d8e623b11bd6bcd69ed3f0\transformed\activity-ktx-1.9.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dcfee32e744d19962e19917950d79c11\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dcfee32e744d19962e19917950d79c11\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\477d9fbebb0473d52fa2144f3e40f905\transformed\sqlite-framework-2.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\477d9fbebb0473d52fa2144f3e40f905\transformed\sqlite-framework-2.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\3cf7afb129e7e0a61487f33fc9efd629\transformed\sqlite-2.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\3cf7afb129e7e0a61487f33fc9efd629\transformed\sqlite-2.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\f0dd217b61d9b695314659dd677506b4\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\f0dd217b61d9b695314659dd677506b4\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\5f117fb26d946a1c5e87c63d4adf47a7\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
@@ -529,12 +558,12 @@ MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Alva
 MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\9cca1bb3a5f6b693dea601da6741bfd8\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\a462c25d076c71bbceffc51f5a9bb1da\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\a462c25d076c71bbceffc51f5a9bb1da\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\cbcfff796798b50f6f9b3adc5450d2b3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\cbcfff796798b50f6f9b3adc5450d2b3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\04383091a568cbbe466b62989e9e288f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\04383091a568cbbe466b62989e9e288f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\35bae98c5e87572327ba1aee83e6e691\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\35bae98c5e87572327ba1aee83e6e691\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\cbcfff796798b50f6f9b3adc5450d2b3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\cbcfff796798b50f6f9b3adc5450d2b3\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c8cb99171604453e2634b2cf3d7da75a\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c8cb99171604453e2634b2cf3d7da75a\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\b8937a08354be65db0b99c5fe6b9d37b\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
@@ -619,6 +648,8 @@ MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\AlvaroPC
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\9f53aad37b78f471293552887d5fd4b7\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\88becb3e7ef5ac417c6d75a12610b090\transformed\recaptcha-18.4.0\AndroidManifest.xml:8:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\88becb3e7ef5ac417c6d75a12610b090\transformed\recaptcha-18.4.0\AndroidManifest.xml:8:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ebc8344e3bfab709f1a74d98f56d1338\transformed\play-services-measurement-21.6.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ebc8344e3bfab709f1a74d98f56d1338\transformed\play-services-measurement-21.6.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c88373834dbccd04d54ca2342fa28118\transformed\play-services-measurement-impl-21.6.1\AndroidManifest.xml:24:5-79
@@ -739,6 +770,8 @@ ADDED from [com.google.firebase:firebase-firestore:24.11.1] C:\Users\AlvaroPC\.g
 		ADDED from [com.google.firebase:firebase-firestore:24.11.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\93ce47240e6fb363e1abb5c29eadf95a\transformed\firebase-firestore-24.11.1\AndroidManifest.xml:21:17-111
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.android.gms:play-services-measurement-api:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\7edd3f337c85c1aa2d5c1523a223e6bb\transformed\play-services-measurement-api-21.6.1\AndroidManifest.xml:24:5-68
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
 MERGED from [com.google.android.gms:play-services-measurement:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ebc8344e3bfab709f1a74d98f56d1338\transformed\play-services-measurement-21.6.1\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ebc8344e3bfab709f1a74d98f56d1338\transformed\play-services-measurement-21.6.1\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c88373834dbccd04d54ca2342fa28118\transformed\play-services-measurement-impl-21.6.1\AndroidManifest.xml:25:5-68
@@ -895,6 +928,240 @@ uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
 ADDED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\88becb3e7ef5ac417c6d75a12610b090\transformed\recaptcha-18.4.0\AndroidManifest.xml:9:5-98
 	android:name
 		ADDED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\88becb3e7ef5ac417c6d75a12610b090\transformed\recaptcha-18.4.0\AndroidManifest.xml:9:22-95
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:22-78
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:22-74
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:29:9-37:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\da8bfd7d400a7204188ad7bc438c3050\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\da8bfd7d400a7204188ad7bc438c3050\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\04383091a568cbbe466b62989e9e288f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\04383091a568cbbe466b62989e9e288f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\35bae98c5e87572327ba1aee83e6e691\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\35bae98c5e87572327ba1aee83e6e691\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:33:13-31
+	android:authorities
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:31:13-68
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:30:13-67
+meta-data#androidx.work.WorkManagerInitializer
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:34:13-36:52
+	android:value
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:36:17-49
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:35:17-68
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:39:9-45:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:42:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:43:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:44:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:45:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:41:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:40:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:46:9-52:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:49:13-70
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:50:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:51:13-69
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:52:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:48:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:47:13-84
+service#androidx.work.impl.foreground.SystemForegroundService
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:53:9-59:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:56:13-77
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:57:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:58:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:59:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:55:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:54:13-81
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:61:9-66:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:64:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:65:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:66:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:63:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:62:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:67:9-77:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:70:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:71:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:72:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:69:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:68:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:73:13-76:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:17-87
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:17-90
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:78:9-88:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:81:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:82:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:83:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:80:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:79:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:84:13-87:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:17-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:17-76
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:89:9-99:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:92:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:93:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:94:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:91:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:90:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:95:13-98:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:17-83
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:17-82
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:100:9-109:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:103:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:104:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:105:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:102:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:101:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:106:13-108:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:110:9-121:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:113:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:114:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:115:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:112:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:25-76
+action#android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:17-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:122:9-131:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:125:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:126:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:127:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:124:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:123:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:128:13-130:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:17-98
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:25-95
+receiver#androidx.work.impl.diagnostics.DiagnosticsReceiver
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:132:9-142:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:135:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:136:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:137:13-57
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:138:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:134:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:133:13-78
+intent-filter#action:name:androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:139:13-141:29
+action#androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:17-88
+	android:name
+		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\03e9a4d47bde8019f65cb92fc384c93e\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:25-85
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
 ADDED from [com.google.android.gms:play-services-measurement:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ebc8344e3bfab709f1a74d98f56d1338\transformed\play-services-measurement-21.6.1\AndroidManifest.xml:26:5-110
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c88373834dbccd04d54ca2342fa28118\transformed\play-services-measurement-impl-21.6.1\AndroidManifest.xml:26:5-110
@@ -939,22 +1206,6 @@ ADDED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\AlvaroPC\.gra
 		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\AlvaroPC\.gradle\caches\transforms-3\49bd292a8f66a1c6ccee428ecf78542a\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
 	android:name
 		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.6] C:\Users\AlvaroPC\.gradle\caches\transforms-3\49bd292a8f66a1c6ccee428ecf78542a\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
-provider#androidx.startup.InitializationProvider
-ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\da8bfd7d400a7204188ad7bc438c3050\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\da8bfd7d400a7204188ad7bc438c3050\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\04383091a568cbbe466b62989e9e288f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\04383091a568cbbe466b62989e9e288f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\35bae98c5e87572327ba1aee83e6e691\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\35bae98c5e87572327ba1aee83e6e691\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
-	tools:node
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
-	android:authorities
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-	android:exported
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-	android:name
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
 meta-data#androidx.emoji2.text.EmojiCompatInitializer
 ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\42b3d198336b05a350f99afa0b5058b2\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
 	android:value
@@ -999,6 +1250,16 @@ ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Alvar
 		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d4a1f7e621e31df8dfef1c6ac162b3b5\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d4a1f7e621e31df8dfef1c6ac162b3b5\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\ae46371023ab6f81172a42faa0f94e06\transformed\room-runtime-2.5.0\AndroidManifest.xml:25:13-74
 service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
 ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c4a8632cbdd8329213f7b8a205470b70\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:26:9-32:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\0a1b67a8ee8c5da9ccba9a4d34ab99e9\transformed\transport-runtime-3.2.0\AndroidManifest.xml:34:9-36:40

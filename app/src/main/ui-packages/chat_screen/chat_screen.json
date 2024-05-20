@@ -1,0 +1,327 @@
+{
+  "name": "chat_screen",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "291:159",
+    "version": "5774962517",
+    "component-id": "d25a1eba5898bd82e429c22445c506279bfc9755"
+  },
+  "default": "ChatScreen",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "MainFrame"
+      },
+      {
+        "type": "group",
+        "id": "UserNameFrame"
+      },
+      {
+        "type": "vector",
+        "id": "1Line"
+      },
+      {
+        "type": "group",
+        "id": "ChatFrame"
+      },
+      {
+        "type": "vector",
+        "id": "2Line"
+      },
+      {
+        "type": "group",
+        "id": "chatBar"
+      },
+      {
+        "type": "text",
+        "id": "USERNAME"
+      },
+      {
+        "type": "group",
+        "id": "User_Image"
+      },
+      {
+        "type": "group",
+        "id": "User_Image_synth"
+      },
+      {
+        "type": "vector",
+        "id": "UserImageVECVEC"
+      },
+      {
+        "type": "vector",
+        "id": "Elipe"
+      }
+    ],
+    "modes": {
+      "ChatScreen": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "MainFrame",
+              "UserNameFrame"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          },
+          {
+            "id": "MainFrame",
+            "padding": {
+              "left": "19.0",
+              "top": "5.0",
+              "right": "19.0",
+              "bottom": "18.0"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "28.5"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "360.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "743.0"
+              }
+            },
+            "main-axis-align": "end",
+            "children": [
+              "1Line",
+              "ChatFrame",
+              "2Line",
+              "chatBar"
+            ],
+            "item-spacing": "10.0"
+          },
+          {
+            "id": "UserNameFrame",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-371.5"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "360.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "57.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "USERNAME",
+              "User_Image"
+            ]
+          },
+          {
+            "id": "1Line",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "1line.svg"
+          },
+          {
+            "id": "ChatFrame",
+            "is-structured": "false"
+          },
+          {
+            "id": "2Line",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "2line.svg"
+          },
+          {
+            "id": "chatBar",
+            "border-radius": "15.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "42.0"
+              }
+            },
+            "is-structured": "false"
+          },
+          {
+            "id": "USERNAME",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.5"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "16.0"
+              }
+            },
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "$userNameText",
+            "overflow": "visible",
+            "text-size": "12.0",
+            "line-height": "1.6039999326070147",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "User_Image",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.1838235855102539"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-8.316176414489746"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "User_Image_synth",
+              "UserImageVECVEC"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "User_Image_synth",
+            "opacity": "100.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Elipe"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "UserImageVECVEC",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "-0.0002689361572265625"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.0001087188720703125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "13.400312423706055"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "16.463132858276367"
+              }
+            },
+            "vector-content": "user_image_vecvec.svg"
+          },
+          {
+            "id": "Elipe",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "26.367647171020508"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "26.367647171020508"
+              }
+            },
+            "vector-content": "elipe.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "userNameText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "ChatScreen",
+      "size": {
+        "width": 360.0,
+        "height": 800.0
+      },
+      "parameters": {
+        "userNameText": "USERNAME"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

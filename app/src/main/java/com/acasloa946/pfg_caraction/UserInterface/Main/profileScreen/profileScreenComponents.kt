@@ -1,5 +1,6 @@
 package com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -11,13 +12,16 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.DpOffset
@@ -30,6 +34,10 @@ import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.CarCardComponent
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.NotFoundAlertComponent
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
+import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
+import com.acasloa946.pfg_caraction.UserInterface.States.ChatScreenStates
+import com.acasloa946.pfg_caraction.UserInterface.States.ProfileScreenStates
+import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.profilescreen.Banner
 import com.acasloa946.pfg_caraction.profilescreen.BannerImage
 import com.acasloa946.pfg_caraction.profilescreen.FramePFP
@@ -62,6 +70,9 @@ fun ProfileScreenComponent(
     memberSinceText: String
 ) {
     val fetchedCars by profileViewmodel.fetchedCarsUploadedByUser.collectAsState()
+    val profileStates by profileViewmodel.profileStates.observeAsState(
+        ProfileScreenStates.Loading
+    )
 
     TopLevel(modifier = modifier) {
         Banner(modifier = Modifier
@@ -148,56 +159,24 @@ fun ProfileScreenComponent(
                 MemberSinceComponent(memberSinceText = memberSinceText)
                 Linea2()
                 Spacer(modifier = Modifier.padding(30.dp))
-                FrameUploadedCars {
-                    val scrollState = rememberLazyListState()
-                    var countOfList = 5
-                    if (!fetchedCars.isEmpty()) {
-                        LazyColumn(
-                            verticalArrangement = Arrangement.spacedBy(5.dp),
-                            state = scrollState
-                        ) {
-                            if (!scrollState.canScrollForward) {
-                                countOfList += 5
-                            }
-                            items(fetchedCars.take(countOfList)) {
-                                CarCardComponent(
-                                    makeModelText = AnnotatedString("${it.make} ${it.model}"),
-                                    priceText = "${it.price}€",
-                                    locationText = AnnotatedString(
-                                        "Localización: " + profileViewmodel.formatLocationString(
-                                            it.locationName!!
-                                        )
-                                    ),
-                                    yearText = AnnotatedString("Año: " + it.year.toString()),
-                                    kmText = AnnotatedString("Km´s: " + it.km.toString()+ " km´s"),
-                                    transText = AnnotatedString("Tipo de transmisión: " + it.transmisionType),
-                                    fuelTypeText = AnnotatedString("Tipo de combustible: " + it.fuelType),
-                                    image = it.image!!,
-                                    onCarClick = {
-                                        //
-                                    }
-                                )
-                            }
-
-                        }
-                    } else {
-                        Column (
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            modifier = Modifier
-                                .align(Alignment.CenterVertically)
-                                .fillMaxSize()
-                        ){
-                            NotFoundAlertComponent(modifier = Modifier.size(205.dp,29.dp))
-                        }
+                FrameUploadedCars () {
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        ProfileCars(
+                            profileStates = profileStates,
+                            fetchedCars = fetchedCars,
+                            context = LocalContext.current
+                        )
                     }
-
 
                 }
 
             }
         }
     }
-    Spacer(modifier = Modifier.padding(40.dp))
+    Spacer(modifier = Modifier.padding(33.dp))
 }
 
 
@@ -240,4 +219,56 @@ fun MemberSinceComponent(
         height = 1.603999918157404.em,
         modifier = modifier
     )
+}
+
+@Composable
+fun ProfileCars(
+    profileStates : ProfileScreenStates<List<CarModel>>,
+    fetchedCars : List<CarModel>,
+    context: Context
+){
+    when (profileStates) {
+        is ProfileScreenStates.Loading -> {
+
+            CircularProgressIndicator(modifier = Modifier.size(200.dp))
+        }
+        is ProfileScreenStates.Success -> {
+            val scrollState = rememberLazyListState()
+            var countOfList = 5
+            if (!fetchedCars.isEmpty()) {
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(5.dp),
+                    state = scrollState,
+                    modifier = Modifier.padding(bottom = 45.dp)
+                ) {
+                    if (!scrollState.canScrollForward) {
+                        countOfList += 5
+                    }
+                    items(fetchedCars.take(countOfList)) {
+                        CarCardComponent(
+                            makeModelText = ("${it.make} ${it.model}"),
+                            priceText = "${it.price}€",
+                            image = it.image!!,
+                            onCarClick = {
+
+                            }
+                        )
+                    }
+
+                }
+            } else {
+                Column (
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .fillMaxSize()
+                ){
+                    NotFoundAlertComponent(modifier = Modifier.size(205.dp,29.dp))
+                }
+            }
+        }
+        is ProfileScreenStates.Error -> {
+            toastMaker("Error al encontrar coches subidos por el usuario. Inténtelo de nuevo más tarde", context)
+        }
+    }
 }

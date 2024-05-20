@@ -1,0 +1,102 @@
+{
+  "name": "message_sent_card",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "301:182",
+    "version": "5776543519",
+    "component-id": "9cc610d9f43e5b1f4e6e6b5052e77dcc9fd04802"
+  },
+  "default": "MessageSentCard",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "MessageText"
+      }
+    ],
+    "modes": {
+      "MessageSentCard": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": "10.0",
+            "border-radius": "25.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": "1.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "MessageText"
+            ],
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            }
+          },
+          {
+            "id": "MessageText",
+            "color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            },
+            "text-content": "$messageContentText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "12.0",
+            "line-height": "1.6039999326070147",
+            "typeface": "Raillinc"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "messageContentText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "MessageSentCard",
+      "size": {
+        "width": 103.0,
+        "height": 39.0
+      },
+      "parameters": {
+        "messageContentText": "Message sent"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

@@ -1,0 +1,102 @@
+{
+  "name": "message_received_card",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "300:181",
+    "version": "5776427907",
+    "component-id": "b65e9077098eafec5aa312d8fb0b25bbc650819e"
+  },
+  "default": "MessageReceivedCard",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "MessageText"
+      }
+    ],
+    "modes": {
+      "MessageReceivedCard": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": "10.0",
+            "border-radius": "25.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": "1.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "MessageText"
+            ],
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            }
+          },
+          {
+            "id": "MessageText",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "$messageContentText",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "12.0",
+            "line-height": "1.6039999326070147",
+            "typeface": "Raillinc"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "messageContentText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "MessageReceivedCard",
+      "size": {
+        "width": 130.0,
+        "height": 39.0
+      },
+      "parameters": {
+        "messageContentText": "Message Received"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
