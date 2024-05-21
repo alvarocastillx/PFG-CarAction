@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "XzTnM8qIz9wRWwySmSiAGW",
     "node": "225:265",
-    "version": "5717933884",
+    "version": "5801178846",
     "component-id": "35406c60aab344009ecf82e76b15046f5828ea9c"
   },
   "default": "CarScreen",
@@ -87,6 +87,10 @@
       {
         "type": "group",
         "id": "ButtonContact"
+      },
+      {
+        "type": "group",
+        "id": "ButtonFavs"
       },
       {
         "type": "text",
@@ -191,6 +195,18 @@
       {
         "type": "text",
         "id": "Contactar con vendedor"
+      },
+      {
+        "type": "vector",
+        "id": "RectangleFav"
+      },
+      {
+        "type": "vector",
+        "id": "VectorFav"
+      },
+      {
+        "type": "text",
+        "id": "FavText"
       }
     ],
     "modes": {
@@ -262,7 +278,8 @@
               "FieldTrans",
               "FieldFuel",
               "FieldPrice",
-              "ButtonContact"
+              "ButtonContact",
+              "ButtonFavs"
             ],
             "item-spacing": "10.0",
             "clip-content": "false"
@@ -716,6 +733,27 @@
             "clip-content": "false"
           },
           {
+            "id": "ButtonFavs",
+            "tap-handler": "$onFavClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RectangleFav",
+              "VectorFav",
+              "FavText"
+            ],
+            "clip-content": "false"
+          },
+          {
             "id": "UserName",
             "color": {
               "alpha": "1.0",
@@ -774,7 +812,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.0000743865966796875"
+                "offset": "0.0001354217529296875"
               }
             },
             "size-constraints": {
@@ -837,7 +875,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -898,7 +936,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -959,7 +997,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -1020,7 +1058,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -1081,7 +1119,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -1142,7 +1180,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -1203,7 +1241,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -1264,7 +1302,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -1325,7 +1363,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "0.9824447631835938"
+                "offset": "0.9825668334960938"
               }
             },
             "size-constraints": {
@@ -1386,7 +1424,7 @@
               },
               "vertical": {
                 "attachment": "center",
-                "offset": "-0.00004100799560546875"
+                "offset": "0.00008106231689453125"
               }
             },
             "size-constraints": {
@@ -1436,6 +1474,91 @@
             "text-size": "18.0",
             "line-height": "1.4479999542236328",
             "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RectangleFav",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle_fav.svg"
+          },
+          {
+            "id": "VectorFav",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "129.12752151489258"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.00008106231689453125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_fav.svg"
+          },
+          {
+            "id": "FavText",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.13232421875"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "31.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            },
+            "text-content": "Añadir a favoritos",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "18.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
           }
         ]
       }
@@ -1443,6 +1566,11 @@
   },
   "parameters": {
     "onContactClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onFavClick": {
       "data-type": "void-callback",
       "required": false,
       "description": ""
@@ -1498,7 +1626,7 @@
       "design": "CarScreen",
       "size": {
         "width": 360.0,
-        "height": 1240.0
+        "height": 1295.0
       },
       "parameters": {
         "makeText": "Marca ",

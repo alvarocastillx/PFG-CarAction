@@ -35,8 +35,10 @@ import com.acasloa946.pfg_caraction.carscreen.AO
 import com.acasloa946.pfg_caraction.carscreen.Banner
 import com.acasloa946.pfg_caraction.carscreen.BannerImage
 import com.acasloa946.pfg_caraction.carscreen.ButtonContact
+import com.acasloa946.pfg_caraction.carscreen.ButtonFavs
 import com.acasloa946.pfg_caraction.carscreen.ContactarConVendedor
 import com.acasloa946.pfg_caraction.carscreen.Elipe
+import com.acasloa946.pfg_caraction.carscreen.FavText
 import com.acasloa946.pfg_caraction.carscreen.FieldAO
 import com.acasloa946.pfg_caraction.carscreen.FieldFuel
 import com.acasloa946.pfg_caraction.carscreen.FieldKM
@@ -67,6 +69,7 @@ import com.acasloa946.pfg_caraction.carscreen.RC7
 import com.acasloa946.pfg_caraction.carscreen.Rectangle
 import com.acasloa946.pfg_caraction.carscreen.Rectangle2
 import com.acasloa946.pfg_caraction.carscreen.Rectangle3
+import com.acasloa946.pfg_caraction.carscreen.RectangleFav
 import com.acasloa946.pfg_caraction.carscreen.RectanglePublish
 import com.acasloa946.pfg_caraction.carscreen.TopLevel
 import com.acasloa946.pfg_caraction.carscreen.Trans
@@ -74,6 +77,7 @@ import com.acasloa946.pfg_caraction.carscreen.UserImage
 import com.acasloa946.pfg_caraction.carscreen.UserImageSynth
 import com.acasloa946.pfg_caraction.carscreen.UserImageVECVEC
 import com.acasloa946.pfg_caraction.carscreen.Vector
+import com.acasloa946.pfg_caraction.carscreen.VectorFav
 import com.acasloa946.pfg_caraction.carscreen.VectorPublish
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
@@ -105,7 +109,8 @@ fun CarScreenComponent(
     carScreenViewmodel: CarScreenViewmodel,
     navController: NavController,
     profileViewmodel: profileViewmodel,
-    onLeftMenuClick: () -> Unit
+    onLeftMenuClick: () -> Unit,
+    onFavClick : () -> Unit
 ) {
 
     val cameraPositionState = rememberCameraPositionState {
@@ -464,6 +469,35 @@ fun CarScreenComponent(
                         offset = DpOffset(
                             x = 0.0.dp,
                             y = -0.5.dp
+                        )
+                    )
+                )
+            }
+            ButtonFavs(onFavClick = onFavClick) {
+                RectangleFav(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorFav(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12752151489258.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                FavText(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.13232421875.dp
                         )
                     )
                 )

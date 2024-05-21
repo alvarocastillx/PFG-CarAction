@@ -9,6 +9,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelVi
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel;
+import com.acasloa946.pfg_caraction.UserInterface.Main.favouritesScreen.favouritesViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel;
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel;

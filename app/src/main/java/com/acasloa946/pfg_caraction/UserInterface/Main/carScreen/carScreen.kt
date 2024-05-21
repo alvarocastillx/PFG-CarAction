@@ -16,6 +16,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.PushPin
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Icon
@@ -29,11 +30,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
@@ -46,6 +49,7 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
 
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutine = rememberCoroutineScope()
+    val context = LocalContext.current
 
     ModalNavigationDrawer(
         drawerState = drawerState,
@@ -83,6 +87,12 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                         selected = false, onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
                     NavigationDrawerItem(
                         icon = {
+                            Icon(imageVector = Icons.Default.PushPin, contentDescription = null)
+                        },
+                        label = { Text(text = "Favoritos") },
+                        selected = false, onClick = { navController.navigate(Routes.FavouritesScreen.route) })
+                    NavigationDrawerItem(
+                        icon = {
                             Icon(imageVector = Icons.Default.Settings, contentDescription = null)
                         },
                         label = { Text(text = "Ajustes") },
@@ -109,7 +119,7 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    CarScreenComponent(modifier = Modifier.fillMaxWidth().height(1300.dp),
+                    CarScreenComponent(modifier = Modifier.fillMaxWidth().height(1370.dp),
                         makeText = carScreenViewmodel.clickedCar.make!!,
                         modelText = carScreenViewmodel.clickedCar.model!!,
                         plateText = carScreenViewmodel.clickedCar.plate!!,
@@ -130,6 +140,15 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                             coroutine.launch {
                                 drawerState.open()
                             }
+                        },
+                        onFavClick = {
+                            carScreenViewmodel.addCarToFavourites(context = context,
+                                onSuccess = {
+                                    toastMaker("Coche agregado a favoritos", context = context)
+                                },
+                                onError = {
+                                    toastMaker("Error al agregar coche a favoritos, inténtelo de nuevo más tarde", context = context)
+                                })
                         }
                     )
                 }

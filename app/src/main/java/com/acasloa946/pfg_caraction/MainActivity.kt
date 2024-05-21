@@ -15,6 +15,7 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelVi
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.Main.favouritesScreen.favouritesViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
@@ -47,6 +48,8 @@ class MainActivity : ComponentActivity() {
         val profileViewmodel : profileViewmodel by viewModels()
         val chatScreenViewmodel : chatScreenViewmodel by viewModels()
         val currentChatsViewmodel : currentChatsViewmodel by viewModels()
+        val favouritesViewmodel : favouritesViewmodel by viewModels()
+
 
 
 
@@ -75,7 +78,8 @@ class MainActivity : ComponentActivity() {
                         carScreenViewmodel,
                         profileViewmodel,
                         chatScreenViewmodel,
-                        currentChatsViewmodel
+                        currentChatsViewmodel,
+                        favouritesViewmodel
                     )
                 }
             }

@@ -263,5 +263,59 @@ interface UserDao {
         return messagesList
     }
 
+    suspend fun addCarToFavourites(context: Context, email: String, carEntity: CarEntity) {
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            var user = UserEntity()
+            try {
+                val fetchedUser = db.collection("Users").document(email).get().await()
+                if (fetchedUser != null) {
+                    user = fetchedUser.toObject(UserEntity::class.java)!!
+                }
+                val userFavouriteCars = user.userFavouriteCars
+                if (!userFavouriteCars?.contains(carEntity.plate + carEntity.model + carEntity.year)!!) {
+                    userFavouriteCars.add(carEntity.plate + carEntity.model + carEntity.year)
+                    db.collection("Users")
+                        .document(email).update(
+                            "userFavouriteCars",
+                            userFavouriteCars
+                        ).addOnSuccessListener {
+                            Log.d("Success", "Coche agregado a favoritos correctamente")
+                        }.addOnFailureListener { Log.d("Error", "Error al agregar coche a favoritos") }
+                }
+                else {
+                    throw IllegalStateException("El coche ya se encuentra en favoritos")
+                }
+            } catch (e: Exception) {
+                Log.e("Error", "ERROR", e)
+            }
+        } else {
+            Log.e("Error", "ERROR: FirebaseApp no inicializado")
+        }
+    }
 
-}
+    suspend fun fetchFavCars(context: Context, email: String): MutableList<CarEntity> {
+        var user = UserEntity()
+        val favCars = mutableListOf<CarEntity>()
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                val fetchedUser = db.collection("Users").document(email).get().await()
+                if (fetchedUser != null) {
+                    user = fetchedUser.toObject(UserEntity::class.java)!!
+                }
+                for (i in user.userFavouriteCars!!) {
+                    val fetchedCar = db.collection("Cars").document(i).get().await()
+                    favCars.add(fetchedCar.toObject(CarEntity::class.java)!!)
+                }
+            } catch (e: Exception) {
+                Log.e("Error", "ERROR", e)
+            }
+        } else {
+            Log.e("Error", "ERROR: FirebaseApp no inicializado")
+        }
+        return favCars
+    }
+    }
+
+

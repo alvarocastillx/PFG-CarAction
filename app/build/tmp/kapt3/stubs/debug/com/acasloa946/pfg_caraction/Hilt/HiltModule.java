@@ -2,12 +2,14 @@ package com.acasloa946.pfg_caraction.Hilt;
 
 import com.acasloa946.pfg_caraction.data.UserDao;
 import com.acasloa946.pfg_caraction.data.UserRepository;
+import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase;
 import com.acasloa946.pfg_caraction.domain.addCarUseCase;
 import com.acasloa946.pfg_caraction.domain.addUserUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchChatsOfUserUseCase;
+import com.acasloa946.pfg_caraction.domain.fetchFavouriteCarsUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase;
 import com.acasloa946.pfg_caraction.domain.getMessagesUseCase;
@@ -20,7 +22,7 @@ import dagger.hilt.components.SingletonComponent;
 import javax.inject.Singleton;
 
 @dagger.Module
-@kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\b\u0010\u0019\u001a\u00020\u001aH\u0007J\u0010\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007\u00a8\u0006\u001d"}, d2 = {"Lcom/acasloa946/pfg_caraction/Hilt/HiltModule;", "", "()V", "provideAddCarUseCase", "Lcom/acasloa946/pfg_caraction/domain/addCarUseCase;", "userRepository", "Lcom/acasloa946/pfg_caraction/data/UserRepository;", "provideAddUserUseCase", "Lcom/acasloa946/pfg_caraction/domain/addUserUseCase;", "provideFetchCarsTypeUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchCarTypesUseCase;", "provideFetchCarsUploadedByUserUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchCarsUploadedByUserUseCase;", "provideFetchCarsUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchCarsUseCase;", "provideFetchChatsOfUserUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchChatsOfUserUseCase;", "provideFetchUserByNameUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchUserByNameUseCase;", "provideFetchUserCase", "Lcom/acasloa946/pfg_caraction/domain/fetchUserUseCase;", "provideLinkCarToProfileUseCase", "Lcom/acasloa946/pfg_caraction/domain/linkCarToProfileUseCase;", "provideSendMessageUseCase", "Lcom/acasloa946/pfg_caraction/domain/sendMessageUseCase;", "provideUserDao", "Lcom/acasloa946/pfg_caraction/data/UserDao;", "providegetMessageUseCase", "Lcom/acasloa946/pfg_caraction/domain/getMessagesUseCase;", "app_debug"})
+@kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u0010\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\b\u0010\u001d\u001a\u00020\u001eH\u0007J\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010\u0005\u001a\u00020\u0006H\u0007\u00a8\u0006!"}, d2 = {"Lcom/acasloa946/pfg_caraction/Hilt/HiltModule;", "", "()V", "provideAddCarToDatabase", "Lcom/acasloa946/pfg_caraction/domain/addCarToFavouritesUseCase;", "userRepository", "Lcom/acasloa946/pfg_caraction/data/UserRepository;", "provideAddCarUseCase", "Lcom/acasloa946/pfg_caraction/domain/addCarUseCase;", "provideAddUserUseCase", "Lcom/acasloa946/pfg_caraction/domain/addUserUseCase;", "provideFetchCarsTypeUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchCarTypesUseCase;", "provideFetchCarsUploadedByUserUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchCarsUploadedByUserUseCase;", "provideFetchCarsUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchCarsUseCase;", "provideFetchChatsOfUserUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchChatsOfUserUseCase;", "provideFetchFavCars", "Lcom/acasloa946/pfg_caraction/domain/fetchFavouriteCarsUseCase;", "provideFetchUserByNameUseCase", "Lcom/acasloa946/pfg_caraction/domain/fetchUserByNameUseCase;", "provideFetchUserCase", "Lcom/acasloa946/pfg_caraction/domain/fetchUserUseCase;", "provideLinkCarToProfileUseCase", "Lcom/acasloa946/pfg_caraction/domain/linkCarToProfileUseCase;", "provideSendMessageUseCase", "Lcom/acasloa946/pfg_caraction/domain/sendMessageUseCase;", "provideUserDao", "Lcom/acasloa946/pfg_caraction/data/UserDao;", "providegetMessageUseCase", "Lcom/acasloa946/pfg_caraction/domain/getMessagesUseCase;", "app_debug"})
 @dagger.hilt.InstallIn(value = {dagger.hilt.components.SingletonComponent.class})
 public final class HiltModule {
     
@@ -101,6 +103,20 @@ public final class HiltModule {
     @dagger.Provides
     @org.jetbrains.annotations.NotNull
     public final com.acasloa946.pfg_caraction.domain.fetchChatsOfUserUseCase provideFetchChatsOfUserUseCase(@org.jetbrains.annotations.NotNull
+    com.acasloa946.pfg_caraction.data.UserRepository userRepository) {
+        return null;
+    }
+    
+    @dagger.Provides
+    @org.jetbrains.annotations.NotNull
+    public final com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase provideAddCarToDatabase(@org.jetbrains.annotations.NotNull
+    com.acasloa946.pfg_caraction.data.UserRepository userRepository) {
+        return null;
+    }
+    
+    @dagger.Provides
+    @org.jetbrains.annotations.NotNull
+    public final com.acasloa946.pfg_caraction.domain.fetchFavouriteCarsUseCase provideFetchFavCars(@org.jetbrains.annotations.NotNull
     com.acasloa946.pfg_caraction.data.UserRepository userRepository) {
         return null;
     }

@@ -44,7 +44,8 @@ fun CarScreen(
     transText: String = "",
     fuelText: String = "",
     priceText: String = "",
-    onContactClick: () -> Unit = {}
+    onContactClick: () -> Unit = {},
+    onFavClick: () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
         Banner(modifier = Modifier.rowWeight(1.0f)) {
@@ -89,7 +90,7 @@ fun CarScreen(
                             alignment = Alignment.Center,
                             offset = DpOffset(
                                 x = -0.0002689361572265625.dp,
-                                y = 0.0000743865966796875.dp
+                                y = 0.0001354217529296875.dp
                             )
                         )
                     )
@@ -113,7 +114,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -134,7 +135,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -155,7 +156,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -176,7 +177,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -197,7 +198,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -218,7 +219,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -239,7 +240,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -260,7 +261,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -281,7 +282,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 0.000457763671875.dp,
-                            y = 0.9824447631835938.dp
+                            y = 0.9825668334960938.dp
                         )
                     )
                 )
@@ -301,7 +302,7 @@ fun CarScreen(
                         alignment = Alignment.Center,
                         offset = DpOffset(
                             x = 129.12752151489258.dp,
-                            y = -0.00004100799560546875.dp
+                            y = 0.00008106231689453125.dp
                         )
                     )
                 )
@@ -315,17 +316,47 @@ fun CarScreen(
                     )
                 )
             }
+            ButtonFavs(onFavClick = onFavClick) {
+                RectangleFav(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorFav(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12752151489258.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                FavText(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.13232421875.dp
+                        )
+                    )
+                )
+            }
         }
     }
 }
 
-@Preview(widthDp = 360, heightDp = 1240)
+@Preview(widthDp = 360, heightDp = 1295)
 @Composable
 private fun CarScreenPreview() {
     MaterialTheme {
         RelayContainer {
             CarScreen(
                 onContactClick = {},
+                onFavClick = {},
                 makeText = "Marca ",
                 modelText = "Modelo",
                 plateText = "Matrícula",
@@ -1057,6 +1088,55 @@ fun ButtonContact(
         clipToParent = false,
         content = content,
         modifier = modifier.tappable(onTap = onContactClick).requiredWidth(318.0.dp).requiredHeight(56.0.dp)
+    )
+}
+
+@Composable
+fun RectangleFav(modifier: Modifier = Modifier) {
+    RelayVector(
+        vector = painterResource(R.drawable.car_screen_rectangle_fav),
+        modifier = modifier.requiredWidth(318.0.dp).requiredHeight(56.0.dp)
+    )
+}
+
+@Composable
+fun VectorFav(modifier: Modifier = Modifier) {
+    RelayVector(
+        vector = painterResource(R.drawable.car_screen_vector_fav),
+        modifier = modifier.requiredWidth(11.563636779785156.dp).requiredHeight(18.66666603088379.dp)
+    )
+}
+
+@Composable
+fun FavText(modifier: Modifier = Modifier) {
+    RelayText(
+        content = "Añadir a favoritos",
+        fontSize = 18.0.sp,
+        fontFamily = kaiseiHarunoUmi,
+        color = Color(
+            alpha = 255,
+            red = 53,
+            green = 54,
+            blue = 52
+        ),
+        height = 1.4479999542236328.em,
+        fontWeight = FontWeight(700.0.toInt()),
+        maxLines = -1,
+        modifier = modifier.requiredWidth(314.0.dp).requiredHeight(31.0.dp)
+    )
+}
+
+@Composable
+fun ButtonFavs(
+    onFavClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable RelayContainerScope.() -> Unit
+) {
+    RelayContainer(
+        isStructured = false,
+        clipToParent = false,
+        content = content,
+        modifier = modifier.tappable(onTap = onFavClick).requiredWidth(318.0.dp).requiredHeight(56.0.dp)
     )
 }
 

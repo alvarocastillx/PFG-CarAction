@@ -2,12 +2,14 @@ package com.acasloa946.pfg_caraction.Hilt
 
 import com.acasloa946.pfg_caraction.data.UserDao
 import com.acasloa946.pfg_caraction.data.UserRepository
+import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase
 import com.acasloa946.pfg_caraction.domain.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.addUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
 import com.acasloa946.pfg_caraction.domain.fetchChatsOfUserUseCase
+import com.acasloa946.pfg_caraction.domain.fetchFavouriteCarsUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
 import com.acasloa946.pfg_caraction.domain.getMessagesUseCase
@@ -75,7 +77,14 @@ class HiltModule {
     fun provideFetchChatsOfUserUseCase(userRepository: UserRepository): fetchChatsOfUserUseCase {
         return fetchChatsOfUserUseCase(userRepository)
     }
-
+    @Provides
+    fun provideAddCarToDatabase(userRepository: UserRepository): addCarToFavouritesUseCase {
+        return addCarToFavouritesUseCase(userRepository)
+    }
+    @Provides
+    fun provideFetchFavCars(userRepository: UserRepository): fetchFavouriteCarsUseCase {
+        return fetchFavouriteCarsUseCase(userRepository)
+    }
 
 
 

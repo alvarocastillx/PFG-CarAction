@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 class UserRepository @Inject constructor(private val userDao : UserDao) {
     suspend fun addUser(userModel: UserModel, context: Context) {
-        userDao.createUserInDatabase(UserEntity(userModel.name,userModel.type,userModel.email, userModel.uploadedCars, userModel.memberSince),context)
+        userDao.createUserInDatabase(UserEntity(userModel.name,userModel.type,userModel.email, userModel.uploadedCars, userModel.memberSince, userModel.userFavouriteCars),context)
     }
 
     suspend fun fetchUser(context: Context, email: String): UserEntity? {
@@ -56,5 +56,15 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
 
     suspend fun fetchChatsOfUser(context: Context, userReading: String): List<MessageModel>{
         return userDao.fetchChatsOfUser(context, userReading).map { item -> MessageModel(item.message,item.sent_by,item.sent_to,item.sent_on) }
+    }
+
+    suspend fun addCarToFavourites(context: Context, email: String, carModel: CarModel){
+        return userDao.addCarToFavourites(context,email, CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType)
+        )
+    }
+
+    suspend fun fetchFavCars(context: Context, email: String): List<CarEntity> {
+        return userDao.fetchFavCars(context, email)
     }
 }

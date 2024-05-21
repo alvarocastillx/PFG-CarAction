@@ -11,5 +11,6 @@ data class UserEntity(
     val type:UserType? = null,
     val email:String? = null,
     val uploadedCars:MutableList<String>? = null,
-    val memberSince: String? = null
+    val memberSince: String? = null,
+    val userFavouriteCars:MutableList<String>?=null
 )

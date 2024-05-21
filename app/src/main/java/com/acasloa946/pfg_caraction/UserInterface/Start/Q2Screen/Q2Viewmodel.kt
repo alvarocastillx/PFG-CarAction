@@ -21,7 +21,7 @@ class Q2Viewmodel @Inject constructor(private val addUserUseCase: addUserUseCase
     fun createUserAcc(name:String, userType: UserType, context : Context) {
         val currentMail = auth.currentUser!!.email
         viewModelScope.launch {
-            addUserUseCase.invoke(UserModel(name,userType, currentMail!!, mutableListOf(), LocalDate.now().toString()),context)
+            addUserUseCase.invoke(UserModel(name,userType, currentMail!!, mutableListOf(), LocalDate.now().toString(), mutableListOf()),context)
         }
     }
 

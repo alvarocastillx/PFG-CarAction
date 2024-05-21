@@ -1134,9 +1134,11 @@ drawable car_screen_rc7
 drawable car_screen_rectangle
 drawable car_screen_rectangle3
 drawable car_screen_rectangle_2
+drawable car_screen_rectangle_fav
 drawable car_screen_rectangle_publish
 drawable car_screen_user_image_vecvec
 drawable car_screen_vector
+drawable car_screen_vector_fav
 drawable car_screen_vector_publish
 drawable chat_button_vector
 drawable chat_screen_1line
@@ -1164,6 +1166,8 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable current_chats_screen_linea1
 drawable current_chats_screen_vector
+drawable favourite_screen_linea1
+drawable favourite_screen_vector
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_call_answer

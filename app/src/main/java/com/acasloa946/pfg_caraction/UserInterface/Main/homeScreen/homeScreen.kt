@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.PushPin
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Icon
@@ -98,6 +99,12 @@ fun HomeScreen(
                         },
                         label = { Text(text = "Chats") },
                         selected = false, onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
+                    NavigationDrawerItem(
+                        icon = {
+                            Icon(imageVector = Icons.Default.PushPin, contentDescription = null)
+                        },
+                        label = { Text(text = "Favoritos") },
+                        selected = false, onClick = { navController.navigate(Routes.FavouritesScreen.route) })
                     NavigationDrawerItem(
                         icon = {
                             Icon(imageVector = Icons.Default.Settings, contentDescription = null)

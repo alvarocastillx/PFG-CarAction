@@ -176,7 +176,7 @@ fun ProfileScreenComponent(
             }
         }
     }
-    Spacer(modifier = Modifier.padding(33.dp))
+    Spacer(modifier = Modifier.padding(37.dp))
 }
 
 
