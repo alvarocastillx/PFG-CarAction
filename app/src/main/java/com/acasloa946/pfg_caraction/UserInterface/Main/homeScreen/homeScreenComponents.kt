@@ -23,8 +23,10 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -82,6 +84,8 @@ import com.acasloa946.pfg_caraction.ui.theme.againstFont
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.google.relay.compose.RelayText
 import com.google.relay.compose.RowScopeInstanceImpl.align
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 
 /**
@@ -107,6 +111,7 @@ fun PantallaPrincipalComponent(
 
     val fetchedCars by homeScreenViewmodel.fetchedCars.collectAsState()
     val fetchedCarsType by homeScreenViewmodel.fetchedCarTypes.collectAsState()
+
     TopLevel(modifier = modifier) {
         Banner(
             modifier = Modifier
@@ -412,18 +417,26 @@ fun NotFoundAlertComponent(modifier: Modifier = Modifier) {
 @Composable
 fun FilterDialog(
     homeScreenViewmodel: homeScreenViewmodel,
-    filterDialogViewmodel: FilterDialogViewmodel
+    filterDialogViewmodel: FilterDialogViewmodel,
+    coroutine : CoroutineScope
 ){
     Dialog(onDismissRequest = { homeScreenViewmodel.changeDialog() }) {
         Column (modifier = Modifier
-            .height(400.dp)
+            .height(460.dp)
             .background(GrisMain),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally) {
             FilterDialogComponent(modifier = Modifier.fillMaxSize(), filterDialogViewmodel = filterDialogViewmodel, homeScreenViewmodel, onApplyClick = {
                 val filterList = filterDialogViewmodel.filterObjectMaker()
                 homeScreenViewmodel.filterArea(filterList)
-            })
+                homeScreenViewmodel.changeDialog()
+            },
+                onDeleteFilterClick = {
+                    coroutine.launch {
+                        homeScreenViewmodel.fetchCars()
+                    }
+                    homeScreenViewmodel.changeDialog()
+                })
         }
     }
 }

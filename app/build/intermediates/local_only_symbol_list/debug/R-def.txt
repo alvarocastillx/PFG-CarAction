@@ -38,6 +38,7 @@ drawable current_chats_screen_linea1
 drawable current_chats_screen_vector
 drawable favourite_screen_linea1
 drawable favourite_screen_vector
+drawable filter_dialog_1
 drawable filter_dialog_rectangle_4
 drawable filter_dialog_vector_fav
 drawable ic_launcher_background

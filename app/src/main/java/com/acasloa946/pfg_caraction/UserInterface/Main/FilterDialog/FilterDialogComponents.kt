@@ -24,14 +24,16 @@ import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenView
 import com.acasloa946.pfg_caraction.filterdialog.ApplyText
 import com.acasloa946.pfg_caraction.filterdialog.ButtonApply
 import com.acasloa946.pfg_caraction.filterdialog.ButtonApplySynth
+import com.acasloa946.pfg_caraction.filterdialog.ButtonDeleteFilters
+import com.acasloa946.pfg_caraction.filterdialog.ButtonDeleteFiltersSynth
+import com.acasloa946.pfg_caraction.filterdialog.Class1
+import com.acasloa946.pfg_caraction.filterdialog.FilterTexx
 import com.acasloa946.pfg_caraction.filterdialog.KM
 import com.acasloa946.pfg_caraction.filterdialog.PRECIO
 import com.acasloa946.pfg_caraction.filterdialog.ReaDeFiltrado
 import com.acasloa946.pfg_caraction.filterdialog.Rectangle4
 import com.acasloa946.pfg_caraction.filterdialog.SliderKMFrame
 import com.acasloa946.pfg_caraction.filterdialog.SliderKMPrice
-import com.acasloa946.pfg_caraction.filterdialog.TextFieldMake
-import com.acasloa946.pfg_caraction.filterdialog.TextFieldModel
 import com.acasloa946.pfg_caraction.filterdialog.TopLevel
 import com.acasloa946.pfg_caraction.filterdialog.VectorFav
 import com.acasloa946.pfg_caraction.filterdialog.raillinc
@@ -45,7 +47,8 @@ fun FilterDialogComponent(
     modifier: Modifier = Modifier,
     filterDialogViewmodel: FilterDialogViewmodel,
     homeScreenViewmodel: homeScreenViewmodel,
-    onApplyClick : () -> Unit
+    onApplyClick : () -> Unit,
+    onDeleteFilterClick:()->Unit
 ) {
 
     LaunchedEffect(Unit) {
@@ -85,6 +88,23 @@ fun FilterDialogComponent(
                 ApplyText(modifier = Modifier.rowWeight(1.0f))
             }
             VectorFav(
+                modifier = Modifier.boxAlign(
+                    alignment = Alignment.Center,
+                    offset = DpOffset(
+                        x = 118.78181838989258.dp,
+                        y = -0.05876445770263672.dp
+                    )
+                )
+            )
+        }
+        ButtonDeleteFilters(
+            onDeleteFilterClick = onDeleteFilterClick,
+            modifier = Modifier.rowWeight(1.0f)
+        ) {
+            ButtonDeleteFiltersSynth {
+                FilterTexx(modifier = Modifier.rowWeight(1.0f))
+            }
+            Class1(
                 modifier = Modifier.boxAlign(
                     alignment = Alignment.Center,
                     offset = DpOffset(

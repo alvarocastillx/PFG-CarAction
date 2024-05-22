@@ -18,6 +18,7 @@ import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchChatsOfUserUseCa
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchFavCarsFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchUserByNameUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchUserCaseFactory;
+import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideHomeScreenViewmodelFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideLinkCarToProfileUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideSendMessageUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideUserDaoFactory;
@@ -458,8 +459,6 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private Provider<favouritesViewmodel> favouritesViewmodelProvider;
 
-    private Provider<homeScreenViewmodel> homeScreenViewmodelProvider;
-
     private Provider<profileViewmodel> profileViewmodelProvider;
 
     private Provider<uploadCarViewmodel> uploadCarViewmodelProvider;
@@ -483,14 +482,13 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
       this.chatScreenViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
       this.currentChatsViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
       this.favouritesViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 5);
-      this.homeScreenViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 6);
-      this.profileViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 7);
-      this.uploadCarViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 8);
+      this.profileViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 6);
+      this.uploadCarViewmodelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 7);
     }
 
     @Override
     public Map<String, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
-      return ImmutableMap.<String, javax.inject.Provider<ViewModel>>builderWithExpectedSize(9).put("com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel", ((Provider) carScreenViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel", ((Provider) q2ViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel", ((Provider) registerViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel", ((Provider) chatScreenViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel", ((Provider) currentChatsViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.favouritesScreen.favouritesViewmodel", ((Provider) favouritesViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel", ((Provider) homeScreenViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel", ((Provider) profileViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel", ((Provider) uploadCarViewmodelProvider)).build();
+      return ImmutableMap.<String, javax.inject.Provider<ViewModel>>builderWithExpectedSize(9).put("com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel", ((Provider) carScreenViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel", ((Provider) q2ViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel", ((Provider) registerViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel", ((Provider) chatScreenViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel", ((Provider) currentChatsViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.favouritesScreen.favouritesViewmodel", ((Provider) favouritesViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel", ((Provider) singletonCImpl.provideHomeScreenViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel", ((Provider) profileViewmodelProvider)).put("com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel", ((Provider) uploadCarViewmodelProvider)).build();
     }
 
     @Override
@@ -537,13 +535,10 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
           case 5: // com.acasloa946.pfg_caraction.UserInterface.Main.favouritesScreen.favouritesViewmodel 
           return (T) new favouritesViewmodel(singletonCImpl.fetchFavouriteCarsUseCase());
 
-          case 6: // com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel 
-          return (T) new homeScreenViewmodel(singletonCImpl.fetchUserUseCase(), singletonCImpl.fetchCarsUseCase(), singletonCImpl.fetchCarTypesUseCase());
-
-          case 7: // com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel 
+          case 6: // com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel 
           return (T) new profileViewmodel(singletonCImpl.fetchCarsUploadedByUserUseCase(), singletonCImpl.fetchUserByNameUseCase());
 
-          case 8: // com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel 
+          case 7: // com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel 
           return (T) new uploadCarViewmodel(singletonCImpl.addCarUseCase(), singletonCImpl.fetchUserUseCase(), singletonCImpl.linkCarToProfileUseCase());
 
           default: throw new AssertionError(id);
@@ -628,6 +623,8 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private Provider<UserDao> provideUserDaoProvider;
 
+    private Provider<homeScreenViewmodel> provideHomeScreenViewmodelProvider;
+
     private SingletonCImpl(HiltModule hiltModuleParam) {
       this.hiltModule = hiltModuleParam;
       initialize(hiltModuleParam);
@@ -670,12 +667,12 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
       return HiltModule_ProvideFetchFavCarsFactory.provideFetchFavCars(hiltModule, userRepository());
     }
 
-    private fetchCarsUseCase fetchCarsUseCase() {
-      return HiltModule_ProvideFetchCarsUseCaseFactory.provideFetchCarsUseCase(hiltModule, userRepository());
-    }
-
     private fetchCarTypesUseCase fetchCarTypesUseCase() {
       return HiltModule_ProvideFetchCarsTypeUseCaseFactory.provideFetchCarsTypeUseCase(hiltModule, userRepository());
+    }
+
+    private fetchCarsUseCase fetchCarsUseCase() {
+      return HiltModule_ProvideFetchCarsUseCaseFactory.provideFetchCarsUseCase(hiltModule, userRepository());
     }
 
     private fetchCarsUploadedByUserUseCase fetchCarsUploadedByUserUseCase() {
@@ -693,6 +690,7 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
     @SuppressWarnings("unchecked")
     private void initialize(final HiltModule hiltModuleParam) {
       this.provideUserDaoProvider = DoubleCheck.provider(new SwitchingProvider<UserDao>(singletonCImpl, 0));
+      this.provideHomeScreenViewmodelProvider = new SwitchingProvider<>(singletonCImpl, 1);
     }
 
     @Override
@@ -730,6 +728,9 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
         switch (id) {
           case 0: // com.acasloa946.pfg_caraction.data.UserDao 
           return (T) HiltModule_ProvideUserDaoFactory.provideUserDao(singletonCImpl.hiltModule);
+
+          case 1: // com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel 
+          return (T) HiltModule_ProvideHomeScreenViewmodelFactory.provideHomeScreenViewmodel(singletonCImpl.hiltModule, singletonCImpl.fetchUserUseCase(), singletonCImpl.fetchCarTypesUseCase(), singletonCImpl.fetchCarsUseCase());
 
           default: throw new AssertionError(id);
         }

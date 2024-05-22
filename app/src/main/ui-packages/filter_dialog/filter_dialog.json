@@ -1,0 +1,467 @@
+{
+  "name": "filter_dialog",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "XzTnM8qIz9wRWwySmSiAGW",
+    "node": "341:304",
+    "version": "5820738498",
+    "component-id": "adbe5348c02688c6cd69470f42388b5c3fdaf269"
+  },
+  "default": "FilterDialog",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Área de filtrado"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 4"
+      },
+      {
+        "type": "group",
+        "id": "SliderKMFrame"
+      },
+      {
+        "type": "text",
+        "id": "KM"
+      },
+      {
+        "type": "group",
+        "id": "SliderKMPrice"
+      },
+      {
+        "type": "text",
+        "id": "PRECIO"
+      },
+      {
+        "type": "group",
+        "id": "ButtonApply"
+      },
+      {
+        "type": "group",
+        "id": "ButtonDeleteFilters"
+      },
+      {
+        "type": "group",
+        "id": "ButtonApply_synth"
+      },
+      {
+        "type": "vector",
+        "id": "VectorFav"
+      },
+      {
+        "type": "text",
+        "id": "ApplyText"
+      },
+      {
+        "type": "group",
+        "id": "ButtonDeleteFilters_synth"
+      },
+      {
+        "type": "vector",
+        "id": "1"
+      },
+      {
+        "type": "text",
+        "id": "FilterTexx"
+      }
+    ],
+    "modes": {
+      "FilterDialog": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": "21.0",
+              "top": "22.0",
+              "right": "21.0",
+              "bottom": "22.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "children": [
+              "Área de filtrado",
+              "Rectangle 4",
+              "SliderKMFrame",
+              "KM",
+              "SliderKMPrice",
+              "PRECIO",
+              "ButtonApply",
+              "ButtonDeleteFilters"
+            ],
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            }
+          },
+          {
+            "id": "Área de filtrado",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "Área de filtrado",
+            "overflow": "visible",
+            "text-size": "28.0",
+            "line-height": "1.6039999553135462",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "Rectangle 4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_4.svg"
+          },
+          {
+            "id": "SliderKMFrame",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "34.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "KM",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "KM",
+            "overflow": "visible",
+            "text-size": "15.0",
+            "line-height": "1.6039999643961587",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "SliderKMPrice",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "34.0"
+              }
+            },
+            "is-structured": "false",
+            "clip-content": "false"
+          },
+          {
+            "id": "PRECIO",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "PRECIO",
+            "overflow": "visible",
+            "text-size": "15.0",
+            "line-height": "1.6039999643961587",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "ButtonApply",
+            "border-radius": "14.0",
+            "tap-handler": "$onApplyClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.78419494628906"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false",
+            "children": [
+              "ButtonApply_synth",
+              "VectorFav"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "ButtonDeleteFilters",
+            "border-radius": "14.0",
+            "tap-handler": "$onDeleteFilterClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "36.78419494628906"
+              }
+            },
+            "stroke-width": "3.0",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "351.66666666666663",
+              "saturation": "0.782608695652174",
+              "value": "0.9019607843137255"
+            },
+            "is-structured": "false",
+            "children": [
+              "ButtonDeleteFilters_synth",
+              "1"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "ButtonApply_synth",
+            "opacity": "100.0",
+            "padding": {
+              "top": "5.0",
+              "bottom": "5.0"
+            },
+            "border-radius": "14.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "ApplyText"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "VectorFav",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "118.78181838989258"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.05876445770263672"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_fav.svg"
+          },
+          {
+            "id": "ApplyText",
+            "relative-transform": [
+              [
+                "1.0",
+                "8.673617379884035e-19",
+                "0.0"
+              ],
+              [
+                "-8.673617379884035e-19",
+                "1.0",
+                "0.0"
+              ]
+            ],
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "26.784196853637695"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            },
+            "text-content": "Aplicar filtros",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "18.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "ButtonDeleteFilters_synth",
+            "opacity": "100.0",
+            "padding": {
+              "top": "5.0",
+              "bottom": "5.0"
+            },
+            "border-radius": "14.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "FilterTexx"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "118.78181838989258"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "-0.05876445770263672"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "1.svg"
+          },
+          {
+            "id": "FilterTexx",
+            "relative-transform": [
+              [
+                "1.0",
+                "8.673617379884035e-19",
+                "0.0"
+              ],
+              [
+                "-8.673617379884035e-19",
+                "1.0",
+                "0.0"
+              ]
+            ],
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "26.784196853637695"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "Eliminar filtros aplicados",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "15.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onApplyClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onDeleteFilterClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "FilterDialog",
+      "size": {
+        "width": 322.0,
+        "height": 349.5683898925781
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

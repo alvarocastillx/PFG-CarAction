@@ -20,10 +20,13 @@ import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.PushPin
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
+import androidx.compose.material3.PlainTooltipBox
+import androidx.compose.material3.PlainTooltipState
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
@@ -160,7 +163,7 @@ fun HomeScreen(
                             homeScreenViewmodel.changeDialog()
                         })
                     if (homeScreenViewmodel.isDialogOpened) {
-                        FilterDialog(homeScreenViewmodel = homeScreenViewmodel, filterDialogViewmodel = filterDialogViewmodel)
+                        FilterDialog(homeScreenViewmodel = homeScreenViewmodel, filterDialogViewmodel = filterDialogViewmodel, coroutine)
                     }
                 }
                 Box(
@@ -186,7 +189,7 @@ fun HomeScreen(
 }
 
 /*
-                            notif.notify(context,"5")
+
 
  */
 
