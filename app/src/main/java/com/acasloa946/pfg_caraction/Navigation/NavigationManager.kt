@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.acasloa946.pfg_caraction.UserInterface.Main.FilterDialog.FilterDialogViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.CarLocationScreen
 import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.carLocationViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.CarMakesScreen
@@ -52,11 +53,12 @@ fun NavigationManager(
     profileViewmodel: profileViewmodel,
     chatScreenViewmodel: chatScreenViewmodel,
     currentChatsViewmodel: currentChatsViewmodel,
-    favouritesViewmodel: favouritesViewmodel
+    favouritesViewmodel: favouritesViewmodel,
+    filterDialogViewmodel: FilterDialogViewmodel
 ) {
 
     val navController = rememberNavController()
-        NavHost(navController = navController, startDestination = "SplashScreen") {
+    NavHost(navController = navController, startDestination = "SplashScreen") {
         composable("InitScreen") {
                 InitPage(navController, initScreenViewmodel)
             }
@@ -77,7 +79,8 @@ fun NavigationManager(
                     navController = navController,
                     homeScreenViewmodel = homeScreenViewmodel,
                     carScreenViewmodel,
-                    profileViewmodel
+                    profileViewmodel,
+                    filterDialogViewmodel
                 )
             }
             composable("UploadCarScreen") {

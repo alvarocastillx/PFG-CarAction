@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -38,10 +39,13 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import coil.compose.SubcomposeAsyncImage
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.R
+import com.acasloa946.pfg_caraction.UserInterface.Main.FilterDialog.FilterDialogComponent
+import com.acasloa946.pfg_caraction.UserInterface.Main.FilterDialog.FilterDialogViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.BottomRoundedShape
 import com.acasloa946.pfg_caraction.carcard.FrameImage
@@ -96,7 +100,8 @@ fun PantallaPrincipalComponent(
     onUserClick: () -> Unit = {},
     homeScreenViewmodel: homeScreenViewmodel,
     navController: NavController,
-    carScreenViewmodel: CarScreenViewmodel
+    carScreenViewmodel: CarScreenViewmodel,
+    onFilterClick : () -> Unit
 ) {
 
 
@@ -234,9 +239,7 @@ fun PantallaPrincipalComponent(
                     )
 
                 }
-                FilterIcon(onFilterClick = {
-
-                }) {
+                FilterIcon(onFilterClick = onFilterClick) {
                     FilterIconVector(
                         modifier = Modifier.boxAlign(
                             alignment = Alignment.Center,
@@ -403,6 +406,25 @@ fun NotFoundAlertComponent(modifier: Modifier = Modifier) {
                 )
             )
         )
+    }
+}
+
+@Composable
+fun FilterDialog(
+    homeScreenViewmodel: homeScreenViewmodel,
+    filterDialogViewmodel: FilterDialogViewmodel
+){
+    Dialog(onDismissRequest = { homeScreenViewmodel.changeDialog() }) {
+        Column (modifier = Modifier
+            .height(400.dp)
+            .background(GrisMain),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            FilterDialogComponent(modifier = Modifier.fillMaxSize(), filterDialogViewmodel = filterDialogViewmodel, homeScreenViewmodel, onApplyClick = {
+                val filterList = filterDialogViewmodel.filterObjectMaker()
+                homeScreenViewmodel.filterArea(filterList)
+            })
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 package com.acasloa946.pfg_caraction.Hilt
 
+import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.data.UserDao
 import com.acasloa946.pfg_caraction.data.UserRepository
 import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase
@@ -84,6 +85,9 @@ class HiltModule {
     @Provides
     fun provideFetchFavCars(userRepository: UserRepository): fetchFavouriteCarsUseCase {
         return fetchFavouriteCarsUseCase(userRepository)
+    }
+    @Provides fun provideHomeScreenViewmodel(fetchUserUseCase: fetchUserUseCase, fetchCarTypesUseCase: fetchCarTypesUseCase, fetchCarsUseCase: fetchCarsUseCase):homeScreenViewmodel {
+        return homeScreenViewmodel(fetchUserUseCase, fetchCarsUseCase, fetchCarTypesUseCase)
     }
 
 

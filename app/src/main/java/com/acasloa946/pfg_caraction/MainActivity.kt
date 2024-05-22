@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.acasloa946.pfg_caraction.Navigation.NavigationManager
+import com.acasloa946.pfg_caraction.UserInterface.Main.FilterDialog.FilterDialogViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.carLocationViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
@@ -49,6 +50,7 @@ class MainActivity : ComponentActivity() {
         val chatScreenViewmodel : chatScreenViewmodel by viewModels()
         val currentChatsViewmodel : currentChatsViewmodel by viewModels()
         val favouritesViewmodel : favouritesViewmodel by viewModels()
+        val filterDialogViewmodel : FilterDialogViewmodel by viewModels()
 
 
 
@@ -79,7 +81,8 @@ class MainActivity : ComponentActivity() {
                         profileViewmodel,
                         chatScreenViewmodel,
                         currentChatsViewmodel,
-                        favouritesViewmodel
+                        favouritesViewmodel,
+                        filterDialogViewmodel
                     )
                 }
             }

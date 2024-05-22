@@ -36,6 +36,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
+import com.acasloa946.pfg_caraction.UserInterface.Main.FilterDialog.FilterDialogViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.toastMaker
@@ -54,7 +55,8 @@ fun HomeScreen(
     navController: NavController,
     homeScreenViewmodel: homeScreenViewmodel,
     carScreenViewmodel: CarScreenViewmodel,
-    profileViewmodel: profileViewmodel
+    profileViewmodel: profileViewmodel,
+    filterDialogViewmodel: FilterDialogViewmodel
 ) {
 
     val context = LocalContext.current
@@ -153,7 +155,13 @@ fun HomeScreen(
                             coroutine.launch {
                                 drawerState.open()
                             }
+                        },
+                        onFilterClick = {
+                            homeScreenViewmodel.changeDialog()
                         })
+                    if (homeScreenViewmodel.isDialogOpened) {
+                        FilterDialog(homeScreenViewmodel = homeScreenViewmodel, filterDialogViewmodel = filterDialogViewmodel)
+                    }
                 }
                 Box(
                     modifier = Modifier

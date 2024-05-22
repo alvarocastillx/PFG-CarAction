@@ -24,9 +24,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class homeScreenViewmodel @Inject constructor(
-    private val fetchUserUseCase: fetchUserUseCase, private val fetchCarsUseCase: fetchCarsUseCase, private val fetchCarTypesUseCase: fetchCarTypesUseCase,
+    private val fetchUserUseCase: fetchUserUseCase,
+    private val fetchCarsUseCase: fetchCarsUseCase,
+    private val fetchCarTypesUseCase: fetchCarTypesUseCase,
 ) : ViewModel() {
-
 
 
     private val auth = Firebase.auth
@@ -39,13 +40,18 @@ class homeScreenViewmodel @Inject constructor(
     var userName: String by mutableStateOf("")
 
     val fetchedCars = MutableStateFlow<List<CarModel>>(emptyList())
-    val fetchedCarTypes  = MutableStateFlow<List<String>>(emptyList())
+    val fetchedCarTypes = MutableStateFlow<List<String>>(emptyList())
 
     private var _typeSortedList: MutableList<CarModel> = mutableListOf()
 
     var countOfList by mutableStateOf(5)
 
+    var isDialogOpened by mutableStateOf(false)
 
+
+    fun changeDialog() {
+        isDialogOpened = !isDialogOpened
+    }
 
     fun add5toList() {
         countOfList += 5
@@ -91,6 +97,7 @@ class homeScreenViewmodel @Inject constructor(
 
 
     }
+
     private var previousType = ""
     private fun filterListBySearchbar(userInput: String) {
         if (previousType == "") {
@@ -98,15 +105,13 @@ class homeScreenViewmodel @Inject constructor(
                 val makeModel = "${item.make} ${item.model}"
                 makeModel.contains(userInput, ignoreCase = true)
             }
-        }
-        else {
+        } else {
             if (userInput != "") {
                 fetchedCars.value = fetchedCars.value.filter { item ->
                     val makeModel = "${item.make} ${item.model}"
                     makeModel.contains(userInput, ignoreCase = true)
                 }
-            }
-            else {
+            } else {
                 fetchedCars.value = _typeSortedList
             }
 
@@ -114,14 +119,13 @@ class homeScreenViewmodel @Inject constructor(
 
     }
 
-    fun filterListByTypeButton(typeToSearch:String) {
+    fun filterListByTypeButton(typeToSearch: String) {
         if (previousType != typeToSearch) {
             fetchedCars.value = _originalCarList.filter { item ->
                 item.type!!.contains(typeToSearch)
             }
             previousType = typeToSearch
-        }
-        else {
+        } else {
             fetchedCars.value = _originalCarList
             previousType = ""
         }
@@ -130,22 +134,36 @@ class homeScreenViewmodel @Inject constructor(
 
     }
 
-    fun formatLocationString(locationString: String): String {
-        val locationParts = locationString.split(",")
-        return locationParts[1] + "," + locationParts[3]
-    }
 
     suspend fun fetchCarTypes() {
         var carTypeList = mutableListOf<String>()
         viewModelScope.launch {
             try {
                 carTypeList = fetchCarTypesUseCase.invoke()
-            }
-            catch (e:Exception) {
-                Log.d("Error","Error al recuperar tipos")
+            } catch (e: Exception) {
+                Log.d("Error", "Error al recuperar tipos")
             }
         }.join()
         fetchedCarTypes.value = carTypeList
+
+    }
+
+    fun filterArea(filterList: List<Any>) {
+
+        if (filterList[0].toString().replace(",", "").toFloat() != 0f) {
+            fetchedCars.value = _originalCarList.filter { item ->
+                item.km!! < filterList[0].toString()
+                    .replace(",", "").toFloat()
+            }
+        }
+        if (filterList[1].toString().replace(",", "").toFloat() != 0f) {
+            fetchedCars.value = fetchedCars.value.filter { item ->
+                item.price != "" && item.price?.replace(",", "")!!.toFloat() < filterList[1].toString()
+                    .replace(",", "").toFloat()
+
+
+            }
+        }
 
     }
 }
