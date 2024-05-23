@@ -96,6 +96,8 @@ font relay_kaisei_harunoumi_medium
 font relay_kaisei_harunoumi_regular
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw no_car_animation
+raw no_chat_no_fav_animation
 string app_name
 string default_web_client_id
 string gcm_defaultSenderId

@@ -1,15 +1,16 @@
 package com.acasloa946.pfg_caraction;
 
 import com.acasloa946.pfg_caraction.Hilt.HiltModule;
-import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Main.favouritesScreen.favouritesViewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel_HiltModules;
-import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.InitScreen.InitScreenViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.Q2Screen.Q2Viewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.RegisterScreen.RegisterViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.carScreen.CarScreenViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.chatScreen.chatScreenViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.currentChatsScreen.currentChatsViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.favouritesScreen.favouritesViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.homeScreenViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.profileScreen.profileViewmodel_HiltModules;
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.uploadCarScreen.uploadCarViewmodel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -157,6 +158,7 @@ public final class CarActionApp_HiltComponents {
           CarScreenViewmodel_HiltModules.KeyModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
           HiltWrapper_SavedStateHandleModule.class,
+          InitScreenViewmodel_HiltModules.KeyModule.class,
           Q2Viewmodel_HiltModules.KeyModule.class,
           RegisterViewmodel_HiltModules.KeyModule.class,
           chatScreenViewmodel_HiltModules.KeyModule.class,
@@ -202,6 +204,7 @@ public final class CarActionApp_HiltComponents {
       modules = {
           CarScreenViewmodel_HiltModules.BindsModule.class,
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
+          InitScreenViewmodel_HiltModules.BindsModule.class,
           Q2Viewmodel_HiltModules.BindsModule.class,
           RegisterViewmodel_HiltModules.BindsModule.class,
           chatScreenViewmodel_HiltModules.BindsModule.class,

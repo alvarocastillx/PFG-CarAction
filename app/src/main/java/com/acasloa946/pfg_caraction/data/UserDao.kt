@@ -316,6 +316,23 @@ interface UserDao {
         }
         return favCars
     }
+
+    suspend fun checkIfUserExists(context: Context, email: String): Boolean {
+        var userExists = false
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                userExists = db.collection("Users").document(email).get().await().exists()
+            } catch (e: Exception) {
+                Log.e("Error", "ERROR", e)
+            }
+        } else {
+            Log.e("Error", "ERROR: FirebaseApp no inicializado")
+        }
+        return userExists
+    }
+
+
     }
 
 

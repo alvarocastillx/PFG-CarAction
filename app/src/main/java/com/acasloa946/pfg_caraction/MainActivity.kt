@@ -8,26 +8,26 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.acasloa946.pfg_caraction.Navigation.NavigationManager
-import com.acasloa946.pfg_caraction.UserInterface.Main.FilterDialog.FilterDialogViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.carLocationScreen.carLocationViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.carMakesScreen.carMakesViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.carModelScreen.carModelViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.carScreen.CarScreenViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.chatScreen.chatScreenViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.currentChatsScreen.currentChatsViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.favouritesScreen.favouritesViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.profileScreen.profileViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Main.uploadCarScreen.uploadCarViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Start.InitScreen.InitScreenViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Start.LoginScreen.loginViewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Start.Q1Screen.Q1Viewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Start.Q2Screen.Q2Viewmodel
-import com.acasloa946.pfg_caraction.UserInterface.Start.RegisterScreen.RegisterViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.FilterDialog.FilterDialogViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.carLocationScreen.carLocationViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.carMakesScreen.carMakesViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.carModelScreen.carModelViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.carScreen.CarScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.chatScreen.chatScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.currentChatsScreen.currentChatsViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.favouritesScreen.favouritesViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.homeScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.profileScreen.profileViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.uploadCarScreen.uploadCarViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.InitScreen.InitScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.LoginScreen.loginViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.Q1Screen.Q1Viewmodel
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.Q2Screen.Q2Viewmodel
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.RegisterScreen.RegisterViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.notifications.notif
 import com.acasloa946.pfg_caraction.ui.theme.PFGCarActionTheme
-import com.google.android.libraries.places.api.Places
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -51,6 +51,7 @@ class MainActivity : ComponentActivity() {
         val currentChatsViewmodel : currentChatsViewmodel by viewModels()
         val favouritesViewmodel : favouritesViewmodel by viewModels()
         val filterDialogViewmodel : FilterDialogViewmodel by viewModels()
+        val notif : notif by viewModels()
 
 
 
@@ -82,7 +83,8 @@ class MainActivity : ComponentActivity() {
                         chatScreenViewmodel,
                         currentChatsViewmodel,
                         favouritesViewmodel,
-                        filterDialogViewmodel
+                        filterDialogViewmodel,
+                        notif
                     )
                 }
             }

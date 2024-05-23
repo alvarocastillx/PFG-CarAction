@@ -116,6 +116,10 @@ dependencies {
     //LIVEDATA
     implementation("androidx.compose.runtime:runtime-livedata:1.6.6")
 
+    //LOTTIE PARA ANIMACIONES
+    implementation("com.airbnb.android:lottie-compose:4.0.0")
+
+
 
 
 

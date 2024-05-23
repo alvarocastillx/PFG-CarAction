@@ -1,11 +1,12 @@
 package com.acasloa946.pfg_caraction.Hilt
 
-import com.acasloa946.pfg_caraction.UserInterface.Main.homeScreen.homeScreenViewmodel
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.data.UserDao
 import com.acasloa946.pfg_caraction.data.UserRepository
 import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase
 import com.acasloa946.pfg_caraction.domain.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.addUserUseCase
+import com.acasloa946.pfg_caraction.domain.checkIfUserExistsUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
@@ -86,8 +87,9 @@ class HiltModule {
     fun provideFetchFavCars(userRepository: UserRepository): fetchFavouriteCarsUseCase {
         return fetchFavouriteCarsUseCase(userRepository)
     }
-    @Provides fun provideHomeScreenViewmodel(fetchUserUseCase: fetchUserUseCase, fetchCarTypesUseCase: fetchCarTypesUseCase, fetchCarsUseCase: fetchCarsUseCase):homeScreenViewmodel {
-        return homeScreenViewmodel(fetchUserUseCase, fetchCarsUseCase, fetchCarTypesUseCase)
+    @Provides
+    fun provideCheckIfUserExistsUseCase(userRepository: UserRepository):checkIfUserExistsUseCase{
+        return checkIfUserExistsUseCase(userRepository)
     }
 
 

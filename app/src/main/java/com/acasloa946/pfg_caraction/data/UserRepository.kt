@@ -67,4 +67,9 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
     suspend fun fetchFavCars(context: Context, email: String): List<CarEntity> {
         return userDao.fetchFavCars(context, email)
     }
+    suspend fun checkIfUserExists(context: Context, email: String):Boolean {
+        return userDao.checkIfUserExists(context, email)
+    }
+
+
 }

@@ -6,6 +6,7 @@ INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\
 INJECTED from C:\Users\AlvaroPC\AndroidStudioProjects\PFGCarAction\app\src\main\AndroidManifest.xml:2:1-36:12
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.11.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\94e5c44fd90ca7eb2cd408cee7a25505\transformed\firebase-firestore-ktx-24.11.1\AndroidManifest.xml:2:1-18:12
 MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c007a930a1a7a101fbd2c2cf36dd224a\transformed\coil-compose-2.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.airbnb.android:lottie-compose:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dd8e7ee2162fdf894cc17905ce2c34fe\transformed\lottie-compose-4.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth-ktx:22.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\feb12476e59bea646ae93e8ca82397f6\transformed\firebase-auth-ktx-22.3.1\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\5f72cbfdff92e98a02cc82f608fe10b1\transformed\firebase-storage-20.3.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\cc99727a1420e05d03552137192d73e8\transformed\firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
@@ -21,6 +22,7 @@ MERGED from [com.google.android.libraries.places:places:3.4.0] C:\Users\AlvaroPC
 MERGED from [io.coil-kt:coil-gif:2.6.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\e751a7f7da48978bfe80b896ba8657ea\transformed\coil-gif-2.6.0\AndroidManifest.xml:2:1-7:12
 MERGED from [io.coil-kt:coil-base:2.6.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\3b1a15188c47a6555500b1921ff11c5e\transformed\coil-base-2.6.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\5d8821929754339a350cf3bba3c0df0e\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.airbnb.android:lottie:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\bf8054c21e031244468ec140e721197e\transformed\lottie-4.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\8eaa708aa512eef4c9d1fd6935632606\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.dagger:hilt-android:2.50] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d14f30c164cf175918cd05902d7456b6\transformed\hilt-android-2.50\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\f9f9ec608fd05f64d1b130ab7a4aa13d\transformed\play-services-auth-21.1.0\AndroidManifest.xml:17:1-40:12
@@ -194,6 +196,8 @@ MERGED from [com.google.firebase:firebase-common-ktx:20.4.3] C:\Users\AlvaroPC\.
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.3] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c17b24b870f8e9bc7aa80fb6cc8d7cb4\transformed\firebase-common-ktx-20.4.3\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.android.libraries.places:places:3.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\370b87636b99932bfac9c20ff90a8e7f\transformed\places-3.4.0\AndroidManifest.xml:14:5-22:19
 MERGED from [com.google.android.libraries.places:places:3.4.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\370b87636b99932bfac9c20ff90a8e7f\transformed\places-3.4.0\AndroidManifest.xml:14:5-22:19
+MERGED from [com.airbnb.android:lottie:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\bf8054c21e031244468ec140e721197e\transformed\lottie-4.0.0\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\bf8054c21e031244468ec140e721197e\transformed\lottie-4.0.0\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\f9f9ec608fd05f64d1b130ab7a4aa13d\transformed\play-services-auth-21.1.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:21.1.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\f9f9ec608fd05f64d1b130ab7a4aa13d\transformed\play-services-auth-21.1.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\9f53aad37b78f471293552887d5fd4b7\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
@@ -314,6 +318,8 @@ MERGED from [com.google.firebase:firebase-firestore-ktx:24.11.1] C:\Users\Alvaro
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.11.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\94e5c44fd90ca7eb2cd408cee7a25505\transformed\firebase-firestore-ktx-24.11.1\AndroidManifest.xml:5:5-44
 MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c007a930a1a7a101fbd2c2cf36dd224a\transformed\coil-compose-2.5.0\AndroidManifest.xml:5:5-44
 MERGED from [io.coil-kt:coil-compose:2.5.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\c007a930a1a7a101fbd2c2cf36dd224a\transformed\coil-compose-2.5.0\AndroidManifest.xml:5:5-44
+MERGED from [com.airbnb.android:lottie-compose:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dd8e7ee2162fdf894cc17905ce2c34fe\transformed\lottie-compose-4.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie-compose:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\dd8e7ee2162fdf894cc17905ce2c34fe\transformed\lottie-compose-4.0.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-auth-ktx:22.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\feb12476e59bea646ae93e8ca82397f6\transformed\firebase-auth-ktx-22.3.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-ktx:22.3.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\feb12476e59bea646ae93e8ca82397f6\transformed\firebase-auth-ktx-22.3.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-storage:20.3.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\5f72cbfdff92e98a02cc82f608fe10b1\transformed\firebase-storage-20.3.0\AndroidManifest.xml:19:5-44
@@ -344,6 +350,8 @@ MERGED from [io.coil-kt:coil-base:2.6.0] C:\Users\AlvaroPC\.gradle\caches\transf
 MERGED from [io.coil-kt:coil-base:2.6.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\3b1a15188c47a6555500b1921ff11c5e\transformed\coil-base-2.6.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\5d8821929754339a350cf3bba3c0df0e\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\5d8821929754339a350cf3bba3c0df0e\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.airbnb.android:lottie:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\bf8054c21e031244468ec140e721197e\transformed\lottie-4.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:4.0.0] C:\Users\AlvaroPC\.gradle\caches\transforms-3\bf8054c21e031244468ec140e721197e\transformed\lottie-4.0.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\8eaa708aa512eef4c9d1fd6935632606\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\AlvaroPC\.gradle\caches\transforms-3\8eaa708aa512eef4c9d1fd6935632606\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.dagger:hilt-android:2.50] C:\Users\AlvaroPC\.gradle\caches\transforms-3\d14f30c164cf175918cd05902d7456b6\transformed\hilt-android-2.50\AndroidManifest.xml:18:3-42
