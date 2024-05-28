@@ -1,4 +1,4 @@
-#Thu May 23 11:12:28 CEST 2024
+#Tue May 28 10:43:29 CEST 2024
 base.0=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
@@ -10,6 +10,7 @@ base.15=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\i
 base.16=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 base.17=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
 base.18=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes4.dex
+base.19=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes5.dex
 base.2=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
 base.3=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
 base.4=C\:\\Users\\AlvaroPC\\AndroidStudioProjects\\PFGCarAction\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
@@ -29,6 +30,7 @@ path.15=8/classes.dex
 path.16=classes2.dex
 path.17=classes3.dex
 path.18=classes4.dex
+path.19=classes5.dex
 path.2=10/classes.dex
 path.3=11/classes.dex
 path.4=12/classes.dex
@@ -48,6 +50,7 @@ renamed.15=classes16.dex
 renamed.16=classes17.dex
 renamed.17=classes18.dex
 renamed.18=classes19.dex
+renamed.19=classes20.dex
 renamed.2=classes3.dex
 renamed.3=classes4.dex
 renamed.4=classes5.dex

@@ -60,10 +60,6 @@
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\register_screen_rectangle_reg.xml"
     },
     {
-        "merged": "com.acasloa946.pfg_caraction.app-merged_res-82:/raw_no_chat_no_fav_animation.json.flat",
-        "source": "com.acasloa946.pfg_caraction.app-main-84:/raw/no_chat_no_fav_animation.json"
-    },
-    {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_chat_screen_2line.xml.flat",
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\chat_screen_2line.xml"
     },
@@ -184,6 +180,10 @@
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\car_screen_rc2.xml"
     },
     {
+        "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\raw_config.json.flat",
+        "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-main-84:\\raw\\config.json"
+    },
+    {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_main_q1_ellipse_3.xml.flat",
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\main_q1_ellipse_3.xml"
     },
@@ -198,6 +198,10 @@
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-main-84:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_car_screen_linea1.xml.flat",
+        "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\car_screen_linea1.xml"
     },
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_upload_car_screen_rectangle3.xml.flat",
@@ -256,6 +260,10 @@
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\filter_dialog_rectangle_4.xml"
     },
     {
+        "merged": "com.acasloa946.pfg_caraction.app-merged_res-82:/drawable-nodpi_car_screen_rectangle_delete.xml.flat",
+        "source": "com.acasloa946.pfg_caraction.app-relay-78:/drawable-nodpi/car_screen_rectangle_delete.xml"
+    },
+    {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_upload_car_screen_rectangle.xml.flat",
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\upload_car_screen_rectangle.xml"
     },
@@ -286,6 +294,10 @@
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\font_railinc_font.otf.flat",
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-main-84:\\font\\railinc_font.otf"
+    },
+    {
+        "merged": "com.acasloa946.pfg_caraction.app-merged_res-82:/drawable-nodpi_car_screen_vector_dlete.xml.flat",
+        "source": "com.acasloa946.pfg_caraction.app-relay-78:/drawable-nodpi/car_screen_vector_dlete.xml"
     },
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_main_q2_rectangle_buy.xml.flat",
@@ -326,6 +338,10 @@
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-main-84:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\raw_no_chat_no_fav_animation.json.flat",
+        "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-main-84:\\raw\\no_chat_no_fav_animation.json"
     },
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -394,6 +410,10 @@
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_register_screen_image_car_action.png.flat",
         "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-relay-78:\\drawable-nodpi\\register_screen_image_car_action.png"
+    },
+    {
+        "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\raw_test.txt.flat",
+        "source": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-main-84:\\raw\\test.txt"
     },
     {
         "merged": "C:\\Users\\AlvaroPC\\.gradle\\daemon\\8.2\\com.acasloa946.pfg_caraction.app-merged_res-82:\\drawable-nodpi_favourite_screen_vector.xml.flat",

@@ -28,12 +28,15 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.CarCardComponent
 import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.NotFoundAlertComponent
 import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.InitScreen.BottomRoundedShape
 import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.RegisterScreen.toastMaker
 import com.acasloa946.pfg_caraction.UserInterface.LottieComponent.NoCarsAnimation
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.States.ProfileScreenStates
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.profilescreen.Banner
@@ -64,7 +67,9 @@ fun ProfileScreenComponent(
     userText: String = "",
     leftMenuClick: () -> Unit = {},
     profileViewmodel: profileViewmodel,
-    memberSinceText: String
+    memberSinceText: String,
+    navController: NavController,
+    carScreenViewmodel: CarScreenViewmodel
 ) {
     val fetchedCars by profileViewmodel.fetchedCarsUploadedByUser.collectAsState()
     val profileStates by profileViewmodel.profileStates.observeAsState(
@@ -164,7 +169,9 @@ fun ProfileScreenComponent(
                         ProfileCars(
                             profileStates = profileStates,
                             fetchedCars = fetchedCars,
-                            context = LocalContext.current
+                            context = LocalContext.current,
+                            navController = navController,
+                            carScreenViewmodel
                         )
                     }
 
@@ -222,11 +229,12 @@ fun MemberSinceComponent(
 fun ProfileCars(
     profileStates : ProfileScreenStates<List<CarModel>>,
     fetchedCars : List<CarModel>,
-    context: Context
+    context: Context,
+    navController : NavController,
+    carScreenViewmodel: CarScreenViewmodel
 ){
     when (profileStates) {
         is ProfileScreenStates.Loading -> {
-
             CircularProgressIndicator(modifier = Modifier.size(200.dp))
         }
         is ProfileScreenStates.Success -> {
@@ -247,7 +255,8 @@ fun ProfileCars(
                             priceText = "${it.price}€",
                             image = it.image!!,
                             onCarClick = {
-
+                                navController.navigate(Routes.CarScreen.route)
+                                carScreenViewmodel.clickedCar = it
                             }
                         )
                     }

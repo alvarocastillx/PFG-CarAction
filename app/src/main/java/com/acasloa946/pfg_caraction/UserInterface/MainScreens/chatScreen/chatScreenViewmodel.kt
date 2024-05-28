@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.acasloa946.pfg_caraction.API.const.Companion.INITIAL_CHATS
 import com.acasloa946.pfg_caraction.UserInterface.States.ChatScreenStates
 import com.acasloa946.pfg_caraction.UserInterface.models.MessageModel
 import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
@@ -31,6 +32,7 @@ class chatScreenViewmodel @Inject constructor(private val sendMessageUseCase: se
     private val _userChatsState = MutableLiveData<ChatScreenStates<List<MessageModel>>>()
     val userChatsState: LiveData<ChatScreenStates<List<MessageModel>>> = _userChatsState
     var loaded by mutableStateOf(false)
+    private var sentOnce by mutableStateOf(false)
 
     fun sendMessage(context: Context, sent_to: String,
                     errorSendingMessage : () -> Unit) {
@@ -41,6 +43,11 @@ class chatScreenViewmodel @Inject constructor(private val sendMessageUseCase: se
                     sendMessageUseCase.invoke(context, messageModel)
                     messageField = ""
                     getMessages(context, sent_to)
+
+                    if (!sentOnce) {
+                        INITIAL_CHATS +=1
+                        sentOnce = true
+                    }
                 }
             } catch (e: Exception) {
                 errorSendingMessage()

@@ -15,6 +15,7 @@ data class CarEntity (
     val locationName : String? = null,
     val userName: String? = null,
     val fuelType:String? = null,
-    val transmisionType:String? = null
+    val transmisionType:String? = null,
+    val carInfo:String? = null
 
 )

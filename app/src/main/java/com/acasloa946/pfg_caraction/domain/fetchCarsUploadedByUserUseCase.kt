@@ -13,7 +13,7 @@ class fetchCarsUploadedByUserUseCase @Inject constructor(private val userReposit
         for (i in carList) {
             val latitude = i.location!!.get("first")
             val longitude = i.location.get("second")
-            carModelList.add(CarModel(i.type!!, i.image!!,i.make!!, i.model!!, i.plate!!, i.year!!, i.km!!, i.price!!, Pair(latitude,longitude), i.locationName!!, i.userName!!, i.fuelType!!, i.transmisionType!!))
+            carModelList.add(CarModel(i.type!!, i.image!!,i.make!!, i.model!!, i.plate!!, i.year!!, i.km!!, i.price!!, Pair(latitude,longitude), i.locationName!!, i.userName!!, i.fuelType!!, i.transmisionType!!, i.carInfo))
         }
         return carModelList
     }

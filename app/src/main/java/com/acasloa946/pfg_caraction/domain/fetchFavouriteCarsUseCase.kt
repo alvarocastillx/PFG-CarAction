@@ -9,7 +9,7 @@ class fetchFavouriteCarsUseCase @Inject constructor(private val userRepository: 
     suspend operator fun invoke(context: Context, email:String): List<CarModel> {
         val carEntityList = userRepository.fetchFavCars(context, email)
         val carModelList = carEntityList.map { item -> CarModel(item.type, item.image,item.make, item.model, item.plate, item.year, item.km, item.price,
-            Pair(item.location!!.get("first"), item.location.get("second")), item.locationName, item.userName, item.fuelType, item.transmisionType) }
+            Pair(item.location!!.get("first"), item.location.get("second")), item.locationName, item.userName, item.fuelType, item.transmisionType, item.carInfo) }
 
         return carModelList
     }

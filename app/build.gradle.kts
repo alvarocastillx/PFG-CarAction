@@ -119,6 +119,10 @@ dependencies {
     //LOTTIE PARA ANIMACIONES
     implementation("com.airbnb.android:lottie-compose:4.0.0")
 
+    //Gemini AI
+    implementation("com.google.ai.client.generativeai:generativeai:0.6.0")
+
+
 
 
 

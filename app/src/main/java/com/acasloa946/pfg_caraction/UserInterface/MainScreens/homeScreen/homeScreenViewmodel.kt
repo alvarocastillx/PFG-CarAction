@@ -8,6 +8,14 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
+import com.acasloa946.pfg_caraction.API.APIModule
+import com.acasloa946.pfg_caraction.API.Models.AIModels.ChatChoice
+import com.acasloa946.pfg_caraction.API.Models.AIModels.ChatCompletionResponse
+import com.acasloa946.pfg_caraction.API.Models.AIModels.ChatRequest
+import com.acasloa946.pfg_caraction.API.Models.AIModels.Message
+import com.acasloa946.pfg_caraction.API.const.Companion.CURRENT_CHATS
+import com.acasloa946.pfg_caraction.API.const.Companion.INITIAL_CHATS
+import com.acasloa946.pfg_caraction.API.const.Companion.SYSTEM_AI_MESSAGE
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.UserInterface.notifications.notif
@@ -46,13 +54,10 @@ class homeScreenViewmodel @Inject constructor(
 
     private var _typeSortedList: MutableList<CarModel> = mutableListOf()
 
-    var countOfList by mutableStateOf(5)
-
     var isDialogOpened by mutableStateOf(false)
 
 
-    var initialChats by mutableStateOf(0)
-    var currentChats by mutableStateOf(0)
+
     private var alreadyFetchedChats by mutableStateOf(false)
 
 
@@ -60,9 +65,6 @@ class homeScreenViewmodel @Inject constructor(
         isDialogOpened = !isDialogOpened
     }
 
-    fun add5toList() {
-        countOfList += 5
-    }
 
     fun fetchUserName(context: Context, onError: () -> Unit) {
         val currentEmail = auth.currentUser?.email
@@ -190,15 +192,15 @@ class homeScreenViewmodel @Inject constructor(
         try {
             viewModelScope.launch {
                 if (!alreadyFetchedChats) {
-                    initialChats = fetchChatsOfUserUseCase.invoke(context, auth.currentUser?.email.toString()).size
-                    currentChats = initialChats
+                    INITIAL_CHATS = fetchChatsOfUserUseCase.invoke(context, auth.currentUser?.email.toString()).size
+                    CURRENT_CHATS = INITIAL_CHATS
                     alreadyFetchedChats = true
                 }
                 else {
-                    currentChats = fetchChatsOfUserUseCase.invoke(context, auth.currentUser?.email.toString()).size
-                    if (currentChats>initialChats) {
+                    CURRENT_CHATS = fetchChatsOfUserUseCase.invoke(context, auth.currentUser?.email.toString()).size
+                    if (CURRENT_CHATS>INITIAL_CHATS) {
                         sendNotification()
-                        initialChats = currentChats
+                        INITIAL_CHATS = CURRENT_CHATS
                     }
                 }
             }
@@ -207,5 +209,7 @@ class homeScreenViewmodel @Inject constructor(
             Log.d("Error","Error recuperando chats")
         }
     }
+
+
 
 }

@@ -73,6 +73,7 @@ fun HomeScreen(
                 toastMaker("Ha ocurrido un error con su cuenta", context)
                 navController.navigate(Routes.InitScreen.route)
             })
+        homeScreenViewmodel.fetchCars()
     }
     LaunchedEffect(true) {
         while (true) {

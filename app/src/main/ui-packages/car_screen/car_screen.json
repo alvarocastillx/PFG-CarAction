@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "XzTnM8qIz9wRWwySmSiAGW",
     "node": "225:265",
-    "version": "5801178846",
+    "version": "5861444096",
     "component-id": "35406c60aab344009ecf82e76b15046f5828ea9c"
   },
   "default": "CarScreen",
@@ -91,6 +91,22 @@
       {
         "type": "group",
         "id": "ButtonFavs"
+      },
+      {
+        "type": "group",
+        "id": "ButtonDelete"
+      },
+      {
+        "type": "vector",
+        "id": "Linea1"
+      },
+      {
+        "type": "text",
+        "id": "InformaciónHeader"
+      },
+      {
+        "type": "text",
+        "id": "InfoText"
       },
       {
         "type": "text",
@@ -207,6 +223,18 @@
       {
         "type": "text",
         "id": "FavText"
+      },
+      {
+        "type": "vector",
+        "id": "RectangleDelete"
+      },
+      {
+        "type": "vector",
+        "id": "VectorDlete"
+      },
+      {
+        "type": "text",
+        "id": "DeleteText"
       }
     ],
     "modes": {
@@ -279,7 +307,11 @@
               "FieldFuel",
               "FieldPrice",
               "ButtonContact",
-              "ButtonFavs"
+              "ButtonFavs",
+              "ButtonDelete",
+              "Linea1",
+              "InformaciónHeader",
+              "InfoText"
             ],
             "item-spacing": "10.0",
             "clip-content": "false"
@@ -752,6 +784,92 @@
               "FavText"
             ],
             "clip-content": "false"
+          },
+          {
+            "id": "ButtonDelete",
+            "tap-handler": "$onDeleteClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "RectangleDelete",
+              "VectorDlete",
+              "DeleteText"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Linea1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "344.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "linea1.svg"
+          },
+          {
+            "id": "InformaciónHeader",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "289.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "33.0"
+              }
+            },
+            "color": {
+              "alpha": "1.0",
+              "hue": "31.999999999999993",
+              "saturation": "0.06048387096774195",
+              "value": "0.9725490196078431"
+            },
+            "text-content": "Información",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "28.0",
+            "line-height": "1.6039999553135462",
+            "typeface": "Raillinc"
+          },
+          {
+            "id": "InfoText",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "$infoText",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "18.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
           },
           {
             "id": "UserName",
@@ -1559,6 +1677,91 @@
             "text-size": "18.0",
             "line-height": "1.4479999542236328",
             "typeface": "Kaisei HarunoUmi"
+          },
+          {
+            "id": "RectangleDelete",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "318.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "56.0"
+              }
+            },
+            "vector-content": "rectangle_delete.svg"
+          },
+          {
+            "id": "VectorDlete",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "129.12752151489258"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.00008106231689453125"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "11.563636779785156"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "18.66666603088379"
+              }
+            },
+            "vector-content": "vector_dlete.svg"
+          },
+          {
+            "id": "DeleteText",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.13232421875"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "314.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "31.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "89.99999999999989",
+              "saturation": "0.037037037037037035",
+              "value": "0.21176470588235294"
+            },
+            "text-content": "Eliminar anuncio",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "18.0",
+            "line-height": "1.4479999542236328",
+            "typeface": "Kaisei HarunoUmi"
           }
         ]
       }
@@ -1572,6 +1775,16 @@
     },
     "onFavClick": {
       "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onDeleteClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "infoText": {
+      "data-type": "text",
       "required": false,
       "description": ""
     },
@@ -1626,9 +1839,10 @@
       "design": "CarScreen",
       "size": {
         "width": 360.0,
-        "height": 1295.0
+        "height": 1737.0
       },
       "parameters": {
+        "infoText": "El Maserati GranTurismo Convertible es un vehículo de lujo y alto rendimiento producido por el fabricante italiano Maserati. Cuenta con un motor V8 de 4.7 litros que produce 454 caballos de fuerza, y puede acelerar de 0 a 60 mph en 4.8 segundos. También conocido como el GranCabrio, este descapotable ofrece un diseño italiano elegante y una experiencia de conducción emocionante.",
         "makeText": "Marca ",
         "modelText": "Modelo",
         "plateText": "Matrícula",

@@ -14,6 +14,7 @@ drawable car_card_line1
 drawable car_card_line2
 drawable car_card_line3
 drawable car_screen_elipe
+drawable car_screen_linea1
 drawable car_screen_rc
 drawable car_screen_rc2
 drawable car_screen_rc3
@@ -23,10 +24,12 @@ drawable car_screen_rc7
 drawable car_screen_rectangle
 drawable car_screen_rectangle3
 drawable car_screen_rectangle_2
+drawable car_screen_rectangle_delete
 drawable car_screen_rectangle_fav
 drawable car_screen_rectangle_publish
 drawable car_screen_user_image_vecvec
 drawable car_screen_vector
+drawable car_screen_vector_dlete
 drawable car_screen_vector_fav
 drawable car_screen_vector_publish
 drawable chat_button_vector

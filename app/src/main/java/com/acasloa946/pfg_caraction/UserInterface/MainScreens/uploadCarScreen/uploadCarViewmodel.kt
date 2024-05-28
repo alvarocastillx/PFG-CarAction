@@ -7,12 +7,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.text.isDigitsOnly
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.API.APIModule
+import com.acasloa946.pfg_caraction.API.Models.AIModels.ChatRequest
+import com.acasloa946.pfg_caraction.API.Models.AIModels.Message
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIMake
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIModel
+import com.acasloa946.pfg_caraction.API.const
+import com.acasloa946.pfg_caraction.UserInterface.States.ProfileScreenStates
+import com.acasloa946.pfg_caraction.UserInterface.States.UploadCarStates
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.domain.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
@@ -73,6 +79,12 @@ class uploadCarViewmodel @Inject constructor(
     private var _userName by mutableStateOf("")
     private var _carFuelType by mutableStateOf("")
     private var _carTransmisionType by mutableStateOf("")
+
+    private var _carInfo by mutableStateOf("")
+
+    private val _uploadCarStates = MutableLiveData<UploadCarStates<Nothing>>()
+    val uploadCarStates: LiveData<UploadCarStates<Nothing>> = _uploadCarStates
+
 
     init {
         userLocation.value = Pair(0.0, 0.0)
@@ -174,12 +186,14 @@ class uploadCarViewmodel @Inject constructor(
         context: Context,
         uploadedSuccessfuly: () -> Unit
     ) {
+        _uploadCarStates.value = UploadCarStates.Loading
         if (selectedImageURL.isNotBlank() && carPlate.isNotBlank() && (makeButtonText != "Marca") && (modelButtonText != "Modelo") && ((_carYear.toString().length == 4) && (_carYear!! <= Calendar.getInstance()
                 .get(Calendar.YEAR))) && (userLocation.value!!.first != 0.0) &&
             carKMField.isNotBlank() && carPriceField.isNotBlank() && userLocationString.isNotBlank()
         ) {
             viewModelScope.launch {
                 try {
+                    getAIInfo("$makeButtonText $modelButtonText")
                     val user = fetchUserUseCase.invoke(auth.currentUser!!.email.toString(), context)
                     _userName = user.name
                     val carToUpload = CarModel(
@@ -195,13 +209,16 @@ class uploadCarViewmodel @Inject constructor(
                         userLocationString,
                         _userName,
                         _carFuelType,
-                        _carTransmisionType
+                        _carTransmisionType,
+                        _carInfo
                     )
                     addCarUseCase.invoke(carToUpload, context)
                     linkCarToProfileUseCase.invoke(carToUpload,context, auth.currentUser!!.email!!)
                     uploadedSuccessfuly()
+                    _uploadCarStates.value = UploadCarStates.Success
                 } catch (e: Exception) {
                     Log.d("ERROR", "ERROR AL AÑADIR COCHE A LA BASE DE DATOS")
+                    _uploadCarStates.value = UploadCarStates.Error(e)
                 }
             }
         } else {
@@ -229,6 +246,22 @@ class uploadCarViewmodel @Inject constructor(
         _userName = ""
         _carFuelType = ""
         _carTransmisionType = ""
+        _carInfo = ""
+    }
+
+    suspend fun getAIInfo(makeModel:String) {
+        val apiModule = APIModule()
+        val listOfMessages = listOf(Message("system", const.SYSTEM_AI_MESSAGE), Message("user", makeModel))
+        val chatRequest = ChatRequest("gpt-3.5-turbo-16k", listOfMessages, 0.7)
+        viewModelScope.launch {
+            try {
+                _carInfo = apiModule.getAIInfo(chatRequest).choices!![0].message.content
+            } catch (e: Exception) {
+                Log.e("ERROR", "Error al obtener información de la IA", e)
+            }
+        }.join()
+
+
     }
 
 

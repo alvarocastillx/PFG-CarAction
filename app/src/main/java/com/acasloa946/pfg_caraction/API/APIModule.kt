@@ -1,18 +1,23 @@
 package com.acasloa946.pfg_caraction.API
 
+import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import com.acasloa946.pfg_caraction.API.Models.AIModels.ChatCompletionResponse
+import com.acasloa946.pfg_caraction.API.Models.AIModels.ChatRequest
 import com.acasloa946.pfg_caraction.API.Models.CarTypes.APITypeResult
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIMake
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
 class APIModule {
     private val apiServiceMakes = RetrofitInstance.apiMakesModels
     private val apiServiceType = RetrofitInstance.apiCarType
+    private val apiAI = RetrofitInstance.apiAI
 
 
     suspend fun getCarMakes(): List<APIMake> {
@@ -80,6 +85,16 @@ class APIModule {
         } else {
             APITypeResult(make = make, model = model, vclass = "Berlina", fueltype1 = "Gasolina", trany = "Manual")
         }
+    }
+
+    suspend fun getAIInfo(chatRequest: ChatRequest): ChatCompletionResponse{
+        val coroutineScope = CoroutineScope(Dispatchers.Default)
+        var response = ChatCompletionResponse()
+
+        coroutineScope.launch {
+            response = apiAI.AIGetInfo(chatRequest)
+        }.join()
+        return response
     }
 
 

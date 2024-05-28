@@ -44,6 +44,7 @@ import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.GrisMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.google.relay.compose.RowScopeInstanceImpl.align
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
@@ -54,8 +55,11 @@ fun currentChatsScreen(navController: NavController, homeScreenViewmodel: homeSc
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutine = rememberCoroutineScope()
 
-    LaunchedEffect(Unit){
-        currentChatsViewmodel.fetchChats(context)
+    LaunchedEffect(true){
+        while (true) {
+            currentChatsViewmodel.fetchChats(context)
+            delay(5000)
+        }
     }
 
     ModalNavigationDrawer(

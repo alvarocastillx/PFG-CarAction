@@ -12,6 +12,7 @@ import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddCarToDatabaseFacto
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddCarUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddUserUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideCheckIfUserExistsUseCaseFactory;
+import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideDeleteCarUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsTypeUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsUploadedByUserUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsUseCaseFactory;
@@ -49,6 +50,7 @@ import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase;
 import com.acasloa946.pfg_caraction.domain.addCarUseCase;
 import com.acasloa946.pfg_caraction.domain.addUserUseCase;
 import com.acasloa946.pfg_caraction.domain.checkIfUserExistsUseCase;
+import com.acasloa946.pfg_caraction.domain.deleteCarUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase;
 import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase;
@@ -527,7 +529,7 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
       public T get() {
         switch (id) {
           case 0: // com.acasloa946.pfg_caraction.UserInterface.MainScreens.carScreen.CarScreenViewmodel 
-          return (T) new CarScreenViewmodel(singletonCImpl.addCarToFavouritesUseCase());
+          return (T) new CarScreenViewmodel(singletonCImpl.addCarToFavouritesUseCase(), singletonCImpl.fetchUserUseCase(), singletonCImpl.deleteCarUseCase());
 
           case 1: // com.acasloa946.pfg_caraction.UserInterface.AuthScreens.InitScreen.InitScreenViewmodel 
           return (T) new InitScreenViewmodel(singletonCImpl.checkIfUserExistsUseCase());
@@ -652,6 +654,14 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
       return HiltModule_ProvideAddCarToDatabaseFactory.provideAddCarToDatabase(hiltModule, userRepository());
     }
 
+    private fetchUserUseCase fetchUserUseCase() {
+      return HiltModule_ProvideFetchUserCaseFactory.provideFetchUserCase(hiltModule, userRepository());
+    }
+
+    private deleteCarUseCase deleteCarUseCase() {
+      return HiltModule_ProvideDeleteCarUseCaseFactory.provideDeleteCarUseCase(hiltModule, userRepository());
+    }
+
     private checkIfUserExistsUseCase checkIfUserExistsUseCase() {
       return HiltModule_ProvideCheckIfUserExistsUseCaseFactory.provideCheckIfUserExistsUseCase(hiltModule, userRepository());
     }
@@ -674,10 +684,6 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private fetchChatsOfUserUseCase fetchChatsOfUserUseCase() {
       return HiltModule_ProvideFetchChatsOfUserUseCaseFactory.provideFetchChatsOfUserUseCase(hiltModule, userRepository());
-    }
-
-    private fetchUserUseCase fetchUserUseCase() {
-      return HiltModule_ProvideFetchUserCaseFactory.provideFetchUserCase(hiltModule, userRepository());
     }
 
     private fetchFavouriteCarsUseCase fetchFavouriteCarsUseCase() {

@@ -217,6 +217,7 @@ fun PantallaPrincipalComponent(
                         value = homeScreenViewmodel.searchBarText,
                         onValueChange = {
                             homeScreenViewmodel.changeSearchBarText(it)
+
                         },
                         leadingIcon = {
                             Icon(imageVector = Icons.Default.Search, contentDescription = null)
@@ -235,7 +236,8 @@ fun PantallaPrincipalComponent(
                             .fillMaxSize()
                             .border(3.dp, RojoMain, RoundedCornerShape(15.dp)),
                         textStyle = TextStyle.Default.copy(fontSize = 10.sp),
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+                        singleLine = true
 
 
                     )
@@ -256,16 +258,13 @@ fun PantallaPrincipalComponent(
             Spacer(modifier = Modifier.padding(15.dp))
             FrameCars(modifier = Modifier.rowWeight(1.0f)) {
                 val scrollState = rememberLazyListState()
-                val countOfList = homeScreenViewmodel.countOfList
+
                 if (fetchedCars.isNotEmpty()) {
                     LazyColumn(
                         verticalArrangement = Arrangement.spacedBy(5.dp),
                         state = scrollState
                     ) {
-                        if (!scrollState.canScrollForward) {
-                            homeScreenViewmodel.add5toList()
-                        }
-                        items(fetchedCars.take(countOfList)) {
+                        items(fetchedCars) {
                             CarCardComponent(
                                 makeModelText = ("${it.make} ${it.model}"),
                                 priceText = "${it.price}€",

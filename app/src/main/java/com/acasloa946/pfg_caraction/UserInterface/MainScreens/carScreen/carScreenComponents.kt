@@ -5,7 +5,11 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
@@ -20,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
@@ -35,8 +40,10 @@ import com.acasloa946.pfg_caraction.carscreen.AO
 import com.acasloa946.pfg_caraction.carscreen.Banner
 import com.acasloa946.pfg_caraction.carscreen.BannerImage
 import com.acasloa946.pfg_caraction.carscreen.ButtonContact
+import com.acasloa946.pfg_caraction.carscreen.ButtonDelete
 import com.acasloa946.pfg_caraction.carscreen.ButtonFavs
 import com.acasloa946.pfg_caraction.carscreen.ContactarConVendedor
+import com.acasloa946.pfg_caraction.carscreen.DeleteText
 import com.acasloa946.pfg_caraction.carscreen.Elipe
 import com.acasloa946.pfg_caraction.carscreen.FavText
 import com.acasloa946.pfg_caraction.carscreen.FieldAO
@@ -51,7 +58,10 @@ import com.acasloa946.pfg_caraction.carscreen.FieldTrans
 import com.acasloa946.pfg_caraction.carscreen.FrameUsername
 import com.acasloa946.pfg_caraction.carscreen.Fueld
 import com.acasloa946.pfg_caraction.carscreen.ImageFrame
+import com.acasloa946.pfg_caraction.carscreen.InfoText
+import com.acasloa946.pfg_caraction.carscreen.InformaciNHeader
 import com.acasloa946.pfg_caraction.carscreen.KMS
+import com.acasloa946.pfg_caraction.carscreen.Linea1
 import com.acasloa946.pfg_caraction.carscreen.LocalizaciN
 import com.acasloa946.pfg_caraction.carscreen.MainCarScreen
 import com.acasloa946.pfg_caraction.carscreen.MapFrame
@@ -69,6 +79,7 @@ import com.acasloa946.pfg_caraction.carscreen.RC7
 import com.acasloa946.pfg_caraction.carscreen.Rectangle
 import com.acasloa946.pfg_caraction.carscreen.Rectangle2
 import com.acasloa946.pfg_caraction.carscreen.Rectangle3
+import com.acasloa946.pfg_caraction.carscreen.RectangleDelete
 import com.acasloa946.pfg_caraction.carscreen.RectangleFav
 import com.acasloa946.pfg_caraction.carscreen.RectanglePublish
 import com.acasloa946.pfg_caraction.carscreen.TopLevel
@@ -77,9 +88,12 @@ import com.acasloa946.pfg_caraction.carscreen.UserImage
 import com.acasloa946.pfg_caraction.carscreen.UserImageSynth
 import com.acasloa946.pfg_caraction.carscreen.UserImageVECVEC
 import com.acasloa946.pfg_caraction.carscreen.Vector
+import com.acasloa946.pfg_caraction.carscreen.VectorDlete
 import com.acasloa946.pfg_caraction.carscreen.VectorFav
 import com.acasloa946.pfg_caraction.carscreen.VectorPublish
+import com.acasloa946.pfg_caraction.carscreen.raillinc
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
+import com.acasloa946.pfg_caraction.ui.theme.againstFont
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
@@ -110,7 +124,9 @@ fun CarScreenComponent(
     navController: NavController,
     profileViewmodel: profileViewmodel,
     onLeftMenuClick: () -> Unit,
-    onFavClick : () -> Unit
+    onFavClick : () -> Unit,
+    infoText : String,
+    onDeleteClick :() -> Unit
 ) {
 
     val cameraPositionState = rememberCameraPositionState {
@@ -124,11 +140,16 @@ fun CarScreenComponent(
     }
 
     var isMapLoaded by remember { mutableStateOf(false) }
+    val context = LocalContext.current
+    var authorCheck by remember {
+        mutableStateOf(false)
+    }
 
 
     LaunchedEffect(Unit) {
         delay(2000)
         isMapLoaded = true
+        authorCheck = carScreenViewmodel.checkIfAuthor(context)
     }
 
 
@@ -142,15 +163,17 @@ fun CarScreenComponent(
                 .border(2.dp, RojoMain, BottomRoundedShape(60.dp))
         ) {
             MaterialSymbolsMenu(
-                modifier = Modifier.boxAlign(
-                    alignment = Alignment.TopStart,
-                    offset = DpOffset(
-                        x = 38.0.dp,
-                        y = 26.0.dp
+                modifier = Modifier
+                    .boxAlign(
+                        alignment = Alignment.TopStart,
+                        offset = DpOffset(
+                            x = 38.0.dp,
+                            y = 26.0.dp
+                        )
                     )
-                ).clickable {
-                    onLeftMenuClick()
-                }
+                    .clickable {
+                        onLeftMenuClick()
+                    }
             ) {
                 Vector(
                     modifier = Modifier.boxAlign(
@@ -502,10 +525,69 @@ fun CarScreenComponent(
                     )
                 )
             }
+            if (authorCheck) {
+                ButtonDelete(onDeleteClick = onDeleteClick) {
+                    RectangleDelete(
+                        modifier = Modifier.boxAlign(
+                            alignment = Alignment.Center,
+                            offset = DpOffset(
+                                x = 0.0.dp,
+                                y = 0.0.dp
+                            )
+                        )
+                    )
+                    VectorDlete(
+                        modifier = Modifier.boxAlign(
+                            alignment = Alignment.Center,
+                            offset = DpOffset(
+                                x = 129.12752151489258.dp,
+                                y = 0.00008106231689453125.dp
+                            )
+                        )
+                    )
+                    DeleteText(
+                        modifier = Modifier.boxAlign(
+                            alignment = Alignment.Center,
+                            offset = DpOffset(
+                                x = 0.0.dp,
+                                y = 0.13232421875.dp
+                            )
+                        )
+                    )
+                }
+            }
+            Linea1()
+            InformaciNHeaderComp()
+            Spacer(modifier = Modifier.padding(2.dp))
+            InfoText(
+                infoText = infoText,
+                modifier = Modifier
+                    .rowWeight(1.0f)
+                    .columnWeight(1.0f)
+            )
         }
     }
 }
 
+@Composable
+fun InformaciNHeaderComp(modifier: Modifier = Modifier) {
+    RelayText(
+        content = "Información",
+        fontSize = 28.0.sp,
+        fontFamily = againstFont,
+        color = Color(
+            alpha = 255,
+            red = 248,
+            green = 241,
+            blue = 233
+        ),
+        height = 1.6039999553135462.em,
+        maxLines = -1,
+        modifier = modifier
+            .requiredWidth(289.0.dp)
+            .requiredHeight(33.0.dp)
+    )
+}
 
 @Composable
 fun UserNameComponent(modifier: Modifier = Modifier, userNameText: String = "") {

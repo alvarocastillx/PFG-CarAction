@@ -1,8 +1,10 @@
 package com.acasloa946.pfg_caraction.UserInterface.MainScreens.uploadCarScreen
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,11 +24,17 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -34,10 +42,13 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.core.text.isDigitsOnly
 import coil.compose.SubcomposeAsyncImage
 import com.acasloa946.pfg_caraction.R
 import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.InitScreen.BottomRoundedShape
+import com.acasloa946.pfg_caraction.UserInterface.AuthScreens.RegisterScreen.toastMaker
+import com.acasloa946.pfg_caraction.UserInterface.States.UploadCarStates
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
 import com.acasloa946.pfg_caraction.ui.theme.RojoMain
 import com.acasloa946.pfg_caraction.ui.theme.raillincFont
@@ -84,6 +95,14 @@ fun UploadCarScreenComponent(
     onLocationClick: () -> Unit,
     onPublishClick: () -> Unit = {}
 ) {
+
+    val uploadCarScreenStates by uploadCarViewmodel.uploadCarStates.observeAsState(
+        UploadCarStates.Waiting
+    )
+    val context = LocalContext.current
+
+    UploadCarsScreenStates(uploadCarScreenStates,context)
+
     TopLevel(modifier = modifier) {
         Banner(
             modifier = Modifier
@@ -198,7 +217,8 @@ fun UploadCarScreenComponent(
                             contentDescription = null,
                             tint = BlancoMain
                         )
-                    }
+                    },
+                    singleLine = true
                 )
 
             }
@@ -323,7 +343,8 @@ fun UploadCarScreenComponent(
                             tint = BlancoMain
                         )
                     },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                    singleLine = true
                 )
             }
             TextFieldKM {
@@ -355,7 +376,8 @@ fun UploadCarScreenComponent(
                             tint = BlancoMain
                         )
                     },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                    singleLine = true
                 )
             }
             TextFieldPrice {
@@ -386,7 +408,8 @@ fun UploadCarScreenComponent(
                             tint = BlancoMain
                         )
                     },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                    singleLine = true
                 )
             }
             Spacer(modifier = Modifier.padding(5.dp))
@@ -443,16 +466,34 @@ fun UploadTextComponent(modifier: Modifier = Modifier) {
     )
 }
 
-/*
-Image(
-                    painter = painterResource(id = R.drawable.image_banner),
-                    contentDescription = null,
-                    modifier = Modifier.fillMaxSize()
-                )
+@Composable
+fun UploadCarsScreenStates(
+    uploadCarStates: UploadCarStates<Nothing>,
+    context: Context
 
+){
+    when (uploadCarStates) {
+        is UploadCarStates.Loading -> {
+            var dialogState by remember {
+                mutableStateOf(true)
+            }
+            Dialog(onDismissRequest = { dialogState = false }) {
+                Column (
+                    modifier = Modifier.size(200.dp)
+                ){
+                    CircularProgressIndicator(modifier = Modifier.size(200.dp))
 
-                modifier = Modifier
-                .rowWeight(1.0f)
-                .clip(BottomRoundedShape(60.dp))
-                .border(2.dp, RojoMain, BottomRoundedShape(60.dp))
- */
+                }
+            }
+        }
+        is UploadCarStates.Success -> {
+
+        }
+        is UploadCarStates.Error -> {
+            toastMaker("Error al subir el coche.",context)
+        }
+        is UploadCarStates.Waiting -> {
+
+        }
+    }
+}

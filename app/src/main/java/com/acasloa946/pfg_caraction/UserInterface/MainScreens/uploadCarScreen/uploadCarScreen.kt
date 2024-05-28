@@ -55,7 +55,6 @@ import kotlinx.coroutines.launch
 fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarViewmodel, carMakesViewmodel: carMakesViewmodel, carModelViewmodel: carModelViewmodel, profileViewmodel: profileViewmodel, homeScreenViewmodel: homeScreenViewmodel) {
 
 
-
     val context = LocalContext.current
 
     val launcher = rememberLauncherForActivityResult(
@@ -100,13 +99,15 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                             Icon(imageVector = Icons.Default.Chat, contentDescription = null)
                         },
                         label = { Text(text = "Chats") },
-                        selected = false, onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
+                        selected = false,
+                        onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
                     NavigationDrawerItem(
                         icon = {
                             Icon(imageVector = Icons.Default.PushPin, contentDescription = null)
                         },
                         label = { Text(text = "Favoritos") },
-                        selected = false, onClick = { navController.navigate(Routes.FavouritesScreen.route) })
+                        selected = false,
+                        onClick = { navController.navigate(Routes.FavouritesScreen.route) })
                     NavigationDrawerItem(
                         icon = {
                             Icon(imageVector = Icons.Default.Settings, contentDescription = null)
@@ -144,12 +145,16 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                     verticalArrangement = Arrangement.Center
                 ) {
                     carMakesViewmodel.getMakes {
-                        toastMaker("Error al recuperar marcas. Inténtelo de nuevo en otro momento.",context)
+                        toastMaker(
+                            "Error al recuperar marcas. Inténtelo de nuevo en otro momento.",
+                            context
+                        )
                     }
                     carModelViewmodel.getModels(uploadCarViewmodel.selectedMake.name.toString())
-                    UploadCarScreenComponent(uploadCarViewmodel = uploadCarViewmodel, modifier = Modifier
-                        .fillMaxWidth()
-                        .height(910.dp),
+                    UploadCarScreenComponent(uploadCarViewmodel = uploadCarViewmodel,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(910.dp),
                         uploadImageClick = {
                             launcher.launch("image/*")
                         },
@@ -157,10 +162,9 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                             navController.navigate(Routes.CarMakesScreen.route)
                         },
                         onModelClick = {
-                            if (uploadCarViewmodel.makeButtonText=="Marca") {
+                            if (uploadCarViewmodel.makeButtonText == "Marca") {
                                 toastMaker("Seleccione la marca de su coche", context)
-                            }
-                            else {
+                            } else {
                                 navController.navigate(Routes.CarModelScreen.route)
                             }
                         },
@@ -174,7 +178,7 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
                                 },
                                 context,
                                 uploadedSuccessfuly = {
-                                    toastMaker("Anuncio publicado correctamente",context)
+                                    toastMaker("Anuncio publicado correctamente", context)
                                     navController.navigate(Routes.HomeScreen.route)
                                     uploadCarViewmodel.clearScreen()
                                 }
@@ -209,51 +213,4 @@ fun UploadCarScreen(navController: NavController, uploadCarViewmodel: uploadCarV
     )
 
 
-
-
-
 }
-/*
-carMakesViewmodel.getMakes {
-                toastMaker("Error al recuperar marcas. Inténtelo de nuevo en otro momento.",context)
-            }
-            carModelViewmodel.getModels(uploadCarViewmodel.selectedMake.name.toString())
-            UploadCarScreenComponent(uploadCarViewmodel = uploadCarViewmodel, modifier = Modifier
-                .fillMaxWidth()
-                .height(910.dp),
-                uploadImageClick = {
-                    launcher.launch("image/*")
-                },
-                onMakeClick = {
-                    navController.navigate(Routes.CarMakesScreen.route)
-                },
-                onModelClick = {
-                    if (uploadCarViewmodel.makeButtonText=="Marca") {
-                        toastMaker("Seleccione la marca de su coche", context)
-                    }
-                    else {
-                        navController.navigate(Routes.CarModelScreen.route)
-                    }
-                },
-                onLocationClick = {
-                    navController.navigate(Routes.CarLocationScreen.route)
-                },
-                onPublishClick = {
-                    uploadCarViewmodel.getCarType(
-                        fillData = {
-                            toastMaker("Introduzca todos los datos de su coche", context)
-                        },
-                        context,
-                        uploadedSuccessfuly = {
-                            toastMaker("Anuncio publicado correctamente",context)
-                            navController.navigate(Routes.HomeScreen.route)
-                            uploadCarViewmodel.clearScreen()
-                        }
-                    )
-
-                }
-            )
-
-
-
-*/

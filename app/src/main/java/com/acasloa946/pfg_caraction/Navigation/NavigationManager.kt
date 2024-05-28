@@ -143,7 +143,8 @@ fun NavigationManager(
                 ProfileScreen(
                     navController = navController,
                     profileViewmodel = profileViewmodel,
-                    homeScreenViewmodel
+                    homeScreenViewmodel,
+                    carScreenViewmodel
                 )
             }
             composable("SplashScreen") {

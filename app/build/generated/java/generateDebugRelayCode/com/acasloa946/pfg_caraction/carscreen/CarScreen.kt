@@ -35,6 +35,7 @@ import com.google.relay.compose.tappable
 @Composable
 fun CarScreen(
     modifier: Modifier = Modifier,
+    infoText: String = "",
     makeText: String = "",
     modelText: String = "",
     plateText: String = "",
@@ -45,7 +46,8 @@ fun CarScreen(
     fuelText: String = "",
     priceText: String = "",
     onContactClick: () -> Unit = {},
-    onFavClick: () -> Unit = {}
+    onFavClick: () -> Unit = {},
+    onDeleteClick: () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
         Banner(modifier = Modifier.rowWeight(1.0f)) {
@@ -345,11 +347,46 @@ fun CarScreen(
                     )
                 )
             }
+            ButtonDelete(onDeleteClick = onDeleteClick) {
+                RectangleDelete(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.0.dp
+                        )
+                    )
+                )
+                VectorDlete(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 129.12752151489258.dp,
+                            y = 0.00008106231689453125.dp
+                        )
+                    )
+                )
+                DeleteText(
+                    modifier = Modifier.boxAlign(
+                        alignment = Alignment.Center,
+                        offset = DpOffset(
+                            x = 0.0.dp,
+                            y = 0.13232421875.dp
+                        )
+                    )
+                )
+            }
+            Linea1()
+            InformaciNHeader()
+            InfoText(
+                infoText = infoText,
+                modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
+            )
         }
     }
 }
 
-@Preview(widthDp = 360, heightDp = 1295)
+@Preview(widthDp = 360, heightDp = 1737)
 @Composable
 private fun CarScreenPreview() {
     MaterialTheme {
@@ -357,6 +394,8 @@ private fun CarScreenPreview() {
             CarScreen(
                 onContactClick = {},
                 onFavClick = {},
+                onDeleteClick = {},
+                infoText = "El Maserati GranTurismo Convertible es un vehículo de lujo y alto rendimiento producido por el fabricante italiano Maserati. Cuenta con un motor V8 de 4.7 litros que produce 454 caballos de fuerza, y puede acelerar de 0 a 60 mph en 4.8 segundos. También conocido como el GranCabrio, este descapotable ofrece un diseño italiano elegante y una experiencia de conducción emocionante.",
                 makeText = "Marca ",
                 modelText = "Modelo",
                 plateText = "Matrícula",
@@ -1137,6 +1176,103 @@ fun ButtonFavs(
         clipToParent = false,
         content = content,
         modifier = modifier.tappable(onTap = onFavClick).requiredWidth(318.0.dp).requiredHeight(56.0.dp)
+    )
+}
+
+@Composable
+fun RectangleDelete(modifier: Modifier = Modifier) {
+    RelayVector(
+        vector = painterResource(R.drawable.car_screen_rectangle_delete),
+        modifier = modifier.requiredWidth(318.0.dp).requiredHeight(56.0.dp)
+    )
+}
+
+@Composable
+fun VectorDlete(modifier: Modifier = Modifier) {
+    RelayVector(
+        vector = painterResource(R.drawable.car_screen_vector_dlete),
+        modifier = modifier.requiredWidth(11.563636779785156.dp).requiredHeight(18.66666603088379.dp)
+    )
+}
+
+@Composable
+fun DeleteText(modifier: Modifier = Modifier) {
+    RelayText(
+        content = "Eliminar anuncio",
+        fontSize = 18.0.sp,
+        fontFamily = kaiseiHarunoUmi,
+        color = Color(
+            alpha = 255,
+            red = 53,
+            green = 54,
+            blue = 52
+        ),
+        height = 1.4479999542236328.em,
+        fontWeight = FontWeight(700.0.toInt()),
+        maxLines = -1,
+        modifier = modifier.requiredWidth(314.0.dp).requiredHeight(31.0.dp)
+    )
+}
+
+@Composable
+fun ButtonDelete(
+    onDeleteClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable RelayContainerScope.() -> Unit
+) {
+    RelayContainer(
+        isStructured = false,
+        clipToParent = false,
+        content = content,
+        modifier = modifier.tappable(onTap = onDeleteClick).requiredWidth(318.0.dp).requiredHeight(56.0.dp)
+    )
+}
+
+@Composable
+fun Linea1(modifier: Modifier = Modifier) {
+    RelayVector(
+        vector = painterResource(R.drawable.car_screen_linea1),
+        modifier = modifier.requiredWidth(344.0.dp).requiredHeight(1.0.dp)
+    )
+}
+
+@Composable
+fun InformaciNHeader(modifier: Modifier = Modifier) {
+    RelayText(
+        content = "Información",
+        fontSize = 28.0.sp,
+        fontFamily = raillinc,
+        color = Color(
+            alpha = 255,
+            red = 248,
+            green = 241,
+            blue = 233
+        ),
+        height = 1.6039999553135462.em,
+        maxLines = -1,
+        modifier = modifier.requiredWidth(289.0.dp).requiredHeight(33.0.dp)
+    )
+}
+
+@Composable
+fun InfoText(
+    infoText: String,
+    modifier: Modifier = Modifier
+) {
+    RelayText(
+        content = infoText,
+        fontSize = 18.0.sp,
+        fontFamily = kaiseiHarunoUmi,
+        color = Color(
+            alpha = 255,
+            red = 255,
+            green = 255,
+            blue = 255
+        ),
+        height = 1.4479999542236328.em,
+        fontWeight = FontWeight(700.0.toInt()),
+        maxLines = -1,
+        modifier = modifier.fillMaxWidth(1.0f).fillMaxHeight(1.0f)
     )
 }
 

@@ -1,5 +1,9 @@
 package com.acasloa946.pfg_caraction.API
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+
 class const {
     companion object {
         const val BASE_URL_MAKES = "https://carapi.app/api/"
@@ -8,6 +12,13 @@ class const {
 
         const val BASE_URL_TYPE = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/all-vehicles-model/"
         const val ENDPOINT_TYPE = "records"
+
+
+        const val BASE_URL_AI = "https://zukijourney.xyzbot.net/v1/chat/completions/"
+        const val SYSTEM_AI_MESSAGE = "Tu objetivo es dar información sobre vehículos. Te pasaré el nombre de un vehículo y me daras sus especificaciones EN UN MÁXIMO DE 50 PALABRAS. ES MUY IMPORTANTE QUE EL MÁXIMO SEAN 50 PALABRAS"
+        var INITIAL_CHATS by mutableStateOf(0)
+        var CURRENT_CHATS by mutableStateOf(0)
+
 
 
     }

@@ -7,7 +7,9 @@ import com.acasloa946.pfg_caraction.data.Entities.CarEntity
 import com.acasloa946.pfg_caraction.data.Entities.MessageEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserEntity
 import com.acasloa946.pfg_caraction.data.Entities.UserType
+import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.delay
@@ -330,6 +332,30 @@ interface UserDao {
             Log.e("Error", "ERROR: FirebaseApp no inicializado")
         }
         return userExists
+    }
+
+    suspend fun deleteCar(context: Context, carEntity: CarEntity) {
+        val auth = Firebase.auth
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                db.collection("Cars").document(carEntity.plate + carEntity.model + carEntity.year).delete().await()
+
+                val user = db.collection("Users").document(auth.currentUser?.email.toString()).get().await()
+                if (user!=null) {
+                    val userObject = user.toObject(UserEntity::class.java)
+                    var uploadedCarsByUser = userObject?.uploadedCars
+                    uploadedCarsByUser?.remove(carEntity.plate + carEntity.model + carEntity.year)
+                    db.collection("Users").document(auth.currentUser?.email.toString()).update("uploadedCars",uploadedCarsByUser).await()
+                }
+
+
+            } catch (e: Exception) {
+                Log.e("Error", "ERROR", e)
+            }
+        } else {
+            Log.e("Error", "ERROR: FirebaseApp no inicializado")
+        }
     }
 
 

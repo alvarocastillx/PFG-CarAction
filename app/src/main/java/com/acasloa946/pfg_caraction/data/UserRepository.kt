@@ -21,7 +21,7 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
     suspend fun addCar(carModel: CarModel ,context: Context,
     ){
         userDao.uploadCarToDatabase(carEntity = CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
-            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType), context,)
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType, carModel.carInfo), context,)
     }
 
     suspend fun fetchCars(): MutableList<CarEntity> {
@@ -33,7 +33,7 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
 
     suspend fun linkCarToProfile(carModel: CarModel, context: Context, email:String) {
         userDao.linkCarToProfile(CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
-            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType), context, email
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType, carModel.carInfo), context, email
         )
 
     }
@@ -59,8 +59,8 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
     }
 
     suspend fun addCarToFavourites(context: Context, email: String, carModel: CarModel){
-        return userDao.addCarToFavourites(context,email, CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
-            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType)
+        userDao.addCarToFavourites(context,email, CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType, carModel.carInfo)
         )
     }
 
@@ -69,6 +69,11 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
     }
     suspend fun checkIfUserExists(context: Context, email: String):Boolean {
         return userDao.checkIfUserExists(context, email)
+    }
+
+    suspend fun deleteCarFunction(context: Context, carModel: CarModel, email:String) {
+        userDao.deleteCar(context,CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType, carModel.carInfo))
     }
 
 

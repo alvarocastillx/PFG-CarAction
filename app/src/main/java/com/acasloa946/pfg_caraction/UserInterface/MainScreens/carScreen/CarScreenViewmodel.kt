@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase
+import com.acasloa946.pfg_caraction.domain.deleteCarUseCase
+import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +18,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CarScreenViewmodel @Inject constructor(private val addCarToFavouritesUseCase: addCarToFavouritesUseCase) :
+class CarScreenViewmodel @Inject constructor(
+    private val addCarToFavouritesUseCase: addCarToFavouritesUseCase,
+    private val fetchUserUseCase: fetchUserUseCase,
+    private val deleteCarUseCase: deleteCarUseCase
+) :
     ViewModel() {
 
     var clickedCar by mutableStateOf(CarModel())
@@ -47,5 +53,30 @@ class CarScreenViewmodel @Inject constructor(private val addCarToFavouritesUseCa
         return locationParts[1] + "," + locationParts[3]
     }
 
+    suspend fun checkIfAuthor(context: Context): Boolean {
+        var check by mutableStateOf(false)
+        viewModelScope.launch {
+            val user = fetchUserUseCase.invoke(auth.currentUser?.email.toString(), context)
+            if (clickedCar.userName == user.name) {
+                check = true
+            }
+        }.join()
+        return check
+    }
+
+    fun deleteCar(
+        context: Context,
+        Success: () -> Unit,
+        Failed : () -> Unit
+    ) {
+        viewModelScope.launch {
+            try {
+                deleteCarUseCase.invoke(context, clickedCar, auth.currentUser?.email.toString())
+                Success()
+            } catch (e: Exception) {
+                Failed()
+            }
+        }
+    }
 
 }

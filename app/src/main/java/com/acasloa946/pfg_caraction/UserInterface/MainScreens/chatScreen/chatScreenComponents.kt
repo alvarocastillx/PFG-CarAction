@@ -159,7 +159,8 @@ fun ChatScreenComponent(
                                 contentDescription = "Enviar"
                             )
                         }
-                    }
+                    },
+                    singleLine = true
 
 
                 )

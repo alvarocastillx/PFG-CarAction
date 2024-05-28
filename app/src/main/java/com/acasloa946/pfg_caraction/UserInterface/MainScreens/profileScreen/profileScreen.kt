@@ -37,6 +37,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
+import com.acasloa946.pfg_caraction.UserInterface.MainScreens.carScreen.CarScreenViewmodel
 import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.bottomnavbar.BottomNavBar
 import com.acasloa946.pfg_caraction.ui.theme.BlancoMain
@@ -46,7 +47,7 @@ import com.google.relay.compose.RowScopeInstanceImpl.align
 import kotlinx.coroutines.launch
 
 @Composable
-fun ProfileScreen(navController: NavController, profileViewmodel: profileViewmodel, homeScreenViewmodel: homeScreenViewmodel) {
+fun ProfileScreen(navController: NavController, profileViewmodel: profileViewmodel, homeScreenViewmodel: homeScreenViewmodel, carScreenViewmodel: CarScreenViewmodel) {
 
     val context = LocalContext.current
 
@@ -145,7 +146,9 @@ fun ProfileScreen(navController: NavController, profileViewmodel: profileViewmod
                             coroutine.launch {
                                 drawerState.open()
                             }
-                        })
+                        },
+                        navController = navController,
+                        carScreenViewmodel = carScreenViewmodel)
                 }
                 Box(
                     modifier = Modifier

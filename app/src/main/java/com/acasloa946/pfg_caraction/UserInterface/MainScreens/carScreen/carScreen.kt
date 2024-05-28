@@ -47,7 +47,12 @@ import com.google.relay.compose.RowScopeInstanceImpl.align
 import kotlinx.coroutines.launch
 
 @Composable
-fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmodel, profileViewmodel: profileViewmodel, homeScreenViewmodel: homeScreenViewmodel) {
+fun CarScreen(
+    navController: NavController,
+    carScreenViewmodel: CarScreenViewmodel,
+    profileViewmodel: profileViewmodel,
+    homeScreenViewmodel: homeScreenViewmodel
+) {
 
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutine = rememberCoroutineScope()
@@ -86,13 +91,15 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                             Icon(imageVector = Icons.Default.Chat, contentDescription = null)
                         },
                         label = { Text(text = "Chats") },
-                        selected = false, onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
+                        selected = false,
+                        onClick = { navController.navigate(Routes.CurrentChatsScreen.route) })
                     NavigationDrawerItem(
                         icon = {
                             Icon(imageVector = Icons.Default.PushPin, contentDescription = null)
                         },
                         label = { Text(text = "Favoritos") },
-                        selected = false, onClick = { navController.navigate(Routes.FavouritesScreen.route) })
+                        selected = false,
+                        onClick = { navController.navigate(Routes.FavouritesScreen.route) })
                     NavigationDrawerItem(
                         icon = {
                             Icon(imageVector = Icons.Default.Settings, contentDescription = null)
@@ -129,7 +136,9 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    CarScreenComponent(modifier = Modifier.fillMaxWidth().height(1370.dp),
+                    CarScreenComponent(modifier = Modifier
+                        .fillMaxWidth()
+                        .height(1740.dp),
                         makeText = carScreenViewmodel.clickedCar.make!!,
                         modelText = carScreenViewmodel.clickedCar.model!!,
                         plateText = carScreenViewmodel.clickedCar.plate!!,
@@ -139,7 +148,9 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                         yearText = carScreenViewmodel.clickedCar.year.toString(),
                         priceText = "${carScreenViewmodel.clickedCar.price}€",
                         fuelText = carScreenViewmodel.clickedCar.fuelType!!,
-                        localizationText = carScreenViewmodel.formatLocationString(carScreenViewmodel.clickedCar.locationName!!),
+                        localizationText = carScreenViewmodel.formatLocationString(
+                            carScreenViewmodel.clickedCar.locationName!!
+                        ),
                         onContactClick = {
                             navController.navigate(Routes.ChatScreen.route)
                         },
@@ -157,7 +168,23 @@ fun CarScreen(navController: NavController, carScreenViewmodel: CarScreenViewmod
                                     toastMaker("Coche agregado a favoritos", context = context)
                                 },
                                 onError = {
-                                    toastMaker("Error al agregar coche a favoritos, inténtelo de nuevo más tarde", context = context)
+                                    toastMaker(
+                                        "Error al agregar coche a favoritos, inténtelo de nuevo más tarde",
+                                        context = context
+                                    )
+                                })
+                        },
+                        infoText = carScreenViewmodel.clickedCar.carInfo.toString(),
+                        onDeleteClick = {
+                            carScreenViewmodel.deleteCar(context, Success = {
+                                toastMaker("El anuncio se ha eliminado correctamente", context)
+                                navController.navigate(Routes.HomeScreen.route)
+                            },
+                                Failed = {
+                                    toastMaker(
+                                        "Error al eliminar el anuncio. Inténtelo de nuevo más tarde",
+                                        context
+                                    )
                                 })
                         }
                     )
