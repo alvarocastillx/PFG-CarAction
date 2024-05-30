@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.models.UserModel
 import com.acasloa946.pfg_caraction.data.Entities.UserType
-import com.acasloa946.pfg_caraction.domain.addUserUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.addUserUseCase
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.lifecycle.HiltViewModel

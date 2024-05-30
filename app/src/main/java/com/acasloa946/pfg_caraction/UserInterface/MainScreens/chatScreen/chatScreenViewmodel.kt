@@ -11,9 +11,9 @@ import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.API.const.Companion.INITIAL_CHATS
 import com.acasloa946.pfg_caraction.UserInterface.States.ChatScreenStates
 import com.acasloa946.pfg_caraction.UserInterface.models.MessageModel
-import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
-import com.acasloa946.pfg_caraction.domain.getMessagesUseCase
-import com.acasloa946.pfg_caraction.domain.sendMessageUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserByNameUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.getMessagesUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.sendMessageUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import dagger.hilt.android.lifecycle.HiltViewModel

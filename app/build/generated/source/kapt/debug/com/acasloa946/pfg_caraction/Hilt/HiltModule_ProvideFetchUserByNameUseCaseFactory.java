@@ -2,7 +2,7 @@
 package com.acasloa946.pfg_caraction.Hilt;
 
 import com.acasloa946.pfg_caraction.data.UserRepository;
-import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase;
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserByNameUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;

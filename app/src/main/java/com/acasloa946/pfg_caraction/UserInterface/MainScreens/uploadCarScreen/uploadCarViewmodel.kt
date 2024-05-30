@@ -17,12 +17,11 @@ import com.acasloa946.pfg_caraction.API.Models.AIModels.Message
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIMake
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIModel
 import com.acasloa946.pfg_caraction.API.const
-import com.acasloa946.pfg_caraction.UserInterface.States.ProfileScreenStates
 import com.acasloa946.pfg_caraction.UserInterface.States.UploadCarStates
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
-import com.acasloa946.pfg_caraction.domain.addCarUseCase
-import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
-import com.acasloa946.pfg_caraction.domain.linkCarToProfileUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.addCarUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.linkCarToProfileUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.storage.storage

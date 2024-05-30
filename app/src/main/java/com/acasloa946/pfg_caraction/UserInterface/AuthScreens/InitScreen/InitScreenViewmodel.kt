@@ -4,9 +4,7 @@ import android.content.Context
 import androidx.activity.result.ActivityResult
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.acasloa946.pfg_caraction.UserInterface.models.UserModel
-import com.acasloa946.pfg_caraction.domain.checkIfUserExistsUseCase
-import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.checkIfUserExistsUseCase
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth

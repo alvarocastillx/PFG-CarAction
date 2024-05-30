@@ -11,8 +11,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.States.ResultStateCurrentChats
 import com.acasloa946.pfg_caraction.UserInterface.models.UserModel
-import com.acasloa946.pfg_caraction.domain.fetchChatsOfUserUseCase
-import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchChatsOfUserUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import dagger.hilt.android.lifecycle.HiltViewModel

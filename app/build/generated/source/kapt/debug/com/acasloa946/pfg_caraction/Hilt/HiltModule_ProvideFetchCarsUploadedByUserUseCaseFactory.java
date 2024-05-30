@@ -2,7 +2,7 @@
 package com.acasloa946.pfg_caraction.Hilt;
 
 import com.acasloa946.pfg_caraction.data.UserRepository;
-import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase;
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUploadedByUserUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;

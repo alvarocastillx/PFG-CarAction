@@ -1,23 +1,22 @@
 package com.acasloa946.pfg_caraction.Hilt
 
-import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.homeScreenViewmodel
 import com.acasloa946.pfg_caraction.data.UserDao
 import com.acasloa946.pfg_caraction.data.UserRepository
-import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase
-import com.acasloa946.pfg_caraction.domain.addCarUseCase
-import com.acasloa946.pfg_caraction.domain.addUserUseCase
-import com.acasloa946.pfg_caraction.domain.checkIfUserExistsUseCase
-import com.acasloa946.pfg_caraction.domain.deleteCarUseCase
-import com.acasloa946.pfg_caraction.domain.fetchCarTypesUseCase
-import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase
-import com.acasloa946.pfg_caraction.domain.fetchCarsUseCase
-import com.acasloa946.pfg_caraction.domain.fetchChatsOfUserUseCase
-import com.acasloa946.pfg_caraction.domain.fetchFavouriteCarsUseCase
-import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
-import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
-import com.acasloa946.pfg_caraction.domain.getMessagesUseCase
-import com.acasloa946.pfg_caraction.domain.linkCarToProfileUseCase
-import com.acasloa946.pfg_caraction.domain.sendMessageUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.addCarToFavouritesUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.addCarUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.addUserUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.checkIfUserExistsUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.deleteCarUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarTypesUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUploadedByUserUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchChatsOfUserUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchFavouriteCarsUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserByNameUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.getMessagesUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.linkCarToProfileUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.sendMessageUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -89,12 +88,12 @@ class HiltModule {
         return fetchFavouriteCarsUseCase(userRepository)
     }
     @Provides
-    fun provideCheckIfUserExistsUseCase(userRepository: UserRepository):checkIfUserExistsUseCase{
+    fun provideCheckIfUserExistsUseCase(userRepository: UserRepository): checkIfUserExistsUseCase {
         return checkIfUserExistsUseCase(userRepository)
     }
 
     @Provides
-    fun provideDeleteCarUseCase(userRepository: UserRepository):deleteCarUseCase {
+    fun provideDeleteCarUseCase(userRepository: UserRepository): deleteCarUseCase {
         return deleteCarUseCase(userRepository)
     }
 

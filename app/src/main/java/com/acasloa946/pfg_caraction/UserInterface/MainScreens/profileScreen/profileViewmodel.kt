@@ -11,8 +11,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.States.ProfileScreenStates
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
-import com.acasloa946.pfg_caraction.domain.fetchCarsUploadedByUserUseCase
-import com.acasloa946.pfg_caraction.domain.fetchUserByNameUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUploadedByUserUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserByNameUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 
@@ -27,7 +27,6 @@ class profileViewmodel @Inject constructor(
     private val fetchUserByNameUseCase: fetchUserByNameUseCase
 ) : ViewModel() {
     val fetchedCarsUploadedByUser = MutableStateFlow<List<CarModel>>(emptyList())
-    private val auth = Firebase.auth
 
     var userName by mutableStateOf("")
     var memberSince by mutableStateOf("")

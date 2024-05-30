@@ -8,9 +8,9 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
-import com.acasloa946.pfg_caraction.domain.addCarToFavouritesUseCase
-import com.acasloa946.pfg_caraction.domain.deleteCarUseCase
-import com.acasloa946.pfg_caraction.domain.fetchUserUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.addCarToFavouritesUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.deleteCarUseCase
+import com.acasloa946.pfg_caraction.domain.UsersUseCases.fetchUserUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.States.FavouriteCarStates
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
-import com.acasloa946.pfg_caraction.domain.fetchFavouriteCarsUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchFavouriteCarsUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import dagger.hilt.android.lifecycle.HiltViewModel
