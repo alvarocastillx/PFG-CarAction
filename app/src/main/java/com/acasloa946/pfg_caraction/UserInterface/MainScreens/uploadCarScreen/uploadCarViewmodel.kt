@@ -160,6 +160,7 @@ class uploadCarViewmodel @Inject constructor(
     }
 
     fun getCarType(fillData: () -> Unit, context: Context, uploadedSuccessfuly: () -> Unit) {
+        _uploadCarStates.value = UploadCarStates.Loading
         val apiModule = APIModule()
         if (makeButtonText != "Marca" && modelButtonText != "Modelo") {
             viewModelScope.launch {
@@ -186,7 +187,7 @@ class uploadCarViewmodel @Inject constructor(
         context: Context,
         uploadedSuccessfuly: () -> Unit
     ) {
-        _uploadCarStates.value = UploadCarStates.Loading
+
         if (selectedImageURL.isNotBlank() && carPlate.isNotBlank() && (makeButtonText != "Marca") && (modelButtonText != "Modelo") && ((_carYear.toString().length == 4) && (_carYear!! <= Calendar.getInstance()
                 .get(Calendar.YEAR))) && (userLocation.value!!.first != 0.0) &&
             carKMField.isNotBlank() && carPriceField.isNotBlank() && userLocationString.isNotBlank()
@@ -252,7 +253,7 @@ class uploadCarViewmodel @Inject constructor(
     suspend fun getAIInfo(makeModel:String) {
         val apiModule = APIModule()
         val listOfMessages = listOf(Message("system", const.SYSTEM_AI_MESSAGE), Message("user", makeModel))
-        val chatRequest = ChatRequest("gpt-3.5-turbo-16k", listOfMessages, 0.7)
+        val chatRequest = ChatRequest("gemini-pro", listOfMessages, 0.7)
         viewModelScope.launch {
             try {
                 _carInfo = apiModule.getAIInfo(chatRequest).choices!![0].message.content

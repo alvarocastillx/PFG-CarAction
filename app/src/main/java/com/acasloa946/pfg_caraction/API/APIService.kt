@@ -38,7 +38,7 @@ interface ApiService {
         @Query("limit") limit:Int = 1
     ): APITypeResponse
 
-    @Headers("Content-Type:application/json","Authorization: Bearer zu-9da0bc0fffba037dd942e468bcde2db1")
+    @Headers("Content-Type:application/json","Authorization: Bearer StRJc1zVGAfQ44uoE883F6Eb341448E583141151D338438c")
     @POST(BASE_URL_AI)
     suspend fun AIGetInfo(
         @Body chatRequest : ChatRequest): ChatCompletionResponse

@@ -38,6 +38,7 @@ class carLocationViewmodel : ViewModel() {
     private val markerAddressDetail = _markerAddressDetail.asStateFlow()
     var userAddress by mutableStateOf("")
 
+    var located by mutableStateOf(false)
 
     fun getLocationPermission(
         context: Context,

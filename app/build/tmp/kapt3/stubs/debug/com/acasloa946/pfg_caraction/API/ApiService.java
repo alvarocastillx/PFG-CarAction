@@ -41,8 +41,8 @@ public abstract interface ApiService {
     int limit, @org.jetbrains.annotations.NotNull
     kotlin.coroutines.Continuation<? super com.acasloa946.pfg_caraction.API.Models.CarTypes.APITypeResponse> $completion);
     
-    @retrofit2.http.Headers(value = {"Content-Type:application/json", "Authorization: Bearer zu-9da0bc0fffba037dd942e468bcde2db1"})
-    @retrofit2.http.POST(value = "https://zukijourney.xyzbot.net/v1/chat/completions/")
+    @retrofit2.http.Headers(value = {"Content-Type:application/json", "Authorization: Bearer StRJc1zVGAfQ44uoE883F6Eb341448E583141151D338438c"})
+    @retrofit2.http.POST(value = "https://api.acloudapp.com/v1/chat/completions/")
     @org.jetbrains.annotations.Nullable
     public abstract java.lang.Object AIGetInfo(@retrofit2.http.Body
     @org.jetbrains.annotations.NotNull

@@ -14,8 +14,8 @@ class const {
         const val ENDPOINT_TYPE = "records"
 
 
-        const val BASE_URL_AI = "https://zukijourney.xyzbot.net/v1/chat/completions/"
-        const val SYSTEM_AI_MESSAGE = "Tu objetivo es dar información sobre vehículos. Te pasaré el nombre de un vehículo y me daras sus especificaciones EN UN MÁXIMO DE 50 PALABRAS. ES MUY IMPORTANTE QUE EL MÁXIMO SEAN 50 PALABRAS"
+        const val BASE_URL_AI = "https://api.acloudapp.com/v1/chat/completions/"
+        const val SYSTEM_AI_MESSAGE = "Tu objetivo es dar información sobre vehículos. Te pasaré el nombre de un vehículo y me darás sus especificaciones EN UN MÁXIMO DE 45 PALABRAS."
         var INITIAL_CHATS by mutableStateOf(0)
         var CURRENT_CHATS by mutableStateOf(0)
 

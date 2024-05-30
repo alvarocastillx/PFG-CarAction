@@ -46,6 +46,7 @@ fun CarLocationScreen(navController: NavController, carLocationViewmodel: carLoc
                 failedToGetLocation = {
                     toastMaker("Ha ocurrido un error obteniendo su ubicación",context)
                 })
+            carLocationViewmodel.located = true
         } else {
             toastMaker(
                 "No se puede obtener la ubicación. Permisos denegados",
@@ -86,10 +87,17 @@ fun CarLocationScreen(navController: NavController, carLocationViewmodel: carLoc
                 carLocationViewmodel,
                 userLocation,
                 onAssignClick = {
-                    uploadCarViewmodel.userLocation = carLocationViewmodel.userLocation as MutableLiveData<Pair<Double, Double>>
-                    carLocationViewmodel.getMarkerAddressDetails(userLocation.first,userLocation.second,context)
-                    uploadCarViewmodel.userLocationString = carLocationViewmodel.userAddress
-                    navController.navigate(Routes.UploadCarScreen.route)
+                    if (carLocationViewmodel.located) {
+                        uploadCarViewmodel.userLocation = carLocationViewmodel.userLocation as MutableLiveData<Pair<Double, Double>>
+                        carLocationViewmodel.getMarkerAddressDetails(userLocation.first,userLocation.second,context)
+                        uploadCarViewmodel.userLocationString = carLocationViewmodel.userAddress
+                        navController.navigate(Routes.UploadCarScreen.route)
+                        carLocationViewmodel.located = false
+                    }
+                    else {
+                        toastMaker("Asigne su ubicación actual", context)
+                    }
+
                 })
 
         }

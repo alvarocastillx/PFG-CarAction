@@ -121,6 +121,8 @@ dependencies {
 
     //Gemini AI
     implementation("com.google.ai.client.generativeai:generativeai:0.6.0")
+    //Libreria mock para testing
+    testImplementation("io.mockk:mockk:1.12.2")
 
 
 
