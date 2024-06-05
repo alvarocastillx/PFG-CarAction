@@ -68,12 +68,14 @@ fun HomeScreen(
     val coroutine = rememberCoroutineScope()
 
     LaunchedEffect(Unit) {
+        homeScreenViewmodel.clearScreen()
         homeScreenViewmodel.fetchUserName(context,
             onError = {
                 toastMaker("Ha ocurrido un error con su cuenta", context)
                 navController.navigate(Routes.InitScreen.route)
             })
         homeScreenViewmodel.fetchCars()
+
     }
     LaunchedEffect(true) {
         while (true) {
@@ -124,12 +126,6 @@ fun HomeScreen(
                         },
                         label = { Text(text = "Favoritos") },
                         selected = false, onClick = { navController.navigate(Routes.FavouritesScreen.route) })
-                    NavigationDrawerItem(
-                        icon = {
-                            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
-                        },
-                        label = { Text(text = "Ajustes") },
-                        selected = false, onClick = { /*TODO*/ })
                     Spacer(modifier = Modifier.padding(180.dp))
                     NavigationDrawerItem(
                         icon = {

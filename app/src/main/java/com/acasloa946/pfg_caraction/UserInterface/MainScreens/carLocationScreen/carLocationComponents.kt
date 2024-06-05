@@ -110,39 +110,7 @@ fun LocationScreenComponent(
         }
         Spacer(modifier = Modifier.padding(5.dp))
         LineSeparatoria()
-        TextFieldLocation {
 
-            TextField(
-                value = "SAN FERNANDO", onValueChange = {
-
-                },
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = RojoMain,
-                    unfocusedBorderColor = BlancoMain,
-                    focusedLabelColor = BlancoMain,
-                    unfocusedLabelColor = BlancoMain,
-                    unfocusedTextColor = BlancoMain,
-                    focusedTextColor = BlancoMain
-                ),
-                placeholder = {
-                    Text("Introduzca la localización del coche", color = BlancoMain, fontSize = 12.sp)
-                },
-                modifier = Modifier.fillMaxWidth(),
-                leadingIcon = {
-                    Icon(imageVector = Icons.Default.AddLocation, contentDescription = null, tint = BlancoMain)
-                }
-            )
-
-
-
-            /*
-            carLocationViewmodel.getMarkerAddressDetails(
-                    userLocation.first,
-                    userLocation.second,
-                    context
-                )
-             */
-        }
         Spacer(modifier = Modifier.padding(3.dp))
         FrameButtons(modifier = Modifier.rowWeight(1.0f)) {
             ThisLocationButton(

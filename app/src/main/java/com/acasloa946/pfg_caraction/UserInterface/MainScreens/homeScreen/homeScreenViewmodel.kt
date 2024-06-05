@@ -58,6 +58,14 @@ class homeScreenViewmodel @Inject constructor(
         isDialogOpened = !isDialogOpened
     }
 
+    fun clearScreen() {
+        alreadyFetchedChats = false
+        _typeSortedList = mutableListOf()
+        searchBarText = ""
+        alreadyFetchedCars = false
+        fetched = false
+    }
+
 
     fun fetchUserName(context: Context, onError: () -> Unit) {
         val currentEmail = auth.currentUser?.email
@@ -151,7 +159,6 @@ class homeScreenViewmodel @Inject constructor(
     }
 
     fun filterArea(filterList: List<Any>) {
-
         if (filterList[0].toString().replace(",", "").toFloat() != 0f) {
             fetchedCars.value = _originalCarList.filter { item ->
                 item.km!! < filterList[0].toString()

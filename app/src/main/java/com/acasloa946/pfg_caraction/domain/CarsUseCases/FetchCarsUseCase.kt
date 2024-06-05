@@ -4,6 +4,9 @@ import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.data.UserRepository
 import javax.inject.Inject
 
+/**
+ * Caso de uso destinado a recuperar todos los coches de la base de datos
+ */
 class fetchCarsUseCase @Inject constructor(private val userRepository: UserRepository) {
     suspend operator fun invoke(): MutableList<CarModel> {
         val carEntityList = userRepository.fetchCars()

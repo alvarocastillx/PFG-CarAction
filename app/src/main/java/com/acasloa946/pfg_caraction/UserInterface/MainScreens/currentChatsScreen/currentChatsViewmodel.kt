@@ -31,11 +31,16 @@ class currentChatsViewmodel @Inject constructor(private val fetchChatsOfUserUseC
 
     var clickedUserToChat by mutableStateOf("")
 
+    var fetchedChats by mutableStateOf(false)
+
     private val userChats by mutableStateOf(mutableListOf<UserModel>())
     fun fetchChats(context: Context) {
         userChats.clear()
         val currentUserMail = auth.currentUser!!.email!!
-        _userCurrentChatsState.value = ResultStateCurrentChats.Loading
+        if (!fetchedChats) {
+            _userCurrentChatsState.value = ResultStateCurrentChats.Loading
+            fetchedChats = true
+        }
         val userMailChats by mutableStateOf(mutableListOf<String>())
         viewModelScope.launch {
             try {

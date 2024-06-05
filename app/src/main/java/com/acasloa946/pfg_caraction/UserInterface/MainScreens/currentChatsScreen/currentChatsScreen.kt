@@ -55,6 +55,10 @@ fun currentChatsScreen(navController: NavController, homeScreenViewmodel: homeSc
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutine = rememberCoroutineScope()
 
+    LaunchedEffect(Unit) {
+        currentChatsViewmodel.fetchedChats = false
+    }
+
     LaunchedEffect(true){
         while (true) {
             currentChatsViewmodel.fetchChats(context)
@@ -102,12 +106,6 @@ fun currentChatsScreen(navController: NavController, homeScreenViewmodel: homeSc
                         },
                         label = { Text(text = "Favoritos") },
                         selected = false, onClick = { navController.navigate(Routes.FavouritesScreen.route) })
-                    NavigationDrawerItem(
-                        icon = {
-                            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
-                        },
-                        label = { Text(text = "Ajustes") },
-                        selected = false, onClick = { /*TODO*/ })
                     Spacer(modifier = Modifier.padding(180.dp))
                     NavigationDrawerItem(
                         icon = {

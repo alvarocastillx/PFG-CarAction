@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import com.acasloa946.pfg_caraction.Navigation.Routes
 import com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.homeScreenViewmodel
 import kotlinx.coroutines.delay
+import okhttp3.internal.wait
 
 @Composable
 fun SplashScreen(navController: NavController, homeScreenViewmodel: homeScreenViewmodel){

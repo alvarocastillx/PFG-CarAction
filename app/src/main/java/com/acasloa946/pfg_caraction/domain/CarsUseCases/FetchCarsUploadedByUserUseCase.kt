@@ -5,6 +5,11 @@ import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.data.UserRepository
 import javax.inject.Inject
 
+/**
+ * Caso de uso destinado a recuperar los coches que ha subido el usuario
+ * @param context: contexto de la aplicación
+ * @param email: email del usuario del que se desean recuperar los coches
+ */
 class fetchCarsUploadedByUserUseCase @Inject constructor(private val userRepository: UserRepository) {
     suspend operator fun invoke(context: Context, email:String): MutableList<CarModel> {
         val carList = userRepository.fetchCarsUploadedByUser(context, email)

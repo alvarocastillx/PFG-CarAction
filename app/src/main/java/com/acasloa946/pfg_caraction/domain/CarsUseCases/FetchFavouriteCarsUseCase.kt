@@ -5,6 +5,11 @@ import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
 import com.acasloa946.pfg_caraction.data.UserRepository
 import javax.inject.Inject
 
+/**
+ * Caso de uso destinado a recuperar los coches favoritos del usuario
+ * @param context: contexto de la aplicación
+ * @param email: correo del usuario del que se desean recuperar los coches favoritos
+ */
 class fetchFavouriteCarsUseCase @Inject constructor(private val userRepository: UserRepository) {
     suspend operator fun invoke(context: Context, email:String): List<CarModel> {
         val carEntityList = userRepository.fetchFavCars(context, email)
