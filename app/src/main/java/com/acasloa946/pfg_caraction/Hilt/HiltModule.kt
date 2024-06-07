@@ -7,6 +7,7 @@ import com.acasloa946.pfg_caraction.domain.CarsUseCases.addCarUseCase
 import com.acasloa946.pfg_caraction.domain.UsersUseCases.addUserUseCase
 import com.acasloa946.pfg_caraction.domain.UsersUseCases.checkIfUserExistsUseCase
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.deleteCarUseCase
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.deleteFavCarUseCase
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarTypesUseCase
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUploadedByUserUseCase
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUseCase
@@ -95,6 +96,10 @@ class HiltModule {
     @Provides
     fun provideDeleteCarUseCase(userRepository: UserRepository): deleteCarUseCase {
         return deleteCarUseCase(userRepository)
+    }
+    @Provides
+    fun provideDeleteFavCarUseCase(userRepository: UserRepository) : deleteFavCarUseCase {
+        return deleteFavCarUseCase(userRepository)
     }
 
 

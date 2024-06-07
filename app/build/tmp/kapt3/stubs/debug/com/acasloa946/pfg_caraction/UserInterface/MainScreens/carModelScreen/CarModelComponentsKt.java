@@ -1,8 +1,13 @@
 package com.acasloa946.pfg_caraction.UserInterface.MainScreens.carModelScreen;
 
 import androidx.compose.foundation.layout.Arrangement;
+import androidx.compose.foundation.text.KeyboardOptions;
+import androidx.compose.material.icons.Icons;
+import androidx.compose.material3.OutlinedTextFieldDefaults;
 import androidx.compose.runtime.Composable;
 import androidx.compose.ui.Modifier;
+import androidx.compose.ui.text.TextStyle;
+import androidx.compose.ui.text.input.KeyboardType;
 import androidx.navigation.NavController;
 import com.acasloa946.pfg_caraction.Navigation.Routes;
 import com.acasloa946.pfg_caraction.UserInterface.MainScreens.uploadCarScreen.uploadCarViewmodel;

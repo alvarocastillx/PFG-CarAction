@@ -13,6 +13,7 @@ import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddCarUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideAddUserUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideCheckIfUserExistsUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideDeleteCarUseCaseFactory;
+import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideDeleteFavCarUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsTypeUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsUploadedByUserUseCaseFactory;
 import com.acasloa946.pfg_caraction.Hilt.HiltModule_ProvideFetchCarsUseCaseFactory;
@@ -49,6 +50,7 @@ import com.acasloa946.pfg_caraction.data.UserRepository;
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.addCarToFavouritesUseCase;
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.addCarUseCase;
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.deleteCarUseCase;
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.deleteFavCarUseCase;
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarTypesUseCase;
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUploadedByUserUseCase;
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchCarsUseCase;
@@ -547,7 +549,7 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
           return (T) new currentChatsViewmodel(singletonCImpl.fetchChatsOfUserUseCase(), singletonCImpl.fetchUserUseCase());
 
           case 6: // com.acasloa946.pfg_caraction.UserInterface.MainScreens.favouritesScreen.favouritesViewmodel 
-          return (T) new favouritesViewmodel(singletonCImpl.fetchFavouriteCarsUseCase());
+          return (T) new favouritesViewmodel(singletonCImpl.fetchFavouriteCarsUseCase(), singletonCImpl.deleteFavCarUseCase());
 
           case 7: // com.acasloa946.pfg_caraction.UserInterface.MainScreens.homeScreen.homeScreenViewmodel 
           return (T) new homeScreenViewmodel(singletonCImpl.fetchUserUseCase(), singletonCImpl.fetchCarsUseCase(), singletonCImpl.fetchCarTypesUseCase(), singletonCImpl.fetchChatsOfUserUseCase());
@@ -688,6 +690,10 @@ public final class DaggerCarActionApp_HiltComponents_SingletonC {
 
     private fetchFavouriteCarsUseCase fetchFavouriteCarsUseCase() {
       return HiltModule_ProvideFetchFavCarsFactory.provideFetchFavCars(hiltModule, userRepository());
+    }
+
+    private deleteFavCarUseCase deleteFavCarUseCase() {
+      return HiltModule_ProvideDeleteFavCarUseCaseFactory.provideDeleteFavCarUseCase(hiltModule, userRepository());
     }
 
     private fetchCarsUseCase fetchCarsUseCase() {

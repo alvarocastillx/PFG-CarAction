@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.API.APIModule
 import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIMake
+import com.acasloa946.pfg_caraction.API.Models.makesAndModels.APIModel
 import kotlinx.coroutines.launch
 
 class carMakesViewmodel : ViewModel() {
@@ -15,6 +16,9 @@ class carMakesViewmodel : ViewModel() {
 
     private var makesFetched by mutableStateOf(false)
 
+    var searchBarText by mutableStateOf("")
+    private var originalList by mutableStateOf(listOf<APIMake>())
+
     fun getMakes(failed : () -> Unit) {
         val apiModule = APIModule()
         if (!makesFetched) {
@@ -22,6 +26,7 @@ class carMakesViewmodel : ViewModel() {
                 try {
                     carMakes = apiModule.getCarMakes()
                     makesFetched = true
+                    originalList = carMakes
                 }
                 catch (e:Exception) {
                     failed()
@@ -29,4 +34,18 @@ class carMakesViewmodel : ViewModel() {
             }
         }
     }
+
+    fun changeSearchBarText(input: String) {
+        searchBarText = input
+        filterListBySearchbar(searchBarText)
+    }
+
+    fun filterListBySearchbar(searchBarText:String) {
+        carMakes = originalList.filter { it.name!!.contains(searchBarText, ignoreCase = true) }
+        if (searchBarText.isBlank()) {
+            carMakes = originalList
+        }
+    }
+
+
 }

@@ -358,6 +358,26 @@ interface UserDao {
         }
     }
 
+    suspend fun deleteFavCar(context: Context, carEntity: CarEntity) {
+        val auth = Firebase.auth
+        if (FirebaseApp.getApps(context).isNotEmpty()) {
+            val db = FirebaseFirestore.getInstance()
+            try {
+                val user = db.collection("Users").document(auth.currentUser?.email.toString()).get().await()
+                if (user!=null) {
+                    val userObject = user.toObject(UserEntity::class.java)
+                    var favouriteCarsOfUser = userObject?.userFavouriteCars
+                    favouriteCarsOfUser?.remove(carEntity.plate + carEntity.model + carEntity.year)
+                    db.collection("Users").document(auth.currentUser?.email.toString()).update("userFavouriteCars",favouriteCarsOfUser).await()
+                }
+            } catch (e: Exception) {
+                Log.e("Error", "ERROR", e)
+            }
+        } else {
+            Log.e("Error", "ERROR: FirebaseApp no inicializado")
+        }
+    }
+
 
     }
 

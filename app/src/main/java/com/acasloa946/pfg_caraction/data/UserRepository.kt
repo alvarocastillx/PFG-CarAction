@@ -76,5 +76,10 @@ class UserRepository @Inject constructor(private val userDao : UserDao) {
             mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType, carModel.carInfo))
     }
 
+    suspend fun deleteFavCar(context: Context, carModel: CarModel) {
+        userDao.deleteFavCar(context,CarEntity(carModel.type, carModel.image,carModel.make, carModel.model, carModel.plate, carModel.year, carModel.km, carModel.price,
+            mapOf("first" to carModel.location!!.first!!,"second" to carModel.location.second!!), carModel.locationName, carModel.userName, carModel.fuelType, carModel.transmisionType, carModel.carInfo))
+    }
+
 
 }

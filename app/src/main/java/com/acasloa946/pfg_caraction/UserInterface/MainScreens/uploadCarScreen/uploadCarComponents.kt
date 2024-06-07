@@ -490,7 +490,7 @@ fun UploadCarsScreenStates(
 
         }
         is UploadCarStates.Error -> {
-            toastMaker("Error al subir el coche.",context)
+
         }
         is UploadCarStates.Waiting -> {
 

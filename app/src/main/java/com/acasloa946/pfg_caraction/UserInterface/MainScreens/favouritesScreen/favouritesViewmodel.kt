@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.acasloa946.pfg_caraction.UserInterface.States.FavouriteCarStates
 import com.acasloa946.pfg_caraction.UserInterface.models.CarModel
+import com.acasloa946.pfg_caraction.domain.CarsUseCases.deleteFavCarUseCase
 import com.acasloa946.pfg_caraction.domain.CarsUseCases.fetchFavouriteCarsUseCase
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
@@ -16,7 +17,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class favouritesViewmodel @Inject constructor(private val fetchFavouriteCarsUseCase: fetchFavouriteCarsUseCase): ViewModel() {
+class favouritesViewmodel @Inject constructor(private val fetchFavouriteCarsUseCase: fetchFavouriteCarsUseCase,
+    private val deleteFavCarUseCase: deleteFavCarUseCase): ViewModel() {
 
     private val auth = Firebase.auth
 
@@ -37,6 +39,21 @@ class favouritesViewmodel @Inject constructor(private val fetchFavouriteCarsUseC
             }
         }
 
+    }
+
+    fun deleteFavCar(context: Context, carModel: CarModel,
+                     error : () ->  Unit, success : () -> Unit){
+
+        viewModelScope.launch {
+            try {
+                deleteFavCarUseCase.invoke(context, carModel)
+                success()
+                fetchFavCars(context)
+            }
+            catch (e:Exception){
+                error()
+            }
+        }
     }
 
 }

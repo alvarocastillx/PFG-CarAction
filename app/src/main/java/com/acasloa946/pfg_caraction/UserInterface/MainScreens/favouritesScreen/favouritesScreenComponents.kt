@@ -3,6 +3,8 @@ package com.acasloa946.pfg_caraction.UserInterface.MainScreens.favouritesScreen
 import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,6 +24,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.PointerInputScope
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.DpOffset
@@ -64,13 +68,16 @@ fun FavouriteScreenComponent(
 
     val context = LocalContext.current
     val favouriteCarsStates by favouritesViewmodel.favouriteCarStates.observeAsState(
-        FavouriteCarStates.Loading)
+        FavouriteCarStates.Loading
+    )
 
     TopLevel(modifier = modifier) {
-        Banner(modifier = Modifier
-            .rowWeight(1.0f)
-            .clip(BottomRoundedShape(60.dp))
-            .border(2.dp, RojoMain, BottomRoundedShape(60.dp))) {
+        Banner(
+            modifier = Modifier
+                .rowWeight(1.0f)
+                .clip(BottomRoundedShape(60.dp))
+                .border(2.dp, RojoMain, BottomRoundedShape(60.dp))
+        ) {
             MaterialSymbolsMenu(
                 leftMenuClick = leftMenuClick,
                 modifier = Modifier.boxAlign(
@@ -111,12 +118,18 @@ fun FavouriteScreenComponent(
             FavoritosComponent()
             Linea1()
             FavsFrame {
-                Column (
+                Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    FavouriteCars(resultState = favouriteCarsStates, context = context, navController, carScreenViewmodel)
+                    FavouriteCars(
+                        resultState = favouriteCarsStates,
+                        navController,
+                        carScreenViewmodel,
+                        favouritesViewmodel,
+                        context
+                    )
                 }
             }
         }
@@ -146,36 +159,51 @@ fun FavoritosComponent(modifier: Modifier = Modifier) {
 
 @Composable
 fun FavouriteCars(
-    resultState : FavouriteCarStates<List<CarModel>>,
-    context: Context,
+    resultState: FavouriteCarStates<List<CarModel>>,
     navController: NavController,
-    carScreenViewmodel : CarScreenViewmodel
+    carScreenViewmodel: CarScreenViewmodel,
+    favouritesViewmodel: favouritesViewmodel,
+    context: Context
 
-){
+) {
     when (resultState) {
         is FavouriteCarStates.Loading -> {
             CircularProgressIndicator(modifier = Modifier.size(200.dp))
         }
+
         is FavouriteCarStates.Success -> {
             if (resultState.data.isNotEmpty()) {
-                LazyColumn (
+                LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.spacedBy(10.dp)
-                ){
-                    items(resultState.data) {
+                ) {
+                    items(resultState.data) { car ->
                         CarCardComponent(
-                            makeModelText = ("${it.make} ${it.model}"),
-                            priceText = "${it.price}€",
-                            image = it.image!!,
+                            makeModelText = ("${car.make} ${car.model}"),
+                            priceText = "${car.price}€",
+                            image = car.image!!,
                             onCarClick = {
                                 navController.navigate(Routes.CarScreen.route)
-                                carScreenViewmodel.clickedCar = it
+                                carScreenViewmodel.clickedCar = car
+                            },
+                            modifier = Modifier.pointerInput(Unit) {
+                                detectTransformGestures { _, pan, zoom, rotation ->
+                                    val dragAmountX = pan.x
+
+                                    if (dragAmountX < -100) { // Ajusta este valor según tus necesidades para detectar un arrastre suficientemente largo hacia la izquierda
+                                        favouritesViewmodel.deleteFavCar(context, car, error = {
+                                            toastMaker("Error al eliminar coche de favoritos, inténtelo de nuevo más tarde.", context)
+                                        },
+                                            success = {
+                                                toastMaker("Coche eliminado de favoritos", context)
+                                            })
+                                    }
+                                }
                             }
                         )
                     }
                 }
-            }
-            else {
+            } else {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
@@ -195,6 +223,7 @@ fun FavouriteCars(
             }
 
         }
+
         is FavouriteCarStates.Error -> {
             toastMaker("Error al obtener coches favoritos", context)
         }

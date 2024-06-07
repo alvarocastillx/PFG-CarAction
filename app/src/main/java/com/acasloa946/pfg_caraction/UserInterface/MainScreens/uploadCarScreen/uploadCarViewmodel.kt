@@ -172,6 +172,7 @@ class uploadCarViewmodel @Inject constructor(
                 uploadCar(fillData, context, uploadedSuccessfuly)
             }
         } else {
+            _uploadCarStates.value = UploadCarStates.Error(Throwable("Introduzca los datos de su coche"))
             fillData()
         }
 
@@ -222,6 +223,7 @@ class uploadCarViewmodel @Inject constructor(
                 }
             }
         } else {
+            _uploadCarStates.value = UploadCarStates.Error(exception = Throwable("Introduzca los datos de su coche"))
             fillData()
         }
 
