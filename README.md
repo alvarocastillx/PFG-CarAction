@@ -12,3 +12,5 @@ Creada con Jetpack Compose. <br>
 <h4>Tecnologías utilizadas:</h4>
 
 [![My Skills](https://skillicons.dev/icons?i=firebase,figma,androidstudio,kotlin)](https://skillicons.dev)
+
+![alt Preview](https://github.com/alvarocastillx/PFG-CarAction/blob/main/proyectoMockup.png)
