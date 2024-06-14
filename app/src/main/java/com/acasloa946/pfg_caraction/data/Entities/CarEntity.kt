@@ -1,7 +1,9 @@
 package com.acasloa946.pfg_caraction.data.Entities
 
 
-
+/**
+ * Entidad de coche
+ */
 data class CarEntity (
     val type: String? = null,
     val image: String? = null,

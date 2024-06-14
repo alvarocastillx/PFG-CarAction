@@ -40,6 +40,9 @@ class carLocationViewmodel : ViewModel() {
 
     var located by mutableStateOf(false)
 
+    /**
+     * Función para obtener permisos
+     */
     fun getLocationPermission(
         context: Context,
         permission: String,
@@ -56,6 +59,9 @@ class carLocationViewmodel : ViewModel() {
         }
     }
 
+    /**
+     * Función para conseguir ubicación
+     */
     @SuppressLint("MissingPermission")
     fun getLocation(
         fusedLocationProviderClient: FusedLocationProviderClient,
@@ -81,6 +87,9 @@ class carLocationViewmodel : ViewModel() {
     }
 
 
+    /**
+     * Función para conseguir detalles de la ubicacón (string de calle)
+     */
     fun getMarkerAddressDetails(lat: Double, long: Double, context: Context) {
         _markerAddressDetail.value = ResponseState.Loading
         try {

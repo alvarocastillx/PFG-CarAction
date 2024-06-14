@@ -19,7 +19,9 @@ import okhttp3.internal.threadName
 
 interface UserDao {
 
-
+    /**
+     * Función para crear usuario en base de datos
+     */
     suspend fun createUserInDatabase(userEntity: UserEntity, context: Context) {
         if (FirebaseApp.getApps(context).isNotEmpty()) {
             val db = FirebaseFirestore.getInstance()
@@ -41,6 +43,9 @@ interface UserDao {
         }
     }
 
+    /**
+     * Función para recuperar información del usuario cuando se abre la app
+     */
     suspend fun fetchUser(context: Context, email: String): UserEntity? {
         var user: UserEntity? = UserEntity("", UserType.NULL, "")
         if (FirebaseApp.getApps(context).isNotEmpty()) {
@@ -61,6 +66,9 @@ interface UserDao {
         return user
     }
 
+    /**
+     * Función para subir anuncio de coche
+     */
     suspend fun uploadCarToDatabase(
         carEntity: CarEntity, context: Context,
     ) {
@@ -84,7 +92,9 @@ interface UserDao {
         }
     }
 
-
+    /**
+     * Función para recuperar todos los anuncios de los coches almacenados en la base de datos.
+     */
     suspend fun fetchCars(): MutableList<CarEntity> {
 
         val db = FirebaseFirestore.getInstance()
@@ -107,6 +117,9 @@ interface UserDao {
 
     }
 
+    /**
+     * Función para recuperar todos los tipos de coche de los coches guardados en Firebase
+     */
     suspend fun fetchCarTypes(): MutableList<String> {
 
         val db = FirebaseFirestore.getInstance()
@@ -123,6 +136,9 @@ interface UserDao {
         return carTypeList
     }
 
+    /**
+     * Función para introducir en el usuario los coches subidos por este
+     */
     suspend fun linkCarToProfile(
         carEntity: CarEntity, context: Context, email: String
     ) {
@@ -150,6 +166,10 @@ interface UserDao {
             Log.e("Error", "ERROR: FirebaseApp no inicializado")
         }
     }
+
+    /**
+     * Recupera los coches que ha subido el usuario
+     */
     suspend fun fetchCarsUploadedByUser(
         context: Context, email: String
     ): MutableList<CarEntity> {
@@ -177,6 +197,9 @@ interface UserDao {
         return carsOfUser
     }
 
+    /**
+     * Recupera el usuario por el nombre
+     */
     suspend fun fetchUserByName(context: Context, name:String):UserEntity? {
         var user: UserEntity? = UserEntity("", UserType.NULL, "")
         if (FirebaseApp.getApps(context).isNotEmpty()) {
@@ -195,6 +218,9 @@ interface UserDao {
         return user
     }
 
+    /**
+     * Función para enviar mensaje
+     */
     suspend fun sendMessage(context: Context, messageEntity : MessageEntity) {
         if (FirebaseApp.getApps(context).isNotEmpty()) {
             val db = FirebaseFirestore.getInstance()
@@ -216,6 +242,9 @@ interface UserDao {
         }
     }
 
+    /**
+     * Función para recuperar mensajes
+     */
     suspend fun getMessages(context: Context, userReading:String, otherUser:String): List<MessageEntity> {
         val sentMessages = mutableListOf<MessageEntity>()
         val receivedMessages = mutableListOf<MessageEntity>()
@@ -242,6 +271,10 @@ interface UserDao {
         return (sentMessages+receivedMessages).sortedBy { messageEntity -> messageEntity.sent_on }
     }
 
+
+    /**
+     * Función para recuperar todos los chats abiertos del usuario
+     */
     suspend fun fetchChatsOfUser(context: Context, userReading:String): MutableList<MessageEntity>{
         val messagesList = mutableListOf<MessageEntity>()
         if (FirebaseApp.getApps(context).isNotEmpty()) {
@@ -265,6 +298,9 @@ interface UserDao {
         return messagesList
     }
 
+    /**
+     * Función para añadir un coche a favoritos
+     */
     suspend fun addCarToFavourites(context: Context, email: String, carEntity: CarEntity) {
         if (FirebaseApp.getApps(context).isNotEmpty()) {
             val db = FirebaseFirestore.getInstance()
@@ -296,6 +332,9 @@ interface UserDao {
         }
     }
 
+    /**
+     * Función para recuperar los coches favoritos
+     */
     suspend fun fetchFavCars(context: Context, email: String): MutableList<CarEntity> {
         var user = UserEntity()
         val favCars = mutableListOf<CarEntity>()
@@ -319,6 +358,9 @@ interface UserDao {
         return favCars
     }
 
+    /**
+     * Función para comprobar si el usuario existe
+     */
     suspend fun checkIfUserExists(context: Context, email: String): Boolean {
         var userExists = false
         if (FirebaseApp.getApps(context).isNotEmpty()) {
@@ -334,6 +376,9 @@ interface UserDao {
         return userExists
     }
 
+    /**
+     * Función para eliminar anuncio de coche
+     */
     suspend fun deleteCar(context: Context, carEntity: CarEntity) {
         val auth = Firebase.auth
         if (FirebaseApp.getApps(context).isNotEmpty()) {
@@ -358,6 +403,9 @@ interface UserDao {
         }
     }
 
+    /**
+     * Función para eliminar coche favorito
+     */
     suspend fun deleteFavCar(context: Context, carEntity: CarEntity) {
         val auth = Firebase.auth
         if (FirebaseApp.getApps(context).isNotEmpty()) {
