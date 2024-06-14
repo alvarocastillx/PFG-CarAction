@@ -7,7 +7,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
-    <string name="app_name">PFG-CarAction</string>
+    <string name="app_name">CarAction</string>
     <string name="default_web_client_id" translatable="false">969276336690-v2b6odp2jgpfp5dt9oiqkemc0sd47hi1.apps.googleusercontent.com</string>
     <string name="gcm_defaultSenderId" translatable="false">969276336690</string>
     <string name="google_api_key" translatable="false">AIzaSyBtOwUdWP7ryviIvmr-ksDYRVGMOvRiqO8</string>

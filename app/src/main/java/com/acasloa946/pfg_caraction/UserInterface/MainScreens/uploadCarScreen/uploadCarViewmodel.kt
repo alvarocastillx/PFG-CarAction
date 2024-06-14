@@ -34,8 +34,7 @@ import javax.inject.Inject
 import kotlin.math.roundToInt
 
 
-//TODO: FUN CLEAR VIEWMODEL
-//TODO: casos de uso de fotos?
+
 @HiltViewModel
 class uploadCarViewmodel @Inject constructor(
     private val addCarUseCase: addCarUseCase,
