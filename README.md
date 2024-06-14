@@ -3,7 +3,11 @@
 Se trata de una aplicación de compraventa de vehículos nuevos y usados para Android. <br>
 Creada con Jetpack Compose. <br>
 
+
 [Enlace a la documentación](https://alvaro-c.gitbook.io/proyecto-final-de-grado/)
+
+[Enlace a la APK](https://mega.nz/file/COYgmKwZ#hb3IewKyRB_DcSzwv6ZmT93HsOdklckS0w0QqaM4qKQ)
+
 
 <h4>Tecnologías utilizadas:</h4>
 
