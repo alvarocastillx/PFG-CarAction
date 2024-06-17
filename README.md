@@ -6,7 +6,7 @@ Creada con Jetpack Compose. <br>
 
 [Enlace a la documentación](https://alvaro-c.gitbook.io/proyecto-final-de-grado/)
 
-[Enlace a la APK](https://mega.nz/file/COYgmKwZ#hb3IewKyRB_DcSzwv6ZmT93HsOdklckS0w0QqaM4qKQ)
+[Enlace a la APK](https://mega.nz/file/qGhwSLrY#EJp0MRgTbpOvSKFfJPnSYF75gDiO2lLc3L-bGIe9oOU)
 
 
 <h4>Tecnologías utilizadas:</h4>
