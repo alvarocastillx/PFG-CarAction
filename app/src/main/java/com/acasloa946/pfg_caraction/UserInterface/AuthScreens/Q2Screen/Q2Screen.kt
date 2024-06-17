@@ -39,10 +39,12 @@ fun Q2Screen(navController: NavController, q2Viewmodel: Q2Viewmodel, q1Viewmodel
             onClickBuy = {
                 q2Viewmodel.createUserAcc(q1Viewmodel.name, userType = UserType.BUYER, context)
                 navController.navigate(Routes.SplashScreen.route)
+                navController.popBackStack()
             },
             onClickSell = {
                 q2Viewmodel.createUserAcc(q1Viewmodel.name, userType = UserType.SELLER, context)
                 navController.navigate(Routes.SplashScreen.route)
+                navController.popBackStack()
             })
         Text(
             text = "CarAction® 2024",

@@ -41,8 +41,8 @@ class FilterDialogViewmodel : ViewModel() {
 
     fun getMaxPrice(fetchedCars : MutableStateFlow<List<CarModel>>) {
         fetchedCars.value.forEach {
-           if (it.price!="" && (it.price!!.replace(",","").toInt()>maxPrice) ) {
-               maxPrice = it.price.replace(",","").toInt()
+           if (it.price!="" && (it.price!!.replace(".","").toInt()>maxPrice) ) {
+               maxPrice = it.price.replace(".","").toInt()
            }
        }
     }
